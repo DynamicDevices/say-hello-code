@@ -279,7 +279,7 @@
         
         <div class="stats">
             <div class="stat">
-                <div class="stat-number" id="totalCount">200</div>
+                <div class="stat-number" id="totalCount">230</div>
                 <div class="stat-label">Languages</div>
             </div>
             <div class="stat">
@@ -304,8 +304,8 @@
 
     <script>
         var languages = [
-            {name: "Python", year: 1991, creator: "Guido van Rossum", code: "print(\"Hello, World!\")", desc: "Python is a high-level, interpreted programming language known for its clean, readable syntax and philosophy of code readability. Created by Guido van Rossum and first released in 1991, Python emphasises simplicity and productivity.", popularity: 98},
-            {name: "JavaScript", year: 1995, creator: "Brendan Eich", code: "console.log(\"Hello, World!\");", desc: "JavaScript is a dynamic, interpreted programming language that was originally designed to add interactivity to web pages. Created by Brendan Eich at Netscape in 1995, it has evolved into one of the most versatile languages in the world.", popularity: 100},
+            {name: "Python", year: 1991, creator: "Guido van Rossum", code: "print(\"Hello, World!\")", desc: "Python is a high-level, interpreted programming language known for its clean, readable syntax and philosophy of code readability. Created by Guido van Rossum and first released in 1991, Python emphasises simplicity and productivity.", popularity: 98, link: "https://www.python.org/"},
+            {name: "JavaScript", year: 1995, creator: "Brendan Eich", code: "console.log(\"Hello, World!\");", desc: "JavaScript is a dynamic, interpreted programming language that was originally designed to add interactivity to web pages. Created by Brendan Eich at Netscape in 1995, it has evolved into one of the most versatile languages in the world.", popularity: 100, link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"},
             {name: "Java", year: 1995, creator: "James Gosling", code: "public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}", desc: "Java is a class-based, object-oriented programming language designed by James Gosling at Sun Microsystems in 1995. Built on the principle of 'write once, run anywhere', Java compiles to bytecode that runs on the Java Virtual Machine.", popularity: 95},
             {name: "C", year: 1972, creator: "Dennis Ritchie", code: "#include <stdio.h>\n\nint main() {\n    printf(\"Hello, World!\\n\");\n    return 0;\n}", desc: "C is a general-purpose, procedural programming language developed by Dennis Ritchie at Bell Labs between 1969 and 1973. Often called the mother of modern programming languages, C provides low-level access to memory and system resources.", popularity: 85},
             {name: "C++", year: 1985, creator: "Bjarne Stroustrup", code: "#include <iostream>\n\nint main() {\n    std::cout << \"Hello, World!\" << std::endl;\n    return 0;\n}", desc: "C++ is an extension of the C programming language, developed by Bjarne Stroustrup at Bell Labs starting in 1979. It adds object-oriented programming capabilities while maintaining the efficiency and flexibility of C.", popularity: 87},
@@ -471,7 +471,37 @@
             {name: "NuSMV", year: 1999, creator: "CMU/ITC-irst", code: "MODULE main\nVAR\n  hello : boolean;\nINIT\n  hello = TRUE\nSPEC\n  AG hello", desc: "NuSMV is a symbolic model checker developed at Carnegie Mellon University and ITC-irst. It uses temporal logic specifications to verify finite state systems and is widely used in formal verification research and education.", popularity: 8},
             {name: "CBMC", year: 2003, creator: "Daniel Kroening", code: "#include <assert.h>\n\nint main() {\n    int hello = 1;\n    assert(hello == 1);\n    return 0;\n}", desc: "CBMC (Bounded Model Checker for C/C++) is a verification tool developed by Daniel Kroening that uses bounded model checking to verify C and C++ programs. It can find bugs like buffer overflows, pointer errors, and assertion violations.", popularity: 10},
             {name: "BLAST", year: 2000, creator: "UC Berkeley", code: "int hello = 1;\nassert(hello > 0);", desc: "BLAST (Berkeley Lazy Abstraction Software verification Tool) is a software model checker developed at UC Berkeley. It uses predicate abstraction and lazy refinement to verify C programs against safety properties automatically.", popularity: 6},
-            {name: "SLAM", year: 2000, creator: "Microsoft Research", code: "#include <assert.h>\n\nint main() {\n    int hello = 1;\n    assert(hello != 0);\n    return 0;\n}", desc: "SLAM (Software Model Checker for C) is a software verification tool developed at Microsoft Research. It uses predicate abstraction to automatically verify that C programs correctly use application programming interfaces (APIs), particularly focusing on device driver verification.", popularity: 8}
+            {name: "SLAM", year: 2000, creator: "Microsoft Research", code: "#include <assert.h>\n\nint main() {\n    int hello = 1;\n    assert(hello != 0);\n    return 0;\n}", desc: "SLAM (Software Model Checker for C) is a software verification tool developed at Microsoft Research. It uses predicate abstraction to automatically verify that C programs correctly use application programming interfaces (APIs), particularly focusing on device driver verification.", popularity: 8},
+            {name: "SPARK", year: 1988, creator: "Praxis Systems", code: "with Spark.Text_IO;\nprocedure Hello\n  with Global => null\nis\nbegin\n   Spark.Text_IO.Put_Line(\"Hello, World!\");\nend Hello;", desc: "SPARK is a formally defined programming language based on Ada, developed by Praxis Systems for high-integrity software development. It includes contracts and formal verification capabilities to prove program correctness.", popularity: 12},
+            {name: "MISRA C", year: 1998, creator: "MISRA", code: "/* MISRA C compliant */\n#include <stdio.h>\n\nint main(void)\n{\n    (void)printf(\"Hello, World!\\n\");\n    return 0;\n}", desc: "MISRA C is a set of software development guidelines for the C programming language developed by MISRA (Motor Industry Software Reliability Association). It restricts C language features to improve code safety and reliability in embedded systems.", popularity: 16},
+            {name: "CompCert C", year: 2006, creator: "Xavier Leroy", code: "#include <stdio.h>\n\nint main(void) {\n    printf(\"Hello, World!\\n\");\n    return 0;\n}", desc: "CompCert C is a fully verified C compiler developed by Xavier Leroy using the Coq proof assistant. It's the first compiler that is mathematically proven to be bug-free, ensuring that compiled code behaves exactly as specified by the C semantics.", popularity: 8},
+            {name: "CBOR", year: 2013, creator: "IETF", code: "0x6D48656C6C6F2C20576F726C6421", desc: "CBOR (Concise Binary Object Representation) is a binary data serialisation format defined by the IETF. It's designed to be compact and fast to parse whilst being human-readable when converted, used in IoT and web applications.", popularity: 14},
+            {name: "MessagePack", year: 2009, creator: "Sadayuki Furuhashi", code: "0xAD48656C6C6F2C20576F726C6421", desc: "MessagePack is an efficient binary serialisation format developed by Sadayuki Furuhashi. It's like JSON but faster and smaller, widely used for data exchange between different programming languages and systems.", popularity: 18},
+            {name: "Protocol Buffers", year: 2001, creator: "Google", code: "syntax = \"proto3\";\n\nmessage Hello {\n  string message = 1;\n}\n\n// Hello{message: \"Hello, World!\"}", desc: "Protocol Buffers (protobuf) is a language-neutral, platform-neutral serialisation mechanism developed by Google. It's used for serialising structured data and is widely adopted in microservices and RPC systems.", popularity: 32},
+            {name: "Apache Avro", year: 2009, creator: "Apache Foundation", code: "{\n  \"type\": \"record\",\n  \"name\": \"Hello\",\n  \"fields\": [\n    {\"name\": \"message\", \"type\": \"string\", \"default\": \"Hello, World!\"}\n  ]\n}", desc: "Apache Avro is a data serialisation system developed by the Apache Software Foundation. It provides rich data structures, compact binary format, and schema evolution capabilities, commonly used in big data processing.", popularity: 20},
+            {name: "Apache Thrift", year: 2007, creator: "Facebook", code: "struct Hello {\n  message: string = \"Hello, World!\";\n}\n\nroot_type Hello;", desc: "Apache Thrift is a software framework developed originally at Facebook for scalable cross-language services development. It combines a software stack with a code generation engine to build services that work across programming languages.", popularity: 22},
+            {name: "FlatBuffers", year: 2014, creator: "Google", code: "table Hello {\n  message: string;\n}\n\nroot_type Hello;\n\n// Binary: Hello{message: \"Hello, World!\"}", desc: "FlatBuffers is an efficient cross-platform serialisation library developed by Google. It allows accessing serialised data without parsing or unpacking, making it ideal for performance-critical applications like games and mobile apps.", popularity: 24},
+            {name: "Cap'n Proto", year: 2013, creator: "Kenton Varda", code: "@0x85150b117366d14b;\n\nstruct Hello {\n  message @0 :Text = \"Hello, World!\";\n}", desc: "Cap'n Proto is an extremely fast data interchange format and capability-based RPC system developed by Kenton Varda. It's designed to be infinitely faster than JSON by avoiding parsing altogether.", popularity: 16},
+            {name: "ASN.1", year: 1984, creator: "ITU-T", code: "Hello-World-Module DEFINITIONS ::= BEGIN\n\nHelloMessage ::= UTF8String\n\nhelloWorld HelloMessage ::= \"Hello, World!\"\n\nEND", desc: "ASN.1 (Abstract Syntax Notation One) is a standard interface description language developed by ITU-T for describing data structures that can be serialised and deserialised in a cross-platform way. Widely used in telecommunications and cryptography.", popularity: 14},
+            {name: "OpenAPI", year: 2010, creator: "Tony Tam", code: "openapi: 3.0.0\ninfo:\n  title: Hello API\n  version: 1.0.0\npaths:\n  /hello:\n    get:\n      responses:\n        '200':\n          description: Hello World", desc: "OpenAPI (formerly Swagger) is a specification language developed by Tony Tam for describing REST APIs. It allows developers to design, document, and consume HTTP APIs in a standardised way.", popularity: 38},
+            {name: "RAML", year: 2013, creator: "MuleSoft", code: "#%RAML 1.0\ntitle: Hello API\nversion: v1\n/hello:\n  get:\n    responses:\n      200:\n        body:\n          text/plain:\n            example: Hello, World!", desc: "RAML (RESTful API Modeling Language) is a YAML-based language developed by MuleSoft for describing RESTful APIs. It focuses on design-first API development with clear documentation and tooling support.", popularity: 16},
+            {name: "API Blueprint", year: 2013, creator: "Apiary", code: "FORMAT: 1A\n\n# Hello API\n\n## Hello [/hello]\n\n### Get Hello [GET]\n\n+ Response 200 (text/plain)\n\n        Hello, World!", desc: "API Blueprint is a high-level API description language developed by Apiary (now Oracle). It uses a Markdown-based syntax to create human-readable API documentation with machine-readable specifications.", popularity: 12},
+            {name: "WSDL", year: 2000, creator: "W3C", code: "<?xml version=\"1.0\"?>\n<definitions xmlns=\"http://schemas.xmlsoap.org/wsdl/\">\n  <message name=\"HelloRequest\">\n    <part name=\"message\" type=\"xsd:string\"/>\n  </message>\n  <portType name=\"HelloService\">\n    <operation name=\"sayHello\">\n      <input message=\"HelloRequest\"/>\n    </operation>\n  </portType>\n</definitions>", desc: "WSDL (Web Services Description Language) is an XML-based interface description language developed by the W3C for describing web services. It defines how to access a web service and what operations it performs.", popularity: 18},
+            {name: "XSD", year: 2001, creator: "W3C", code: "<?xml version=\"1.0\"?>\n<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"hello\" type=\"xs:string\" default=\"Hello, World!\"/>\n</xs:schema>", desc: "XSD (XML Schema Definition) is a schema language developed by the W3C for describing the structure and constraining the contents of XML documents. It provides a way to define the elements, attributes, and data types in XML.", popularity: 20},
+            {name: "RelaxNG", year: 2001, creator: "James Clark", code: "<element name=\"hello\" xmlns=\"http://relaxng.org/ns/structure/1.0\">\n  <text/>\n</element>\n\n<!-- Valid: <hello>Hello, World!</hello> -->", desc: "RelaxNG is a schema language for XML developed by James Clark and others. It provides a simpler and more flexible alternative to XML Schema (XSD) for validating XML documents with a cleaner syntax.", popularity: 8},
+            {name: "Schematron", year: 2000, creator: "Rick Jelliffe", code: "<schema xmlns=\"http://purl.oclc.org/dsdl/schematron\">\n  <pattern>\n    <rule context=\"hello\">\n      <assert test=\". = 'Hello, World!'\">Message must be Hello, World!</assert>\n    </rule>\n  </pattern>\n</schema>", desc: "Schematron is a rule-based validation language developed by Rick Jelliffe for making assertions about the presence or absence of patterns in XML documents. It's often used alongside other schema languages for complex validation.", popularity: 6},
+            {name: "XSLT", year: 1999, creator: "W3C", code: "<?xml version=\"1.0\"?>\n<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\">\n  <xsl:template match=\"/\">\n    <html>\n      <body>\n        <h1>Hello, World!</h1>\n      </body>\n    </html>\n  </xsl:template>\n</xsl:stylesheet>", desc: "XSLT (Extensible Stylesheet Language Transformations) is a declarative programming language developed by the W3C for transforming XML documents into other formats like HTML, text, or other XML structures.", popularity: 22},
+            {name: "XPath", year: 1999, creator: "W3C", code: "//hello[text()='Hello, World!']", desc: "XPath is a query language developed by the W3C for selecting nodes from XML documents. It uses a path-like syntax similar to file system paths and is widely used in XSLT, XML Schema, and web scraping.", popularity: 26},
+            {name: "XQuery", year: 2007, creator: "W3C", code: "xquery version \"1.0\";\n\nlet $hello := \"Hello, World!\"\nreturn <greeting>{$hello}</greeting>", desc: "XQuery is a query and functional programming language developed by the W3C for querying and transforming XML data. It combines the power of SQL-like queries with functional programming concepts for complex XML processing.", popularity: 16},
+            {name: "SPARQL", year: 2008, creator: "W3C", code: "PREFIX ex: <http://example.org/>\n\nSELECT ?message\nWHERE {\n  ex:greeting ex:message \"Hello, World!\" .\n}", desc: "SPARQL is a query language and protocol developed by the W3C for querying RDF (Resource Description Framework) data. It's the standard query language for the Semantic Web and linked data applications.", popularity: 14},
+            {name: "Cypher", year: 2011, creator: "Neo4j", code: "CREATE (hello:Message {text: \"Hello, World!\"})\nRETURN hello.text", desc: "Cypher is a declarative graph query language developed by Neo4j for querying graph databases. It uses ASCII-art syntax to represent graph patterns and is designed to be intuitive for describing graph relationships.", popularity: 28},
+            {name: "Gremlin", year: 2009, creator: "TinkerPop", code: "g.addV('message').property('text', 'Hello, World!').values('text')", desc: "Gremlin is a graph traversal language developed by the Apache TinkerPop project. It provides a functional, data-flow language for querying and manipulating graph databases across different graph database systems.", popularity: 22},
+            {name: "N1QL", year: 2014, creator: "Couchbase", code: "SELECT \"Hello, World!\" AS message", desc: "N1QL (pronounced 'nickel') is a SQL-like query language developed by Couchbase for querying JSON documents in NoSQL databases. It extends SQL to work with JSON data structures and nested documents.", popularity: 18},
+            {name: "MongoDB Query Language", year: 2009, creator: "MongoDB Inc.", code: "db.messages.insertOne({message: \"Hello, World!\"})\ndb.messages.find({message: \"Hello, World!\"})", desc: "MongoDB Query Language (MQL) is a rich query language developed by MongoDB Inc. for querying and manipulating documents in MongoDB databases. It uses a JSON-like syntax for expressing complex queries and aggregations.", popularity: 36},
+            {name: "CQL", year: 2011, creator: "Apache Cassandra", code: "CREATE TABLE messages (id UUID PRIMARY KEY, text TEXT);\nINSERT INTO messages (id, text) VALUES (uuid(), 'Hello, World!');\nSELECT * FROM messages WHERE text = 'Hello, World!';", desc: "CQL (Cassandra Query Language) is a SQL-like query language developed for Apache Cassandra. It provides a familiar interface for developers while supporting Cassandra's distributed, column-family data model.", popularity: 24},
+            {name: "Redis Commands", year: 2009, creator: "Salvatore Sanfilippo", code: "SET greeting \"Hello, World!\"\nGET greeting", desc: "Redis Commands form a command language developed by Salvatore Sanfilippo for the Redis in-memory data structure store. It provides a simple yet powerful set of commands for manipulating various data types like strings, lists, sets, and hashes.", popularity: 42},
+            {name: "Elasticsearch Query DSL", year: 2010, creator: "Elastic", code: "{\n  \"query\": {\n    \"match\": {\n      \"message\": \"Hello, World!\"\n    }\n  }\n}", desc: "Elasticsearch Query DSL is a JSON-based query language developed by Elastic for searching and analysing data in Elasticsearch. It provides a rich set of query types for full-text search, structured queries, and complex aggregations.", popularity: 38},
+            {name: "Solr Query Language", year: 2004, creator: "Apache Lucene", code: "q=message:\"Hello, World!\"&wt=json", desc: "Solr Query Language is a search query syntax developed by the Apache Lucene project for the Apache Solr search platform. It provides powerful full-text search capabilities with support for faceting, highlighting, and complex query operations.", popularity: 26}
         ];
 
         var filteredLanguages = languages.slice();
@@ -505,6 +535,217 @@
             var div = document.createElement('div');
             div.textContent = text;
             return div.innerHTML;
+        }
+
+        function generateReferenceLink(languageName) {
+            var links = {
+                "Python": "https://www.python.org/",
+                "JavaScript": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+                "Java": "https://docs.oracle.com/en/java/",
+                "C": "https://en.cppreference.com/w/c",
+                "C++": "https://en.cppreference.com/w/cpp",
+                "C#": "https://docs.microsoft.com/en-us/dotnet/csharp/",
+                "Go": "https://golang.org/",
+                "Rust": "https://www.rust-lang.org/",
+                "Swift": "https://swift.org/",
+                "Kotlin": "https://kotlinlang.org/",
+                "Ruby": "https://www.ruby-lang.org/",
+                "PHP": "https://www.php.net/",
+                "TypeScript": "https://www.typescriptlang.org/",
+                "HTML": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+                "CSS": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+                "SQL": "https://www.iso.org/standard/63555.html",
+                "Bash": "https://www.gnu.org/software/bash/",
+                "PowerShell": "https://docs.microsoft.com/en-us/powershell/",
+                "R": "https://www.r-project.org/",
+                "MATLAB": "https://www.mathworks.com/products/matlab.html",
+                "Perl": "https://www.perl.org/",
+                "Lua": "https://www.lua.org/",
+                "Haskell": "https://www.haskell.org/",
+                "Scala": "https://www.scala-lang.org/",
+                "Dart": "https://dart.dev/",
+                "Clojure": "https://clojure.org/",
+                "Erlang": "https://www.erlang.org/",
+                "Elixir": "https://elixir-lang.org/",
+                "F#": "https://fsharp.org/",
+                "OCaml": "https://ocaml.org/",
+                "Lisp": "https://common-lisp.net/",
+                "Scheme": "https://www.scheme.org/",
+                "Assembly x86": "https://en.wikipedia.org/wiki/X86_assembly_language",
+                "FORTRAN": "https://fortran-lang.org/",
+                "COBOL": "https://www.iso.org/standard/74527.html",
+                "Pascal": "https://www.freepascal.org/",
+                "BASIC": "https://en.wikipedia.org/wiki/BASIC",
+                "Ada": "https://www.adacore.com/about-ada",
+                "JSON": "https://www.json.org/",
+                "YAML": "https://yaml.org/",
+                "XML": "https://www.w3.org/XML/",
+                "Markdown": "https://daringfireball.net/projects/markdown/",
+                "LaTeX": "https://www.latex-project.org/",
+                "Julia": "https://julialang.org/",
+                "Objective-C": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/",
+                "Smalltalk": "https://squeak.org/",
+                "Prolog": "https://www.swi-prolog.org/",
+                "Forth": "https://www.forth.org/",
+                "Logo": "https://en.wikipedia.org/wiki/Logo_(programming_language)",
+                "APL": "https://www.dyalog.com/",
+                "ML": "https://www.smlnj.org/",
+                "Zig": "https://ziglang.org/",
+                "Crystal": "https://crystal-lang.org/",
+                "Nim": "https://nim-lang.org/",
+                "V": "https://vlang.io/",
+                "D": "https://dlang.org/",
+                "Fish": "https://fishshell.com/",
+                "Zsh": "https://www.zsh.org/",
+                "CoffeeScript": "https://coffeescript.org/",
+                "PureScript": "https://www.purescript.org/",
+                "Elm": "https://elm-lang.org/",
+                "Groovy": "https://groovy-lang.org/",
+                "Tcl": "https://www.tcl.tk/",
+                "AWK": "https://www.gnu.org/software/gawk/",
+                "Mathematica": "https://www.wolfram.com/mathematica/",
+                "Octave": "https://www.gnu.org/software/octave/",
+                "SAS": "https://www.sas.com/",
+                "Solidity": "https://soliditylang.org/",
+                "TOML": "https://toml.io/",
+                "GraphQL": "https://graphql.org/",
+                "Handlebars": "https://handlebarsjs.com/",
+                "Carbon": "https://github.com/carbon-language/carbon-lang",
+                "Gleam": "https://gleam.run/",
+                "Roc": "https://www.roc-lang.org/",
+                "Odin": "https://odin-lang.org/",
+                "JAI": "https://github.com/BSVino/JaiPrimer/blob/master/JaiPrimer.md",
+                "WebAssembly": "https://webassembly.org/",
+                "Move": "https://github.com/move-language/move",
+                "GDScript": "https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/",
+                "MicroPython": "https://micropython.org/",
+                "Arduino": "https://www.arduino.cc/reference/en/",
+                "Brainfuck": "https://en.wikipedia.org/wiki/Brainfuck",
+                "Racket": "https://racket-lang.org/",
+                "Mojo": "https://www.modular.com/max/mojo",
+                "Pony": "https://www.ponylang.io/",
+                "Hy": "https://docs.hylang.org/",
+                "Red": "https://www.red-lang.org/",
+                "Fennel": "https://fennel-lang.org/",
+                "Idris": "https://www.idris-lang.org/",
+                "Chapel": "https://chapel-lang.org/",
+                "Agda": "https://wiki.portal.chalmers.se/agda/",
+                "Lean": "https://lean-lang.org/",
+                "Coq": "https://coq.inria.fr/",
+                "Isabelle/HOL": "https://isabelle.in.tum.de/",
+                "Dafny": "https://dafny.org/",
+                "Vala": "https://wiki.gnome.org/Projects/Vala",
+                "Genie": "https://wiki.gnome.org/Projects/Genie",
+                "PicoLisp": "https://picolisp.com/",
+                "Pure Data": "https://puredata.info/",
+                "Inform 7": "http://inform7.com/",
+                "Rexx": "https://www.rexxla.org/",
+                "Miranda": "https://www.cs.kent.ac.uk/people/staff/sjt/Miranda/",
+                "Clean": "https://clean.cs.ru.nl/",
+                "Icon": "https://www2.cs.arizona.edu/icon/",
+                "J": "https://www.jsoftware.com/",
+                "Factor": "https://factorcode.org/",
+                "PostScript": "https://www.adobe.com/products/postscript/",
+                "Modula-2": "https://www.modula2.org/",
+                "Oberon": "https://www.projectoberon.com/",
+                "Eiffel": "https://www.eiffel.org/",
+                "SNOBOL": "https://www.snobol4.org/",
+                "ALGOL 68": "https://jmvdveer.home.xs4all.nl/algol.html",
+                "MUMPS": "https://www.intersystems.com/products/cache/",
+                "PL/I": "https://www.ibm.com/docs/en/enterprise-pl-i-z-os",
+                "RPG": "https://www.ibm.com/docs/en/i/7.4?topic=languages-ile-rpg",
+                "PILOT": "https://en.wikipedia.org/wiki/PILOT",
+                "WATFIV": "https://en.wikipedia.org/wiki/WATFIV",
+                "BCPL": "https://www.bell-labs.com/usr/dmr/www/bcpl.html",
+                "B": "https://www.bell-labs.com/usr/dmr/www/bintro.html",
+                "SIMULA": "https://simula67.github.io/",
+                "JOSS": "https://en.wikipedia.org/wiki/JOSS",
+                "MAD": "https://en.wikipedia.org/wiki/MAD_(programming_language)",
+                "NELIAC": "https://en.wikipedia.org/wiki/NELIAC",
+                "JOVIAL": "https://en.wikipedia.org/wiki/JOVIAL",
+                "CLIP": "https://en.wikipedia.org/wiki/Clipper_(programming_language)",
+                "FoxPro": "https://docs.microsoft.com/en-us/previous-versions/visualstudio/foxpro/",
+                "dBASE": "https://www.dbase.com/",
+                "Clipper": "https://harbour.github.io/",
+                "Paradox PAL": "https://en.wikipedia.org/wiki/Paradox_(database)",
+                "HyperTalk": "https://hypercard.org/",
+                "AppleScript": "https://developer.apple.com/library/archive/documentation/AppleScript/",
+                "VBScript": "https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/scripting-articles/",
+                "JScript": "https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/scripting-articles/",
+                "ActionScript": "https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/",
+                "Lingo": "https://en.wikipedia.org/wiki/Lingo_(programming_language)",
+                "MEL": "https://help.autodesk.com/view/MAYAUL/2022/ENU/?guid=GUID-44EAAE2C-98F7-4E6B-B1BC-9BE4E5CEED79",
+                "MaxScript": "https://help.autodesk.com/view/3DSMAX/2022/ENU/?guid=GUID-44EAAE2C-98F7-4E6B-B1BC-9BE4E5CEED79",
+                "UnrealScript": "https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/GameplayArchitecture/",
+                "LSL": "https://wiki.secondlife.com/wiki/LSL_Portal",
+                "HLSL": "https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/",
+                "GLSL": "https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language",
+                "Cg": "https://developer.nvidia.com/cg-toolkit",
+                "VHDL": "https://www.ieee.org/",
+                "Verilog": "https://www.verilog.com/",
+                "SystemVerilog": "https://www.systemverilog.org/",
+                "SPICE": "http://bwrcs.eecs.berkeley.edu/Classes/IcBook/SPICE/",
+                "SKILL": "https://www.cadence.com/",
+                "ABEL": "https://en.wikipedia.org/wiki/ABEL_(programming_language)",
+                "AHDL": "https://www.intel.com/content/www/us/en/docs/",
+                "Lustre": "https://www-verimag.imag.fr/SYNCHRONE/lustre-v6/",
+                "Esterel": "https://www-sop.inria.fr/meije/esterel/",
+                "SIGNAL": "https://www.irisa.fr/espresso/Polychrony/",
+                "TLA+": "https://lamport.azurewebsites.net/tla/tla.html",
+                "Alloy": "https://alloytools.org/",
+                "Z": "https://www.iso.org/standard/21573.html",
+                "VDM": "https://www.vdmportal.org/",
+                "B-Method": "https://www.atelierb.eu/",
+                "Event-B": "https://www.event-b.org/",
+                "CSP": "https://www.cs.ox.ac.uk/bill.roscoe/publications/68b.pdf",
+                "CCS": "https://en.wikipedia.org/wiki/Calculus_of_communicating_systems",
+                "Pi-calculus": "https://en.wikipedia.org/wiki/Pi-calculus",
+                "Petri Nets": "https://www.informatik.uni-hamburg.de/TGI/PetriNets/",
+                "Promela": "https://spinroot.com/spin/whatispin.html",
+                "UPPAAL": "https://uppaal.org/",
+                "NuSMV": "https://nusmv.fbk.eu/",
+                "CBMC": "https://www.cprover.org/cbmc/",
+                "BLAST": "https://mtc.epfl.ch/software-tools/blast/",
+                "SLAM": "https://www.microsoft.com/en-us/research/project/slam/",
+                "SPARK": "https://www.adacore.com/about-spark",
+                "MISRA C": "https://www.misra.org.uk/",
+                "CompCert C": "https://compcert.org/",
+                "CBOR": "https://cbor.io/",
+                "MessagePack": "https://msgpack.org/",
+                "Protocol Buffers": "https://developers.google.com/protocol-buffers",
+                "Apache Avro": "https://avro.apache.org/",
+                "Apache Thrift": "https://thrift.apache.org/",
+                "FlatBuffers": "https://google.github.io/flatbuffers/",
+                "Cap'n Proto": "https://capnproto.org/",
+                "ASN.1": "https://www.itu.int/rec/T-REC-X.680/",
+                "OpenAPI": "https://swagger.io/specification/",
+                "RAML": "https://raml.org/",
+                "API Blueprint": "https://apiblueprint.org/",
+                "WSDL": "https://www.w3.org/TR/wsdl/",
+                "XSD": "https://www.w3.org/XML/Schema",
+                "RelaxNG": "https://relaxng.org/",
+                "Schematron": "https://schematron.com/",
+                "XSLT": "https://www.w3.org/TR/xslt/",
+                "XPath": "https://www.w3.org/TR/xpath/",
+                "XQuery": "https://www.w3.org/XML/Query/",
+                "SPARQL": "https://www.w3.org/TR/sparql11-query/",
+                "Cypher": "https://neo4j.com/docs/cypher-manual/",
+                "Gremlin": "https://tinkerpop.apache.org/gremlin.html",
+                "N1QL": "https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/",
+                "MongoDB Query Language": "https://docs.mongodb.com/manual/tutorial/query-documents/",
+                "CQL": "https://cassandra.apache.org/doc/latest/cassandra/cql/",
+                "Redis Commands": "https://redis.io/commands",
+                "Elasticsearch Query DSL": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html",
+                "Solr Query Language": "https://solr.apache.org/guide/solr/latest/query-guide/standard-query-parser.html"
+            };
+            
+            // Return specific link if available, otherwise search for documentation
+            if (links[languageName]) {
+                return links[languageName];
+            }
+            
+            // Generate search URL for languages not in the list
+            return "https://www.google.com/search?q=" + encodeURIComponent(languageName + " programming language documentation");
         }
 
         function updateFilteredLanguages() {
@@ -541,13 +782,19 @@
                     popularityBadge = '<span style="color: #60a5fa; font-size: 0.8em; margin-left: 8px;">🔥 Trending</span>';
                 }
                 
+                // Generate reference link based on language name
+                var referenceLink = generateReferenceLink(lang.name);
+                
                 return '<div class="language-card">' +
                     '<div class="language-header">' +
                         '<div>' +
                             '<div class="language-name">' + escapeHtml(lang.name) + popularityBadge + '</div>' +
                             '<div class="language-year">' + lang.year + ' • ' + escapeHtml(lang.creator) + '</div>' +
                         '</div>' +
-                        '<button class="copy-button" onclick="copyCode(' + index + ', this)">Copy</button>' +
+                        '<div style="display: flex; gap: 8px;">' +
+                            '<button class="copy-button" onclick="copyCode(' + index + ', this)">Copy</button>' +
+                            '<button class="copy-button" onclick="window.open(\'' + referenceLink + '\', \'_blank\')" title="Learn more about ' + escapeHtml(lang.name) + '">📖</button>' +
+                        '</div>' +
                     '</div>' +
                     '<div class="language-description">' + escapeHtml(lang.desc) + '</div>' +
                     '<div class="code-container">' +

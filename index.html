@@ -255,12 +255,55 @@
                 justify-content: center;
             }
         }
+
+        .footer {
+            margin-top: 60px;
+            padding: 40px 20px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            margin: 8px 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                margin-top: 40px;
+                padding: 30px 15px 15px;
+            }
+
+            .footer p {
+                font-size: 13px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <h1 class="title">Hello World Collection</h1>
-        <p class="subtitle">Authentic "Hello, World!" programs in 150+ programming languages</p>
+        <p class="subtitle">Authentic "Hello, World!" programs in 209 programming languages</p>
         
         <div class="controls">
             <div class="search-bar">
@@ -276,20 +319,38 @@
                 </select>
             </div>
         </div>
-        
+
         <div class="stats">
             <div class="stat">
-                <div class="stat-number" id="totalCount">230</div>
+                <div class="stat-number" id="totalCount">209</div>
                 <div class="stat-label">Languages</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" id="filteredCount">209</div>
+                <div class="stat-label">Showing</div>
             </div>
             <div class="stat">
                 <div class="stat-number">1957</div>
                 <div class="stat-label">First Language</div>
             </div>
             <div class="stat">
-                <div class="stat-number">68</div>
+                <div class="stat-number">67</div>
                 <div class="stat-label">Years Span</div>
             </div>
+            <div class="stat">
+                <div class="stat-number" id="favoriteCount">0</div>
+                <div class="stat-label">Favorites</div>
+            </div>
+                <div class="stat-label">Years Span</div>
+            </div>
+        </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Dynamic Devices Ltd. All rights reserved.</p>
+            <p>Created in collaboration with <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">Claude.ai</a></p>
+        </div>
+    </footer>
         </div>
     </div>
 
@@ -303,6 +364,7 @@
     </div>
 
     <script>
+        // Enhanced language data with additional metadata
         var languages = [
             {name: "Python", year: 1991, creator: "Guido van Rossum", code: "print(\"Hello, World!\")", desc: "Python is a high-level, interpreted programming language known for its clean, readable syntax and philosophy of code readability. Created by Guido van Rossum and first released in 1991, Python emphasises simplicity and productivity.", popularity: 98, link: "https://www.python.org/"},
             {name: "JavaScript", year: 1995, creator: "Brendan Eich", code: "console.log(\"Hello, World!\");", desc: "JavaScript is a dynamic, interpreted programming language that was originally designed to add interactivity to web pages. Created by Brendan Eich at Netscape in 1995, it has evolved into one of the most versatile languages in the world.", popularity: 100, link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"},
@@ -501,7 +563,17 @@
             {name: "CQL", year: 2011, creator: "Apache Cassandra", code: "CREATE TABLE messages (id UUID PRIMARY KEY, text TEXT);\nINSERT INTO messages (id, text) VALUES (uuid(), 'Hello, World!');\nSELECT * FROM messages WHERE text = 'Hello, World!';", desc: "CQL (Cassandra Query Language) is a SQL-like query language developed for Apache Cassandra. It provides a familiar interface for developers while supporting Cassandra's distributed, column-family data model.", popularity: 24},
             {name: "Redis Commands", year: 2009, creator: "Salvatore Sanfilippo", code: "SET greeting \"Hello, World!\"\nGET greeting", desc: "Redis Commands form a command language developed by Salvatore Sanfilippo for the Redis in-memory data structure store. It provides a simple yet powerful set of commands for manipulating various data types like strings, lists, sets, and hashes.", popularity: 42},
             {name: "Elasticsearch Query DSL", year: 2010, creator: "Elastic", code: "{\n  \"query\": {\n    \"match\": {\n      \"message\": \"Hello, World!\"\n    }\n  }\n}", desc: "Elasticsearch Query DSL is a JSON-based query language developed by Elastic for searching and analysing data in Elasticsearch. It provides a rich set of query types for full-text search, structured queries, and complex aggregations.", popularity: 38},
-            {name: "Solr Query Language", year: 2004, creator: "Apache Lucene", code: "q=message:\"Hello, World!\"&wt=json", desc: "Solr Query Language is a search query syntax developed by the Apache Lucene project for the Apache Solr search platform. It provides powerful full-text search capabilities with support for faceting, highlighting, and complex query operations.", popularity: 26}
+            {name: "Solr Query Language", year: 2004, creator: "Apache Lucene", code: "q=message:\"Hello, World!\"&wt=json", desc: "Solr Query Language is a search query syntax developed by the Apache Lucene project for the Apache Solr search platform. It provides powerful full-text search capabilities with support for faceting, highlighting, and complex query operations.", popularity: 26},
+            {name: "Mojo", year: 2023, creator: "Chris Lattner", code: "fn main():\n    print(\"Hello, World!\")", desc: "Mojo is a new programming language designed for AI development that combines Python's usability with C's performance. Created by Chris Lattner at Modular, it aims to be a superset of Python with systems programming capabilities.", popularity: 28},
+            {name: "Bend", year: 2024, creator: "HigherOrderCO", code: "def main():\n  return \"Hello, World!\"", desc: "Bend is a massively parallel, high-level programming language that compiles to HVM (High-order Virtual Machine). It's designed to run on GPUs and multi-core CPUs with automatic parallelization.", popularity: 15},
+            {name: "Gleam", year: 2016, creator: "Louis Pilfold", code: "import gleam/io\n\npub fn main() {\n  io.println(\"Hello, World!\")\n}", desc: "Gleam is a type-safe functional programming language that compiles to Erlang and JavaScript. Created by Louis Pilfold, combining robustness of Erlang VM with modern syntax.", popularity: 22},
+            {name: "Roc", year: 2018, creator: "Richard Feldman", code: "app \"hello\"\n    packages { pf: \"platform\" }\n    imports [pf.Stdout]\n    provides [main] to pf\n\nmain =\n    Stdout.line \"Hello, World!\"", desc: "Roc is a functional programming language designed for building reliable software with excellent performance. Created by Richard Feldman with emphasis on simplicity.", popularity: 18},
+            {name: "Odin", year: 2016, creator: "Ginger Bill", code: "package main\n\nimport \"core:fmt\"\n\nmain :: proc() {\n    fmt.println(\"Hello, World!\")\n}", desc: "Odin is a general-purpose programming language designed as an alternative to C with modern features and better ergonomics. Created by Ginger Bill.", popularity: 20},
+            {name: "JAI", year: 2014, creator: "Jonathan Blow", code: "#import \"Basic\";\n\nmain :: () {\n    print(\"Hello, World!\\n\");\n}", desc: "JAI is a programming language designed by Jonathan Blow for high-performance programming, particularly game development. Still in development, aims to provide control of C with modern features.", popularity: 16},
+            {name: "WebAssembly", year: 2017, creator: "W3C", code: "(module\n  (import \"env\" \"print\" (func $print (param i32)))\n  (func $main\n    i32.const 42\n    call $print)\n  (start $main))", desc: "WebAssembly (WASM) is a binary instruction format for a stack-based virtual machine designed by the W3C. It serves as a portable compilation target for programming languages.", popularity: 35},
+            {name: "Move", year: 2019, creator: "Facebook", code: "script {\n    use std::debug;\n    fun main() {\n        debug::print(&b\"Hello, World!\");\n    }\n}", desc: "Move is a programming language designed for writing safe smart contracts originally developed by Facebook for the Diem blockchain project. Features strong safety guarantees.", popularity: 24},
+            {name: "Cairo", year: 2021, creator: "StarkWare", code: "from starkware.cairo.common.serialize import serialize_word\n\nfunc main():\n    serialize_word('Hello, World!')\n    return ()\nend", desc: "Cairo is a programming language for writing provable programs, where one party can prove to another that a certain computation was executed correctly. Developed by StarkWare for blockchain applications.", popularity: 12},
+            {name: "Noir", year: 2022, creator: "Aztec Protocol", code: "fn main(x: Field, y: Field) {\n    constrain x != y;\n    std::println(\"Hello, World!\");\n}", desc: "Noir is a domain-specific language for creating and verifying proofs. Developed by Aztec Protocol, it's designed for writing zero-knowledge circuits with a Rust-like syntax.", popularity: 10}
         ];
 
         var filteredLanguages = languages.slice();
@@ -738,67 +810,251 @@
                 "Elasticsearch Query DSL": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html",
                 "Solr Query Language": "https://solr.apache.org/guide/solr/latest/query-guide/standard-query-parser.html"
             };
-            
+
             // Return specific link if available, otherwise search for documentation
             if (links[languageName]) {
                 return links[languageName];
             }
-            
+
             // Generate search URL for languages not in the list
             return "https://www.google.com/search?q=" + encodeURIComponent(languageName + " programming language documentation");
         }
 
+        // Enhanced JavaScript functionality
+        var filteredLanguages = languages.slice();
+        var currentSort = 'popularity';
+        var currentFilter = 'all';
+        var favorites = JSON.parse(localStorage.getItem('helloWorldFavorites') || '[]');
+
+        // Enhanced language data with tags and categories
+        function enhanceLanguageData() {
+            languages.forEach(function(lang) {
+                // Add tags based on characteristics
+                lang.tags = [];
+
+                // Era tags
+                if (lang.year < 1970) lang.tags.push({text: 'Pioneer', type: 'era'});
+                else if (lang.year < 1990) lang.tags.push({text: 'Classic', type: 'era'});
+                else if (lang.year < 2010) lang.tags.push({text: 'Modern', type: 'era'});
+                else lang.tags.push({text: 'Contemporary', type: 'era'});
+
+                // Paradigm tags
+                if (lang.name.includes('Script') || ['JavaScript', 'Python', 'Ruby', 'PHP'].includes(lang.name)) {
+                    lang.tags.push({text: 'Scripting', type: 'paradigm'});
+                }
+                if (['Java', 'C++', 'C#', 'Python', 'Ruby'].includes(lang.name)) {
+                    lang.tags.push({text: 'OOP', type: 'paradigm'});
+                }
+                if (['Haskell', 'Lisp', 'Scheme', 'Clojure', 'F#', 'OCaml'].includes(lang.name)) {
+                    lang.tags.push({text: 'Functional', type: 'paradigm'});
+                }
+                if (['C', 'C++', 'Rust', 'Go', 'Assembly x86'].includes(lang.name)) {
+                    lang.tags.push({text: 'Systems', type: 'paradigm'});
+                }
+
+                // Domain tags
+                if (['HTML', 'CSS', 'JavaScript', 'TypeScript', 'PHP'].includes(lang.name)) {
+                    lang.tags.push({text: 'Web', type: 'domain'});
+                }
+                if (['SQL', 'MongoDB Query Language', 'CQL'].includes(lang.name)) {
+                    lang.tags.push({text: 'Database', type: 'domain'});
+                }
+                if (['MATLAB', 'R', 'Julia', 'Mathematica'].includes(lang.name)) {
+                    lang.tags.push({text: 'Scientific', type: 'domain'});
+                }
+
+                // Add favorite status
+                lang.isFavorite = favorites.includes(lang.name);
+            });
+        }
+
+        function sortLanguages(languages, sortBy) {
+            var sorted = languages.slice();
+
+            switch(sortBy) {
+                case 'alphabetical':
+                    return sorted.sort(function(a, b) {
+                        return a.name.localeCompare(b.name);
+                    });
+                case 'year':
+                    return sorted.sort(function(a, b) {
+                        return a.year - b.year;
+                    });
+                case 'year-desc':
+                    return sorted.sort(function(a, b) {
+                        return b.year - a.year;
+                    });
+                case 'favorites':
+                    return sorted.sort(function(a, b) {
+                        if (a.isFavorite && !b.isFavorite) return -1;
+                        if (!a.isFavorite && b.isFavorite) return 1;
+                        return b.popularity - a.popularity;
+                    });
+                case 'popularity':
+                default:
+                    return sorted.sort(function(a, b) {
+                        return b.popularity - a.popularity;
+                    });
+            }
+        }
+
+        function escapeHtml(text) {
+            var div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function generateReferenceLink(languageName) {
+            var links = {
+                "Python": "https://www.python.org/",
+                "JavaScript": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+                "Java": "https://docs.oracle.com/en/java/",
+                "C": "https://en.cppreference.com/w/c",
+                "C++": "https://en.cppreference.com/w/cpp",
+                "C#": "https://docs.microsoft.com/en-us/dotnet/csharp/",
+                "Go": "https://golang.org/",
+                "Rust": "https://www.rust-lang.org/",
+                "Swift": "https://swift.org/",
+                "Kotlin": "https://kotlinlang.org/",
+                "Ruby": "https://www.ruby-lang.org/",
+                "PHP": "https://www.php.net/",
+                "TypeScript": "https://www.typescriptlang.org/",
+                "HTML": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+                "CSS": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+                "SQL": "https://www.iso.org/standard/63555.html",
+                "Bash": "https://www.gnu.org/software/bash/",
+                "PowerShell": "https://docs.microsoft.com/en-us/powershell/",
+                "R": "https://www.r-project.org/",
+                "MATLAB": "https://www.mathworks.com/products/matlab.html"
+            };
+
+            return links[languageName] || "https://www.google.com/search?q=" + encodeURIComponent(languageName + " programming language documentation");
+        }
+
+        function applySyntaxHighlighting(code) {
+            return code
+                .replace(/\b(function|class|def|var|let|const|if|else|for|while|return|import|export|from|as|try|catch|finally|throw|new|this|super|extends|implements|interface|enum|struct|union|typedef|sizeof|malloc|free|include|define|ifdef|ifndef|endif|pragma)\b/g, '<span class="keyword">$1</span>')
+                .replace(/(["'])((?:\\.|(?!\1)[^\\])*?)\1/g, '<span class="string">$1$2$1</span>')
+                .replace(/\/\/.*$/gm, '<span class="comment">$&</span>')
+                .replace(/\/\*[\s\S]*?\*\//g, '<span class="comment">$&</span>')
+                .replace(/\b(\d+\.?\d*)\b/g, '<span class="number">$1</span>');
+        }
+
+        function toggleFavorite(languageName) {
+            var index = favorites.indexOf(languageName);
+            if (index > -1) {
+                favorites.splice(index, 1);
+            } else {
+                favorites.push(languageName);
+            }
+
+            localStorage.setItem('helloWorldFavorites', JSON.stringify(favorites));
+
+            // Update language data
+            var lang = languages.find(function(l) { return l.name === languageName; });
+            if (lang) {
+                lang.isFavorite = !lang.isFavorite;
+            }
+
+            updateStats();
+            updateFilteredLanguages();
+        }
+
         function updateFilteredLanguages() {
             var searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            
+
             var filtered = languages.filter(function(lang) {
-                return lang.name.toLowerCase().indexOf(searchTerm) !== -1 ||
-                       lang.creator.toLowerCase().indexOf(searchTerm) !== -1 ||
-                       lang.desc.toLowerCase().indexOf(searchTerm) !== -1;
+                var matchesSearch = lang.name.toLowerCase().indexOf(searchTerm) !== -1 ||
+                                  lang.creator.toLowerCase().indexOf(searchTerm) !== -1 ||
+                                  lang.desc.toLowerCase().indexOf(searchTerm) !== -1;
+
+                var matchesFilter = true;
+                switch(currentFilter) {
+                    case 'favorites':
+                        matchesFilter = lang.isFavorite;
+                        break;
+                    case 'popular':
+                        matchesFilter = lang.popularity >= 70;
+                        break;
+                    case 'modern':
+                        matchesFilter = lang.year >= 2000;
+                        break;
+                    case 'classic':
+                        matchesFilter = lang.year < 1990;
+                        break;
+                    case 'all':
+                    default:
+                        matchesFilter = true;
+                }
+
+                return matchesSearch && matchesFilter;
             });
-            
+
             filteredLanguages = sortLanguages(filtered, currentSort);
             renderLanguages();
+            updateStats();
+        }
+
+        function updateStats() {
+            document.getElementById('totalCount').textContent = languages.length;
+            document.getElementById('filteredCount').textContent = filteredLanguages.length;
+            document.getElementById('favoriteCount').textContent = favorites.length;
         }
 
         function renderLanguages() {
             var container = document.getElementById('languagesContainer');
             var noResults = document.getElementById('noResults');
-            
+
             if (filteredLanguages.length === 0) {
                 container.style.display = 'none';
                 noResults.style.display = 'block';
                 return;
             }
-            
+
             container.style.display = 'grid';
             noResults.style.display = 'none';
-            
+
             container.innerHTML = filteredLanguages.map(function(lang, index) {
                 var popularityBadge = '';
-                if (currentSort === 'popularity' && lang.popularity >= 80) {
-                    popularityBadge = '<span style="color: #fbbf24; font-size: 0.8em; margin-left: 8px;">⭐ Popular</span>';
-                } else if (currentSort === 'popularity' && lang.popularity >= 50) {
-                    popularityBadge = '<span style="color: #60a5fa; font-size: 0.8em; margin-left: 8px;">🔥 Trending</span>';
+                if (lang.popularity >= 90) {
+                    popularityBadge = '<span style="color: var(--accent-yellow); font-size: 0.8em; margin-left: 8px;">⭐ Highly Popular</span>';
+                } else if (lang.popularity >= 70) {
+                    popularityBadge = '<span style="color: var(--accent-blue); font-size: 0.8em; margin-left: 8px;">🔥 Popular</span>';
+                } else if (lang.popularity >= 50) {
+                    popularityBadge = '<span style="color: var(--accent-green); font-size: 0.8em; margin-left: 8px;">📈 Growing</span>';
                 }
-                
-                // Generate reference link based on language name
+
                 var referenceLink = generateReferenceLink(lang.name);
-                
+                var highlightedCode = applySyntaxHighlighting(escapeHtml(lang.code));
+
+                var tagsHtml = lang.tags.map(function(tag) {
+                    return '<span class="tag ' + tag.type + '">' + tag.text + '</span>';
+                }).join('');
+
                 return '<div class="language-card">' +
                     '<div class="language-header">' +
                         '<div>' +
-                            '<div class="language-name">' + escapeHtml(lang.name) + popularityBadge + '</div>' +
+                            '<div class="language-name">' +
+                                escapeHtml(lang.name) + popularityBadge +
+                                '<button class="favorite-btn ' + (lang.isFavorite ? 'favorited' : '') + '" onclick="toggleFavorite(\'' + escapeHtml(lang.name) + '\')" title="' + (lang.isFavorite ? 'Remove from favorites' : 'Add to favorites') + '">' +
+                                    (lang.isFavorite ? '★' : '☆') +
+                                '</button>' +
+                            '</div>' +
                             '<div class="language-year">' + lang.year + ' • ' + escapeHtml(lang.creator) + '</div>' +
                         '</div>' +
-                        '<div style="display: flex; gap: 8px;">' +
-                            '<button class="copy-button" onclick="copyCode(' + index + ', this)">Copy</button>' +
-                            '<button class="copy-button" onclick="window.open(\'' + referenceLink + '\', \'_blank\')" title="Learn more about ' + escapeHtml(lang.name) + '">📖</button>' +
+                        '<div class="language-actions">' +
+                            '<button class="action-btn" onclick="copyCode(' + index + ', this)" title="Copy code to clipboard">' +
+                                '<span>📋</span> Copy' +
+                            '</button>' +
+                            '<a href="' + referenceLink + '" target="_blank" class="action-btn" title="Learn more about ' + escapeHtml(lang.name) + '">' +
+                                '<span>📖</span> Docs' +
+                            '</a>' +
                         '</div>' +
                     '</div>' +
+                    (lang.tags.length > 0 ? '<div class="language-tags">' + tagsHtml + '</div>' : '') +
                     '<div class="language-description">' + escapeHtml(lang.desc) + '</div>' +
                     '<div class="code-container">' +
-                        '<pre class="code-block">' + escapeHtml(lang.code) + '</pre>' +
+                        '<pre class="code-block">' + highlightedCode + '</pre>' +
                     '</div>' +
                 '</div>';
             }).join('');
@@ -808,10 +1064,10 @@
             var code = filteredLanguages[index].code;
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(code).then(function() {
-                    button.textContent = 'Copied!';
+                    button.innerHTML = '<span>✅</span> Copied!';
                     button.classList.add('copied');
                     setTimeout(function() {
-                        button.textContent = 'Copy';
+                        button.innerHTML = '<span>📋</span> Copy';
                         button.classList.remove('copied');
                     }, 2000);
                 }).catch(function() {
@@ -829,10 +1085,10 @@
             textArea.select();
             try {
                 document.execCommand('copy');
-                button.textContent = 'Copied!';
+                button.innerHTML = '<span>✅</span> Copied!';
                 button.classList.add('copied');
                 setTimeout(function() {
-                    button.textContent = 'Copy';
+                    button.innerHTML = '<span>📋</span> Copy';
                     button.classList.remove('copied');
                 }, 2000);
             } catch (err) {
@@ -841,6 +1097,14 @@
             document.body.removeChild(textArea);
         }
 
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Event listeners
         document.getElementById('searchInput').addEventListener('input', function(e) {
             updateFilteredLanguages();
         });
@@ -850,7 +1114,56 @@
             updateFilteredLanguages();
         });
 
+        // Filter button event listeners
+        document.querySelectorAll('.filter-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(function(b) {
+                    b.classList.remove('active');
+                });
+                this.classList.add('active');
+                currentFilter = this.getAttribute('data-filter');
+                updateFilteredLanguages();
+            });
+        });
+
+        // Scroll to top button visibility
+        window.addEventListener('scroll', function() {
+            var scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key) {
+                    case 'k':
+                        e.preventDefault();
+                        document.getElementById('searchInput').focus();
+                        break;
+                    case 'f':
+                        e.preventDefault();
+                        document.querySelector('[data-filter="favorites"]').click();
+                        break;
+                }
+            }
+        });
+
+        // Initialize
+        enhanceLanguageData();
         updateFilteredLanguages();
+
+        // Add loading animation
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.opacity = '0';
+            setTimeout(function() {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
     </script>
 </body>
 </html>

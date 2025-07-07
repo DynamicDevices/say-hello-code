@@ -113,20 +113,32 @@
     </footer>
 
     <!-- Include modular language data files -->
-    <script src="js/languages-data.js"></script>
     <script src="js/popular-languages.js"></script>
     <script src="js/web-languages.js"></script>
     <script src="js/systems-languages.js"></script>
     <script src="js/functional-languages.js"></script>
+    <script src="js/data-languages.js"></script>
+    <script src="js/academic-languages.js"></script>
+    <script src="js/scripting-languages.js"></script>
+    <script src="js/mobile-languages.js"></script>
+    <script src="js/game-languages.js"></script>
+    <script src="js/object-oriented-languages.js"></script>
+    <script src="js/esoteric-languages.js"></script>
+    <script src="js/legacy-languages.js"></script>
+    <script src="js/numerical-languages.js"></script>
+    <script src="js/shell-languages.js"></script>
+    <script src="js/markup-languages.js"></script>
+    <script src="js/config-languages.js"></script>
+    <script src="js/vintage-languages.js"></script>
+    <script src="js/specialized-languages.js"></script>
+    <script src="js/additional-languages.js"></script>
+    <script src="js/emerging-languages.js"></script>
 
     <script>
         // Combine all language arrays into one comprehensive array
         var allLanguages = [];
-        
+
         // Add languages from each module if they exist
-        if (typeof languages !== 'undefined') {
-            allLanguages = allLanguages.concat(languages);
-        }
         if (typeof popularLanguages !== 'undefined') {
             allLanguages = allLanguages.concat(popularLanguages);
         }
@@ -139,6 +151,54 @@
         if (typeof functionalLanguages !== 'undefined') {
             allLanguages = allLanguages.concat(functionalLanguages);
         }
+        if (typeof dataLanguages !== 'undefined') {
+            allLanguages = allLanguages.concat(dataLanguages);
+        }
+        if (typeof academicLanguages !== 'undefined') {
+            allLanguages = allLanguages.concat(academicLanguages);
+        }
+        if (typeof scriptingLanguages !== 'undefined') {
+            allLanguages = allLanguages.concat(scriptingLanguages);
+        }
+        if (typeof mobileLanguages !== 'undefined') {
+            allLanguages = allLanguages.concat(mobileLanguages);
+        }
+        if (typeof gameLanguages !== 'undefined') {
+            allLanguages = allLanguages.concat(gameLanguages);
+        }
+        if (typeof objectOrientedLanguages !== 'undefined') {
+            allLanguages = allLanguages.concat(objectOrientedLanguages);
+        }
+        if (typeof esotericLanguages !== 'undefined') {
+            allLanguages = allLanguages.concat(esotericLanguages);
+        }
+        if (typeof legacyLanguages !== 'undefined') {
+            allLanguages = allLanguages.concat(legacyLanguages);
+        }
+        if (typeof numericalLanguages !== 'undefined') {
+            allLanguages = allLanguages.concat(numericalLanguages);
+        }
+        if (typeof shellLanguages !== 'undefined') {
+            allLanguages = allLanguages.concat(shellLanguages);
+        }
+        if (typeof markupLanguages !== 'undefined') {
+            allLanguages = allLanguages.concat(markupLanguages);
+        }
+        if (typeof configLanguages !== 'undefined') {
+            allLanguages = allLanguages.concat(configLanguages);
+        }
+        if (typeof vintageLanguages !== 'undefined') {
+            allLanguages = allLanguages.concat(vintageLanguages);
+        }
+        if (typeof specializedLanguages !== 'undefined') {
+            allLanguages = allLanguages.concat(specializedLanguages);
+        }
+        if (typeof additionalLanguages !== 'undefined') {
+            allLanguages = allLanguages.concat(additionalLanguages);
+        }
+        if (typeof emergingLanguages !== 'undefined') {
+            allLanguages = allLanguages.concat(emergingLanguages);
+        }
 
         // Remove duplicates based on language name
         var languageMap = new Map();
@@ -147,7 +207,7 @@
                 languageMap.set(lang.name, lang);
             }
         });
-        
+
         // Convert back to array
         var languages = Array.from(languageMap.values());
 
@@ -413,7 +473,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Add loading animation
             document.body.style.opacity = '0';
-            
+
             setTimeout(function() {
                 filteredLanguages = sortLanguages(languages, currentSort);
                 renderLanguages();

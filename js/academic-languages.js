@@ -1,0 +1,10 @@
+// Academic and Research Languages
+var academicLanguages = [
+    {name: "Coq", year: 1989, creator: "Thierry Coquand", code: "Require Import Coq.Strings.String.\nOpen Scope string_scope.\nDefinition hello := \"Hello, World!\".", desc: "Coq is an interactive theorem prover first released in 1989. It allows for expressing mathematical assertions and mechanically checks proofs.", popularity: 15},
+    {name: "Agda", year: 2007, creator: "Ulf Norell", code: "module Hello where\n\nopen import IO\n\nmain = run (putStrLn \"Hello, World!\")", desc: "Agda is a dependently typed functional programming language based on intuitionistic type theory. Developed by Ulf Norell.", popularity: 10},
+    {name: "Lean", year: 2013, creator: "Leonardo de Moura", code: "#eval \"Hello, World!\"", desc: "Lean is a theorem prover and programming language developed by Leonardo de Moura at Microsoft Research.", popularity: 18},
+    {name: "Isabelle", year: 1986, creator: "Lawrence Paulson", code: "theory Hello\nimports Main\nbegin\n\nvalue \"Hello, World!\"\n\nend", desc: "Isabelle is a generic proof assistant for Higher-Order Logic (HOL). Developed by Lawrence Paulson at Cambridge University.", popularity: 8},
+    {name: "J", year: 1990, creator: "Kenneth Iverson", code: "'Hello, World!'", desc: "J is an array programming language developed by Kenneth Iverson and Roger Hui. It is a successor to APL.", popularity: 8},
+    {name: "K", year: 1993, creator: "Arthur Whitney", code: "\"Hello, World!\"", desc: "K is a proprietary array processing language developed by Arthur Whitney and commercialized by Kx Systems.", popularity: 5},
+    {name: "Q", year: 2003, creator: "Arthur Whitney", code: "\"Hello, World!\"", desc: "Q is a programming language for array processing, developed by Arthur Whitney. It is the query language for kdb+.", popularity: 10}
+];

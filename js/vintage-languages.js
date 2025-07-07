@@ -1,0 +1,7 @@
+// Vintage and Historical Languages
+var vintageLanguages = [
+    {name: "SNOBOL", year: 1962, creator: "Ralph Griswold", code: "OUTPUT = \"Hello, World!\"\nEND", desc: "SNOBOL is a series of computer programming languages developed between 1962 and 1967 at AT&T Bell Laboratories by David J. Farber, Ralph E. Griswold and Ivan P. Polonsky.", popularity: 3},
+    {name: "BCPL", year: 1966, creator: "Martin Richards", code: "GET \"LIBHDR\"\n\nLET START() BE\n$( WRITES(\"Hello, World!*N\")\n$)", desc: "BCPL (Basic Combined Programming Language) is a procedural, imperative, and structured programming language designed by Martin Richards of the University of Cambridge in 1966.", popularity: 2},
+    {name: "B", year: 1969, creator: "Ken Thompson", code: "main() {\n  printf(\"Hello, World!\");\n}", desc: "B is a programming language developed at Bell Labs circa 1969 by Ken Thompson and Dennis Ritchie. It was the predecessor to the C programming language.", popularity: 1},
+    {name: "PDP-11 Assembly", year: 1970, creator: "DEC", code: ".TITLE HELLO\n.MCALL .TTYOUT,.EXIT\nSTART: MOV #MSG,R1\nLOOP: MOVB (R1)+,R0\n      BEQ DONE\n      .TTYOUT\n      BR LOOP\nDONE: .EXIT\nMSG: .ASCII /Hello, World!/<0>\n.END START", desc: "PDP-11 Assembly language for the influential PDP-11 minicomputer series from Digital Equipment Corporation.", popularity: 5}
+];

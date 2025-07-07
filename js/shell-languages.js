@@ -1,0 +1,9 @@
+// Shell and Command Line Languages
+var shellLanguages = [
+    {name: "Tcsh", year: 1983, creator: "Ken Greer", code: "#!/bin/tcsh\necho \"Hello, World!\"", desc: "Tcsh is a Unix shell based on and compatible with the C shell (csh). It was originally developed by Ken Greer at Carnegie Mellon University.", popularity: 15},
+    {name: "Ksh", year: 1983, creator: "David Korn", code: "#!/bin/ksh\necho \"Hello, World!\"", desc: "KornShell (ksh) is a Unix shell developed by David Korn at Bell Labs. It's backward-compatible with the Bourne shell and includes many features of the C shell.", popularity: 20},
+    {name: "Csh", year: 1978, creator: "Bill Joy", code: "#!/bin/csh\necho \"Hello, World!\"", desc: "C shell (csh) is a Unix shell created by Bill Joy at the University of California, Berkeley. It was designed to provide a more C-like syntax for shell scripting.", popularity: 12},
+    {name: "Dash", year: 1997, creator: "Herbert Xu", code: "#!/bin/dash\necho \"Hello, World!\"", desc: "Dash (Debian Almquist shell) is a POSIX-compliant Unix shell that aims to be as small as possible. Developed by Herbert Xu based on the Almquist shell.", popularity: 18},
+    {name: "Nushell", year: 2019, creator: "Jonathan Turner", code: "echo \"Hello, World!\"", desc: "Nushell is a new type of shell that takes a modern, structured approach to your command line. Created by Jonathan Turner, it treats data as structured rather than text.", popularity: 22},
+    {name: "Xonsh", year: 2015, creator: "Anthony Scopatz", code: "#!/usr/bin/env xonsh\necho \"Hello, World!\"", desc: "Xonsh is a Python-powered, cross-platform, Unix-gazing shell language and command prompt. Created by Anthony Scopatz, it combines Python with shell commands.", popularity: 16}
+];

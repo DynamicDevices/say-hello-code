@@ -1,6 +1,6 @@
 // Consolidated Programming Languages Collection
-// Total Languages: 174
-// Generated: 2025-07-07T15:45:52.923Z
+// Total Languages: 177
+// Generated: 2025-01-27T12:00:00.000Z
 
 var languages = [
     {
@@ -3681,6 +3681,78 @@ var languages = [
         "difficulty": "Advanced",
         "typing": "Mixed",
         "sourceFile": "systems-languages.js"
+    },
+    {
+        "name": "Deno",
+        "year": 2020,
+        "creator": "Ryan Dahl",
+        "code": "console.log(\"Hello, World!\");",
+        "desc": "Deno is a modern runtime for JavaScript and TypeScript that uses V8 and is built in Rust. Created by Ryan Dahl, the original creator of Node.js, it focuses on security and developer experience.",
+        "popularity": 75,
+        "categories": [
+            "Web",
+            "Backend",
+            "Runtime"
+        ],
+        "primaryCategory": "Runtime",
+        "paradigms": [
+            "Multi-paradigm"
+        ],
+        "domains": [
+            "Web Development",
+            "Server-side"
+        ],
+        "difficulty": "Beginner to Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "web-languages.js"
+    },
+    {
+        "name": "Bun",
+        "year": 2022,
+        "creator": "Jarred Sumner",
+        "code": "console.log(\"Hello, World!\");",
+        "desc": "Bun is a fast all-in-one JavaScript runtime built from scratch to serve the modern JavaScript ecosystem. Created by Jarred Sumner, it includes a bundler, test runner, and package manager.",
+        "popularity": 70,
+        "categories": [
+            "Web",
+            "Backend",
+            "Runtime"
+        ],
+        "primaryCategory": "Runtime",
+        "paradigms": [
+            "Multi-paradigm"
+        ],
+        "domains": [
+            "Web Development",
+            "Server-side"
+        ],
+        "difficulty": "Beginner to Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "web-languages.js"
+    },
+    {
+        "name": "Bend",
+        "year": 2024,
+        "creator": "Victor Taelin",
+        "code": "def main:\n  return \"Hello, World!\"",
+        "desc": "Bend is a massively parallel, high-level programming language that compiles to HVM (High-order Virtual Machine). Created by Victor Taelin, it's designed to run on GPUs and multi-core CPUs with automatic parallelization.",
+        "popularity": 25,
+        "categories": [
+            "Emerging",
+            "Parallel"
+        ],
+        "primaryCategory": "Emerging",
+        "paradigms": [
+            "Functional",
+            "Parallel"
+        ],
+        "domains": [
+            "High Performance Computing",
+            "Parallel Processing"
+        ],
+        "difficulty": "Intermediate to Advanced",
+        "typing": "Static",
+        "sourceFile": "emerging-languages.js"
     }
 ];
 

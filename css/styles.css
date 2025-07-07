@@ -344,6 +344,8 @@ body {
     border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 500;
+    margin-right: 4px;
+    display: inline-block;
 }
 
 .language-creator {
@@ -359,9 +361,8 @@ body {
     border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 500;
-    margin-right: 5px;
+    margin-right: 4px;
     display: inline-block;
-    margin-bottom: 3px;
 }
 
 .language-meta-extra {
@@ -378,6 +379,8 @@ body {
     border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 500;
+    margin-right: 4px;
+    display: inline-block;
 }
 
 .language-typing {
@@ -387,6 +390,8 @@ body {
     border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 500;
+    margin-right: 4px;
+    display: inline-block;
 }
 
 .copy-button {

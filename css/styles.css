@@ -701,40 +701,44 @@ body {
 .copy-btn, .reference-btn {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-    padding: 6px 10px;
-    background: #475569;
+    gap: 6px;
+    padding: 10px 14px;
+    background: linear-gradient(135deg, #475569, #64748b);
     color: #f8fafc;
     text-decoration: none;
     border: none;
-    border-radius: 6px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
-    border: 1px solid #64748b;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     white-space: nowrap;
+    height: 36px;
+    box-sizing: border-box;
 }
 
 .copy-btn:hover, .reference-btn:hover {
-    background: #60a5fa;
-    border-color: #60a5fa;
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
+    border-color: rgba(96, 165, 250, 0.5);
 }
 
 .copy-btn:active, .reference-btn:active {
     transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .copy-btn.copied {
-    background: #10b981;
-    border-color: #10b981;
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-color: rgba(16, 185, 129, 0.5);
 }
 
 .copy-btn.copied:hover {
-    background: #059669;
-    border-color: #059669;
+    background: linear-gradient(135deg, #059669, #047857);
+    border-color: rgba(5, 150, 105, 0.5);
 }
 
 /* Favorite Button */

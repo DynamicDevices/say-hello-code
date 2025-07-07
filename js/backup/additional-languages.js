@@ -1,9 +1,0 @@
-// Additional Programming Languages
-var additionalLanguages = [
-    {name: "Rexx", year: 1979, creator: "Mike Cowlishaw", code: "say \"Hello, World!\"", desc: "Rexx (Restructured Extended Executor) is an interpreted programming language developed at IBM by Mike Cowlishaw. Designed to be a macro and scripting language.", popularity: 10},
-    {name: "Icon", year: 1977, creator: "Ralph Griswold", code: "procedure main()\n    write(\"Hello, World!\")\nend", desc: "Icon is a high-level, general-purpose programming language with a large repertoire of features for processing and presenting symbolic data. Created by Ralph Griswold.", popularity: 6},
-    {name: "Factor", year: 2003, creator: "Slava Pestov", code: "\"Hello, World!\" print", desc: "Factor is a stack-based, concatenative programming language created by Slava Pestov. It features a rich library of combinators for manipulating the stack.", popularity: 5},
-    {name: "Joy", year: 1999, creator: "Manfred von Thun", code: "\"Hello, World!\" putchars.", desc: "Joy is a purely functional programming language based on composition of functions rather than lambda calculus. Created by Manfred von Thun.", popularity: 3},
-    {name: "Cat", year: 2006, creator: "Christopher Diggins", code: "\"Hello, World!\" writeln", desc: "Cat is a functional stack-based programming language inspired by Joy. Created by Christopher Diggins with a focus on type safety.", popularity: 2},
-    {name: "Kitten", year: 2011, creator: "Jon Purdy", code: "\"Hello, World!\" say", desc: "Kitten is a statically typed, stack-based functional programming language designed by Jon Purdy. It aims to be a practical concatenative language.", popularity: 1}
-];

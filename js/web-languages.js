@@ -1,0 +1,7 @@
+// Web Technologies and Languages
+var webLanguages = [
+    {name: "HTML", year: 1990, creator: "Tim Berners-Lee", code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>Hello World</title>\n</head>\n<body>\n    <h1>Hello, World!</h1>\n</body>\n</html>", desc: "HTML (HyperText Markup Language) is the standard markup language for creating web pages and web applications. Developed by Tim Berners-Lee at CERN in 1990.", popularity: 85},
+    {name: "CSS", year: 1996, creator: "Håkon Lie", code: "body::before {\n    content: \"Hello, World!\";\n    font-size: 2em;\n    display: block;\n    text-align: center;\n}", desc: "CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation and formatting of documents written in HTML or XML.", popularity: 83},
+    {name: "TypeScript", year: 2012, creator: "Anders Hejlsberg", code: "console.log(\"Hello, World!\");", desc: "TypeScript is a strongly typed superset of JavaScript developed by Microsoft and led by Anders Hejlsberg. It adds static type definitions to JavaScript.", popularity: 92},
+    {name: "PHP", year: 1995, creator: "Rasmus Lerdorf", code: "<?php\necho \"Hello, World!\";\n?>", desc: "PHP is a server-side scripting language designed for web development but also used for general-purpose programming. Created by Rasmus Lerdorf in 1995.", popularity: 88}
+];

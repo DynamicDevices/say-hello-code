@@ -271,6 +271,37 @@ body {
     font-size: 0.9rem;
 }
 
+.language-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+    align-items: center;
+}
+
+.language-type {
+    background: #3b82f6;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.language-popularity {
+    background: #10b981;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.language-creator {
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
 .copy-button {
     background: #60a5fa;
     border: none;

@@ -228,28 +228,90 @@
             return baseUrls[languageName] || '#';
         }
 
+        function getLanguageType(lang) {
+            // Categorize languages based on their characteristics
+            var name = lang.name.toLowerCase();
+            var desc = lang.desc.toLowerCase();
+
+            // Web languages
+            if (['javascript', 'typescript', 'html', 'css', 'php'].includes(name)) {
+                return 'Web';
+            }
+
+            // Systems languages
+            if (['c', 'c++', 'rust', 'go', 'assembly', 'zig'].includes(name) ||
+                desc.includes('system') || desc.includes('low-level')) {
+                return 'Systems';
+            }
+
+            // Functional languages
+            if (['haskell', 'lisp', 'scheme', 'clojure', 'erlang', 'elixir', 'f#', 'ocaml', 'ml'].includes(name) ||
+                desc.includes('functional')) {
+                return 'Functional';
+            }
+
+            // Mobile languages
+            if (['swift', 'kotlin', 'dart', 'objective-c'].includes(name) ||
+                desc.includes('mobile') || desc.includes('ios') || desc.includes('android')) {
+                return 'Mobile';
+            }
+
+            // Data Science/Scientific
+            if (['python', 'r', 'matlab', 'julia', 'mathematica'].includes(name) ||
+                desc.includes('data') || desc.includes('scientific') || desc.includes('statistical')) {
+                return 'Data Science';
+            }
+
+            // Scripting languages
+            if (['bash', 'powershell', 'perl', 'lua', 'tcl'].includes(name) ||
+                desc.includes('script') || desc.includes('shell')) {
+                return 'Scripting';
+            }
+
+            // Enterprise/Business
+            if (['java', 'c#', 'cobol', 'fortran', 'ada'].includes(name) ||
+                desc.includes('enterprise') || desc.includes('business')) {
+                return 'Enterprise';
+            }
+
+            // Default to General Purpose
+            return 'General Purpose';
+        }
+
+        function getPopularityLevel(popularity) {
+            if (popularity >= 90) return 'Very Popular';
+            if (popularity >= 70) return 'Popular';
+            if (popularity >= 50) return 'Moderate';
+            if (popularity >= 30) return 'Niche';
+            return 'Specialized';
+        }
+
         function renderLanguages() {
             var container = document.getElementById('languagesContainer');
             var noResults = document.getElementById('noResults');
-            
+
             if (filteredLanguages.length === 0) {
                 container.innerHTML = '';
                 noResults.style.display = 'block';
                 return;
             }
-            
+
             noResults.style.display = 'none';
-            
+
             var html = filteredLanguages.map(function(lang, index) {
                 var referenceLink = generateReferenceLink(lang.name);
                 var linkAttribute = lang.link ? lang.link : referenceLink;
-                
+                var languageType = getLanguageType(lang);
+                var popularityLevel = getPopularityLevel(lang.popularity);
+
                 return `
                     <div class="language-card" data-index="${index}">
                         <div class="language-header">
                             <div class="language-info">
                                 <h3 class="language-name">${escapeHtml(lang.name)}</h3>
                                 <div class="language-meta">
+                                    <span class="language-type">${languageType}</span>
+                                    <span class="language-popularity">${popularityLevel}</span>
                                     <span class="language-year">${lang.year}</span>
                                     <span class="language-creator">by ${escapeHtml(lang.creator)}</span>
                                 </div>
@@ -267,15 +329,10 @@
                         <div class="code-container">
                             <pre class="code-block"><code>${escapeHtml(lang.code)}</code></pre>
                         </div>
-
-                        <div class="language-tags">
-                            <span class="tag popularity-tag">Popularity: ${lang.popularity}</span>
-                            <span class="tag year-tag">${lang.year}</span>
-                        </div>
                     </div>
                 `;
             }).join('');
-            
+
             container.innerHTML = html;
             
             // Update statistics

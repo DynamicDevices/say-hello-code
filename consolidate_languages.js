@@ -164,7 +164,7 @@ function getParadigms(name, desc) {
 }
 
 // Read all language files
-const jsDir = './js';
+const jsDir = './js/backup';
 const allLanguages = [];
 
 const files = fs.readdirSync(jsDir).filter(file => file.endsWith('-languages.js'));

@@ -15,7 +15,9 @@ This collection was created to:
 ## 🚀 Features
 
 - **200+ Programming Languages** - From classic languages like FORTRAN to modern ones like Rust
-- **Interactive Search & Filtering** - Find languages by name, year, or creator
+- **Interactive Search & Filtering** - Find languages by name, year, creator, or description
+- **Category Filtering** - Filter by language categories (Web, Systems, Functional, etc.)
+- **Rich Metadata** - View programming paradigms, difficulty levels, and typing information
 - **Copy-to-Clipboard** - Easy code copying for experimentation
 - **Language Information** - Learn about each language's history and creator
 - **Responsive Design** - Works perfectly on desktop and mobile devices
@@ -24,6 +26,34 @@ This collection was created to:
 ## 🌐 Live Demo
 
 Visit [sayhellocode.com](https://sayhellocode.com) to explore the collection.
+
+## 📁 Project Structure
+
+```
+├── index.html              # Main website
+├── css/
+│   └── styles.css         # Styling
+├── js/
+│   └── languages.js       # Consolidated language data
+├── build_languages.py     # Script to consolidate language files
+└── README.md              # This file
+```
+
+## 🔧 Development
+
+To work with this project locally:
+
+1. Clone the repository
+2. Start a local web server:
+   ```bash
+   python -m http.server 8000
+   ```
+3. Open `http://localhost:8000` in your browser
+
+To rebuild the consolidated language file:
+```bash
+python build_languages.py
+```
 
 ## 📚 Educational Use
 

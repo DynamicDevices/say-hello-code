@@ -198,6 +198,31 @@ body {
     color: #f8fafc;
 }
 
+.clear-filters-btn {
+    padding: 15px 20px;
+    font-size: 1rem;
+    background: #dc2626;
+    border: 2px solid #dc2626;
+    border-radius: 12px;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    height: 52px;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+.clear-filters-btn:hover {
+    background: #b91c1c;
+    border-color: #b91c1c;
+    transform: translateY(-1px);
+}
+
+.clear-filters-btn:active {
+    transform: translateY(0);
+}
+
 .stats {
     display: flex;
     justify-content: center;
@@ -324,6 +349,44 @@ body {
 .language-creator {
     color: #94a3b8;
     font-size: 0.85rem;
+}
+
+/* New metadata styles */
+.language-paradigm {
+    background: #6366f1;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-right: 5px;
+    display: inline-block;
+    margin-bottom: 3px;
+}
+
+.language-meta-extra {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.language-difficulty {
+    background: #f59e0b;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.language-typing {
+    background: #8b5cf6;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
 }
 
 .copy-button {

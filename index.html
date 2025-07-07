@@ -67,7 +67,32 @@
             
             <!-- Search input -->
             <input type="text" class="search-input" id="searchInput" placeholder="Search languages, creators, or years...">
-            
+
+            <!-- Category filter -->
+            <select class="sort-select" id="categoryFilter" style="margin-right: 10px;">
+                <option value="">All Categories</option>
+                <option value="Popular">Popular</option>
+                <option value="Web">Web</option>
+                <option value="Systems">Systems</option>
+                <option value="Functional">Functional</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Mobile">Mobile</option>
+                <option value="Game Development">Game Development</option>
+                <option value="Academic">Academic</option>
+                <option value="Legacy">Legacy</option>
+                <option value="Emerging">Emerging</option>
+                <option value="Esoteric">Esoteric</option>
+                <option value="Specialized">Specialized</option>
+                <option value="Configuration">Configuration</option>
+                <option value="Markup">Markup</option>
+                <option value="Shell">Shell</option>
+                <option value="Scripting">Scripting</option>
+                <option value="Scientific">Scientific</option>
+                <option value="Vintage">Vintage</option>
+                <option value="Object-Oriented">Object-Oriented</option>
+                <option value="Additional">Additional</option>
+            </select>
+
             <!-- Sort select -->
             <select class="sort-select" id="sortSelect">
                 <option value="popularity">Sort by Popularity</option>
@@ -75,6 +100,9 @@
                 <option value="year">Sort by Year</option>
                 <option value="creator">Sort by Creator</option>
             </select>
+
+            <!-- Clear filters button -->
+            <button class="clear-filters-btn" id="clearFilters" style="margin-left: 10px;">Clear Filters</button>
         </div>
 
         <!-- Statistics section -->
@@ -112,106 +140,21 @@
         </div>
     </footer>
 
-    <!-- Include modular language data files -->
-    <script src="js/popular-languages.js"></script>
-    <script src="js/web-languages.js"></script>
-    <script src="js/systems-languages.js"></script>
-    <script src="js/functional-languages.js"></script>
-    <script src="js/data-languages.js"></script>
-    <script src="js/academic-languages.js"></script>
-    <script src="js/scripting-languages.js"></script>
-    <script src="js/mobile-languages.js"></script>
-    <script src="js/game-languages.js"></script>
-    <script src="js/object-oriented-languages.js"></script>
-    <script src="js/esoteric-languages.js"></script>
-    <script src="js/legacy-languages.js"></script>
-    <script src="js/numerical-languages.js"></script>
-    <script src="js/shell-languages.js"></script>
-    <script src="js/markup-languages.js"></script>
-    <script src="js/config-languages.js"></script>
-    <script src="js/vintage-languages.js"></script>
-    <script src="js/specialized-languages.js"></script>
-    <script src="js/additional-languages.js"></script>
-    <script src="js/emerging-languages.js"></script>
+    <!-- Include consolidated language data file -->
+    <script src="js/languages.js"></script>
 
     <script>
-        // Combine all language arrays into one comprehensive array
-        var allLanguages = [];
+        // Use the consolidated languages array directly
+        var allLanguages = languages;
 
-        // Add languages from each module if they exist
-        if (typeof popularLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(popularLanguages);
-        }
-        if (typeof webLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(webLanguages);
-        }
-        if (typeof systemsLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(systemsLanguages);
-        }
-        if (typeof functionalLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(functionalLanguages);
-        }
-        if (typeof dataLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(dataLanguages);
-        }
-        if (typeof academicLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(academicLanguages);
-        }
-        if (typeof scriptingLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(scriptingLanguages);
-        }
-        if (typeof mobileLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(mobileLanguages);
-        }
-        if (typeof gameLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(gameLanguages);
-        }
-        if (typeof objectOrientedLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(objectOrientedLanguages);
-        }
-        if (typeof esotericLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(esotericLanguages);
-        }
-        if (typeof legacyLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(legacyLanguages);
-        }
-        if (typeof numericalLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(numericalLanguages);
-        }
-        if (typeof shellLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(shellLanguages);
-        }
-        if (typeof markupLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(markupLanguages);
-        }
-        if (typeof configLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(configLanguages);
-        }
-        if (typeof vintageLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(vintageLanguages);
-        }
-        if (typeof specializedLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(specializedLanguages);
-        }
-        if (typeof additionalLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(additionalLanguages);
-        }
-        if (typeof emergingLanguages !== 'undefined') {
-            allLanguages = allLanguages.concat(emergingLanguages);
-        }
-
-        // Remove duplicates based on language name
-        var languageMap = new Map();
-        allLanguages.forEach(function(lang) {
-            if (!languageMap.has(lang.name)) {
-                languageMap.set(lang.name, lang);
-            }
+        // Convert back to array and sort alphabetically
+        allLanguages = Array.from(allLanguages).sort(function(a, b) {
+            return a.name.localeCompare(b.name);
         });
 
-        // Convert back to array
-        var languages = Array.from(languageMap.values());
+        console.log('Total languages loaded:', allLanguages.length);
 
-        var filteredLanguages = languages.slice();
+        var filteredLanguages = allLanguages.slice();
         var currentSort = 'popularity';
 
         function sortLanguages(languages, sortBy) {
@@ -389,6 +332,23 @@
                     return `<span class="language-type" data-type="${type}">${type}</span>`;
                 }).join('');
 
+                // Add paradigm badges if available
+                var paradigmBadges = '';
+                if (lang.paradigms && lang.paradigms.length > 0) {
+                    paradigmBadges = lang.paradigms.map(function(paradigm) {
+                        return `<span class="language-paradigm">${paradigm}</span>`;
+                    }).join('');
+                }
+
+                // Add difficulty and typing info
+                var metaInfo = '';
+                if (lang.difficulty) {
+                    metaInfo += `<span class="language-difficulty">${lang.difficulty}</span>`;
+                }
+                if (lang.typing) {
+                    metaInfo += `<span class="language-typing">${lang.typing} Typed</span>`;
+                }
+
                 return `
                     <div class="language-card" data-index="${index}">
                         <div class="language-header">
@@ -396,10 +356,12 @@
                                 <h3 class="language-name">${escapeHtml(lang.name)}</h3>
                                 <div class="language-meta">
                                     ${typeBadges}
+                                    ${paradigmBadges}
                                     <span class="language-popularity">${popularityLevel}</span>
                                     <span class="language-year">${lang.year}</span>
                                     <span class="language-creator">by ${escapeHtml(lang.creator)}</span>
                                 </div>
+                                ${metaInfo ? `<div class="language-meta-extra">${metaInfo}</div>` : ''}
                             </div>
                             <div class="language-actions">
                                 <button class="copy-btn" onclick="copyCode(${index})">Copy Code</button>
@@ -421,7 +383,7 @@
             container.innerHTML = html;
             
             // Update statistics
-            document.getElementById('totalLanguages').textContent = languages.length;
+            document.getElementById('totalLanguages').textContent = allLanguages.length;
             document.getElementById('visibleLanguages').textContent = filteredLanguages.length;
         }
 
@@ -443,21 +405,69 @@
             });
         }
 
-        // Search functionality
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            var searchTerm = e.target.value.toLowerCase();
-            
-            if (searchTerm === '') {
-                filteredLanguages = languages.slice();
+        // Category filter functionality
+        document.getElementById('categoryFilter').addEventListener('change', function(e) {
+            var selectedCategory = e.target.value;
+
+            if (selectedCategory === '') {
+                filteredLanguages = allLanguages.slice();
             } else {
-                filteredLanguages = languages.filter(function(lang) {
+                filteredLanguages = allLanguages.filter(function(lang) {
+                    return lang.categories && lang.categories.includes(selectedCategory);
+                });
+            }
+
+            // Apply current search if any
+            var searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            if (searchTerm !== '') {
+                filteredLanguages = filteredLanguages.filter(function(lang) {
                     return lang.name.toLowerCase().includes(searchTerm) ||
                            lang.creator.toLowerCase().includes(searchTerm) ||
                            lang.year.toString().includes(searchTerm) ||
-                           lang.desc.toLowerCase().includes(searchTerm);
+                           lang.desc.toLowerCase().includes(searchTerm) ||
+                           (lang.categories && lang.categories.some(function(cat) {
+                               return cat.toLowerCase().includes(searchTerm);
+                           })) ||
+                           (lang.paradigms && lang.paradigms.some(function(par) {
+                               return par.toLowerCase().includes(searchTerm);
+                           }));
                 });
             }
-            
+
+            filteredLanguages = sortLanguages(filteredLanguages, currentSort);
+            renderLanguages();
+        });
+
+        // Enhanced search functionality that works with category filter
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            var searchTerm = e.target.value.toLowerCase();
+            var selectedCategory = document.getElementById('categoryFilter').value;
+
+            // Start with category-filtered languages
+            var baseLanguages = allLanguages;
+            if (selectedCategory !== '') {
+                baseLanguages = allLanguages.filter(function(lang) {
+                    return lang.categories && lang.categories.includes(selectedCategory);
+                });
+            }
+
+            if (searchTerm === '') {
+                filteredLanguages = baseLanguages.slice();
+            } else {
+                filteredLanguages = baseLanguages.filter(function(lang) {
+                    return lang.name.toLowerCase().includes(searchTerm) ||
+                           lang.creator.toLowerCase().includes(searchTerm) ||
+                           lang.year.toString().includes(searchTerm) ||
+                           lang.desc.toLowerCase().includes(searchTerm) ||
+                           (lang.categories && lang.categories.some(function(cat) {
+                               return cat.toLowerCase().includes(searchTerm);
+                           })) ||
+                           (lang.paradigms && lang.paradigms.some(function(par) {
+                               return par.toLowerCase().includes(searchTerm);
+                           }));
+                });
+            }
+
             filteredLanguages = sortLanguages(filteredLanguages, currentSort);
             renderLanguages();
         });
@@ -469,14 +479,38 @@
             renderLanguages();
         });
 
+        // Clear filters functionality
+        document.getElementById('clearFilters').addEventListener('click', function() {
+            // Reset search input
+            document.getElementById('searchInput').value = '';
+
+            // Reset category filter
+            document.getElementById('categoryFilter').value = '';
+
+            // Reset sort to default
+            document.getElementById('sortSelect').value = 'popularity';
+            currentSort = 'popularity';
+
+            // Reset filtered languages to all languages
+            filteredLanguages = sortLanguages(allLanguages, currentSort);
+            renderLanguages();
+        });
+
         // Initial render
+        function initialRender() {
+            if (allLanguages.length > 0) {
+                filteredLanguages = sortLanguages(allLanguages, currentSort);
+                renderLanguages();
+            } else {
+                console.error('No languages loaded');
+            }
+        }
         document.addEventListener('DOMContentLoaded', function() {
             // Add loading animation
             document.body.style.opacity = '0';
 
             setTimeout(function() {
-                filteredLanguages = sortLanguages(languages, currentSort);
-                renderLanguages();
+                initialRender();
                 document.body.style.opacity = '1';
             }, 100);
         });

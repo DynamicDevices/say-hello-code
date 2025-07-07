@@ -354,13 +354,21 @@
                         <div class="language-header">
                             <div class="language-info">
                                 <h3 class="language-name">${escapeHtml(lang.name)}</h3>
-                                <div class="language-meta">
+
+                                <!-- Primary badges (categories/types) -->
+                                <div class="language-badges-primary">
                                     ${typeBadges}
                                     ${paradigmBadges}
                                     <span class="language-popularity">${popularityLevel}</span>
+                                </div>
+
+                                <!-- Secondary info (year, creator) -->
+                                <div class="language-info-secondary">
                                     <span class="language-year">${lang.year}</span>
                                     <span class="language-creator">by ${escapeHtml(lang.creator)}</span>
                                 </div>
+
+                                <!-- Metadata badges (difficulty, typing) -->
                                 ${metaInfo ? `<div class="language-meta-extra">${metaInfo}</div>` : ''}
                             </div>
                             <div class="language-actions">

@@ -304,14 +304,46 @@ body {
     align-items: center;
 }
 
+/* Language card metadata sections */
+.language-badges-primary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+.language-info-secondary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 8px;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.language-creator {
+    color: #cbd5e1;
+    font-style: italic;
+}
+
+.language-year {
+    color: #94a3b8;
+    font-weight: 500;
+}
+
 .language-type {
     background: #3b82f6;
     color: white;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 14px;
+    font-size: 0.8rem;
     font-weight: 500;
     margin-right: 4px;
+    display: inline-block;
+    line-height: 1.2;
 }
 
 /* Different colors for different language types */
@@ -365,33 +397,62 @@ body {
     display: inline-block;
 }
 
+/* Badge styling for paradigm and popularity */
+.language-paradigm {
+    background: #10b981;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 14px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-right: 4px;
+    display: inline-block;
+    line-height: 1.2;
+}
+
+.language-popularity {
+    background: #f59e0b;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 14px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-right: 4px;
+    display: inline-block;
+    line-height: 1.2;
+}
+
 .language-meta-extra {
-    margin-top: 8px;
+    margin-top: 6px;
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 6px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(148, 163, 184, 0.2);
 }
 
 .language-difficulty {
     background: #f59e0b;
     color: white;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 14px;
+    font-size: 0.8rem;
     font-weight: 500;
     margin-right: 4px;
     display: inline-block;
+    line-height: 1.2;
 }
 
 .language-typing {
     background: #8b5cf6;
     color: white;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 14px;
+    font-size: 0.8rem;
     font-weight: 500;
     margin-right: 4px;
     display: inline-block;
+    line-height: 1.2;
 }
 
 .copy-button {
@@ -828,5 +889,24 @@ body {
     .copy-btn, .reference-btn {
         font-size: 0.75rem;
         padding: 5px 8px;
+    }
+
+    /* Mobile responsive improvements for new layout */
+    .language-badges-primary {
+        gap: 4px;
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+
+    .language-info-secondary {
+        gap: 8px;
+        margin-bottom: 6px;
+        font-size: 0.8rem;
+    }
+
+    .language-type, .language-paradigm, .language-popularity,
+    .language-difficulty, .language-typing {
+        font-size: 0.75rem;
+        padding: 3px 8px;
     }
 }

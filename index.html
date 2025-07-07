@@ -372,7 +372,7 @@
                                 ${metaInfo ? `<div class="language-meta-extra">${metaInfo}</div>` : ''}
                             </div>
                             <div class="language-actions">
-                                <button class="copy-btn" onclick="copyCode(${index})">Copy Code</button>
+                                <button class="copy-btn" onclick="copyCode(${index}, this)">Copy Code</button>
                                 <a href="${linkAttribute}" target="_blank" rel="noopener noreferrer" class="reference-btn">Learn More</a>
                             </div>
                         </div>
@@ -395,22 +395,48 @@
             document.getElementById('visibleLanguages').textContent = filteredLanguages.length;
         }
 
-        function copyCode(index) {
+        function copyCode(index, btn) {
             var code = filteredLanguages[index].code;
-            navigator.clipboard.writeText(code).then(function() {
-                // Show feedback
-                var btn = event.target;
-                var originalText = btn.textContent;
-                btn.textContent = 'Copied!';
-                btn.style.backgroundColor = '#4CAF50';
-                
-                setTimeout(function() {
-                    btn.textContent = originalText;
-                    btn.style.backgroundColor = '';
-                }, 2000);
-            }).catch(function(err) {
-                console.error('Failed to copy: ', err);
-            });
+
+            // Check if Clipboard API is supported
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(code).then(function() {
+                    showCopyFeedback(btn, 'Copied!', '#4CAF50');
+                }).catch(function(err) {
+                    console.error('Failed to copy: ', err);
+                    showCopyFeedback(btn, 'Copy Failed', '#f44336');
+                });
+            } else {
+                // Fallback for older browsers
+                try {
+                    var textArea = document.createElement('textarea');
+                    textArea.value = code;
+                    textArea.style.position = 'fixed';
+                    textArea.style.left = '-999999px';
+                    textArea.style.top = '-999999px';
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+                    document.execCommand('copy');
+                    textArea.remove();
+                    showCopyFeedback(btn, 'Copied!', '#4CAF50');
+                } catch (err) {
+                    console.error('Failed to copy: ', err);
+                    showCopyFeedback(btn, 'Copy Failed', '#f44336');
+                }
+            }
+        }
+
+        function showCopyFeedback(btn, message, color) {
+            var originalText = btn.textContent;
+            var originalColor = btn.style.backgroundColor;
+            btn.textContent = message;
+            btn.style.backgroundColor = color;
+
+            setTimeout(function() {
+                btn.textContent = originalText;
+                btn.style.backgroundColor = originalColor;
+            }, 2000);
         }
 
         // Category filter functionality

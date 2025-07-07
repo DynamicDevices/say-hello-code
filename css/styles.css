@@ -9,7 +9,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -50,21 +50,23 @@ body {
     line-height: 1.5;
 }
 
-.header .creator-info {
+/* Creator line styling - no underlines, subtle links */
+.header .creator {
     font-size: 0.9rem;
     opacity: 0.8;
-    margin-top: 1rem;
+    margin: 1rem 0 2.5rem 0;
+    color: #cbd5e1;
 }
 
-.header .creator-info a {
-    color: white;
+.header .creator a {
+    color: #e2e8f0;
     text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    transition: border-color 0.2s ease;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
-.header .creator-info a:hover {
-    border-bottom-color: white;
+.header .creator a:hover {
+    color: #f1f5f9;
 }
 
 /* Mobile responsiveness for header */
@@ -131,15 +133,15 @@ body {
 .search-input {
     flex: 1;
     min-width: 300px;
-    padding: 12px 16px;
-    font-size: 1rem;
+    padding: 10px 14px;
+    font-size: 0.95rem;
     background: #1e293b;
     border: 2px solid #334155;
     border-radius: 10px;
     color: #f8fafc;
     outline: none;
     transition: border-color 0.3s;
-    height: 44px;
+    height: 38px;
     box-sizing: border-box;
 }
 
@@ -151,7 +153,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    height: 44px;
+    height: 38px;
 }
 
 .title {
@@ -169,15 +171,9 @@ body {
     white-space: nowrap;
 }
 
-.sort-label {
-    color: #94a3b8;
-    font-size: 0.9rem;
-    white-space: nowrap;
-}
-
 .sort-select {
-    padding: 12px 14px;
-    font-size: 0.95rem;
+    padding: 10px 12px;
+    font-size: 0.9rem;
     background: #1e293b;
     border: 2px solid #334155;
     border-radius: 10px;
@@ -185,7 +181,7 @@ body {
     outline: none;
     cursor: pointer;
     transition: border-color 0.3s;
-    height: 44px;
+    height: 38px;
     box-sizing: border-box;
 }
 
@@ -202,13 +198,16 @@ body {
     padding: 12px 18px;
     font-size: 0.95rem;
     background: #dc2626;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    background: #dc2626;
     border: 2px solid #dc2626;
     border-radius: 10px;
     color: #ffffff;
     outline: none;
     cursor: pointer;
     transition: all 0.3s;
-    height: 44px;
+    height: 38px;
     box-sizing: border-box;
     font-weight: 500;
 }

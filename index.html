@@ -351,38 +351,53 @@
 
                 return `
                     <div class="language-card" data-index="${index}">
-                        <div class="language-header">
-                            <div class="language-info">
-                                <h3 class="language-name">${escapeHtml(lang.name)}</h3>
-
-                                <!-- Primary badges (categories/types) -->
-                                <div class="language-badges-primary">
-                                    ${typeBadges}
-                                    ${paradigmBadges}
-                                    <span class="language-popularity">${popularityLevel}</span>
+                        <!-- Card Header with Language Info -->
+                        <div class="language-card-header">
+                            <div class="language-title-section">
+                                <div class="language-title-row">
+                                    <h3 class="language-name">${escapeHtml(lang.name)}</h3>
+                                    <div class="language-year-badge">${lang.year}</div>
                                 </div>
-
-                                <!-- Secondary info (year, creator) -->
-                                <div class="language-info-secondary">
-                                    <span class="language-year">${lang.year}</span>
-                                    <span class="language-creator">by ${escapeHtml(lang.creator)}</span>
-                                </div>
-
-                                <!-- Metadata badges (difficulty, typing) -->
-                                ${metaInfo ? `<div class="language-meta-extra">${metaInfo}</div>` : ''}
+                                <div class="language-creator">Created by ${escapeHtml(lang.creator)}</div>
                             </div>
                             <div class="language-actions">
-                                <button class="copy-btn" onclick="copyCode(${index}, this)">Copy Code</button>
-                                <a href="${linkAttribute}" target="_blank" rel="noopener noreferrer" class="reference-btn">Learn More</a>
+                                <button class="copy-btn modern-btn" onclick="copyCode(${index}, this)">
+                                    <span class="btn-icon">📋</span>
+                                    <span class="btn-text">Copy</span>
+                                </button>
+                                <a href="${linkAttribute}" target="_blank" rel="noopener noreferrer" class="reference-btn modern-btn">
+                                    <span class="btn-icon">📖</span>
+                                    <span class="btn-text">Learn</span>
+                                </a>
                             </div>
                         </div>
 
+                        <!-- Badge Section -->
+                        <div class="language-badges-section">
+                            <div class="badge-group primary-badges">
+                                ${typeBadges}
+                                ${paradigmBadges}
+                            </div>
+                            <div class="badge-group secondary-badges">
+                                <span class="language-popularity badge-popularity">${popularityLevel}</span>
+                                ${metaInfo ? metaInfo : ''}
+                            </div>
+                        </div>
+
+                        <!-- Description -->
                         <div class="language-description">
                             <p>${escapeHtml(lang.desc)}</p>
                         </div>
 
-                        <div class="code-container">
-                            <pre class="code-block"><code>${escapeHtml(lang.code)}</code></pre>
+                        <!-- Code Section -->
+                        <div class="language-code-section">
+                            <div class="code-header">
+                                <span class="code-label">Hello World Example</span>
+                                <div class="code-language-indicator">${escapeHtml(lang.name)}</div>
+                            </div>
+                            <div class="code-container">
+                                <pre class="code-block"><code>${escapeHtml(lang.code)}</code></pre>
+                            </div>
                         </div>
                     </div>
                 `;
@@ -428,14 +443,16 @@
         }
 
         function showCopyFeedback(btn, message, color) {
-            var originalText = btn.textContent;
-            var originalColor = btn.style.backgroundColor;
-            btn.textContent = message;
-            btn.style.backgroundColor = color;
+            var originalText = btn.querySelector('.btn-text').textContent;
+            var originalClass = btn.className;
+
+            // Update button text and add copied class
+            btn.querySelector('.btn-text').textContent = message;
+            btn.classList.add('copied');
 
             setTimeout(function() {
-                btn.textContent = originalText;
-                btn.style.backgroundColor = originalColor;
+                btn.querySelector('.btn-text').textContent = originalText;
+                btn.className = originalClass;
             }, 2000);
         }
 

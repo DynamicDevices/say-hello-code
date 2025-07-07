@@ -258,18 +258,48 @@ body {
     gap: 20px;
 }
 
+/* ===== MODERN LANGUAGE CARD DESIGN ===== */
+
 .language-card {
-    background: #1e293b;
-    border: 1px solid #334155;
-    border-radius: 12px;
+    background: linear-gradient(145deg, #1e293b 0%, #334155 100%);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 16px;
     overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.language-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .language-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    border-color: #60a5fa;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.04);
+    border-color: rgba(96, 165, 250, 0.3);
+}
+
+.language-card:hover::before {
+    opacity: 1;
+}
+
+.language-card-header {
+    padding: 24px 24px 16px;
+    background: rgba(15, 23, 42, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
 }
 
 .language-header {
@@ -285,10 +315,30 @@ body {
     flex: 1;
 }
 
+.language-title-section {
+    flex: 1;
+    min-width: 0;
+}
+
 .language-name {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
     color: #f8fafc;
+    margin: 0;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+}
+
+.language-year-badge {
+    background: linear-gradient(135deg, #475569, #64748b);
+    color: #e2e8f0;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .language-year {
@@ -302,6 +352,13 @@ body {
     gap: 8px;
     margin-top: 4px;
     align-items: center;
+}
+
+.language-creator {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-style: italic;
 }
 
 /* Language card metadata sections */
@@ -322,6 +379,75 @@ body {
     align-items: center;
     font-size: 0.85rem;
     color: #94a3b8;
+}
+
+/* Modern Action Buttons */
+.language-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.modern-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: linear-gradient(135deg, #475569, #64748b);
+    color: #f8fafc;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.modern-btn:hover {
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
+    border-color: rgba(96, 165, 250, 0.5);
+}
+
+.modern-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-icon {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.btn-text {
+    font-weight: 600;
+}
+
+/* Badge Section */
+.language-badges-section {
+    padding: 16px 24px;
+    background: rgba(15, 23, 42, 0.2);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.badge-group:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+.primary-badges {
+    margin-bottom: 8px;
 }
 
 .language-creator {
@@ -474,27 +600,86 @@ body {
     background: #10b981;
 }
 
+/* Description Section */
 .language-description {
-    padding: 15px 20px;
+    padding: 20px 24px;
+    background: rgba(15, 23, 42, 0.1);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.language-description p {
     color: #cbd5e1;
-    border-bottom: 1px solid #334155;
     font-size: 0.95rem;
     line-height: 1.6;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Code Section */
+.language-code-section {
+    background: #0f172a;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    background: rgba(15, 23, 42, 0.8);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.code-label {
+    color: #94a3b8;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.code-language-indicator {
+    background: rgba(96, 165, 250, 0.2);
+    color: #93c5fd;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(96, 165, 250, 0.3);
 }
 
 .code-container {
     position: relative;
+    background: #0f172a;
 }
 
 .code-block {
-    background: #0f172a;
+    background: transparent;
     color: #e2e8f0;
-    padding: 20px;
-    font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+    padding: 20px 24px;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Consolas', 'Courier New', monospace;
     font-size: 0.9rem;
-    line-height: 1.5;
+    line-height: 1.6;
     overflow-x: auto;
     white-space: pre;
+    margin: 0;
+    border-radius: 0;
+}
+
+.code-block::-webkit-scrollbar {
+    height: 6px;
+}
+
+.code-block::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+}
+
+.code-block::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.3);
+    border-radius: 3px;
+}
+
+.code-block::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.5);
 }
 
 /* Language Card Action Buttons */
@@ -782,7 +967,124 @@ body {
         padding: 6px 10px;
         font-size: 0.8rem;
     }
+
+    .language-card-header {
+        padding: 16px 16px 12px;
+    }
+
+    .language-name {
+        font-size: 1.2rem;
+    }
+
+    .language-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .modern-btn {
+        justify-content: center;
+        padding: 10px 16px;
+    }
+
+    .language-badges-section {
+        padding: 12px 16px;
+    }
+
+    .language-description {
+        padding: 16px;
+    }
+
+    .code-header {
+        padding: 8px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .code-block {
+        padding: 14px 16px;
+        font-size: 0.8rem;
+    }
 }
+
+/* ===== ENHANCED ANIMATIONS AND INTERACTIONS ===== */
+
+/* Smooth badge hover effects */
+.language-type:hover, .language-paradigm:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.4);
+}
+
+.badge-popularity:hover, .language-popularity:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(245, 158, 11, 0.4);
+}
+
+.language-difficulty:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(239, 68, 68, 0.4);
+}
+
+.language-typing:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(139, 92, 246, 0.4);
+}
+
+/* Code block selection styling */
+.code-block::selection {
+    background: rgba(96, 165, 250, 0.3);
+}
+
+.code-block::-moz-selection {
+    background: rgba(96, 165, 250, 0.3);
+}
+
+/* Copy button success state */
+.modern-btn.copied {
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-color: rgba(16, 185, 129, 0.5);
+}
+
+.modern-btn.copied:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+}
+
+/* Loading state for buttons */
+.modern-btn.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Focus states for accessibility */
+.modern-btn:focus {
+    outline: 2px solid #60a5fa;
+    outline-offset: 2px;
+}
+
+/* Subtle pulse animation for new cards */
+@keyframes cardIntro {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.language-card {
+    animation: cardIntro 0.5s ease-out;
+}
+
+/* Stagger animation for multiple cards */
+.language-card:nth-child(1) { animation-delay: 0.1s; }
+.language-card:nth-child(2) { animation-delay: 0.2s; }
+.language-card:nth-child(3) { animation-delay: 0.3s; }
+.language-card:nth-child(4) { animation-delay: 0.4s; }
+.language-card:nth-child(5) { animation-delay: 0.5s; }
+.language-card:nth-child(6) { animation-delay: 0.6s; }
 
 /* Footer Styles */
 .footer {
@@ -908,5 +1210,69 @@ body {
     .language-difficulty, .language-typing {
         font-size: 0.75rem;
         padding: 3px 8px;
+    }
+
+    /* ===== RESPONSIVE DESIGN FOR MODERN CARDS ===== */
+
+    .language-card-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        padding: 20px 20px 16px;
+    }
+
+    .language-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .language-name {
+        font-size: 1.3rem;
+    }
+
+    .language-year-badge {
+        align-self: flex-start;
+    }
+
+    .language-actions {
+        justify-content: flex-end;
+        gap: 6px;
+    }
+
+    .modern-btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .language-badges-section {
+        padding: 14px 20px;
+    }
+
+    .badge-group {
+        gap: 6px;
+    }
+
+    .language-type, .language-paradigm, .badge-popularity,
+    .language-popularity, .language-difficulty, .language-typing {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+
+    .language-description {
+        padding: 18px 20px;
+    }
+
+    .language-description p {
+        font-size: 0.9rem;
+    }
+
+    .code-header {
+        padding: 10px 20px;
+    }
+
+    .code-block {
+        padding: 16px 20px;
+        font-size: 0.85rem;
     }
 }

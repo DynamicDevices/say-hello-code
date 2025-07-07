@@ -1,7 +1,7 @@
         // Complete language data with all 208+ programming languages
         // Contains information about programming languages including:
         // name, creation year, creator, example code, description, popularity score, and official link
-        const languages = [
+        var languages = [
             {name: "Python", year: 1991, creator: "Guido van Rossum", code: "print(\"Hello, World!\")", desc: "Python is a high-level, interpreted programming language known for its clean, readable syntax and philosophy of code readability. Created by Guido van Rossum and first released in 1991, Python emphasises simplicity and productivity.", popularity: 98, link: "https://www.python.org/"},
             {name: "JavaScript", year: 1995, creator: "Brendan Eich", code: "console.log(\"Hello, World!\");", desc: "JavaScript is a dynamic, interpreted programming language that was originally designed to add interactivity to web pages. Created by Brendan Eich at Netscape in 1995, it has evolved into one of the most versatile languages in the world.", popularity: 100, link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"},
             {name: "Java", year: 1995, creator: "James Gosling", code: "public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}", desc: "Java is a class-based, object-oriented programming language designed by James Gosling at Sun Microsystems in 1995. Built on the principle of 'write once, run anywhere', Java compiles to bytecode that runs on the Java Virtual Machine.", popularity: 95},

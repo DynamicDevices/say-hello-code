@@ -229,53 +229,73 @@
         }
 
         function getLanguageType(lang) {
-            // Categorize languages based on their characteristics
+            // Categorize languages based on their characteristics - can have multiple categories
             var name = lang.name.toLowerCase();
             var desc = lang.desc.toLowerCase();
+            var categories = [];
 
             // Web languages
-            if (['javascript', 'typescript', 'html', 'css', 'php'].includes(name)) {
-                return 'Web';
+            if (['javascript', 'typescript', 'html', 'css', 'php'].includes(name) ||
+                desc.includes('web') || desc.includes('browser')) {
+                categories.push('Web');
             }
 
             // Systems languages
-            if (['c', 'c++', 'rust', 'go', 'assembly', 'zig'].includes(name) ||
-                desc.includes('system') || desc.includes('low-level')) {
-                return 'Systems';
+            if (['c', 'c++', 'rust', 'go', 'assembly', 'zig', 'fortran'].includes(name) ||
+                desc.includes('system') || desc.includes('low-level') || desc.includes('performance')) {
+                categories.push('Systems');
             }
 
             // Functional languages
             if (['haskell', 'lisp', 'scheme', 'clojure', 'erlang', 'elixir', 'f#', 'ocaml', 'ml'].includes(name) ||
                 desc.includes('functional')) {
-                return 'Functional';
+                categories.push('Functional');
             }
 
             // Mobile languages
-            if (['swift', 'kotlin', 'dart', 'objective-c'].includes(name) ||
+            if (['swift', 'kotlin', 'dart', 'objective-c', 'java'].includes(name) ||
                 desc.includes('mobile') || desc.includes('ios') || desc.includes('android')) {
-                return 'Mobile';
+                categories.push('Mobile');
             }
 
             // Data Science/Scientific
-            if (['python', 'r', 'matlab', 'julia', 'mathematica'].includes(name) ||
-                desc.includes('data') || desc.includes('scientific') || desc.includes('statistical')) {
-                return 'Data Science';
+            if (['python', 'r', 'matlab', 'julia', 'mathematica', 'scala'].includes(name) ||
+                desc.includes('data') || desc.includes('scientific') || desc.includes('statistical') ||
+                desc.includes('machine learning') || desc.includes('analytics')) {
+                categories.push('Data Science');
             }
 
             // Scripting languages
-            if (['bash', 'powershell', 'perl', 'lua', 'tcl'].includes(name) ||
-                desc.includes('script') || desc.includes('shell')) {
-                return 'Scripting';
+            if (['bash', 'powershell', 'perl', 'lua', 'tcl', 'python', 'ruby', 'javascript'].includes(name) ||
+                desc.includes('script') || desc.includes('shell') || desc.includes('automation')) {
+                categories.push('Scripting');
             }
 
             // Enterprise/Business
-            if (['java', 'c#', 'cobol', 'fortran', 'ada'].includes(name) ||
-                desc.includes('enterprise') || desc.includes('business')) {
-                return 'Enterprise';
+            if (['java', 'c#', 'cobol', 'fortran', 'ada', 'scala'].includes(name) ||
+                desc.includes('enterprise') || desc.includes('business') || desc.includes('corporate')) {
+                categories.push('Enterprise');
             }
 
-            // Default to General Purpose
-            return 'General Purpose';
+            // Academic/Research
+            if (['prolog', 'ml', 'coq', 'agda', 'idris', 'lean'].includes(name) ||
+                desc.includes('academic') || desc.includes('research') || desc.includes('theorem') ||
+                desc.includes('proof') || desc.includes('logic')) {
+                categories.push('Academic');
+            }
+
+            // Game Development
+            if (['c++', 'c#', 'lua', 'gdscript'].includes(name) ||
+                desc.includes('game') || desc.includes('unity') || desc.includes('unreal')) {
+                categories.push('Game Dev');
+            }
+
+            // If no specific categories found, add General Purpose
+            if (categories.length === 0) {
+                categories.push('General Purpose');
+            }
+
+            return categories;
         }
 
         function getPopularityLevel(popularity) {
@@ -301,8 +321,13 @@
             var html = filteredLanguages.map(function(lang, index) {
                 var referenceLink = generateReferenceLink(lang.name);
                 var linkAttribute = lang.link ? lang.link : referenceLink;
-                var languageType = getLanguageType(lang);
+                var languageTypes = getLanguageType(lang);
                 var popularityLevel = getPopularityLevel(lang.popularity);
+
+                // Generate multiple type badges with data attributes for styling
+                var typeBadges = languageTypes.map(function(type) {
+                    return `<span class="language-type" data-type="${type}">${type}</span>`;
+                }).join('');
 
                 return `
                     <div class="language-card" data-index="${index}">
@@ -310,7 +335,7 @@
                             <div class="language-info">
                                 <h3 class="language-name">${escapeHtml(lang.name)}</h3>
                                 <div class="language-meta">
-                                    <span class="language-type">${languageType}</span>
+                                    ${typeBadges}
                                     <span class="language-popularity">${popularityLevel}</span>
                                     <span class="language-year">${lang.year}</span>
                                     <span class="language-creator">by ${escapeHtml(lang.creator)}</span>

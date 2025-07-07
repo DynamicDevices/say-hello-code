@@ -286,7 +286,31 @@ body {
     border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 500;
+    margin-right: 4px;
 }
+
+/* Different colors for different language types */
+.language-type:nth-of-type(1) { background: #3b82f6; } /* Blue - Web */
+.language-type:nth-of-type(2) { background: #ef4444; } /* Red - Systems */
+.language-type:nth-of-type(3) { background: #8b5cf6; } /* Purple - Functional */
+.language-type:nth-of-type(4) { background: #f59e0b; } /* Orange - Mobile */
+.language-type:nth-of-type(5) { background: #10b981; } /* Green - Data Science */
+.language-type:nth-of-type(6) { background: #6b7280; } /* Gray - Scripting */
+.language-type:nth-of-type(7) { background: #dc2626; } /* Dark Red - Enterprise */
+.language-type:nth-of-type(8) { background: #7c3aed; } /* Indigo - Academic */
+.language-type:nth-of-type(9) { background: #059669; } /* Teal - Game Dev */
+
+/* Alternative approach using specific classes for better control */
+.language-type[data-type="Web"] { background: #3b82f6; }
+.language-type[data-type="Systems"] { background: #ef4444; }
+.language-type[data-type="Functional"] { background: #8b5cf6; }
+.language-type[data-type="Mobile"] { background: #f59e0b; }
+.language-type[data-type="Data Science"] { background: #10b981; }
+.language-type[data-type="Scripting"] { background: #6b7280; }
+.language-type[data-type="Enterprise"] { background: #dc2626; }
+.language-type[data-type="Academic"] { background: #7c3aed; }
+.language-type[data-type="Game Dev"] { background: #059669; }
+.language-type[data-type="General Purpose"] { background: #64748b; }
 
 .language-popularity {
     background: #10b981;

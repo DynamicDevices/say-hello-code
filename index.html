@@ -247,29 +247,30 @@
                 return `
                     <div class="language-card" data-index="${index}">
                         <div class="language-header">
-                            <h3 class="language-name">${escapeHtml(lang.name)}</h3>
-                            <div class="language-meta">
-                                <span class="language-year">${lang.year}</span>
-                                <span class="language-creator">by ${escapeHtml(lang.creator)}</span>
+                            <div class="language-info">
+                                <h3 class="language-name">${escapeHtml(lang.name)}</h3>
+                                <div class="language-meta">
+                                    <span class="language-year">${lang.year}</span>
+                                    <span class="language-creator">by ${escapeHtml(lang.creator)}</span>
+                                </div>
+                            </div>
+                            <div class="language-actions">
+                                <button class="copy-btn" onclick="copyCode(${index})">Copy Code</button>
+                                <a href="${linkAttribute}" target="_blank" rel="noopener noreferrer" class="reference-btn">Learn More</a>
                             </div>
                         </div>
-                        
+
                         <div class="language-description">
                             <p>${escapeHtml(lang.desc)}</p>
                         </div>
-                        
+
                         <div class="code-container">
                             <pre class="code-block"><code>${escapeHtml(lang.code)}</code></pre>
                         </div>
-                        
+
                         <div class="language-tags">
                             <span class="tag popularity-tag">Popularity: ${lang.popularity}</span>
                             <span class="tag year-tag">${lang.year}</span>
-                        </div>
-                        
-                        <div class="language-actions">
-                            <button class="copy-btn" onclick="copyCode(${index})">Copy Code</button>
-                            <a href="${linkAttribute}" target="_blank" rel="noopener noreferrer" class="reference-btn">Learn More</a>
                         </div>
                     </div>
                 `;

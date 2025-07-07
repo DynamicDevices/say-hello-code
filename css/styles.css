@@ -1,4 +1,5 @@
-commi* {
+/* Reset and base styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -251,7 +252,12 @@ body {
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.language-info {
+    flex: 1;
 }
 
 .language-name {
@@ -311,7 +317,8 @@ body {
 .language-actions {
     display: flex;
     gap: 8px;
-    align-items: center;
+    align-items: flex-start;
+    flex-shrink: 0;
 }
 
 .action-btn {
@@ -354,6 +361,46 @@ body {
 
 .action-btn span {
     font-size: 1rem;
+}
+
+/* Copy and Reference Button Styles */
+.copy-btn, .reference-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 10px;
+    background: #475569;
+    color: #f8fafc;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid #64748b;
+    white-space: nowrap;
+}
+
+.copy-btn:hover, .reference-btn:hover {
+    background: #60a5fa;
+    border-color: #60a5fa;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+}
+
+.copy-btn:active, .reference-btn:active {
+    transform: translateY(0);
+}
+
+.copy-btn.copied {
+    background: #10b981;
+    border-color: #10b981;
+}
+
+.copy-btn.copied:hover {
+    background: #059669;
+    border-color: #059669;
 }
 
 /* Favorite Button */
@@ -641,4 +688,22 @@ body {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .language-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .language-actions {
+        align-self: flex-end;
+    }
+
+    .copy-btn, .reference-btn {
+        font-size: 0.75rem;
+        padding: 5px 8px;
+    }
 }

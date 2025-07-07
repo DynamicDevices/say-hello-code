@@ -354,11 +354,11 @@
                         <!-- Card Header with Language Info -->
                         <div class="language-card-header">
                             <div class="language-title-section">
-                                <div class="language-title-row">
-                                    <h3 class="language-name">${escapeHtml(lang.name)}</h3>
-                                    <div class="language-year-badge">${lang.year}</div>
+                                <h3 class="language-name">${escapeHtml(lang.name)}</h3>
+                                <div class="language-meta">
+                                    <span class="language-year">Created ${lang.year}</span>
+                                    <span class="language-creator">by ${escapeHtml(lang.creator)}</span>
                                 </div>
-                                <div class="language-creator">Created by ${escapeHtml(lang.creator)}</div>
                             </div>
                             <div class="language-actions">
                                 <button class="copy-btn modern-btn" onclick="copyCode(${index}, this)">

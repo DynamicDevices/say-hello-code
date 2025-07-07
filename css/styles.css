@@ -26,7 +26,7 @@ body {
 .header {
     text-align: center;
     padding: 3rem 1rem 2rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
     color: white;
     margin-bottom: 2rem;
 }
@@ -122,7 +122,7 @@ body {
     max-width: 800px;
     margin: 0 auto 30px;
     display: flex;
-    gap: 20px;
+    gap: 15px;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -131,15 +131,15 @@ body {
 .search-input {
     flex: 1;
     min-width: 300px;
-    padding: 15px 20px;
-    font-size: 1.1rem;
+    padding: 12px 16px;
+    font-size: 1rem;
     background: #1e293b;
     border: 2px solid #334155;
-    border-radius: 12px;
+    border-radius: 10px;
     color: #f8fafc;
     outline: none;
     transition: border-color 0.3s;
-    height: 52px;
+    height: 44px;
     box-sizing: border-box;
 }
 
@@ -151,7 +151,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    height: 52px;
+    height: 44px;
 }
 
 .title {
@@ -176,16 +176,16 @@ body {
 }
 
 .sort-select {
-    padding: 15px 16px;
-    font-size: 1rem;
+    padding: 12px 14px;
+    font-size: 0.95rem;
     background: #1e293b;
     border: 2px solid #334155;
-    border-radius: 12px;
+    border-radius: 10px;
     color: #f8fafc;
     outline: none;
     cursor: pointer;
     transition: border-color 0.3s;
-    height: 52px;
+    height: 44px;
     box-sizing: border-box;
 }
 
@@ -199,16 +199,16 @@ body {
 }
 
 .clear-filters-btn {
-    padding: 15px 20px;
-    font-size: 1rem;
+    padding: 12px 18px;
+    font-size: 0.95rem;
     background: #dc2626;
     border: 2px solid #dc2626;
-    border-radius: 12px;
+    border-radius: 10px;
     color: #ffffff;
     outline: none;
     cursor: pointer;
     transition: all 0.3s;
-    height: 52px;
+    height: 44px;
     box-sizing: border-box;
     font-weight: 500;
 }
@@ -268,6 +268,9 @@ body {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
 }
 
 .language-card::before {
@@ -324,7 +327,7 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     color: #f8fafc;
-    margin: 0;
+    margin: 0 0 8px 0;
     letter-spacing: -0.025em;
     line-height: 1.2;
 }
@@ -339,19 +342,23 @@ body {
     letter-spacing: 0.025em;
     border: 1px solid rgba(148, 163, 184, 0.2);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    user-select: none;
 }
 
 .language-year {
     color: #94a3b8;
     font-size: 0.9rem;
+    user-select: none;
 }
 
 .language-meta {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 4px;
     align-items: center;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    user-select: none;
 }
 
 .language-creator {
@@ -359,6 +366,7 @@ body {
     font-size: 0.9rem;
     font-weight: 500;
     font-style: italic;
+    user-select: none;
 }
 
 /* Language card metadata sections */
@@ -386,6 +394,7 @@ body {
     display: flex;
     gap: 8px;
     flex-shrink: 0;
+    align-items: flex-start;
 }
 
 .modern-btn {
@@ -405,6 +414,8 @@ body {
     border: 1px solid rgba(148, 163, 184, 0.2);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     white-space: nowrap;
+    height: 36px;
+    box-sizing: border-box;
 }
 
 .modern-btn:hover {
@@ -460,9 +471,13 @@ body {
     font-weight: 500;
 }
 
-.language-type {
-    background: #3b82f6;
-    color: white;
+/* Consistent badge styling for all language characteristics */
+.language-type,
+.language-paradigm,
+.language-popularity,
+.language-difficulty,
+.language-typing,
+.badge-popularity {
     padding: 4px 10px;
     border-radius: 14px;
     font-size: 0.8rem;
@@ -470,20 +485,12 @@ body {
     margin-right: 4px;
     display: inline-block;
     line-height: 1.2;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
 }
 
 /* Different colors for different language types */
-.language-type:nth-of-type(1) { background: #3b82f6; } /* Blue - Web */
-.language-type:nth-of-type(2) { background: #ef4444; } /* Red - Systems */
-.language-type:nth-of-type(3) { background: #8b5cf6; } /* Purple - Functional */
-.language-type:nth-of-type(4) { background: #f59e0b; } /* Orange - Mobile */
-.language-type:nth-of-type(5) { background: #10b981; } /* Green - Data Science */
-.language-type:nth-of-type(6) { background: #6b7280; } /* Gray - Scripting */
-.language-type:nth-of-type(7) { background: #dc2626; } /* Dark Red - Enterprise */
-.language-type:nth-of-type(8) { background: #7c3aed; } /* Indigo - Academic */
-.language-type:nth-of-type(9) { background: #059669; } /* Teal - Game Dev */
-
-/* Alternative approach using specific classes for better control */
 .language-type[data-type="Web"] { background: #3b82f6; }
 .language-type[data-type="Systems"] { background: #ef4444; }
 .language-type[data-type="Functional"] { background: #8b5cf6; }
@@ -494,91 +501,41 @@ body {
 .language-type[data-type="Academic"] { background: #7c3aed; }
 .language-type[data-type="Game Dev"] { background: #059669; }
 .language-type[data-type="General Purpose"] { background: #64748b; }
+.language-type[data-type="Runtime"] { background: #0ea5e9; }
+.language-type[data-type="Backend"] { background: #6366f1; }
+.language-type[data-type="Emerging"] { background: #ec4899; }
+.language-type[data-type="Parallel"] { background: #84cc16; }
 
-.language-popularity {
-    background: #10b981;
-    color: white;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin-right: 4px;
-    display: inline-block;
-}
+/* Default fallback for language types */
+.language-type:nth-of-type(1) { background: #3b82f6; }
+.language-type:nth-of-type(2) { background: #ef4444; }
+.language-type:nth-of-type(3) { background: #8b5cf6; }
+.language-type:nth-of-type(4) { background: #f59e0b; }
+.language-type:nth-of-type(5) { background: #10b981; }
+.language-type:nth-of-type(6) { background: #6b7280; }
+.language-type:nth-of-type(7) { background: #dc2626; }
+.language-type:nth-of-type(8) { background: #7c3aed; }
+.language-type:nth-of-type(9) { background: #059669; }
 
-.language-creator {
-    color: #94a3b8;
-    font-size: 0.85rem;
-}
-
-/* New metadata styles */
-.language-paradigm {
-    background: #6366f1;
-    color: white;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin-right: 4px;
-    display: inline-block;
-}
-
-/* Badge styling for paradigm and popularity */
+/* Paradigm badges */
 .language-paradigm {
     background: #10b981;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 14px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    margin-right: 4px;
-    display: inline-block;
-    line-height: 1.2;
 }
 
-.language-popularity {
+/* Popularity badges */
+.language-popularity,
+.badge-popularity {
     background: #f59e0b;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 14px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    margin-right: 4px;
-    display: inline-block;
-    line-height: 1.2;
 }
 
-.language-meta-extra {
-    margin-top: 6px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    padding-top: 6px;
-    border-top: 1px solid rgba(148, 163, 184, 0.2);
-}
-
+/* Difficulty badges */
 .language-difficulty {
     background: #f59e0b;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 14px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    margin-right: 4px;
-    display: inline-block;
-    line-height: 1.2;
 }
 
+/* Typing badges */
 .language-typing {
     background: #8b5cf6;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 14px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    margin-right: 4px;
-    display: inline-block;
-    line-height: 1.2;
 }
 
 .copy-button {
@@ -618,6 +575,9 @@ body {
 /* Code Section */
 .language-code-section {
     background: #0f172a;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .code-header {
@@ -627,6 +587,7 @@ body {
     padding: 12px 24px;
     background: rgba(15, 23, 42, 0.8);
     border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    flex-shrink: 0;
 }
 
 .code-label {
@@ -650,10 +611,13 @@ body {
 .code-container {
     position: relative;
     background: #0f172a;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .code-block {
-    background: transparent;
+    background: #0f172a;
     color: #e2e8f0;
     padding: 20px 24px;
     font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Consolas', 'Courier New', monospace;
@@ -663,6 +627,8 @@ body {
     white-space: pre;
     margin: 0;
     border-radius: 0;
+    flex: 1;
+    min-height: 100px;
 }
 
 .code-block::-webkit-scrollbar {

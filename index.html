@@ -13,9 +13,18 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0f172a;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
             color: #f8fafc;
             line-height: 1.6;
+        }
+
+        .main-content {
+            flex: 1;
             padding: 20px;
         }
 
@@ -257,7 +266,7 @@
         }
 
         .footer {
-            margin-top: 60px;
+            margin-top: auto;
             padding: 40px 20px 20px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -299,11 +308,13 @@
             }
         }
     </style>
+
 </head>
 <body>
-    <div class="header">
-        <h1 class="title">Hello World Collection</h1>
-        <p class="subtitle">Authentic "Hello, World!" programs in 209 programming languages</p>
+    <div class="main-content">
+        <div class="header">
+            <h1 class="title">Hello World Collection</h1>
+            <p class="subtitle">Authentic "Hello, World!" programs in 209 programming languages</p>
         
         <div class="controls">
             <div class="search-bar">
@@ -341,18 +352,8 @@
                 <div class="stat-number" id="favoriteCount">0</div>
                 <div class="stat-label">Favorites</div>
             </div>
-                <div class="stat-label">Years Span</div>
-            </div>
-        </div>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 Dynamic Devices Ltd. All rights reserved.</p>
-            <p>Created in collaboration with <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">Claude.ai</a></p>
-        </div>
-    </footer>
-        </div>
-    </div>
+        </div> <!-- Close stats -->
+    </div> <!-- Close header -->
 
     <div class="languages-container" id="languagesContainer">
         <!-- Languages will be inserted here -->
@@ -1165,5 +1166,14 @@
             }, 100);
         });
     </script>
+    </div> <!-- Close main-content -->
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Dynamic Devices Ltd. All rights reserved.</p>
+            <p>Created in collaboration with <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">Claude.ai</a></p>
+        </div>
+    </footer>
+
 </body>
 </html>

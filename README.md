@@ -1,4 +1,4 @@
-# Hello World Collection 🌍
+# Say Hello Code 🌍
 
 A comprehensive collection of "Hello, World!" programs in 200+ programming languages, designed to help students and aspiring programmers explore the vast landscape of programming languages.
 

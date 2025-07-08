@@ -79,7 +79,7 @@ function checkUrl(url) {
             port: urlObj.port,
             path: urlObj.pathname + urlObj.search,
             method: 'HEAD',
-            timeout: 5000,
+            timeout: 15000, // Increased from 5000 to 15000 (15 seconds)
             headers: {
                 'User-Agent': 'Mozilla/5.0 (compatible; SayHelloCode-URLTester/1.0)'
             }
@@ -200,7 +200,7 @@ async function testAllUrls() {
         allResults.push(...batchResults);
         
         if (i + BATCH_SIZE < testPromises.length) {
-            await new Promise(resolve => setTimeout(resolve, 500));
+            await new Promise(resolve => setTimeout(resolve, 1000)); // Increased from 500ms to 1000ms
         }
     }
     

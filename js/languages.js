@@ -1,5 +1,5 @@
 // Consolidated Programming Languages Collection
-// Total Languages: 237
+// Total Languages: 242
 // Generated: 2025-01-27T12:00:00.000Z
 
 var languages = [
@@ -5147,6 +5147,140 @@ var languages = [
         "difficulty": "Beginner",
         "typing": "Dynamic",
         "sourceFile": "scripting-languages.js"
+    },
+    {
+        "name": "Assembly (x86 NASM)",
+        "year": 1972,
+        "creator": "Intel",
+        "code": "section .data\n    hello db 'Hello, World!', 0\n\nsection .text\n    global _start\n\n_start:\n    ; write system call\n    mov eax, 4\n    mov ebx, 1\n    mov ecx, hello\n    mov edx, 13\n    int 0x80\n    \n    ; exit system call\n    mov eax, 1\n    mov ebx, 0\n    int 0x80",
+        "desc": "Assembly language is a low-level programming language with a very strong correspondence between the instructions in the language and the architecture's machine code instructions. This is x86 assembly using NASM syntax.",
+        "popularity": 25,
+        "categories": [
+            "Systems",
+            "Low-level"
+        ],
+        "primaryCategory": "Systems",
+        "paradigms": [
+            "Imperative",
+            "Procedural"
+        ],
+        "domains": [
+            "System Programming",
+            "Operating Systems",
+            "Embedded Systems",
+            "Device Drivers"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Untyped",
+        "sourceFile": "systems-languages.js"
+    },
+    {
+        "name": "Assembly (x86-64)",
+        "year": 2003,
+        "creator": "AMD/Intel",
+        "code": "section .data\n    hello db 'Hello, World!', 10, 0\n    hello_len equ $ - hello - 1\n\nsection .text\n    global _start\n\n_start:\n    ; write system call\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, hello\n    mov rdx, hello_len\n    syscall\n    \n    ; exit system call\n    mov rax, 60\n    mov rdi, 0\n    syscall",
+        "desc": "x86-64 assembly language for 64-bit processors. Assembly language usually has one statement per machine instruction and provides direct access to processor registers and memory.",
+        "popularity": 30,
+        "categories": [
+            "Systems",
+            "Low-level"
+        ],
+        "primaryCategory": "Systems",
+        "paradigms": [
+            "Imperative",
+            "Procedural"
+        ],
+        "domains": [
+            "System Programming",
+            "Operating Systems",
+            "High Performance Computing",
+            "Reverse Engineering"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Untyped",
+        "sourceFile": "systems-languages.js"
+    },
+    {
+        "name": "Assembly (ARM)",
+        "year": 1985,
+        "creator": "Acorn Computers",
+        "code": ".data\nhello: .asciz \"Hello, World!\\n\"\n\n.text\n.global _start\n\n_start:\n    @ write system call\n    mov r7, #4\n    mov r0, #1\n    ldr r1, =hello\n    mov r2, #14\n    swi 0\n    \n    @ exit system call\n    mov r7, #1\n    mov r0, #0\n    swi 0",
+        "desc": "ARM assembly language for ARM processors, widely used in mobile devices and embedded systems. ARM assembly uses a different instruction set architecture compared to x86.",
+        "popularity": 35,
+        "categories": [
+            "Systems",
+            "Embedded",
+            "Mobile"
+        ],
+        "primaryCategory": "Embedded",
+        "paradigms": [
+            "Imperative",
+            "Procedural"
+        ],
+        "domains": [
+            "Embedded Systems",
+            "Mobile Development",
+            "IoT",
+            "System Programming"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Untyped",
+        "sourceFile": "systems-languages.js"
+    },
+    {
+        "name": "Assembly (MIPS)",
+        "year": 1981,
+        "creator": "MIPS Technologies",
+        "code": ".data\nhello: .asciiz \"Hello, World!\\n\"\n\n.text\n.globl main\n\nmain:\n    # print string\n    li $v0, 4\n    la $a0, hello\n    syscall\n    \n    # exit program\n    li $v0, 10\n    syscall",
+        "desc": "MIPS assembly language for MIPS processors, commonly used in academic settings to teach computer architecture and assembly programming concepts.",
+        "popularity": 20,
+        "categories": [
+            "Academic",
+            "Systems",
+            "Educational"
+        ],
+        "primaryCategory": "Academic",
+        "paradigms": [
+            "Imperative",
+            "Procedural"
+        ],
+        "domains": [
+            "Education",
+            "Embedded Systems",
+            "Computer Architecture"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Untyped",
+        "sourceFile": "academic-languages.js"
+    },
+    {
+        "name": "Assembly (RISC-V)",
+        "year": 2010,
+        "creator": "UC Berkeley",
+        "code": ".data\nhello: .string \"Hello, World!\\n\"\n\n.text\n.globl _start\n\n_start:\n    # write system call\n    li a7, 64          # sys_write\n    li a0, 1           # stdout\n    la a1, hello       # message address\n    li a2, 14          # message length\n    ecall\n    \n    # exit system call\n    li a7, 93          # sys_exit\n    li a0, 0           # exit status\n    ecall",
+        "desc": "RISC-V assembly language for the open-source RISC-V instruction set architecture. RISC-V is a modern, modular ISA designed for research and commercial use, gaining popularity in academia and industry.",
+        "popularity": 25,
+        "categories": [
+            "Modern",
+            "Systems",
+            "Academic",
+            "Open Source"
+        ],
+        "primaryCategory": "Modern",
+        "paradigms": [
+            "Imperative",
+            "Procedural"
+        ],
+        "domains": [
+            "System Programming",
+            "Embedded Systems",
+            "Research",
+            "Education",
+            "Hardware Design"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Untyped",
+        "sourceFile": "systems-languages.js"
     }
 ];
 

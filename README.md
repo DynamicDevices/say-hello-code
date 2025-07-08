@@ -1,6 +1,6 @@
 # Say Hello Code 🌍
 
-A comprehensive collection of "Hello, World!" programs in 200+ programming languages, designed to help students and aspiring programmers explore the vast landscape of programming languages.
+A comprehensive collection of "Hello, World!" programs in 240+ programming languages, designed to help students and aspiring programmers explore the vast landscape of programming languages.
 
 🌐 **[Visit the Live Site: sayhellocode.com](https://sayhellocode.com)**
 
@@ -29,7 +29,7 @@ This collection was created to:
 
 ## 🚀 Features
 
-- **200+ Programming Languages** - From classic languages like FORTRAN to modern ones like Rust
+- **240+ Programming Languages** - From classic languages like FORTRAN to modern ones like Rust
 - **Interactive Search & Filtering** - Find languages by name, year, creator, or description
 - **Category Filtering** - Filter by language categories (Web, Systems, Functional, etc.)
 - **Rich Metadata** - View programming paradigms, difficulty levels, and typing information
@@ -50,6 +50,14 @@ This collection was created to:
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on how to add new languages or improve the project.
 
+## 👥 Contributors
+
+We'd like to thank the following people who have helped improve this project:
+
+- **Jim Hunt** - Identified missing assembly language coverage and provided valuable feedback on low-level programming language representation
+
+*Want to be listed here? Contribute to the project and help make programming education better for everyone!*
+
 ## 🚀 Deployment
 
 This project is optimized for GitHub Pages. See our [Deployment Guide](DEPLOYMENT.md) for setup instructions.
@@ -60,7 +68,7 @@ The live site is available at:
 
 ## 📊 Usage Statistics
 
-- **200+ Languages** supported
+- **240+ Languages** supported
 - **67 Years** of programming history (1957-2024)
 - **Multiple Categories** including Web, Systems, Functional, Data Science, and more
 - **Educational Resource** used by students and educators worldwide

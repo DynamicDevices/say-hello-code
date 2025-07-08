@@ -2,6 +2,8 @@
 
 A comprehensive collection of "Hello, World!" programs in 200+ programming languages, designed to help students and aspiring programmers explore the vast landscape of programming languages.
 
+🌐 **[Visit the Live Site: sayhellocode.com](https://sayhellocode.com)**
+
 ## 📄 License
 
 This work is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
@@ -52,7 +54,9 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 This project is optimized for GitHub Pages. See our [Deployment Guide](DEPLOYMENT.md) for setup instructions.
 
-The live site is available at: https://DynamicDevices.github.io/say-hello-code
+The live site is available at:
+- **Primary Domain**: https://sayhellocode.com
+- **GitHub Pages**: https://DynamicDevices.github.io/say-hello-code
 
 ## 📊 Usage Statistics
 
@@ -65,7 +69,7 @@ The live site is available at: https://DynamicDevices.github.io/say-hello-code
 
 When using this work, please provide attribution such as:
 
-> "Hello World examples from Say Hello Code by Dynamic Devices Ltd, licensed under CC BY 4.0. Available at https://DynamicDevices.github.io/say-hello-code"
+> "Hello World examples from Say Hello Code by Dynamic Devices Ltd, licensed under CC BY 4.0. Available at https://sayhellocode.com"
 
 ## 📞 Contact
 

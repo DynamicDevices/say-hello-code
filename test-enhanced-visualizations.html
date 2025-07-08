@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Visualizations Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #1a1a1a; color: white; }
+        .header { padding: 20px; background: #2a2a2a; margin-bottom: 20px; }
+        .visualization-toggle-btn { 
+            background: #4a90e2; 
+            color: white; 
+            padding: 12px 24px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+            margin: 10px;
+            font-size: 16px;
+        }
+        .visualization-toggle-btn:hover { background: #357abd; }
+        .visualization-container { 
+            padding: 20px; 
+            background: #2a2a2a; 
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .visualization-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .chart-container {
+            background: #333;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .chart-container h3 {
+            margin-top: 0;
+            color: #4a90e2;
+        }
+        .hidden { display: none; }
+        .stats { 
+            padding: 15px; 
+            background: #333; 
+            margin: 10px 0; 
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .test-info {
+            background: #0a4d0a;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border-left: 4px solid #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-info">
+        <h2>🧪 Enhanced Visualizations Test</h2>
+        <p><strong>Testing improvements:</strong></p>
+        <ul>
+            <li>✅ Combined categories in pie chart (fewer slices)</li>
+            <li>✅ Timeline tooltips show language names</li>
+            <li>✅ Fixed paradigm chart (Chart.js 3.x compatibility)</li>
+            <li>✅ Scatter plot for popularity vs difficulty</li>
+        </ul>
+    </div>
+
+    <div class="header">
+        <h1>Say Hello Code - Enhanced Visualizations</h1>
+        <button id="clearFilters">Clear Filters</button>
+    </div>
+    
+    <div class="stats">
+        <div><strong>240+</strong> Languages</div>
+        <div><strong>1949-2024</strong> Year Range</div>
+        <div><strong>All</strong> Showing</div>
+    </div>
+    
+    <div id="languagesContainer">
+        <p>Languages container (placeholder)</p>
+    </div>
+
+    <!-- Sample languages data for testing -->
+    <script>
+        var languages = [
+            { name: "JavaScript", year: 1995, creator: "Brendan Eich", popularity: 95, categories: ["Web"], primaryCategory: "Web", paradigms: ["Multi-paradigm", "Functional", "Object-Oriented"], difficulty: "Beginner" },
+            { name: "Python", year: 1991, creator: "Guido van Rossum", popularity: 90, categories: ["Popular"], primaryCategory: "Popular", paradigms: ["Multi-paradigm", "Object-Oriented", "Functional"], difficulty: "Beginner" },
+            { name: "Java", year: 1995, creator: "James Gosling", popularity: 85, categories: ["Popular"], primaryCategory: "Popular", paradigms: ["Object-Oriented"], difficulty: "Intermediate" },
+            { name: "C", year: 1972, creator: "Dennis Ritchie", popularity: 80, categories: ["Systems"], primaryCategory: "Systems", paradigms: ["Procedural"], difficulty: "Advanced" },
+            { name: "C++", year: 1985, creator: "Bjarne Stroustrup", popularity: 75, categories: ["Systems"], primaryCategory: "Systems", paradigms: ["Object-Oriented", "Procedural"], difficulty: "Advanced" },
+            { name: "Rust", year: 2010, creator: "Graydon Hoare", popularity: 70, categories: ["Systems"], primaryCategory: "Systems", paradigms: ["Multi-paradigm"], difficulty: "Advanced" },
+            { name: "Go", year: 2009, creator: "Robert Griesemer", popularity: 65, categories: ["Systems"], primaryCategory: "Systems", paradigms: ["Procedural"], difficulty: "Intermediate" },
+            { name: "Swift", year: 2014, creator: "Apple Inc.", popularity: 60, categories: ["Mobile"], primaryCategory: "Mobile", paradigms: ["Multi-paradigm"], difficulty: "Intermediate" },
+            { name: "Kotlin", year: 2011, creator: "JetBrains", popularity: 55, categories: ["Mobile"], primaryCategory: "Mobile", paradigms: ["Object-Oriented", "Functional"], difficulty: "Intermediate" },
+            { name: "Haskell", year: 1990, creator: "Simon Peyton Jones", popularity: 30, categories: ["Functional"], primaryCategory: "Functional", paradigms: ["Functional"], difficulty: "Advanced" },
+            { name: "Lisp", year: 1958, creator: "John McCarthy", popularity: 25, categories: ["Academic"], primaryCategory: "Academic", paradigms: ["Functional"], difficulty: "Advanced" },
+            { name: "COBOL", year: 1959, creator: "Grace Hopper", popularity: 15, categories: ["Legacy"], primaryCategory: "Legacy", paradigms: ["Procedural"], difficulty: "Intermediate" },
+            { name: "Fortran", year: 1957, creator: "John Backus", popularity: 20, categories: ["Scientific"], primaryCategory: "Scientific", paradigms: ["Procedural"], difficulty: "Intermediate" },
+            { name: "R", year: 1993, creator: "Ross Ihaka", popularity: 50, categories: ["Data Science"], primaryCategory: "Data Science", paradigms: ["Functional"], difficulty: "Intermediate" },
+            { name: "MATLAB", year: 1984, creator: "Cleve Moler", popularity: 45, categories: ["Scientific"], primaryCategory: "Scientific", paradigms: ["Procedural"], difficulty: "Intermediate" },
+            { name: "HTML", year: 1993, creator: "Tim Berners-Lee", popularity: 95, categories: ["Markup"], primaryCategory: "Markup", paradigms: ["Declarative"], difficulty: "Beginner" },
+            { name: "CSS", year: 1996, creator: "Håkon Wium Lie", popularity: 90, categories: ["Markup"], primaryCategory: "Markup", paradigms: ["Declarative"], difficulty: "Beginner" },
+            { name: "Bash", year: 1989, creator: "Brian Fox", popularity: 70, categories: ["Shell"], primaryCategory: "Shell", paradigms: ["Procedural"], difficulty: "Intermediate" },
+            { name: "PowerShell", year: 2006, creator: "Jeffrey Snover", popularity: 40, categories: ["Shell"], primaryCategory: "Shell", paradigms: ["Object-Oriented"], difficulty: "Intermediate" },
+            { name: "Brainfuck", year: 1993, creator: "Urban Müller", popularity: 5, categories: ["Esoteric"], primaryCategory: "Esoteric", paradigms: ["Imperative"], difficulty: "Advanced" }
+        ];
+        
+        console.log('Test data loaded:', languages.length, 'languages');
+        console.log('Sample paradigms:', languages.map(l => l.paradigms).flat().filter((v, i, a) => a.indexOf(v) === i));
+        console.log('Sample categories:', languages.map(l => l.primaryCategory).filter((v, i, a) => a.indexOf(v) === i));
+    </script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    
+    <!-- Our visualization script -->
+    <script src="js/visualizations.js"></script>
+    
+    <script>
+        // Additional debugging
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🧪 Enhanced Visualizations Test Started');
+            console.log('Languages available:', typeof languages, languages ? languages.length : 'none');
+            console.log('Chart.js available:', typeof Chart);
+            
+            // Check if button was created
+            setTimeout(function() {
+                var btn = document.getElementById('visualizationToggle');
+                console.log('Button found:', !!btn);
+                if (btn) {
+                    console.log('Button text:', btn.innerHTML);
+                    
+                    // Auto-click the button for testing
+                    setTimeout(function() {
+                        console.log('🔄 Auto-clicking visualization button for testing...');
+                        btn.click();
+                    }, 1000);
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>

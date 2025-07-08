@@ -145,19 +145,29 @@ var Visualizations = (function() {
         var ctx = document.getElementById('timelineChart');
         if (!ctx) return;
 
-        // Process data by decade
+        // Group languages by decade and store language names
         var decades = {};
+        var languagesByDecade = {};
+
         languages.forEach(function(lang) {
             var decade = Math.floor(lang.year / 10) * 10;
-            decades[decade] = (decades[decade] || 0) + 1;
+            var decadeLabel = decade + 's';
+
+            decades[decadeLabel] = (decades[decadeLabel] || 0) + 1;
+
+            if (!languagesByDecade[decadeLabel]) {
+                languagesByDecade[decadeLabel] = [];
+            }
+            languagesByDecade[decadeLabel].push(lang.name);
         });
 
-        var labels = Object.keys(decades).sort().map(function(decade) {
-            return decade + 's';
+        // Sort decades chronologically
+        var sortedDecades = Object.keys(decades).sort(function(a, b) {
+            return parseInt(a) - parseInt(b);
         });
-        var data = Object.keys(decades).sort().map(function(decade) {
-            return decades[decade];
-        });
+
+        var labels = sortedDecades;
+        var data = sortedDecades.map(function(decade) { return decades[decade]; });
 
         charts.timeline = new Chart(ctx, {
             type: 'bar',
@@ -183,7 +193,28 @@ var Visualizations = (function() {
                                 return context[0].label;
                             },
                             label: function(context) {
-                                return context.parsed.y + ' languages created';
+                                var decade = context.label;
+                                var count = context.parsed.y;
+                                var languageList = languagesByDecade[decade];
+
+                                var result = [count + ' languages created'];
+
+                                if (languageList && languageList.length > 0) {
+                                    result.push(''); // Empty line
+                                    result.push('Languages:');
+
+                                    // Show first 10 languages, then "and X more" if there are more
+                                    var displayLanguages = languageList.slice(0, 10);
+                                    displayLanguages.forEach(function(lang) {
+                                        result.push('• ' + lang);
+                                    });
+
+                                    if (languageList.length > 10) {
+                                        result.push('• ... and ' + (languageList.length - 10) + ' more');
+                                    }
+                                }
+
+                                return result;
                             }
                         }
                     }
@@ -200,20 +231,45 @@ var Visualizations = (function() {
         });
     }
 
-    // 2. Category Distribution Pie Chart
+    // 2. Category Distribution Pie Chart (with combined categories)
     function createCategoryChart() {
         var ctx = document.getElementById('categoryChart');
         if (!ctx) return;
 
-        // Process primary categories
-        var categories = {};
+        // Group categories into broader groups to reduce clutter
+        var categoryGroups = {
+            'Popular Languages': ['Popular', 'Web', 'Object-Oriented'],
+            'Systems & Low-Level': ['Systems', 'Legacy', 'Vintage'],
+            'Specialized': ['Functional', 'Data Science', 'Scientific', 'Academic'],
+            'Development': ['Mobile', 'Game Development', 'Scripting'],
+            'Configuration & Markup': ['Configuration', 'Markup', 'Shell'],
+            'Emerging & Experimental': ['Emerging', 'Esoteric', 'Additional'],
+            'Other': ['Specialized', 'Other']
+        };
+
+        var groupedCategories = {};
+
         languages.forEach(function(lang) {
-            var category = lang.primaryCategory || 'Other';
-            categories[category] = (categories[category] || 0) + 1;
+            var primaryCategory = lang.primaryCategory || 'Other';
+            var groupFound = false;
+
+            // Find which group this category belongs to
+            for (var group in categoryGroups) {
+                if (categoryGroups[group].indexOf(primaryCategory) !== -1) {
+                    groupedCategories[group] = (groupedCategories[group] || 0) + 1;
+                    groupFound = true;
+                    break;
+                }
+            }
+
+            // If no group found, put in "Other"
+            if (!groupFound) {
+                groupedCategories['Other'] = (groupedCategories['Other'] || 0) + 1;
+            }
         });
 
-        var labels = Object.keys(categories);
-        var data = Object.values(categories);
+        var labels = Object.keys(groupedCategories);
+        var data = Object.values(groupedCategories);
         var colors = generateColors(labels.length);
 
         charts.category = new Chart(ctx, {
@@ -335,6 +391,7 @@ var Visualizations = (function() {
     }
 
     // 4. Programming Paradigms Bar Chart
+    // 4. Programming Paradigms Bar Chart (Fixed for Chart.js 3.x)
     function createParadigmChart() {
         var ctx = document.getElementById('paradigmChart');
         if (!ctx) return;
@@ -358,7 +415,7 @@ var Visualizations = (function() {
         var data = sortedParadigms.map(function(item) { return item[1]; });
 
         charts.paradigm = new Chart(ctx, {
-            type: 'horizontalBar',
+            type: 'bar',
             data: {
                 labels: labels,
                 datasets: [{
@@ -370,6 +427,7 @@ var Visualizations = (function() {
                 }]
             },
             options: {
+                indexAxis: 'y', // This makes it horizontal
                 responsive: true,
                 plugins: {
                     legend: {

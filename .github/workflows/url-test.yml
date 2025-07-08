@@ -189,9 +189,18 @@ jobs:
     - name: Set job status
       if: always()
       run: |
-        if [ "${{ steps.url-test.outputs.failed_urls }}" -gt "0" ]; then
-          echo "::warning::Found ${{ steps.url-test.outputs.failed_urls }} broken URLs out of ${{ steps.url-test.outputs.total_urls }} total URLs"
+        FAILED_URLS="${{ steps.url-test.outputs.failed_urls }}"
+        TOTAL_URLS="${{ steps.url-test.outputs.total_urls }}"
+
+        # Set default values if variables are empty
+        FAILED_URLS=${FAILED_URLS:-0}
+        TOTAL_URLS=${TOTAL_URLS:-0}
+
+        echo "Debug: FAILED_URLS='$FAILED_URLS', TOTAL_URLS='$TOTAL_URLS'"
+
+        if [ "$FAILED_URLS" -gt "0" ]; then
+          echo "::warning::Found $FAILED_URLS broken URLs out of $TOTAL_URLS total URLs"
           exit 1
         else
-          echo "::notice::All ${{ steps.url-test.outputs.total_urls }} URLs are accessible"
+          echo "::notice::All $TOTAL_URLS URLs are accessible"
         fi

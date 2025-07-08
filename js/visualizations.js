@@ -15,25 +15,35 @@ var Visualizations = (function() {
 
     // Initialize all visualizations
     function init() {
+        console.log('Initializing visualizations...');
+
         if (typeof languages === 'undefined' || !languages.length) {
             console.warn('Languages data not available for visualizations');
             return;
         }
 
+        if (typeof Chart === 'undefined') {
+            console.error('Chart.js library not loaded');
+            return;
+        }
+
+        console.log('Languages data available:', languages.length, 'languages');
+        console.log('Chart.js available:', typeof Chart);
+
         setupVisualizationToggle();
         createVisualizationContainer();
-        initializeCharts();
+        // Don't initialize charts immediately, wait for user to click toggle
     }
 
     // Setup the toggle button for showing/hiding visualizations
     function setupVisualizationToggle() {
-        var header = document.querySelector('header');
+        var header = document.querySelector('.header');
         var toggleBtn = document.createElement('button');
         toggleBtn.id = 'visualizationToggle';
         toggleBtn.className = 'visualization-toggle-btn';
         toggleBtn.innerHTML = '📊 Show Visualizations';
         toggleBtn.addEventListener('click', toggleVisualizations);
-        
+
         // Insert after the clear filters button
         var clearBtn = document.getElementById('clearFilters');
         if (clearBtn && clearBtn.parentNode) {
@@ -74,7 +84,7 @@ var Visualizations = (function() {
         `;
 
         // Insert after the statistics section
-        var stats = document.getElementById('statistics');
+        var stats = document.querySelector('.stats'); // Changed from getElementById('statistics') to querySelector('.stats')
         if (stats && stats.parentNode) {
             stats.parentNode.insertBefore(container, stats.nextSibling);
         } else {
@@ -84,20 +94,33 @@ var Visualizations = (function() {
 
     // Toggle visualization visibility
     function toggleVisualizations() {
+        console.log('Toggle visualizations clicked');
+
         var container = document.getElementById('visualizationContainer');
         var toggleBtn = document.getElementById('visualizationToggle');
-        
+
+        console.log('Container found:', !!container);
+        console.log('Toggle button found:', !!toggleBtn);
+
+        if (!container) {
+            console.error('Visualization container not found');
+            return;
+        }
+
         if (isChartsVisible) {
             container.classList.add('hidden');
             toggleBtn.innerHTML = '📊 Show Visualizations';
             isChartsVisible = false;
+            console.log('Hiding visualizations');
         } else {
             container.classList.remove('hidden');
             toggleBtn.innerHTML = '📊 Hide Visualizations';
             isChartsVisible = true;
-            
+            console.log('Showing visualizations');
+
             // Initialize charts if not already done
             if (Object.keys(charts).length === 0) {
+                console.log('Initializing charts for the first time');
                 initializeCharts();
             }
         }

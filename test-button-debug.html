@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Debug Test</title>
+    <style>
+        .header { padding: 20px; }
+        .visualization-toggle-btn { 
+            background: #4a90e2; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+            margin: 10px;
+        }
+        .visualization-container { 
+            padding: 20px; 
+            background: #f0f0f0; 
+            margin: 20px;
+        }
+        .hidden { display: none; }
+        .stats { padding: 10px; background: #eee; margin: 10px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Debug Test</h1>
+        <button id="clearFilters">Clear Filters</button>
+    </div>
+    
+    <div class="stats">
+        <p>Stats section</p>
+    </div>
+    
+    <div id="languagesContainer">
+        <p>Languages container</p>
+    </div>
+
+    <!-- Minimal languages data for testing -->
+    <script>
+        var languages = [
+            { name: "JavaScript", year: 1995, creator: "Brendan Eich", popularity: 95, categories: ["Web"], paradigms: ["Multi-paradigm"], difficulty: "Easy" },
+            { name: "Python", year: 1991, creator: "Guido van Rossum", popularity: 90, categories: ["Popular"], paradigms: ["Multi-paradigm"], difficulty: "Easy" }
+        ];
+    </script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    
+    <!-- Our visualization script -->
+    <script src="js/visualizations.js"></script>
+    
+    <script>
+        // Additional debugging
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded');
+            console.log('Languages available:', typeof languages, languages ? languages.length : 'none');
+            console.log('Chart.js available:', typeof Chart);
+            
+            // Check if button was created
+            setTimeout(function() {
+                var btn = document.getElementById('visualizationToggle');
+                console.log('Button found:', !!btn);
+                if (btn) {
+                    console.log('Button text:', btn.innerHTML);
+                    console.log('Button parent:', btn.parentNode);
+                }
+                
+                var container = document.getElementById('visualizationContainer');
+                console.log('Container found:', !!container);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

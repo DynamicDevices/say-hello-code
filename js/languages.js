@@ -179,10 +179,10 @@ var languages = [
     },
     {
         "name": "Assembly x86",
-        "year": 1949,
-        "creator": "Various",
+        "year": 1947,
+        "creator": "Kathleen Booth",
         "code": ".section .data\n    hello: .ascii \"Hello, World!\\n\"\n.section .text\n    .global _start\n_start:\n    mov $4, %eax\n    mov $1, %ebx\n    mov $hello, %ecx\n    int $0x80",
-        "desc": "Assembly language provides a human-readable representation of machine code instructions specific to the x86 processor architecture that has dominated personal computing.",
+        "desc": "Assembly language, invented by Kathleen Booth in 1947 for the ARC (Automatic Relay Calculator), provides a human-readable representation of machine code instructions. This example shows x86 assembly syntax.",
         "popularity": 45,
         "categories": [
             "Systems",
@@ -5170,10 +5170,10 @@ var languages = [
     },
     {
         "name": "Assembly (x86 NASM)",
-        "year": 1972,
-        "creator": "Intel",
+        "year": 1996,
+        "creator": "Simon Tatham and Julian Hall",
         "code": "section .data\n    hello db 'Hello, World!', 0\n\nsection .text\n    global _start\n\n_start:\n    ; write system call\n    mov eax, 4\n    mov ebx, 1\n    mov ecx, hello\n    mov edx, 13\n    int 0x80\n    \n    ; exit system call\n    mov eax, 1\n    mov ebx, 0\n    int 0x80",
-        "desc": "Assembly language is a low-level programming language with a very strong correspondence between the instructions in the language and the architecture's machine code instructions. This is x86 assembly using NASM syntax.",
+        "desc": "NASM (Netwide Assembler) is a popular open-source assembler for x86 architecture, first released in 1996. It supports 16-bit, 32-bit, and 64-bit programs and is widely used on Linux systems.",
         "popularity": 25,
         "categories": [
             "Systems",

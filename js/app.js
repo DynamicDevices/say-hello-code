@@ -47,10 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('languages length:', typeof languages !== 'undefined' ? languages.length : 'N/A');
 
         if (typeof languages !== 'undefined' && languages.length > 0) {
-            allLanguages = languages;
+            // Deduplicate languages based on normalized names
+            allLanguages = deduplicateLanguages(languages);
             filteredLanguages = allLanguages.slice();
 
-            console.log('Languages loaded successfully:', allLanguages.length, 'languages');
+            console.log('Languages loaded successfully:', allLanguages.length, 'languages (after deduplication)');
 
             // Initial render
             updateStatistics(filteredLanguages);
@@ -71,6 +72,31 @@ document.addEventListener('DOMContentLoaded', function() {
             return false; // Failed
         }
     }
+
+// Deduplicate languages based on normalized names
+function deduplicateLanguages(languages) {
+    var seen = {};
+    var deduplicated = [];
+
+    for (var i = 0; i < languages.length; i++) {
+        var lang = languages[i];
+        var normalizedName = lang.name.toLowerCase().trim();
+
+        // Handle common variations
+        normalizedName = normalizedName
+            .replace(/\s+/g, '') // Remove spaces
+            .replace(/[^\w]/g, ''); // Remove special characters
+
+        if (!seen[normalizedName]) {
+            seen[normalizedName] = true;
+            deduplicated.push(lang);
+        } else {
+            console.log('Duplicate language removed:', lang.name);
+        }
+    }
+
+    return deduplicated;
+}
 
     // Try to initialize immediately
     if (!initializeApp()) {
@@ -138,23 +164,73 @@ function setupEventListeners() {
 
 // Filter languages based on search and category
 function filterLanguages() {
-    var searchTerm = searchInput.value.toLowerCase();
+    var searchTerm = searchInput.value.trim();
     var selectedCategory = categoryFilter.value;
 
-    filteredLanguages = allLanguages.filter(function(lang) {
-        var matchesSearch = !searchTerm ||
-            lang.name.toLowerCase().includes(searchTerm) ||
-            lang.creator.toLowerCase().includes(searchTerm) ||
-            lang.year.toString().includes(searchTerm) ||
-            (lang.desc && lang.desc.toLowerCase().includes(searchTerm));
+    console.log('Filtering with search term:', searchTerm, 'category:', selectedCategory);
 
-        var matchesCategory = !selectedCategory ||
-            (lang.categories && lang.categories.includes(selectedCategory)) ||
-            lang.primaryCategory === selectedCategory;
-        
-        return matchesSearch && matchesCategory;
-    });
-    
+    if (!searchTerm && !selectedCategory) {
+        filteredLanguages = allLanguages.slice();
+    } else {
+        filteredLanguages = allLanguages.filter(function(lang) {
+            var matchesSearch = true;
+
+            if (searchTerm) {
+                var searchLower = searchTerm.toLowerCase();
+                var langName = lang.name.toLowerCase();
+                var langCreator = lang.creator.toLowerCase();
+                var langYear = lang.year.toString();
+                var langDesc = (lang.desc || '').toLowerCase();
+
+                // Improved search logic with priority matching
+                var exactNameMatch = langName === searchLower;
+                var nameStartsWith = langName.startsWith(searchLower);
+                var nameContains = langName.includes(searchLower);
+                var creatorContains = langCreator.includes(searchLower);
+                var yearMatches = langYear.includes(searchTerm);
+                var descContains = langDesc.includes(searchLower);
+
+                // For single character searches, be more restrictive
+                if (searchTerm.length === 1) {
+                    matchesSearch = exactNameMatch ||
+                                  nameStartsWith ||
+                                  creatorContains ||
+                                  yearMatches;
+                } else if (searchTerm.length === 2) {
+                    // For 2-character searches, prioritize exact matches and starts-with
+                    matchesSearch = exactNameMatch ||
+                                  nameStartsWith ||
+                                  nameContains ||
+                                  creatorContains ||
+                                  yearMatches;
+                } else {
+                    // For longer searches, use full text search
+                    matchesSearch = nameContains ||
+                                  creatorContains ||
+                                  yearMatches ||
+                                  descContains;
+                }
+
+                // Debug logging for single character searches
+                if (searchTerm.length === 1 && matchesSearch) {
+                    console.log('Match found for "' + searchTerm + '":', lang.name,
+                               'exact:', exactNameMatch,
+                               'starts:', nameStartsWith,
+                               'creator:', creatorContains,
+                               'year:', yearMatches);
+                }
+            }
+
+            var matchesCategory = !selectedCategory ||
+                (lang.categories && lang.categories.includes(selectedCategory)) ||
+                lang.primaryCategory === selectedCategory;
+
+            return matchesSearch && matchesCategory;
+        });
+    }
+
+    console.log('Filtered results:', filteredLanguages.length, 'languages');
+
     filteredLanguages = sortLanguages(filteredLanguages, currentSort);
     updateStatistics(filteredLanguages);
     renderLanguages();

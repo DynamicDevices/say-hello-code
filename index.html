@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Say Hello Code - 200+ Programming Languages | Learn to Code</title>
+    <title>Say Hello Code - Programming Languages | Learn to Code</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Explore Hello World programs in 200+ programming languages from 1957 to today. Perfect for students learning to code, comparing syntax, and discovering new programming languages.">
+    <meta name="description" content="Explore Hello World programs in programming languages from 1949 to today. Perfect for students learning to code, comparing syntax, and discovering new programming languages.">
     <meta name="keywords" content="hello world, programming languages, learn to code, programming tutorial, coding examples, computer science, programming education, syntax comparison, coding bootcamp, programming reference">
     <meta name="author" content="Dynamic Devices Ltd">
     <meta name="robots" content="index, follow">
@@ -14,15 +14,15 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://DynamicDevices.github.io/say-hello-code/">
-    <meta property="og:title" content="Say Hello Code - 200+ Programming Languages">
-    <meta property="og:description" content="Explore Hello World programs in 200+ programming languages. Perfect for students learning to code and discovering new programming languages.">
+    <meta property="og:title" content="Say Hello Code - Programming Languages">
+    <meta property="og:description" content="Explore Hello World programs in programming languages. Perfect for students learning to code and discovering new programming languages.">
     <meta property="og:image" content="https://DynamicDevices.github.io/say-hello-code/og-image.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://DynamicDevices.github.io/say-hello-code/">
-    <meta property="twitter:title" content="Say Hello Code - 200+ Programming Languages">
-    <meta property="twitter:description" content="Explore Hello World programs in 200+ programming languages. Perfect for students learning to code.">
+    <meta property="twitter:title" content="Say Hello Code - Programming Languages">
+    <meta property="twitter:description" content="Explore Hello World programs in programming languages. Perfect for students learning to code.">
     <meta property="twitter:image" content="https://DynamicDevices.github.io/say-hello-code/og-image.png">
 
     <!-- Security headers via meta tags (GitHub Pages compatible) -->
@@ -53,7 +53,7 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Say Hello Code",
-        "description": "A comprehensive collection of Hello World programs in 200+ programming languages for educational purposes",
+        "description": "A comprehensive collection of Hello World programs in programming languages for educational purposes",
         "url": "https://DynamicDevices.github.io/say-hello-code",
         "author": {
             "@type": "Organization",
@@ -82,7 +82,7 @@
         <!-- Header section with title, subtitle, search, and sorting -->
         <div class="header">
             <h1 class="title">Say Hello Code</h1>
-            <p class="subtitle">Explore "Hello, World!" programs in 200+ programming languages from 1957 to today</p>
+            <p class="subtitle">Explore "Hello, World!" programs in programming languages from 1949 to today</p>
             <p class="creator">Created by <a href="https://www.dynamicdevices.co.uk" target="_blank" rel="noopener noreferrer">Dynamic Devices Ltd</a> in collaboration with <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">Claude.ai</a></p>
             
             <!-- Search input -->
@@ -131,15 +131,15 @@
         <!-- Statistics section -->
         <div class="stats">
             <div class="stat-item">
-                <span class="stat-number" id="totalLanguages">200+</span>
+                <span class="stat-number" id="totalLanguages">Loading...</span>
                 <span class="stat-label">Languages</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number">67</span>
+                <span class="stat-number" id="yearsOfHistory">Loading...</span>
                 <span class="stat-label">Years of History</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number" id="visibleLanguages">200+</span>
+                <span class="stat-number" id="visibleLanguages">Loading...</span>
                 <span class="stat-label">Showing</span>
             </div>
         </div>
@@ -157,7 +157,7 @@
     <!-- Footer section with copyright information -->
     <footer class="footer">
         <div class="footer-content">
-            <p><strong>Educational Programming Resource</strong> - Learn coding with Hello World examples in 200+ languages</p>
+            <p><strong>Educational Programming Resource</strong> - Learn coding with Hello World examples in multiple languages</p>
             <p>&copy; 2025 <a href="https://www.dynamicdevices.co.uk" target="_blank" rel="noopener noreferrer" title="Dynamic Devices - Software Development Company">Dynamic Devices Ltd</a>.
             Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" title="Creative Commons Attribution 4.0">CC BY 4.0</a>.</p>
             <p>Created in collaboration with <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" title="Claude AI Assistant">Claude.ai</a> | Perfect for students, educators, and developers</p>
@@ -206,6 +206,91 @@
             });
 
             console.log('Total languages loaded:', allLanguages.length);
+
+            // Calculate and update statistics dynamically
+            updateStatistics(allLanguages);
+        }
+
+        // Function to calculate and update statistics dynamically
+        function updateStatistics(languages) {
+            // Calculate total languages
+            var totalLanguages = languages.length;
+
+            // Calculate year range
+            var years = languages.map(function(lang) { return lang.year; }).filter(function(year) { return year && year > 0; });
+            var minYear = Math.min.apply(Math, years);
+            var maxYear = Math.max.apply(Math, years);
+            var yearRange = maxYear - minYear;
+
+            // Update the statistics in the DOM
+            document.getElementById('totalLanguages').textContent = totalLanguages;
+            document.getElementById('visibleLanguages').textContent = totalLanguages;
+            document.getElementById('yearsOfHistory').textContent = yearRange;
+
+            // Update page title dynamically
+            document.title = 'Say Hello Code - ' + totalLanguages + ' Programming Languages | Learn to Code';
+
+            // Update meta descriptions
+            var metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) {
+                metaDesc.setAttribute('content', 'Explore Hello World programs in ' + totalLanguages + ' programming languages from ' + minYear + ' to today. Perfect for students learning to code, comparing syntax, and discovering new programming languages.');
+            }
+
+            // Update Open Graph meta tags
+            var ogTitle = document.querySelector('meta[property="og:title"]');
+            if (ogTitle) {
+                ogTitle.setAttribute('content', 'Say Hello Code - ' + totalLanguages + ' Programming Languages');
+            }
+
+            var ogDesc = document.querySelector('meta[property="og:description"]');
+            if (ogDesc) {
+                ogDesc.setAttribute('content', 'Explore Hello World programs in ' + totalLanguages + ' programming languages. Perfect for students learning to code and discovering new programming languages.');
+            }
+
+            // Update Twitter meta tags
+            var twitterTitle = document.querySelector('meta[property="twitter:title"]');
+            if (twitterTitle) {
+                twitterTitle.setAttribute('content', 'Say Hello Code - ' + totalLanguages + ' Programming Languages');
+            }
+
+            var twitterDesc = document.querySelector('meta[property="twitter:description"]');
+            if (twitterDesc) {
+                twitterDesc.setAttribute('content', 'Explore Hello World programs in ' + totalLanguages + ' programming languages. Perfect for students learning to code.');
+            }
+
+            // Update structured data
+            var structuredDataScript = document.querySelector('script[type="application/ld+json"]');
+            if (structuredDataScript) {
+                try {
+                    var structuredData = JSON.parse(structuredDataScript.textContent);
+                    structuredData.description = 'A comprehensive collection of Hello World programs in ' + totalLanguages + ' programming languages for educational purposes';
+                    structuredDataScript.textContent = JSON.stringify(structuredData, null, 4);
+                } catch (e) {
+                    console.warn('Could not update structured data:', e);
+                }
+            }
+
+            // Update subtitle
+            var subtitle = document.querySelector('.subtitle');
+            if (subtitle) {
+                subtitle.textContent = 'Explore "Hello, World!" programs in ' + totalLanguages + ' programming languages from ' + minYear + ' to today';
+            }
+
+            // Update footer description
+            var footerDesc = document.querySelector('footer p strong');
+            if (footerDesc && footerDesc.parentNode) {
+                footerDesc.parentNode.innerHTML = '<strong>Educational Programming Resource</strong> - Learn coding with Hello World examples in ' + totalLanguages + ' languages';
+            }
+
+            // Store values globally for use in other functions
+            window.totalLanguagesCount = totalLanguages;
+            window.minYear = minYear;
+            window.maxYear = maxYear;
+
+            console.log('Statistics updated:', {
+                totalLanguages: totalLanguages,
+                yearRange: yearRange + ' years (' + minYear + '-' + maxYear + ')'
+            });
         }
 
         var filteredLanguages = allLanguages.slice();

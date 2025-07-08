@@ -1,5 +1,5 @@
 // Consolidated Programming Languages Collection
-// Total Languages: 237
+// Total Languages: 247
 // Generated: 2025-01-27T12:00:00.000Z
 
 var languages = [
@@ -4837,6 +4837,29 @@ var languages = [
         "sourceFile": "functional-languages.js"
     },
     {
+        "name": "PureScript",
+        "year": 2013,
+        "creator": "Phil Freeman",
+        "code": "module Main where\n\nimport Prelude\nimport Effect.Console (log)\n\nmain = log \"Hello, World!\"",
+        "desc": "PureScript is a strongly-typed, purely-functional programming language that compiles to JavaScript, inspired by Haskell.",
+        "popularity": 15,
+        "categories": [
+            "Functional",
+            "Web"
+        ],
+        "primaryCategory": "Functional",
+        "paradigms": [
+            "Functional"
+        ],
+        "domains": [
+            "Web Development",
+            "Frontend Development"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "functional-languages.js"
+    },
+    {
         "name": "ReasonML",
         "year": 2016,
         "creator": "Jordan Walke",
@@ -4882,6 +4905,105 @@ var languages = [
         "difficulty": "Advanced",
         "typing": "Static",
         "sourceFile": "parallel-languages.js"
+    },
+    {
+        "name": "VHDL",
+        "year": 1987,
+        "creator": "U.S. Department of Defense",
+        "code": "library IEEE;\nuse IEEE.STD_LOGIC_1164.ALL;\n\nentity hello is\nend hello;\n\narchitecture Behavioral of hello is\nbegin\n    process\n    begin\n        report \"Hello, World!\";\n        wait;\n    end process;\nend Behavioral;",
+        "desc": "VHDL (VHSIC Hardware Description Language) is a hardware description language used in electronic design automation to describe digital and mixed-signal systems.",
+        "popularity": 25,
+        "categories": [
+            "Hardware",
+            "Engineering"
+        ],
+        "primaryCategory": "Hardware",
+        "paradigms": [
+            "Concurrent",
+            "Event-driven"
+        ],
+        "domains": [
+            "Hardware Design",
+            "Digital Systems",
+            "FPGA Programming"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "hardware-languages.js"
+    },
+    {
+        "name": "Verilog",
+        "year": 1984,
+        "creator": "Phil Moorby",
+        "code": "module hello;\n  initial begin\n    $display(\"Hello, World!\");\n    $finish;\n  end\nendmodule",
+        "desc": "Verilog is a hardware description language used to model electronic systems, widely used in the design and verification of digital circuits.",
+        "popularity": 30,
+        "categories": [
+            "Hardware",
+            "Engineering"
+        ],
+        "primaryCategory": "Hardware",
+        "paradigms": [
+            "Concurrent",
+            "Event-driven"
+        ],
+        "domains": [
+            "Hardware Design",
+            "Digital Systems",
+            "ASIC Design"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "hardware-languages.js"
+    },
+    {
+        "name": "PostScript",
+        "year": 1982,
+        "creator": "John Warnock",
+        "code": "/Helvetica findfont 12 scalefont setfont\n72 720 moveto\n(Hello, World!) show\nshowpage",
+        "desc": "PostScript is a page description language and programming language used primarily in desktop publishing and electronic publishing.",
+        "popularity": 20,
+        "categories": [
+            "Domain-Specific",
+            "Graphics"
+        ],
+        "primaryCategory": "Domain-Specific",
+        "paradigms": [
+            "Stack-based",
+            "Concatenative"
+        ],
+        "domains": [
+            "Desktop Publishing",
+            "Graphics",
+            "Printing"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "graphics-languages.js"
+    },
+    {
+        "name": "SPICE",
+        "year": 1973,
+        "creator": "University of California, Berkeley",
+        "code": "* Hello World SPICE Circuit\n.TITLE Hello World\nVHELLO 1 0 DC 5V\nRLOAD 1 0 1K\n.OP\n.PRINT DC V(1)\n.END",
+        "desc": "SPICE (Simulation Program with Integrated Circuit Emphasis) is a general-purpose analog electronic circuit simulator.",
+        "popularity": 15,
+        "categories": [
+            "Domain-Specific",
+            "Engineering"
+        ],
+        "primaryCategory": "Domain-Specific",
+        "paradigms": [
+            "Declarative"
+        ],
+        "domains": [
+            "Circuit Simulation",
+            "Electronic Design",
+            "Engineering"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Untyped",
+        "sourceFile": "engineering-languages.js"
     },
     {
         "name": "GAMS",
@@ -5029,6 +5151,55 @@ var languages = [
         "sourceFile": "statistical-languages.js"
     },
     {
+        "name": "Mojo",
+        "year": 2023,
+        "creator": "Modular Inc.",
+        "code": "def main():\n    print(\"Hello, World!\")",
+        "desc": "Mojo is a new programming language designed for AI development, combining Python's usability with C's performance.",
+        "popularity": 25,
+        "categories": [
+            "Modern",
+            "AI/ML"
+        ],
+        "primaryCategory": "Modern",
+        "paradigms": [
+            "Object-Oriented",
+            "Functional"
+        ],
+        "domains": [
+            "Artificial Intelligence",
+            "Machine Learning",
+            "High Performance Computing"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "modern-languages.js"
+    },
+    {
+        "name": "Carbon",
+        "year": 2022,
+        "creator": "Google",
+        "code": "package Sample api;\n\nfn Main() -> i32 {\n    Print(\"Hello, World!\");\n    return 0;\n}",
+        "desc": "Carbon is an experimental programming language by Google, designed as a C++ successor with modern features and better tooling.",
+        "popularity": 20,
+        "categories": [
+            "Modern",
+            "Systems"
+        ],
+        "primaryCategory": "Modern",
+        "paradigms": [
+            "Object-Oriented",
+            "Generic"
+        ],
+        "domains": [
+            "System Programming",
+            "Performance-Critical Applications"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "modern-languages.js"
+    },
+    {
         "name": "Jai",
         "year": 2014,
         "creator": "Jonathan Blow",
@@ -5053,6 +5224,29 @@ var languages = [
         "sourceFile": "game-languages.js"
     },
     {
+        "name": "Odin",
+        "year": 2016,
+        "creator": "Ginger Bill",
+        "code": "package main\n\nimport \"core:fmt\"\n\nmain :: proc() {\n    fmt.println(\"Hello, World!\");\n}",
+        "desc": "Odin is a general-purpose programming language designed as an alternative to C, with modern features and simplicity.",
+        "popularity": 12,
+        "categories": [
+            "Modern",
+            "Systems"
+        ],
+        "primaryCategory": "Systems",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "System Programming",
+            "Game Development"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "systems-languages.js"
+    },
+    {
         "name": "Vale",
         "year": 2019,
         "creator": "Evan Ovadia",
@@ -5075,6 +5269,30 @@ var languages = [
         "difficulty": "Advanced",
         "typing": "Static",
         "sourceFile": "systems-languages.js"
+    },
+    {
+        "name": "Pony",
+        "year": 2015,
+        "creator": "Sylvan Clebsch",
+        "code": "actor Main\n  new create(env: Env) =>\n    env.out.print(\"Hello, World!\")",
+        "desc": "Pony is an actor-model programming language designed for high-performance concurrent applications with memory safety.",
+        "popularity": 10,
+        "categories": [
+            "Modern",
+            "Concurrent"
+        ],
+        "primaryCategory": "Concurrent",
+        "paradigms": [
+            "Actor Model",
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Concurrent Programming",
+            "Distributed Systems"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "concurrent-languages.js"
     },
     {
         "name": "AngelScript",
@@ -5147,6 +5365,29 @@ var languages = [
         "difficulty": "Beginner",
         "typing": "Dynamic",
         "sourceFile": "scripting-languages.js"
+    },
+    {
+        "name": "Elm",
+        "year": 2012,
+        "creator": "Evan Czaplicki",
+        "code": "import Html exposing (text)\n\nmain =\n  text \"Hello, World!\"",
+        "desc": "Elm is a functional programming language for creating web browser-based graphical user interfaces, known for its strong type system.",
+        "popularity": 22,
+        "categories": [
+            "Functional",
+            "Web"
+        ],
+        "primaryCategory": "Web",
+        "paradigms": [
+            "Functional"
+        ],
+        "domains": [
+            "Web Development",
+            "Frontend Development"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "web-languages.js"
     }
 ];
 

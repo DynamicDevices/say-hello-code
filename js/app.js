@@ -313,7 +313,7 @@ function generateReferenceLink(languageName) {
         'Bash': 'https://www.gnu.org/software/bash/',
         'PowerShell': 'https://learn.microsoft.com/en-us/powershell/',
         'R': 'https://www.r-project.org/',
-        'MATLAB': 'https://www.mathworks.com/help/matlab/index.html',
+        'MATLAB': 'https://www.mathworks.com/products/matlab.html',
         'Perl': 'https://www.perl.org/',
         'Lua': 'https://www.lua.org/',
         'Haskell': 'https://www.haskell.org/',

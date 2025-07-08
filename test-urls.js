@@ -254,17 +254,85 @@ async function testAllUrls() {
     console.log(`⏰ Timeout: ${results.summary.timeout} (${(results.summary.timeout/results.summary.total*100).toFixed(1)}%)`);
     console.log(`❌ Failed: ${results.summary.failed} (${(results.summary.failed/results.summary.total*100).toFixed(1)}%)`);
     
+    // Enhanced broken links output
     if (results.summary.errors.length > 0) {
         console.log('\n==================================================');
-        console.log('❌ FAILED URLS');
+        console.log('🚨 BROKEN LINKS DETECTED');
         console.log('==================================================');
+        console.log(`Found ${results.summary.errors.length} broken link(s) that need attention:\n`);
+        
+        // Group errors by type for better organization
+        const errorsByType = {
+            timeout: [],
+            networkError: [],
+            httpError: []
+        };
         
         results.summary.errors.forEach(error => {
-            console.log(`${error.language}: ${error.url}`);
-            console.log(`  Status: ${error.status || 'N/A'}`);
-            console.log(`  Error: ${error.error || 'Unknown error'}`);
-            console.log('');
+            if (error.error === 'timeout') {
+                errorsByType.timeout.push(error);
+            } else if (error.error && !error.status) {
+                errorsByType.networkError.push(error);
+            } else {
+                errorsByType.httpError.push(error);
+            }
         });
+        
+        // Display timeout errors
+        if (errorsByType.timeout.length > 0) {
+            console.log('⏰ TIMEOUT ERRORS:');
+            console.log('─'.repeat(50));
+            errorsByType.timeout.forEach((error, index) => {
+                console.log(`${index + 1}. ${error.language}`);
+                console.log(`   URL: ${error.url}`);
+                console.log(`   Issue: Request timed out after 15 seconds`);
+                console.log('');
+            });
+        }
+        
+        // Display network errors
+        if (errorsByType.networkError.length > 0) {
+            console.log('🌐 NETWORK ERRORS:');
+            console.log('─'.repeat(50));
+            errorsByType.networkError.forEach((error, index) => {
+                console.log(`${index + 1}. ${error.language}`);
+                console.log(`   URL: ${error.url}`);
+                console.log(`   Issue: ${error.error}`);
+                console.log('');
+            });
+        }
+        
+        // Display HTTP errors
+        if (errorsByType.httpError.length > 0) {
+            console.log('🔗 HTTP ERRORS:');
+            console.log('─'.repeat(50));
+            errorsByType.httpError.forEach((error, index) => {
+                console.log(`${index + 1}. ${error.language}`);
+                console.log(`   URL: ${error.url}`);
+                console.log(`   Status: ${error.status}`);
+                console.log(`   Issue: ${getHttpErrorDescription(error.status)}`);
+                console.log('');
+            });
+        }
+        
+        console.log('==================================================');
+        console.log('🔧 RECOMMENDED ACTIONS:');
+        console.log('==================================================');
+        console.log('1. Review the broken URLs listed above');
+        console.log('2. Update the baseUrls object in js/app.js with working URLs');
+        console.log('3. Test fixes locally with: node test-urls.js');
+        console.log('4. Consider adding fallback URLs for frequently broken links');
+        console.log('');
+        
+        // Output broken links in a format easy to copy/paste
+        console.log('📋 BROKEN URLS (Copy/Paste Format):');
+        console.log('─'.repeat(50));
+        results.summary.errors.forEach(error => {
+            console.log(`${error.language}: ${error.url}`);
+        });
+        console.log('');
+    } else {
+        console.log('\n🎉 All URLs are working correctly!');
     }
     
     const reportFile = 'url-test-report.json';
@@ -272,6 +340,25 @@ async function testAllUrls() {
     console.log(`📄 Detailed report saved to: ${reportFile}`);
     
     return results;
+}
+
+// Helper function to get human-readable HTTP error descriptions
+function getHttpErrorDescription(statusCode) {
+    const descriptions = {
+        400: 'Bad Request - The server cannot process the request',
+        401: 'Unauthorized - Authentication required',
+        403: 'Forbidden - Access denied',
+        404: 'Not Found - The requested resource does not exist',
+        405: 'Method Not Allowed - HTTP method not supported',
+        408: 'Request Timeout - Server timed out waiting for request',
+        429: 'Too Many Requests - Rate limit exceeded',
+        500: 'Internal Server Error - Server encountered an error',
+        502: 'Bad Gateway - Invalid response from upstream server',
+        503: 'Service Unavailable - Server temporarily unavailable',
+        504: 'Gateway Timeout - Upstream server timed out'
+    };
+    
+    return descriptions[statusCode] || `HTTP ${statusCode} error`;
 }
 
 // Run the test if this script is executed directly

@@ -35,28 +35,41 @@ jobs:
         echo "Starting URL tests..."
         node test-urls.js > url-test-output.txt 2>&1
         TEST_EXIT_CODE=$?
-        
+
         # Extract summary from output
-        echo "## URL Test Results" >> $GITHUB_STEP_SUMMARY
+        echo "## 🔗 URL Test Results" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo '```' >> $GITHUB_STEP_SUMMARY
         grep -A 10 "📊 SUMMARY" url-test-output.txt >> $GITHUB_STEP_SUMMARY || echo "Summary not found" >> $GITHUB_STEP_SUMMARY
         echo '```' >> $GITHUB_STEP_SUMMARY
-        
+
+        # Add failed URLs section to summary if any failures exist
+        FAILED_URLS=$(grep "❌ Failed:" url-test-output.txt | grep -o '[0-9]\+' | head -1 || echo "0")
+        if [ "$FAILED_URLS" -gt "0" ]; then
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## ❌ Failed URLs Details" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          # Extract failed URLs section with better formatting
+          sed -n '/❌ FAILED URLS/,/📄\|$/p' url-test-output.txt | head -50 >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "💡 **Action Required:** Update the failing URLs in \`js/app.js\` baseUrls object" >> $GITHUB_STEP_SUMMARY
+        fi
+
         # Set output variables
         TOTAL_URLS=$(grep "Total URLs tested:" url-test-output.txt | grep -o '[0-9]\+' | head -1 || echo "0")
         SUCCESSFUL_URLS=$(grep "✅ Successful:" url-test-output.txt | grep -o '[0-9]\+' | head -1 || echo "0")
-        FAILED_URLS=$(grep "❌ Failed:" url-test-output.txt | grep -o '[0-9]\+' | head -1 || echo "0")
-        
+
         echo "total_urls=$TOTAL_URLS" >> $GITHUB_OUTPUT
         echo "successful_urls=$SUCCESSFUL_URLS" >> $GITHUB_OUTPUT
         echo "failed_urls=$FAILED_URLS" >> $GITHUB_OUTPUT
         echo "test_exit_code=$TEST_EXIT_CODE" >> $GITHUB_OUTPUT
-        
+
         # Show full output for debugging
         echo "Full test output:"
         cat url-test-output.txt
-        
+
         exit $TEST_EXIT_CODE
       
     - name: Upload test results

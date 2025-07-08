@@ -1,6 +1,14 @@
+
 # Say Hello Code - Project Reference
 
 **Say Hello Code** (sayhellocode.com) - "Hello, World!" programs in 240+ programming languages.
+
+## Repository
+```bash
+git remote -v
+origin  git@github.com:DynamicDevices/say-hello-code.git (fetch)
+origin  git@github.com:DynamicDevices/say-hello-code.git (push)
+```
 
 ## File Structure
 ```

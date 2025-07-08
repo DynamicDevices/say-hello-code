@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sayhellocode.com/sitemap.xml
-
-# Educational programming resource
-# Hello World examples in 200+ programming languages
-# Perfect for students learning to code
+Sitemap: https://DynamicDevices.github.io/say-hello-code/sitemap.xml

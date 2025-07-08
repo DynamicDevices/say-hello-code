@@ -1,0 +1,27 @@
+{
+  "name": "Say Hello Code - Programming Languages Collection",
+  "short_name": "Say Hello Code",
+  "description": "Explore Hello World programs in 200+ programming languages",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#3b82f6",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "developer", "reference"],
+  "lang": "en",
+  "scope": "./"
+}

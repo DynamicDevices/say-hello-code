@@ -1,0 +1,38 @@
+{
+  "name": "say-hello-code",
+  "version": "1.0.0",
+  "description": "A comprehensive collection of Hello World programs in 200+ programming languages",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx http-server . -p 8000",
+    "build": "echo 'GitHub Pages builds automatically'",
+    "test": "echo \"No tests specified\" && exit 0",
+    "validate": "html-validate index.html",
+    "lighthouse": "lighthouse http://localhost:8000 --output html --output-path ./lighthouse-report.html",
+    "deploy": "echo 'Push to main branch to deploy to GitHub Pages'"
+  },
+  "keywords": [
+    "programming",
+    "hello-world",
+    "education",
+    "coding",
+    "languages",
+    "tutorial"
+  ],
+  "author": "Dynamic Devices Ltd",
+  "license": "CC-BY-4.0",
+  "devDependencies": {
+    "html-validate": "^8.7.4",
+    "lighthouse": "^10.4.0",
+    "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DynamicDevices/say-hello-code.git"
+  },
+  "homepage": "https://DynamicDevices.github.io/say-hello-code",
+  "bugs": {
+    "url": "https://github.com/DynamicDevices/say-hello-code/issues"
+  }
+}

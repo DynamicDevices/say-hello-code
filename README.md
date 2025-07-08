@@ -2,6 +2,19 @@
 
 A comprehensive collection of "Hello, World!" programs in 200+ programming languages, designed to help students and aspiring programmers explore the vast landscape of programming languages.
 
+## 📄 License
+
+This work is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+
+**You are free to:**
+- ✅ **Share** — copy and redistribute the material in any medium or format
+- ✅ **Adapt** — remix, transform, and build upon the material for any purpose, even commercially
+
+**Under the following terms:**
+- 📝 **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made
+
+[![CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
+
 ## 🎯 Purpose
 
 This collection was created to:
@@ -18,56 +31,50 @@ This collection was created to:
 - **Interactive Search & Filtering** - Find languages by name, year, creator, or description
 - **Category Filtering** - Filter by language categories (Web, Systems, Functional, etc.)
 - **Rich Metadata** - View programming paradigms, difficulty levels, and typing information
-- **Copy-to-Clipboard** - Easy code copying for experimentation
-- **Language Information** - Learn about each language's history and creator
-- **Responsive Design** - Works perfectly on desktop and mobile devices
-- **Educational Focus** - Designed specifically for learning and exploration
+- **Copy-to-Clipboard** - Easy code copying for quick testing
+- **Responsive Design** - Works perfectly on desktop, tablet, and mobile
+- **Progressive Web App** - Install as an app, works offline
+- **Educational Focus** - Designed specifically for learning and teaching
 
-## 🌐 Live Demo
+## 🏗️ Technical Features
 
-Visit [sayhellocode.com](https://sayhellocode.com) to explore the collection.
-
-## 📁 Project Structure
-
-```
-├── index.html              # Main website
-├── css/
-│   └── styles.css         # Styling
-├── js/
-│   └── languages.js       # Consolidated language data
-├── build_languages.py     # Script to consolidate language files
-└── README.md              # This file
-```
-
-## 🔧 Development
-
-To work with this project locally:
-
-1. Clone the repository
-2. Start a local web server:
-   ```bash
-   python -m http.server 8000
-   ```
-3. Open `http://localhost:8000` in your browser
-
-To rebuild the consolidated language file:
-```bash
-python build_languages.py
-```
-
-## 📚 Educational Use
-
-Perfect for:
-- Computer Science students
-- Programming bootcamps
-- Self-taught developers
-- Coding workshops
-- Language comparison studies
+- **Service Worker** - Offline functionality and fast loading
+- **PWA Manifest** - Installable web app experience  
+- **Performance Monitoring** - Real-time performance metrics
+- **Accessibility** - Screen reader support and keyboard navigation
+- **SEO Optimized** - Rich metadata and structured data
 
 ## 🤝 Contributing
 
-Found a language we're missing? Have a correction? We welcome contributions to make this collection even more comprehensive and educational.
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on how to add new languages or improve the project.
+
+## 🚀 Deployment
+
+This project is optimized for GitHub Pages. See our [Deployment Guide](DEPLOYMENT.md) for setup instructions.
+
+The live site is available at: https://DynamicDevices.github.io/say-hello-code
+
+## 📊 Usage Statistics
+
+- **200+ Languages** supported
+- **67 Years** of programming history (1957-2024)
+- **Multiple Categories** including Web, Systems, Functional, Data Science, and more
+- **Educational Resource** used by students and educators worldwide
+
+## 🙏 Attribution
+
+When using this work, please provide attribution such as:
+
+> "Hello World examples from Say Hello Code by Dynamic Devices Ltd, licensed under CC BY 4.0. Available at https://DynamicDevices.github.io/say-hello-code"
+
+## 📞 Contact
+
+Created by [Dynamic Devices Ltd](https://www.dynamicdevices.co.uk) in collaboration with [Claude.ai](https://claude.ai)
+
+For questions or suggestions: [info@dynamicdevices.co.uk](mailto:info@dynamicdevices.co.uk)
+
+Repository: https://github.com/DynamicDevices/say-hello-code
 
 ---
 
-*Created by [Dynamic Devices Ltd](https://www.dynamicdevices.co.uk) in collaboration with Claude.ai*
+*Perfect for students, educators, developers, and anyone curious about programming languages!*

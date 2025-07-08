@@ -1,12 +1,20 @@
 {
-  "timestamp": "2025-07-08T16:55:55.929Z",
+  "timestamp": "2025-07-08T17:25:08.904Z",
   "summary": {
     "total": 242,
-    "successful": 242,
+    "successful": 241,
     "failed": 0,
     "redirected": 24,
     "timeout": 0,
-    "errors": []
+    "errors": [],
+    "botRestricted": 1,
+    "botRestrictedUrls": [
+      {
+        "language": "AWK",
+        "url": "https://httpbin.org/status/403",
+        "status": 403
+      }
+    ]
   },
   "details": [
     {
@@ -59,9 +67,9 @@
     },
     {
       "language": "AWK",
-      "url": "https://www.tutorialspoint.com/awk/index.htm",
+      "url": "https://httpbin.org/status/403",
       "error": null,
-      "status": 200
+      "status": 403
     },
     {
       "language": "B",

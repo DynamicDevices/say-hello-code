@@ -210,9 +210,18 @@ async function testAllUrls() {
     // Process results and update summary
     allResults.forEach(testResult => {
         const { language, url, result, status, statusText, isSuccessful, isRedirect } = testResult;
-        
+
         if (result.error === 'timeout') {
             results.summary.timeout++;
+        } else if (result.status === 403) {
+            // 403 Forbidden - likely bot restriction, log as warning but don't count as failure
+            results.summary.botRestricted = (results.summary.botRestricted || 0) + 1;
+            results.summary.botRestrictedUrls = results.summary.botRestrictedUrls || [];
+            results.summary.botRestrictedUrls.push({
+                language: language,
+                url: url,
+                status: result.status
+            });
         } else if (result.error || (result.status && (result.status < 200 || result.status >= 400))) {
             results.summary.failed++;
             results.summary.errors.push({
@@ -227,15 +236,24 @@ async function testAllUrls() {
                 results.summary.redirected++;
             }
         }
-        
+
         const languageName = language.padEnd(20);
         const statusDisplay = statusText.toString().padEnd(3);
-        console.log(`${status} ${languageName} | ${statusDisplay} | ${url}`);
-        
+
+        // Use different icon for 403 bot restrictions
+        let displayStatus = status;
+        if (result.status === 403) {
+            displayStatus = '🤖'; // Bot icon for restricted access
+        }
+
+        console.log(`${displayStatus} ${languageName} | ${statusDisplay} | ${url}`);
+
         if (result.error && result.error !== 'timeout') {
             console.log(`   Error: ${result.error}`);
+        } else if (result.status === 403) {
+            console.log(`   Note: Access restricted (likely bot detection)`);
         }
-        
+
         results.details.push({
             language: language,
             url: url,
@@ -251,6 +269,7 @@ async function testAllUrls() {
     console.log(`Total URLs tested: ${results.summary.total}`);
     console.log(`✅ Successful: ${results.summary.successful} (${(results.summary.successful/results.summary.total*100).toFixed(1)}%)`);
     console.log(`🔄 Redirected: ${results.summary.redirected} (${(results.summary.redirected/results.summary.total*100).toFixed(1)}%)`);
+    console.log(`🤖 Bot Restricted: ${results.summary.botRestricted || 0} (${((results.summary.botRestricted || 0)/results.summary.total*100).toFixed(1)}%)`);
     console.log(`⏰ Timeout: ${results.summary.timeout} (${(results.summary.timeout/results.summary.total*100).toFixed(1)}%)`);
     console.log(`❌ Failed: ${results.summary.failed} (${(results.summary.failed/results.summary.total*100).toFixed(1)}%)`);
     
@@ -285,11 +304,11 @@ async function testAllUrls() {
             errorsByType.timeout.forEach((error, index) => {
                 console.log(`${index + 1}. ${error.language}`);
                 console.log(`   URL: ${error.url}`);
-                console.log(`   Issue: Request timed out after 15 seconds`);
+                console.log(`   Issue: Request timed out after 60 seconds`);
                 console.log('');
             });
         }
-        
+
         // Display network errors
         if (errorsByType.networkError.length > 0) {
             console.log('🌐 NETWORK ERRORS:');
@@ -334,11 +353,69 @@ async function testAllUrls() {
     } else {
         console.log('\n🎉 All URLs are working correctly!');
     }
-    
+
+    // Generate and save detailed report
     const reportFile = 'url-test-report.json';
     fs.writeFileSync(reportFile, JSON.stringify(results, null, 2));
-    console.log(`📄 Detailed report saved to: ${reportFile}`);
-    
+
+    // Display results header
+    console.log('\n==================================================');
+    console.log('📊 URL TEST RESULTS');
+    console.log('==================================================');
+
+    if (results.summary.errors.length > 0) {
+        // Display broken URLs
+        console.log(`\n❌ Found ${results.summary.errors.length} broken URL(s):\n`);
+        results.summary.errors.forEach((error, index) => {
+            console.log(`${index + 1}. ${error.language}`);
+            console.log(`   URL: ${error.url}`);
+            console.log('');
+        });
+
+        // Display action items
+        console.log('==================================================');
+        console.log('🔧 RECOMMENDED ACTIONS:');
+        console.log('==================================================');
+        console.log('1. Review the broken URLs listed above');
+        console.log('2. Update the baseUrls object in js/app.js with working URLs');
+        console.log('3. Test fixes locally with: node test-urls.js');
+        console.log('4. Consider adding fallback URLs for frequently broken links');
+        console.log('');
+
+        // Copy/paste format for quick reference
+        console.log('📋 BROKEN URLS (Copy/Paste Format):');
+        console.log('─'.repeat(50));
+        results.summary.errors.forEach(error => {
+            console.log(`${error.language}: ${error.url}`);
+        });
+        console.log('');
+    } else {
+        console.log('\n🎉 All URLs are working correctly!');
+    }
+
+    // Display bot-restricted URLs if any
+    if (results.summary.botRestrictedUrls && results.summary.botRestrictedUrls.length > 0) {
+        console.log('\n==================================================');
+        console.log('🤖 BOT-RESTRICTED URLS (INFORMATIONAL)');
+        console.log('==================================================');
+        console.log(`Found ${results.summary.botRestrictedUrls.length} URL(s) with bot access restrictions:\n`);
+
+        results.summary.botRestrictedUrls.forEach((restriction, index) => {
+            console.log(`${index + 1}. ${restriction.language}`);
+            console.log(`   URL: ${restriction.url}`);
+            console.log(`   Status: ${restriction.status}`);
+            console.log(`   Issue: Access denied (likely bot detection)`);
+            console.log(`   Note: URL may work fine for human users`);
+            console.log('');
+        });
+
+        console.log('ℹ️  These URLs are not counted as failures since they likely work for human users.');
+        console.log('   Consider testing manually or using alternative documentation sources if needed.');
+    }
+
+    // Report file generation confirmation
+    console.log('\n📄 Detailed report saved to:', reportFile);
+
     return results;
 }
 
@@ -363,7 +440,25 @@ function getHttpErrorDescription(statusCode) {
 
 // Run the test if this script is executed directly
 if (require.main === module) {
-    testAllUrls().catch(console.error);
+    testAllUrls()
+        .then(results => {
+            // Exit with error code only for actual failures (not 403 bot restrictions)
+            const actualFailures = results.summary.failed + results.summary.timeout;
+            if (actualFailures > 0) {
+                console.log(`\n❌ Exiting with error code 1 due to ${actualFailures} actual failure(s)`);
+                process.exit(1);
+            } else {
+                console.log(`\n✅ Exiting with success code 0`);
+                if (results.summary.botRestricted > 0) {
+                    console.log(`   (${results.summary.botRestricted} bot-restricted URLs are not considered failures)`);
+                }
+                process.exit(0);
+            }
+        })
+        .catch(error => {
+            console.error('Script execution failed:', error);
+            process.exit(1);
+        });
 }
 
 module.exports = { testAllUrls, checkUrl, generateReferenceLink, extractBaseUrlsFromAppJs };

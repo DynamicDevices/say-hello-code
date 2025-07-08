@@ -88,6 +88,14 @@ Uses `baseUrls` object for known languages, Google search fallback for others.
 - MathWorks MATLAB → Wikipedia (403 bypass)
 - Various 404s → Current working documentation
 
+### Bot-Restricted URLs (403 Handling)
+**New Feature**: 403 Forbidden errors are now treated as informational warnings rather than failures:
+- **Rationale**: 403 errors are typically due to bot/automated access restrictions, not broken URLs
+- **Behavior**: URLs returning 403 are logged separately and don't cause CI failures
+- **Display**: Shows with 🤖 icon and "Bot Restricted" category in summary
+- **Exit Code**: Script exits with success (0) even with 403 errors present
+- **Use Case**: Allows human users to access URLs that block automated requests
+
 ## Deployment
 - **Host**: GitHub Pages
 - **Domain**: sayhellocode.com (Cloudflare CDN)

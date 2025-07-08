@@ -50,6 +50,42 @@ This collection was created to:
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on how to add new languages or improve the project.
 
+## 🤖 Working with Agentic AI
+
+This project is designed to work seamlessly with Agentic AI assistants like Claude.ai with CodeLLM capabilities. The project includes comprehensive documentation to help AI assistants understand the codebase quickly and make effective contributions.
+
+### For AI Collaboration
+
+When working with an AI assistant on this project, **always start your conversation with**:
+
+```
+"Please review the PROJECT-REFERENCE.md file to understand this project"
+```
+
+This initialization ensures the AI assistant:
+- ✅ Understands the project structure and architecture
+- ✅ Knows the critical technical details (like deduplication logic)
+- ✅ Is aware of common issues and their solutions
+- ✅ Can make informed decisions about code changes
+- ✅ Follows established patterns and conventions
+
+### AI-Friendly Documentation
+
+The project includes several AI-optimized documentation files:
+- **`PROJECT-REFERENCE.md`** - Comprehensive technical reference
+- **`CONTRIBUTING.md`** - Contribution guidelines and workflows
+- **`DEPLOYMENT.md`** - Deployment procedures and requirements
+- **Inline code comments** - Detailed explanations of complex logic
+
+### Benefits of AI Collaboration
+
+- **Faster Development** - AI can quickly understand and modify the codebase
+- **Consistent Code Quality** - AI follows established patterns and conventions
+- **Automated Testing** - AI can help maintain and improve the URL testing system
+- **Documentation Updates** - AI can keep documentation synchronized with code changes
+
+*This project demonstrates effective human-AI collaboration in software development.*
+
 ## 👥 Contributors
 
 We'd like to thank the following people who have helped improve this project:

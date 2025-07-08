@@ -40,10 +40,49 @@
             navigator.serviceWorker.register('./sw.js')
                 .then(function(registration) {
                     console.log('ServiceWorker registration successful with scope: ', registration.scope);
+
+                    // Check for updates every time the page loads
+                    registration.addEventListener('updatefound', function() {
+                        const newWorker = registration.installing;
+                        newWorker.addEventListener('statechange', function() {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                console.log('New service worker available, refreshing...');
+                                window.location.reload();
+                            }
+                        });
+                    });
                 })
                 .catch(function(err) {
                     console.log('ServiceWorker registration failed: ', err);
                 });
         });
     }
+
+    // Manual cache clearing function (for debugging)
+    window.clearSiteCache = function() {
+        if ('caches' in window) {
+            caches.keys().then(function(cacheNames) {
+                return Promise.all(
+                    cacheNames.map(function(cacheName) {
+                        console.log('Deleting cache:', cacheName);
+                        return caches.delete(cacheName);
+                    })
+                );
+            }).then(function() {
+                console.log('All caches cleared. Reloading page...');
+                window.location.reload(true);
+            });
+        }
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for(let registration of registrations) {
+                    registration.unregister();
+                }
+            });
+        }
+    };
+
+    // Display cache clear instructions in console
+    console.log('💡 If you\'re not seeing updated language data, run: clearSiteCache()');
 })();

@@ -1,5 +1,5 @@
 // Consolidated Programming Languages Collection
-// Total Languages: 177
+// Total Languages: 217
 // Generated: 2025-01-27T12:00:00.000Z
 
 var languages = [
@@ -3753,6 +3753,928 @@ var languages = [
         "difficulty": "Intermediate to Advanced",
         "typing": "Static",
         "sourceFile": "emerging-languages.js"
+    },
+    {
+        "name": "ALGOL 60",
+        "year": 1960,
+        "creator": "ALGOL Committee",
+        "code": "begin\n  outstring(1, \"Hello, World!\");\n  outimage(1)\nend",
+        "desc": "ALGOL 60 was a major revision of ALGOL 58, introducing block structure and lexical scoping. It became the foundation for many modern programming languages.",
+        "popularity": 8,
+        "categories": [
+            "Legacy",
+            "Historical"
+        ],
+        "primaryCategory": "Historical",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Scientific Computing"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "historical-languages.js"
+    },
+    {
+        "name": "ALGOL 68",
+        "year": 1968,
+        "creator": "Adriaan van Wijngaarden",
+        "code": "BEGIN\n  print((\"Hello, World!\", newline))\nEND",
+        "desc": "ALGOL 68 was a much more complex language than ALGOL 60, introducing many advanced features like user-defined data types and parallel processing constructs.",
+        "popularity": 7,
+        "categories": [
+            "Legacy",
+            "Historical"
+        ],
+        "primaryCategory": "Historical",
+        "paradigms": [
+            "Procedural",
+            "Concurrent"
+        ],
+        "domains": [
+            "Scientific Computing"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "historical-languages.js"
+    },
+    {
+        "name": "APL",
+        "year": 1966,
+        "creator": "Kenneth E. Iverson",
+        "code": "'Hello, World!'",
+        "desc": "APL (A Programming Language) is an array programming language based on a notation invented by Kenneth E. Iverson. Known for its mathematical symbols and concise expressions.",
+        "popularity": 12,
+        "categories": [
+            "Legacy",
+            "Mathematical"
+        ],
+        "primaryCategory": "Mathematical",
+        "paradigms": [
+            "Array Programming",
+            "Functional"
+        ],
+        "domains": [
+            "Mathematical Computing",
+            "Data Analysis"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Dynamic",
+        "sourceFile": "mathematical-languages.js"
+    },
+    {
+        "name": "AutoHotkey",
+        "year": 2003,
+        "creator": "Chris Mallett",
+        "code": "MsgBox, Hello, World!",
+        "desc": "AutoHotkey is a free, open-source scripting language for Windows that allows users to easily create small to complex scripts for all kinds of tasks.",
+        "popularity": 25,
+        "categories": [
+            "Scripting",
+            "Automation"
+        ],
+        "primaryCategory": "Scripting",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Automation",
+            "Desktop Applications"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Dynamic",
+        "sourceFile": "scripting-languages.js"
+    },
+    {
+        "name": "AutoLISP",
+        "year": 1986,
+        "creator": "Autodesk",
+        "code": "(princ \"Hello, World!\")",
+        "desc": "AutoLISP is a dialect of the LISP programming language built specifically for use with the full version of AutoCAD and its derivatives.",
+        "popularity": 15,
+        "categories": [
+            "Domain-Specific",
+            "CAD"
+        ],
+        "primaryCategory": "Domain-Specific",
+        "paradigms": [
+            "Functional"
+        ],
+        "domains": [
+            "CAD",
+            "Engineering"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "domain-specific-languages.js"
+    },
+    {
+        "name": "Batch",
+        "year": 1981,
+        "creator": "Microsoft",
+        "code": "@echo off\necho Hello, World!",
+        "desc": "Batch is a scripting language for DOS and Windows command line. It consists of a series of commands to be executed by the command-line interpreter.",
+        "popularity": 30,
+        "categories": [
+            "Scripting",
+            "System"
+        ],
+        "primaryCategory": "Scripting",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "System Administration",
+            "Automation"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Untyped",
+        "sourceFile": "scripting-languages.js"
+    },
+    {
+        "name": "BBC BASIC",
+        "year": 1981,
+        "creator": "Sophie Wilson",
+        "code": "PRINT \"Hello, World!\"",
+        "desc": "BBC BASIC is a version of the BASIC programming language released in 1981 as the programming language for the BBC Micro and later for the Acorn Archimedes.",
+        "popularity": 8,
+        "categories": [
+            "Legacy",
+            "Educational"
+        ],
+        "primaryCategory": "Legacy",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Education",
+            "Home Computing"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Dynamic",
+        "sourceFile": "educational-languages.js"
+    },
+    {
+        "name": "Boo",
+        "year": 2003,
+        "creator": "Rodrigo B. de Oliveira",
+        "code": "print \"Hello, World!\"",
+        "desc": "Boo is an object-oriented, statically typed, general-purpose programming language that seeks to make use of the Common Language Infrastructure's support for Unicode, internationalization, and web applications.",
+        "popularity": 10,
+        "categories": [
+            "Object-Oriented",
+            ".NET"
+        ],
+        "primaryCategory": "Object-Oriented",
+        "paradigms": [
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Web Development",
+            ".NET Applications"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "dotnet-languages.js"
+    },
+    {
+        "name": "Clipper",
+        "year": 1985,
+        "creator": "Nantucket Corporation",
+        "code": "? \"Hello, World!\"",
+        "desc": "Clipper is a programming language and compiler that was very popular in the DOS era for developing database applications. It was originally a dBASE III compiler.",
+        "popularity": 5,
+        "categories": [
+            "Legacy",
+            "Database"
+        ],
+        "primaryCategory": "Legacy",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Database Applications",
+            "Business Software"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "database-languages.js"
+    },
+    {
+        "name": "CORAL 66",
+        "year": 1964,
+        "creator": "Royal Radar Establishment",
+        "code": "WRITE(\"Hello, World!\")",
+        "desc": "CORAL 66 was a programming language developed for real-time embedded systems, particularly used in military and aerospace applications in the UK.",
+        "popularity": 2,
+        "categories": [
+            "Legacy",
+            "Embedded"
+        ],
+        "primaryCategory": "Legacy",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Embedded Systems",
+            "Real-time Systems"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "embedded-languages.js"
+    },
+    {
+        "name": "CPL",
+        "year": 1963,
+        "creator": "Christopher Strachey",
+        "code": "§ (main) {\n  write(\"Hello, World!\");\n}",
+        "desc": "CPL (Combined Programming Language) was a multi-paradigm programming language developed in the early 1960s. It was a precursor to BCPL and influenced the development of C.",
+        "popularity": 3,
+        "categories": [
+            "Legacy",
+            "Historical"
+        ],
+        "primaryCategory": "Historical",
+        "paradigms": [
+            "Multi-paradigm"
+        ],
+        "domains": [
+            "System Programming"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "historical-languages.js"
+    },
+    {
+        "name": "dBASE",
+        "year": 1979,
+        "creator": "Wayne Ratliff",
+        "code": "? \"Hello, World!\"",
+        "desc": "dBASE was one of the first database management systems for microcomputers and the dBASE programming language was widely used for business applications.",
+        "popularity": 8,
+        "categories": [
+            "Legacy",
+            "Database"
+        ],
+        "primaryCategory": "Database",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Database Applications",
+            "Business Software"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "database-languages.js"
+    },
+    {
+        "name": "Dylan",
+        "year": 1992,
+        "creator": "Apple Computer",
+        "code": "format-out(\"Hello, World!\\n\");",
+        "desc": "Dylan is a multi-paradigm programming language that includes support for functional and object-oriented programming. Originally developed by Apple Computer.",
+        "popularity": 5,
+        "categories": [
+            "Multi-paradigm",
+            "Functional"
+        ],
+        "primaryCategory": "Multi-paradigm",
+        "paradigms": [
+            "Functional",
+            "Object-Oriented"
+        ],
+        "domains": [
+            "General Purpose"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Dynamic",
+        "sourceFile": "functional-languages.js"
+    },
+    {
+        "name": "Euphoria",
+        "year": 1993,
+        "creator": "Robert Craig",
+        "code": "puts(1, \"Hello, World!\\n\")",
+        "desc": "Euphoria is a programming language created by Robert Craig of Rapid Deployment Software in Toronto. It is simple, flexible, and easy to learn.",
+        "popularity": 8,
+        "categories": [
+            "General Purpose",
+            "Beginner-Friendly"
+        ],
+        "primaryCategory": "General Purpose",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "General Purpose",
+            "Education"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Dynamic",
+        "sourceFile": "educational-languages.js"
+    },
+    {
+        "name": "Forth",
+        "year": 1970,
+        "creator": "Charles H. Moore",
+        "code": ": HELLO ( -- ) .\" Hello, World!\" CR ;\nHELLO",
+        "desc": "Forth is a stack-based, extensible programming language without type checking. It was created by Charles H. Moore in the early 1970s.",
+        "popularity": 12,
+        "categories": [
+            "Stack-based",
+            "Embedded"
+        ],
+        "primaryCategory": "Stack-based",
+        "paradigms": [
+            "Stack-based",
+            "Concatenative"
+        ],
+        "domains": [
+            "Embedded Systems",
+            "Real-time Systems"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Untyped",
+        "sourceFile": "embedded-languages.js"
+    },
+    {
+        "name": "FoxPro",
+        "year": 1984,
+        "creator": "Fox Software",
+        "code": "? \"Hello, World!\"",
+        "desc": "FoxPro was a text-based procedurally oriented programming language and database management system originally published by Fox Software and later by Microsoft.",
+        "popularity": 10,
+        "categories": [
+            "Legacy",
+            "Database"
+        ],
+        "primaryCategory": "Database",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Database Applications",
+            "Business Software"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "database-languages.js"
+    },
+    {
+        "name": "GW-BASIC",
+        "year": 1983,
+        "creator": "Microsoft",
+        "code": "10 PRINT \"Hello, World!\"\n20 END",
+        "desc": "GW-BASIC was a dialect of the BASIC programming language developed by Microsoft for MS-DOS. It was bundled with MS-DOS operating systems.",
+        "popularity": 12,
+        "categories": [
+            "Legacy",
+            "Educational"
+        ],
+        "primaryCategory": "Legacy",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Education",
+            "Home Computing"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Dynamic",
+        "sourceFile": "educational-languages.js"
+    },
+    {
+        "name": "HyperTalk",
+        "year": 1987,
+        "creator": "Bill Atkinson",
+        "code": "answer \"Hello, World!\"",
+        "desc": "HyperTalk is a high-level, procedural programming language created in 1987 by Dan Winkler and used in conjunction with Apple's HyperCard hypermedia program.",
+        "popularity": 5,
+        "categories": [
+            "Legacy",
+            "Hypermedia"
+        ],
+        "primaryCategory": "Legacy",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Hypermedia",
+            "Education"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Dynamic",
+        "sourceFile": "hypermedia-languages.js"
+    },
+    {
+        "name": "Inform",
+        "year": 1993,
+        "creator": "Graham Nelson",
+        "code": "[ Main;\n  print \"Hello, World!^\";\n];",
+        "desc": "Inform is a programming language and design system for interactive fiction originally created by Graham Nelson in 1993.",
+        "popularity": 8,
+        "categories": [
+            "Domain-Specific",
+            "Interactive Fiction"
+        ],
+        "primaryCategory": "Domain-Specific",
+        "paradigms": [
+            "Declarative"
+        ],
+        "domains": [
+            "Interactive Fiction",
+            "Game Development"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "game-languages.js"
+    },
+    {
+        "name": "JOSS",
+        "year": 1963,
+        "creator": "RAND Corporation",
+        "code": "1.1 TYPE \"Hello, World!\"",
+        "desc": "JOSS (JOHNNIAC Open Shop System) was one of the very first interactive, time-sharing programming languages. Developed at RAND Corporation.",
+        "popularity": 2,
+        "categories": [
+            "Legacy",
+            "Historical"
+        ],
+        "primaryCategory": "Historical",
+        "paradigms": [
+            "Interactive"
+        ],
+        "domains": [
+            "Scientific Computing"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "historical-languages.js"
+    },
+    {
+        "name": "Korn Shell",
+        "year": 1983,
+        "creator": "David Korn",
+        "code": "#!/bin/ksh\necho \"Hello, World!\"",
+        "desc": "The Korn shell (ksh) is a Unix shell which was developed by David Korn at Bell Labs in the early 1980s and announced at USENIX in 1983.",
+        "popularity": 15,
+        "categories": [
+            "Shell",
+            "System"
+        ],
+        "primaryCategory": "Shell",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "System Administration",
+            "Scripting"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Untyped",
+        "sourceFile": "shell-languages.js"
+    },
+    {
+        "name": "LabVIEW",
+        "year": 1986,
+        "creator": "National Instruments",
+        "code": "// Visual programming - displays \"Hello, World!\" in a string indicator",
+        "desc": "LabVIEW is a system-design platform and development environment for a visual programming language from National Instruments.",
+        "popularity": 20,
+        "categories": [
+            "Visual Programming",
+            "Engineering"
+        ],
+        "primaryCategory": "Visual Programming",
+        "paradigms": [
+            "Visual Programming",
+            "Dataflow"
+        ],
+        "domains": [
+            "Engineering",
+            "Scientific Computing",
+            "Instrumentation"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "visual-languages.js"
+    },
+    {
+        "name": "Lingo",
+        "year": 1988,
+        "creator": "John H. Thompson",
+        "code": "put \"Hello, World!\"",
+        "desc": "Lingo is a verbose object-oriented (OO) scripting language developed by John H. Thompson for use in Adobe Director (formerly Macromedia Director).",
+        "popularity": 5,
+        "categories": [
+            "Legacy",
+            "Multimedia"
+        ],
+        "primaryCategory": "Legacy",
+        "paradigms": [
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Multimedia",
+            "Interactive Media"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "multimedia-languages.js"
+    },
+    {
+        "name": "LiveCode",
+        "year": 1993,
+        "creator": "Scott Raney",
+        "code": "answer \"Hello, World!\"",
+        "desc": "LiveCode is a cross-platform rapid application development runtime system inspired by HyperCard. Originally called MetaCard, then Revolution.",
+        "popularity": 12,
+        "categories": [
+            "RAD",
+            "Cross-platform"
+        ],
+        "primaryCategory": "RAD",
+        "paradigms": [
+            "Event-driven"
+        ],
+        "domains": [
+            "Rapid Application Development",
+            "Mobile Development"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Dynamic",
+        "sourceFile": "rad-languages.js"
+    },
+    {
+        "name": "Modula-3",
+        "year": 1988,
+        "creator": "Luca Cardelli",
+        "code": "MODULE Hello EXPORTS Main;\nIMPORT IO;\nBEGIN\n  IO.Put(\"Hello, World!\\n\");\nEND Hello.",
+        "desc": "Modula-3 is a programming language conceived as a successor to an upgraded version of Modula-2 known as Modula-2+. It was developed at Digital Equipment Corporation and Olivetti.",
+        "popularity": 5,
+        "categories": [
+            "Legacy",
+            "System Programming"
+        ],
+        "primaryCategory": "Legacy",
+        "paradigms": [
+            "Procedural",
+            "Object-Oriented"
+        ],
+        "domains": [
+            "System Programming"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "system-languages.js"
+    },
+    {
+        "name": "Mumps",
+        "year": 1966,
+        "creator": "Neil Pappalardo",
+        "code": "WRITE \"Hello, World!\",!",
+        "desc": "MUMPS (Massachusetts General Hospital Utility Multi-Programming System) is a general-purpose computer programming language originally designed for the healthcare industry.",
+        "popularity": 8,
+        "categories": [
+            "Legacy",
+            "Healthcare"
+        ],
+        "primaryCategory": "Legacy",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Healthcare",
+            "Database Applications"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "healthcare-languages.js"
+    },
+    {
+        "name": "Newspeak",
+        "year": 2006,
+        "creator": "Gilad Bracha",
+        "code": "class HelloWorld = (\npublic main = (\n  'Hello, World!' out\n)\n)",
+        "desc": "Newspeak is a programming language and platform in the tradition of Smalltalk and Self being developed by a team led by Gilad Bracha.",
+        "popularity": 3,
+        "categories": [
+            "Object-Oriented",
+            "Research"
+        ],
+        "primaryCategory": "Research",
+        "paradigms": [
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Research"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Dynamic",
+        "sourceFile": "research-languages.js"
+    },
+    {
+        "name": "Occam",
+        "year": 1983,
+        "creator": "David May",
+        "code": "#INCLUDE \"consts.inc\"\n#INCLUDE \"hostio.inc\"\nPROC main (CHAN OF BYTE keyboard, screen, error)\n  so.write.string.nl (screen, \"Hello, World!\")\n:",
+        "desc": "Occam is a concurrent programming language that builds on the communicating sequential processes (CSP) process algebra, and shares many of its features.",
+        "popularity": 5,
+        "categories": [
+            "Legacy",
+            "Concurrent"
+        ],
+        "primaryCategory": "Legacy",
+        "paradigms": [
+            "Concurrent"
+        ],
+        "domains": [
+            "Parallel Computing",
+            "Embedded Systems"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "concurrent-languages.js"
+    },
+    {
+        "name": "Oz",
+        "year": 1991,
+        "creator": "Gert Smolka",
+        "code": "{System.showInfo \"Hello, World!\"}",
+        "desc": "Oz is a multiparadigm programming language, developed in the Programming Systems Lab at Université catholique de Louvain, for programming language education and research.",
+        "popularity": 5,
+        "categories": [
+            "Multi-paradigm",
+            "Academic"
+        ],
+        "primaryCategory": "Academic",
+        "paradigms": [
+            "Multi-paradigm",
+            "Concurrent"
+        ],
+        "domains": [
+            "Education",
+            "Research"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Dynamic",
+        "sourceFile": "academic-languages.js"
+    },
+    {
+        "name": "Paradox",
+        "year": 1985,
+        "creator": "Richard Schwartz",
+        "code": "MESSAGE \"Hello, World!\"",
+        "desc": "Paradox is a relational database management system originally written by Richard Schwartz and Robert Shostak for DOS. It included its own programming language.",
+        "popularity": 8,
+        "categories": [
+            "Legacy",
+            "Database"
+        ],
+        "primaryCategory": "Database",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Database Applications"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "database-languages.js"
+    },
+    {
+        "name": "Pike",
+        "year": 1994,
+        "creator": "Fredrik Hübinette",
+        "code": "int main() {\n  write(\"Hello, World!\\n\");\n  return 0;\n}",
+        "desc": "Pike is an interpreted, general-purpose, high-level, cross-platform, dynamic programming language, with a syntax similar to that of C.",
+        "popularity": 8,
+        "categories": [
+            "General Purpose",
+            "Interpreted"
+        ],
+        "primaryCategory": "General Purpose",
+        "paradigms": [
+            "Multi-paradigm"
+        ],
+        "domains": [
+            "General Purpose",
+            "Web Development"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "general-languages.js"
+    },
+    {
+        "name": "PL/M",
+        "year": 1972,
+        "creator": "Gary Kildall",
+        "code": "HELLO: PROCEDURE;\n  CALL PRINT('HELLO, WORLD!');\nEND HELLO;",
+        "desc": "PL/M (Programming Language for Microcomputers) is a high-level programming language developed by Intel for their microprocessors.",
+        "popularity": 3,
+        "categories": [
+            "Legacy",
+            "System Programming"
+        ],
+        "primaryCategory": "Legacy",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "System Programming",
+            "Embedded Systems"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "embedded-languages.js"
+    },
+    {
+        "name": "PL/SQL",
+        "year": 1991,
+        "creator": "Oracle Corporation",
+        "code": "BEGIN\n  DBMS_OUTPUT.PUT_LINE('Hello, World!');\nEND;\n/",
+        "desc": "PL/SQL (Procedural Language/Structured Query Language) is Oracle Corporation's procedural extension for SQL and the Oracle relational database.",
+        "popularity": 35,
+        "categories": [
+            "Database",
+            "Procedural"
+        ],
+        "primaryCategory": "Database",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Database Applications",
+            "Enterprise Software"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "database-languages.js"
+    },
+    {
+        "name": "Prolog",
+        "year": 1972,
+        "creator": "Alain Colmerauer",
+        "code": ":- write('Hello, World!'), nl.",
+        "desc": "Prolog is a logic programming language associated with artificial intelligence and computational linguistics. It was created by Alain Colmerauer and Philippe Roussel.",
+        "popularity": 15,
+        "categories": [
+            "Logic Programming",
+            "AI"
+        ],
+        "primaryCategory": "Logic Programming",
+        "paradigms": [
+            "Logic Programming"
+        ],
+        "domains": [
+            "Artificial Intelligence",
+            "Expert Systems"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Dynamic",
+        "sourceFile": "ai-languages.js"
+    },
+    {
+        "name": "QBasic",
+        "year": 1991,
+        "creator": "Microsoft",
+        "code": "PRINT \"Hello, World!\"",
+        "desc": "QBasic is an IDE and interpreter for a variant of the BASIC programming language which is based on QuickBASIC. It was developed and marketed by Microsoft.",
+        "popularity": 15,
+        "categories": [
+            "Legacy",
+            "Educational"
+        ],
+        "primaryCategory": "Educational",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Education",
+            "Beginner Programming"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Dynamic",
+        "sourceFile": "educational-languages.js"
+    },
+    {
+        "name": "RPG",
+        "year": 1959,
+        "creator": "IBM",
+        "code": "     C                   DSPLY     'Hello, World!'",
+        "desc": "RPG (Report Program Generator) is a high-level programming language for business applications, originally developed by IBM in 1959.",
+        "popularity": 12,
+        "categories": [
+            "Legacy",
+            "Business"
+        ],
+        "primaryCategory": "Legacy",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Business Applications",
+            "Mainframe Computing"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "business-languages.js"
+    },
+    {
+        "name": "Simula",
+        "year": 1962,
+        "creator": "Ole-Johan Dahl",
+        "code": "Begin\n   OutText(\"Hello, World!\");\n   Outimage;\nEnd;",
+        "desc": "Simula is the name of two simulation programming languages, Simula I and Simula 67, developed in the 1960s at the Norwegian Computing Center. It introduced object-oriented programming.",
+        "popularity": 8,
+        "categories": [
+            "Legacy",
+            "Historical",
+            "Object-Oriented"
+        ],
+        "primaryCategory": "Historical",
+        "paradigms": [
+            "Object-Oriented",
+            "Procedural"
+        ],
+        "domains": [
+            "Simulation",
+            "Scientific Computing"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "historical-languages.js"
+    },
+    {
+        "name": "Smalltalk",
+        "year": 1972,
+        "creator": "Alan Kay",
+        "code": "Transcript show: 'Hello, World!'.",
+        "desc": "Smalltalk is an object-oriented, dynamically typed reflective programming language. It was designed and created in part for educational use at Xerox PARC by Alan Kay and others.",
+        "popularity": 12,
+        "categories": [
+            "Object-Oriented",
+            "Educational"
+        ],
+        "primaryCategory": "Object-Oriented",
+        "paradigms": [
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Education",
+            "Research"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "educational-languages.js"
+    },
+    {
+        "name": "Turbo Pascal",
+        "year": 1983,
+        "creator": "Anders Hejlsberg",
+        "code": "program HelloWorld;\nbegin\n  writeln('Hello, World!');\nend.",
+        "desc": "Turbo Pascal is a software development system that includes a compiler and an integrated development environment (IDE) for the Pascal programming language running on CP/M, CP/M-86, and DOS.",
+        "popularity": 18,
+        "categories": [
+            "Legacy",
+            "Educational"
+        ],
+        "primaryCategory": "Educational",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Education",
+            "System Programming"
+        ],
+        "difficulty": "Beginner to Intermediate",
+        "typing": "Static",
+        "sourceFile": "educational-languages.js"
+    },
+    {
+        "name": "WATFIV",
+        "year": 1967,
+        "creator": "University of Waterloo",
+        "code": "      WRITE(6,100)\n100   FORMAT(' HELLO, WORLD!')\n      STOP\n      END",
+        "desc": "WATFIV (WATerloo FORTRAN IV) was a FORTRAN compiler developed at the University of Waterloo for student use in the late 1960s.",
+        "popularity": 3,
+        "categories": [
+            "Legacy",
+            "Educational"
+        ],
+        "primaryCategory": "Legacy",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Education",
+            "Scientific Computing"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "educational-languages.js"
     }
 ];
 

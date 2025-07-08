@@ -314,9 +314,12 @@ var Visualizations = (function() {
         // Process data for scatter plot
         var difficultyMap = {
             'Beginner': 1,
+            'Beginner to Intermediate': 1.5,
             'Intermediate': 2,
             'Intermediate to Advanced': 2.5,
-            'Advanced': 3
+            'Advanced': 3,
+            'Beginner to Advanced': 2,  // Wide range, use middle
+            'Varies': 2  // Unknown/variable, use middle
         };
 
         var scatterData = languages.map(function(lang) {
@@ -357,8 +360,16 @@ var Visualizations = (function() {
                             },
                             body: function(context) {
                                 var ctx = context[0];
-                                var difficultyLabels = ['', 'Beginner', 'Intermediate', 'Advanced'];
-                                var difficulty = difficultyLabels[Math.round(ctx.parsed.x)] || 'Intermediate';
+                                // Create reverse mapping to get original difficulty from numeric value
+                                var reverseDifficultyMap = {
+                                    1: 'Beginner',
+                                    1.5: 'Beginner to Intermediate',
+                                    2: 'Intermediate',
+                                    2.5: 'Intermediate to Advanced',
+                                    3: 'Advanced'
+                                };
+
+                                var difficulty = reverseDifficultyMap[ctx.parsed.x] || 'Intermediate';
                                 return [
                                     'Difficulty: ' + difficulty,
                                     'Popularity: ' + ctx.parsed.y
@@ -382,9 +393,15 @@ var Visualizations = (function() {
                         min: 0.5,
                         max: 3.5,
                         ticks: {
-                            stepSize: 1,
+                            stepSize: 0.5,
                             callback: function(value) {
-                                var labels = ['', 'Beginner', 'Intermediate', 'Advanced'];
+                                var labels = {
+                                    1: 'Beginner',
+                                    1.5: 'Beg-Int',
+                                    2: 'Intermediate',
+                                    2.5: 'Int-Adv',
+                                    3: 'Advanced'
+                                };
                                 return labels[value] || '';
                             }
                         }

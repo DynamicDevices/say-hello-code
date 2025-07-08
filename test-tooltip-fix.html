@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip Test - Popularity Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #1a1a2e; color: white; }
+        .chart-container { width: 600px; height: 400px; margin: 20px auto; background: white; padding: 20px; border-radius: 8px; }
+        .test-info { background: #16213e; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        h1, h2 { color: #4fc3f7; }
+    </style>
+</head>
+<body>
+    <div class="test-info">
+        <h1>🧪 Tooltip Test - Popularity vs Difficulty</h1>
+        <p><strong>Testing:</strong> Hover over any dot to see if tooltip shows clean single lines</p>
+        <p><strong>Expected:</strong> Language name + single "Difficulty" line + single "Popularity" line</p>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="popularityChart"></canvas>
+    </div>
+
+    <script>
+        // Test data
+        var testLanguages = [
+            { name: 'JavaScript', difficulty: 'Beginner', popularity: 95 },
+            { name: 'Python', difficulty: 'Beginner', popularity: 90 },
+            { name: 'Java', difficulty: 'Intermediate', popularity: 85 },
+            { name: 'C++', difficulty: 'Advanced', popularity: 75 },
+            { name: 'Rust', difficulty: 'Advanced', popularity: 60 }
+        ];
+
+        // Create chart
+        var ctx = document.getElementById('popularityChart').getContext('2d');
+        
+        var difficultyMap = {
+            'Beginner': 1,
+            'Intermediate': 2,
+            'Advanced': 3
+        };
+
+        var scatterData = testLanguages.map(function(lang) {
+            return {
+                x: difficultyMap[lang.difficulty] || 2,
+                y: lang.popularity || 0,
+                label: lang.name
+            };
+        });
+
+        new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Languages',
+                    data: scatterData,
+                    backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1,
+                    pointRadius: 8,
+                    pointHoverRadius: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        displayColors: false,
+                        filter: function(tooltipItem) {
+                            // Only show tooltip for the first item to avoid duplicates
+                            return tooltipItem.datasetIndex === 0;
+                        },
+                        callbacks: {
+                            title: function(context) {
+                                return context[0].raw.label;
+                            },
+                            label: function(context) {
+                                var difficultyLabels = ['', 'Beginner', 'Intermediate', 'Advanced'];
+                                var difficulty = difficultyLabels[Math.round(context.parsed.x)] || 'Intermediate';
+                                return 'Difficulty: ' + difficulty;
+                            },
+                            afterLabel: function(context) {
+                                return 'Popularity: ' + context.parsed.y;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Difficulty Level'
+                        },
+                        min: 0.5,
+                        max: 3.5,
+                        ticks: {
+                            stepSize: 1,
+                            callback: function(value) {
+                                var labels = ['', 'Beginner', 'Intermediate', 'Advanced'];
+                                return labels[value] || '';
+                            }
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Popularity Score'
+                        },
+                        min: 0,
+                        max: 100
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

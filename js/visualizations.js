@@ -347,6 +347,11 @@ var Visualizations = (function() {
                         display: false
                     },
                     tooltip: {
+                        displayColors: false,
+                        filter: function(tooltipItem) {
+                            // Only show tooltip for the first item to avoid duplicates
+                            return tooltipItem.datasetIndex === 0;
+                        },
                         callbacks: {
                             title: function(context) {
                                 return context[0].raw.label;

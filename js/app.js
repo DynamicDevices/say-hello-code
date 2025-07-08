@@ -82,10 +82,10 @@ function deduplicateLanguages(languages) {
         var lang = languages[i];
         var normalizedName = lang.name.toLowerCase().trim();
 
-        // Handle common variations
+        // Handle common variations but preserve important special characters
         normalizedName = normalizedName
             .replace(/\s+/g, '') // Remove spaces
-            .replace(/[^\w]/g, ''); // Remove special characters
+            .replace(/[^\w#\+\-\.]/g, ''); // Remove special characters but keep #, +, -, .
 
         if (!seen[normalizedName]) {
             seen[normalizedName] = true;

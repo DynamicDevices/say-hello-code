@@ -30,7 +30,6 @@ var currentSort = 'popularity';
 // DOM elements
 var searchInput, categoryFilter, sortSelect, languagesContainer, noResults;
 
-// Initialize the application when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Get DOM elements
     searchInput = document.getElementById('searchInput');
@@ -39,19 +38,66 @@ document.addEventListener('DOMContentLoaded', function() {
     languagesContainer = document.getElementById('languagesContainer');
     noResults = document.getElementById('noResults');
 
-    // Load languages data
-    if (typeof allLanguages !== 'undefined') {
-        allLanguages = allLanguages;
-        filteredLanguages = allLanguages.slice();
-        
-        // Initial render
-        updateStatistics(filteredLanguages);
-        renderLanguages();
-        
-        // Set up event listeners
-        setupEventListeners();
-    } else {
-        console.error('Languages data not loaded');
+    // Function to initialize the app with language data
+    // Function to initialize the app with language data
+    function initializeApp() {
+        console.log('Attempting to initialize app...');
+        console.log('typeof languages:', typeof languages);
+        console.log('languages defined:', typeof languages !== 'undefined');
+        console.log('languages length:', typeof languages !== 'undefined' ? languages.length : 'N/A');
+
+        if (typeof languages !== 'undefined' && languages.length > 0) {
+            allLanguages = languages;
+            filteredLanguages = allLanguages.slice();
+
+            console.log('Languages loaded successfully:', allLanguages.length, 'languages');
+
+            // Initial render
+            updateStatistics(filteredLanguages);
+            renderLanguages();
+
+            // Set up event listeners
+            setupEventListeners();
+
+            return true; // Success
+        } else {
+            console.error('Languages data not loaded - typeof languages:', typeof languages);
+            console.error('Available global variables:', Object.keys(window).filter(key => key.includes('lang')));
+
+            // Show loading message instead of error initially
+            if (languagesContainer) {
+                languagesContainer.innerHTML = '<div class="loading-message">Loading language data...</div>';
+            }
+            return false; // Failed
+        }
+    }
+
+    // Try to initialize immediately
+    if (!initializeApp()) {
+        // If languages not loaded yet, try again with increasing delays
+        var retryCount = 0;
+        var maxRetries = 10;
+
+        function retryInit() {
+            retryCount++;
+            console.log('Retry attempt', retryCount, 'of', maxRetries);
+
+            if (initializeApp()) {
+                console.log('Successfully initialized on retry', retryCount);
+                return;
+            }
+
+            if (retryCount < maxRetries) {
+                setTimeout(retryInit, retryCount * 100); // Increasing delay
+            } else {
+                console.error('Failed to initialize after', maxRetries, 'attempts');
+                if (languagesContainer) {
+                    languagesContainer.innerHTML = '<div class="error-message">Failed to load language data after multiple attempts. Please refresh the page or clear your browser cache.</div>';
+                }
+            }
+        }
+
+        setTimeout(retryInit, 100);
     }
 });
 
@@ -118,11 +164,16 @@ function filterLanguages() {
 function updateStatistics(languages) {
     var totalLanguagesElement = document.getElementById('totalLanguages');
     var yearRangeElement = document.getElementById('yearRange');
-    
+    var visibleLanguagesElement = document.getElementById('visibleLanguages');
+
     if (totalLanguagesElement) {
-        totalLanguagesElement.textContent = languages.length;
+        totalLanguagesElement.textContent = allLanguages.length;
     }
-    
+
+    if (visibleLanguagesElement) {
+        visibleLanguagesElement.textContent = languages.length;
+    }
+
     if (yearRangeElement && languages.length > 0) {
         var years = languages.map(function(lang) { return lang.year; });
         var minYear = Math.min.apply(Math, years);

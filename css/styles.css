@@ -1351,3 +1351,36 @@ body {
         font-size: 0.85rem;
     }
 }
+
+/* Loading and Error Message Styles */
+.loading-message, .error-message {
+    text-align: center;
+    padding: 40px 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    font-size: 1.1rem;
+}
+
+.loading-message {
+    background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 100%);
+    color: #0277bd;
+    border: 2px solid #81d4fa;
+}
+
+.error-message {
+    background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+    color: #c62828;
+    border: 2px solid #ef9a9a;
+}
+
+.loading-message::before {
+    content: "⏳ ";
+    font-size: 1.5rem;
+    margin-right: 8px;
+}
+
+.error-message::before {
+    content: "⚠️ ";
+    font-size: 1.5rem;
+    margin-right: 8px;
+}

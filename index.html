@@ -333,6 +333,7 @@
 
         function generateReferenceLink(languageName) {
             var baseUrls = {
+                // Popular Languages
                 'Python': 'https://www.python.org/',
                 'JavaScript': 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
                 'Java': 'https://www.oracle.com/java/',
@@ -364,10 +365,578 @@
                 'F#': 'https://fsharp.org/',
                 'OCaml': 'https://ocaml.org/',
                 'Lisp': 'https://common-lisp.net/',
-                'Scheme': 'https://www.scheme.org/'
+                'Scheme': 'https://www.scheme.org/',
+
+                // Systems & Low-level Languages
+                'Assembly x86': 'https://en.wikipedia.org/wiki/X86_assembly_language',
+                'Assembly (x86-64)': 'https://en.wikipedia.org/wiki/X86-64',
+                'Assembly (x86 NASM)': 'https://www.nasm.us/',
+                'Assembly (ARM)': 'https://developer.arm.com/documentation/dui0473/m/writing-arm-assembly-language',
+                'Assembly (MIPS)': 'https://en.wikipedia.org/wiki/MIPS_architecture',
+                'Assembly (RISC-V)': 'https://riscv.org/technical/specifications/',
+                'PDP-11 Assembly': 'https://en.wikipedia.org/wiki/PDP-11_architecture',
+                'Fortran': 'https://fortran-lang.org/',
+                'FORTRAN': 'https://fortran-lang.org/',
+                'Ada': 'https://www.adacore.com/about-ada',
+                'D': 'https://dlang.org/',
+                'Zig': 'https://ziglang.org/',
+                'Carbon': 'https://github.com/carbon-language/carbon-lang',
+                'V': 'https://vlang.io/',
+                'Nim': 'https://nim-lang.org/',
+                'Crystal': 'https://crystal-lang.org/',
+                'Odin': 'https://odin-lang.org/',
+
+                // Web & Frontend
+                'Angular': 'https://angular.io/',
+                'Vue.js': 'https://vuejs.org/',
+                'React': 'https://reactjs.org/',
+                'Svelte': 'https://svelte.dev/',
+                'CoffeeScript': 'https://coffeescript.org/',
+                'Elm': 'https://elm-lang.org/',
+                'PureScript': 'https://www.purescript.org/',
+                'ReScript': 'https://rescript-lang.org/',
+                'JSX': 'https://reactjs.org/docs/introducing-jsx.html',
+                'LESS': 'https://lesscss.org/',
+                'SASS': 'https://sass-lang.com/',
+
+                // Mobile Development
+                'Flutter': 'https://flutter.dev/',
+                'React Native': 'https://reactnative.dev/',
+                'Objective-C': 'https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/',
+                'Xamarin': 'https://dotnet.microsoft.com/apps/xamarin',
+                'Ionic': 'https://ionicframework.com/',
+                'PhoneGap': 'https://phonegap.com/',
+                'Titanium': 'https://titaniumsdk.com/',
+
+                // Functional Languages
+                'Idris': 'https://www.idris-lang.org/',
+                'Idris 2': 'https://www.idris-lang.org/',
+                'Agda': 'https://wiki.portal.chalmers.se/agda/',
+                'Coq': 'https://coq.inria.fr/',
+                'Lean': 'https://leanprover.github.io/',
+                'ML': 'https://www.smlnj.org/',
+                'Standard ML': 'https://www.smlnj.org/',
+                'Miranda': 'https://www.cs.kent.ac.uk/people/staff/dat/miranda/',
+                'Clean': 'https://clean.cs.ru.nl/',
+                'Joy': 'http://www.latrobe.edu.au/humanities/research/research-projects/past-projects/joy-programming-language',
+                'Koka': 'https://koka-lang.github.io/',
+                'Unison': 'https://www.unison-lang.org/',
+
+                // Scripting & Shell
+                'AWK': 'https://www.gnu.org/software/gawk/manual/gawk.html',
+                'Sed': 'https://www.gnu.org/software/sed/manual/sed.html',
+                'Tcl': 'https://www.tcl.tk/',
+                'Expect': 'https://core.tcl-lang.org/expect/',
+                'Zsh': 'https://www.zsh.org/',
+                'Fish': 'https://fishshell.com/',
+                'Csh': 'https://en.wikipedia.org/wiki/C_shell',
+                'Tcsh': 'https://www.tcsh.org/',
+                'Ksh': 'https://www.kornshell.com/',
+                'Korn Shell': 'https://www.kornshell.com/',
+                'Dash': 'https://wiki.ubuntu.com/DashAsBinSh',
+                'Nushell': 'https://www.nushell.sh/',
+                'Xonsh': 'https://xon.sh/',
+
+                // Data & Analytics
+                'Julia': 'https://julialang.org/',
+                'Mathematica': 'https://www.wolfram.com/mathematica/',
+                'Wolfram': 'https://www.wolfram.com/language/',
+                'SAS': 'https://www.sas.com/',
+                'SPSS': 'https://www.ibm.com/products/spss-statistics',
+                'Stata': 'https://www.stata.com/',
+                'Octave': 'https://www.gnu.org/software/octave/',
+                'Maxima': 'https://maxima.sourceforge.io/',
+                'Maple': 'https://www.maplesoft.com/products/maple/',
+                'SageMath': 'https://www.sagemath.org/',
+                'S': 'https://en.wikipedia.org/wiki/S_(programming_language)',
+
+                // Database Languages
+                'PostgreSQL': 'https://www.postgresql.org/',
+                'MySQL': 'https://www.mysql.com/',
+                'SQLite': 'https://www.sqlite.org/',
+                'MongoDB': 'https://www.mongodb.com/',
+                'Cypher': 'https://neo4j.com/developer/cypher/',
+                'GraphQL': 'https://graphql.org/',
+                'PL/SQL': 'https://docs.oracle.com/en/database/oracle/oracle-database/19/lnpls/',
+                'N1QL': 'https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/index.html',
+                'SPARQL': 'https://www.w3.org/TR/sparql11-query/',
+
+                // Enterprise & Legacy
+                'COBOL': 'https://www.ibm.com/docs/en/cobol-zos',
+                'BASIC': 'https://en.wikipedia.org/wiki/BASIC',
+                'QBasic': 'https://en.wikipedia.org/wiki/QBasic',
+                'GW-BASIC': 'https://en.wikipedia.org/wiki/GW-BASIC',
+                'BBC BASIC': 'https://www.bbcbasic.co.uk/',
+                'Pascal': 'https://www.freepascal.org/',
+                'Turbo Pascal': 'https://en.wikipedia.org/wiki/Turbo_Pascal',
+                'Delphi': 'https://www.embarcadero.com/products/delphi',
+                'Visual Basic': 'https://docs.microsoft.com/en-us/dotnet/visual-basic/',
+                'VB.NET': 'https://docs.microsoft.com/en-us/dotnet/visual-basic/',
+                'ALGOL': 'https://en.wikipedia.org/wiki/ALGOL',
+                'ALGOL 60': 'https://en.wikipedia.org/wiki/ALGOL_60',
+                'ALGOL 68': 'https://en.wikipedia.org/wiki/ALGOL_68',
+                'BCPL': 'https://en.wikipedia.org/wiki/BCPL',
+                'B': 'https://en.wikipedia.org/wiki/B_(programming_language)',
+                'CPL': 'https://en.wikipedia.org/wiki/CPL_(programming_language)',
+                'PL/I': 'https://en.wikipedia.org/wiki/PL/I',
+                'PL/M': 'https://en.wikipedia.org/wiki/PL/M',
+                'CORAL 66': 'https://en.wikipedia.org/wiki/CORAL_66',
+                'JOVIAL': 'https://en.wikipedia.org/wiki/JOVIAL',
+                'JOSS': 'https://en.wikipedia.org/wiki/JOSS',
+                'MAD': 'https://en.wikipedia.org/wiki/MAD_(programming_language)',
+                'NELIAC': 'https://en.wikipedia.org/wiki/NELIAC',
+                'Short Code': 'https://en.wikipedia.org/wiki/Short_Code_(computer_language)',
+                'Autocode': 'https://en.wikipedia.org/wiki/Autocode',
+                'FLOW-MATIC': 'https://en.wikipedia.org/wiki/FLOW-MATIC',
+                'WATFIV': 'https://en.wikipedia.org/wiki/WATFIV',
+
+                // Game Development
+                'GDScript': 'https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/',
+                'UnityScript': 'https://docs.unity3d.com/',
+                'AngelScript': 'https://www.angelcode.com/angelscript/',
+                'Squirrel': 'http://squirrel-lang.org/',
+                'Ren\'Py': 'https://www.renpy.org/',
+                'Inform': 'https://ganelson.github.io/inform-website/',
+                'TADS': 'https://www.tads.org/',
+
+                // Esoteric & Educational
+                'Brainfuck': 'https://en.wikipedia.org/wiki/Brainfuck',
+                'Befunge': 'https://en.wikipedia.org/wiki/Befunge',
+                'Whitespace': 'https://en.wikipedia.org/wiki/Whitespace_(programming_language)',
+                'Malbolge': 'https://en.wikipedia.org/wiki/Malbolge',
+                'Chef': 'https://www.dangermouse.net/esoteric/chef.html',
+                'Shakespeare': 'https://en.wikipedia.org/wiki/Shakespeare_Programming_Language',
+                'LOLCODE': 'https://en.wikipedia.org/wiki/LOLCODE',
+                'Piet': 'https://www.dangermouse.net/esoteric/piet.html',
+                'Ook!': 'https://en.wikipedia.org/wiki/Ook!',
+                'Intercal': 'https://en.wikipedia.org/wiki/INTERCAL',
+
+                // Configuration & Markup
+                'YAML': 'https://yaml.org/',
+                'TOML': 'https://toml.io/',
+                'JSON': 'https://www.json.org/',
+                'XML': 'https://www.w3.org/XML/',
+                'Markdown': 'https://daringfireball.net/projects/markdown/',
+                'LaTeX': 'https://www.latex-project.org/',
+                'AsciiDoc': 'https://asciidoc.org/',
+                'reStructuredText': 'https://docutils.sourceforge.io/rst.html',
+                'Org-mode': 'https://orgmode.org/',
+                'WikiText': 'https://www.mediawiki.org/wiki/Wikitext',
+                'Textile': 'https://textile-lang.com/',
+                'Creole': 'http://www.wikicreole.org/',
+
+                // DevOps & Infrastructure
+                'Dockerfile': 'https://docs.docker.com/engine/reference/builder/',
+                'Terraform': 'https://www.terraform.io/',
+                'Ansible': 'https://docs.ansible.com/',
+                'Puppet': 'https://puppet.com/docs/',
+                'SaltStack': 'https://docs.saltproject.io/',
+                'Vagrant': 'https://www.vagrantup.com/docs',
+                'CMake': 'https://cmake.org/documentation/',
+                'Makefile': 'https://www.gnu.org/software/make/manual/make.html',
+                'Gradle': 'https://gradle.org/',
+
+                // Newer & Emerging Languages
+                'Gleam': 'https://gleam.run/',
+                'Roc': 'https://www.roc-lang.org/',
+                'Grain': 'https://grain-lang.org/',
+                'Fennel': 'https://fennel-lang.org/',
+                'Janet': 'https://janet-lang.org/',
+                'Jai': 'https://github.com/BSVino/JaiPrimer/blob/master/JaiPrimer.md',
+                'JAI': 'https://github.com/BSVino/JaiPrimer/blob/master/JaiPrimer.md',
+                'Red': 'https://www.red-lang.org/',
+                'Factor': 'https://factorcode.org/',
+                'Forth': 'https://www.forth.com/',
+                'PostScript': 'https://en.wikipedia.org/wiki/PostScript',
+                'Mojo': 'https://www.modular.com/mojo',
+                'Bend': 'https://github.com/HigherOrderCO/Bend',
+                'Vale': 'https://vale.dev/',
+                'Inko': 'https://inko-lang.org/',
+                'Wren': 'https://wren.io/',
+                'Kitten': 'https://kittenlang.org/',
+
+                // Specialized Languages
+                'Prolog': 'https://www.swi-prolog.org/',
+                'Smalltalk': 'https://squeak.org/',
+                'Self': 'https://selflanguage.org/',
+                'Io': 'https://iolanguage.org/',
+                'Rebol': 'http://www.rebol.com/',
+                'Logo': 'https://en.wikipedia.org/wiki/Logo_(programming_language)',
+                'Scratch': 'https://scratch.mit.edu/',
+                'LiveCode': 'https://livecode.com/',
+                'HyperTalk': 'https://en.wikipedia.org/wiki/HyperTalk',
+                'Lingo': 'https://en.wikipedia.org/wiki/Lingo_(programming_language)',
+                'Mumps': 'https://en.wikipedia.org/wiki/MUMPS',
+                'APL': 'https://www.dyalog.com/',
+                'J': 'https://www.jsoftware.com/',
+                'K': 'https://kx.com/',
+                'Q': 'https://kx.com/',
+
+                // Additional Languages
+                'ActionScript': 'https://help.adobe.com/en_US/ActionScript/3.0_ProgrammingAS3/',
+                'AppleScript': 'https://developer.apple.com/library/archive/documentation/AppleScript/',
+                'AutoHotkey': 'https://www.autohotkey.com/',
+                'AutoLISP': 'https://help.autodesk.com/view/OARX/2023/ENU/?guid=GUID-C8C7B3A2-7B6D-4F7E-8C7B-7B6D4F7E8C7B',
+                'Batch': 'https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/',
+                'Boo': 'https://boo-language.github.io/',
+                'Cat': 'https://github.com/cdiggins/cat-language',
+                'Chapel': 'https://chapel-lang.org/',
+                'Clipper': 'https://en.wikipedia.org/wiki/Clipper_(programming_language)',
+                'dBASE': 'https://en.wikipedia.org/wiki/DBase',
+                'Deno': 'https://deno.land/',
+                'Bun': 'https://bun.sh/',
+                'Dylan': 'https://opendylan.org/',
+                'Eiffel': 'https://www.eiffel.org/',
+                'Euphoria': 'https://openeuphoria.org/',
+                'FoxPro': 'https://en.wikipedia.org/wiki/Visual_FoxPro',
+                'Fortress': 'https://en.wikipedia.org/wiki/Fortress_(programming_language)',
+                'Futhark': 'https://futhark-lang.org/',
+                'GAMS': 'https://www.gams.com/',
+                'Groovy': 'https://groovy-lang.org/',
+                'Hack': 'https://hacklang.org/',
+                'Hy': 'https://hylang.org/',
+                'Icon': 'https://www.cs.arizona.edu/icon/',
+                'Isabelle': 'https://isabelle.in.tum.de/',
+                'JScript': 'https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/scripting-articles/',
+                'LabVIEW': 'https://www.ni.com/en-us/shop/labview.html',
+                'LiveScript': 'https://livescript.net/',
+                'Modula-2': 'https://www.modula2.org/',
+                'Modula-3': 'https://www.modula3.org/',
+                'Newspeak': 'https://newspeaklanguage.org/',
+                'Oberon': 'https://www.oberon.ethz.ch/',
+                'Occam': 'https://en.wikipedia.org/wiki/Occam_(programming_language)',
+                'Oz': 'https://mozart.github.io/',
+                'Paradox': 'https://en.wikipedia.org/wiki/Paradox_(database)',
+                'Pike': 'https://pike.lysator.liu.se/',
+                'Pony': 'https://www.ponylang.io/',
+                'Processing': 'https://processing.org/',
+                'Racket': 'https://racket-lang.org/',
+                'ReasonML': 'https://reasonml.github.io/',
+                'Regex': 'https://en.wikipedia.org/wiki/Regular_expression',
+                'Rexx': 'https://www.rexx.org/',
+                'RPG': 'https://en.wikipedia.org/wiki/IBM_RPG',
+                'Simula': 'https://en.wikipedia.org/wiki/Simula',
+                'SNOBOL': 'https://en.wikipedia.org/wiki/SNOBOL',
+                'Solidity': 'https://soliditylang.org/',
+                'SPICE': 'https://en.wikipedia.org/wiki/SPICE',
+                'SystemVerilog': 'https://en.wikipedia.org/wiki/SystemVerilog',
+                'Vala': 'https://vala.dev/',
+                'Verilog': 'https://en.wikipedia.org/wiki/Verilog',
+                'VHDL': 'https://en.wikipedia.org/wiki/VHDL',
+                'GLSL': 'https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language',
+                'HLSL': 'https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl',
+                'Gnuplot': 'http://www.gnuplot.info/',
+                'WebAssembly': 'https://webassembly.org/',
+                'X10': 'https://x10-lang.org/',
+                'XPath': 'https://www.w3.org/TR/xpath/',
+                'XQuery': 'https://www.w3.org/TR/xquery/',
+                'XSLT': 'https://www.w3.org/TR/xslt/',
+                'AMPL': 'https://ampl.com/',
+
+                // Additional missing languages
+                'QML': 'https://doc.qt.io/qt-5/qmlapplications.html',
+                'Raku': 'https://raku.org/',
+                'Ring': 'https://ring-lang.github.io/',
+                'Scilab': 'https://www.scilab.org/',
+                'Stylus': 'https://stylus-lang.com/',
+                'Twig': 'https://twig.symfony.com/',
+                'Vim': 'https://www.vim.org/',
+                'Xtend': 'https://www.eclipse.org/xtend/',
+                'Yacc': 'https://www.gnu.org/software/bison/',
+                'OpenSCAD': 'https://openscad.org/',
+                'Meson': 'https://mesonbuild.com/',
+                'MoonScript': 'https://moonscript.org/',
+                'Mustache': 'https://mustache.github.io/',
+                'Nix': 'https://nixos.org/manual/nix/stable/',
+                'Nunjucks': 'https://mozilla.github.io/nunjucks/',
+                'Pug': 'https://pugjs.org/',
+                'Jade': 'https://pugjs.org/',
+                'Jinja': 'https://jinja.palletsprojects.com/',
+                'Jsonnet': 'https://jsonnet.org/',
+                'Jupyter': 'https://jupyter.org/',
+                'Less': 'https://lesscss.org/',
+                'Liquid': 'https://shopify.github.io/liquid/',
+                'Mako': 'https://www.makotemplates.org/',
+                'Mercury': 'https://mercurylang.org/',
+                'Handlebars': 'https://handlebarsjs.com/',
+                'HCL': 'https://github.com/hashicorp/hcl',
+                'Haxe': 'https://haxe.org/',
+                'IDL': 'https://en.wikipedia.org/wiki/IDL_(programming_language)',
+                'Ink': 'https://www.inklestudios.com/ink/',
+                'Objective-J': 'https://www.cappuccino.dev/',
+                'C': 'https://en.cppreference.com/w/c',
+                'C++': 'https://en.cppreference.com/w/cpp',
+                'C#': 'https://docs.microsoft.com/en-us/dotnet/csharp/',
+                'Go': 'https://golang.org/',
+                'Rust': 'https://www.rust-lang.org/',
+                'Swift': 'https://swift.org/',
+                'Kotlin': 'https://kotlinlang.org/',
+                'Ruby': 'https://www.ruby-lang.org/',
+                'PHP': 'https://www.php.net/',
+                'TypeScript': 'https://www.typescriptlang.org/',
+                'HTML': 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+                'CSS': 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+                'SQL': 'https://www.w3schools.com/sql/',
+                'Bash': 'https://www.gnu.org/software/bash/',
+                'PowerShell': 'https://docs.microsoft.com/en-us/powershell/',
+                'R': 'https://www.r-project.org/',
+                'MATLAB': 'https://www.mathworks.com/products/matlab.html',
+                'Perl': 'https://www.perl.org/',
+                'Lua': 'https://www.lua.org/',
+                'Haskell': 'https://www.haskell.org/',
+                'Scala': 'https://www.scala-lang.org/',
+                'Dart': 'https://dart.dev/',
+                'Clojure': 'https://clojure.org/',
+                'Erlang': 'https://www.erlang.org/',
+                'Elixir': 'https://elixir-lang.org/',
+                'F#': 'https://fsharp.org/',
+                'OCaml': 'https://ocaml.org/',
+                'Lisp': 'https://common-lisp.net/',
+                'Scheme': 'https://www.scheme.org/',
+
+                // Systems & Low-level Languages
+                'Assembly x86': 'https://en.wikipedia.org/wiki/X86_assembly_language',
+                'Fortran': 'https://fortran-lang.org/',
+                'FORTRAN': 'https://fortran-lang.org/',
+                'Ada': 'https://www.adacore.com/about-ada',
+                'D': 'https://dlang.org/',
+                'Zig': 'https://ziglang.org/',
+                'Carbon': 'https://github.com/carbon-language/carbon-lang',
+                'V': 'https://vlang.io/',
+                'Nim': 'https://nim-lang.org/',
+                'Crystal': 'https://crystal-lang.org/',
+
+                // Web & Frontend
+                'Angular': 'https://angular.io/',
+                'Vue': 'https://vuejs.org/',
+                'React': 'https://reactjs.org/',
+                'Svelte': 'https://svelte.dev/',
+                'CoffeeScript': 'https://coffeescript.org/',
+                'Elm': 'https://elm-lang.org/',
+                'PureScript': 'https://www.purescript.org/',
+                'ReScript': 'https://rescript-lang.org/',
+
+                // Mobile Development
+                'Flutter': 'https://flutter.dev/',
+                'React Native': 'https://reactnative.dev/',
+                'Objective-C': 'https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/',
+                'Xamarin': 'https://dotnet.microsoft.com/apps/xamarin',
+
+                // Functional Languages
+                'Elm': 'https://elm-lang.org/',
+                'PureScript': 'https://www.purescript.org/',
+                'Idris': 'https://www.idris-lang.org/',
+                'Agda': 'https://wiki.portal.chalmers.se/agda/',
+                'Coq': 'https://coq.inria.fr/',
+                'Lean': 'https://leanprover.github.io/',
+                'ML': 'https://www.smlnj.org/',
+                'Standard ML': 'https://www.smlnj.org/',
+
+                // Scripting & Shell
+                'AWK': 'https://www.gnu.org/software/gawk/manual/gawk.html',
+                'Sed': 'https://www.gnu.org/software/sed/manual/sed.html',
+                'Tcl': 'https://www.tcl.tk/',
+                'Expect': 'https://core.tcl-lang.org/expect/',
+                'Zsh': 'https://www.zsh.org/',
+                'Fish': 'https://fishshell.com/',
+                'Csh': 'https://en.wikipedia.org/wiki/C_shell',
+                'Dash': 'https://wiki.ubuntu.com/DashAsBinSh',
+
+                // Data & Analytics
+                'Julia': 'https://julialang.org/',
+                'Mathematica': 'https://www.wolfram.com/mathematica/',
+                'Wolfram': 'https://www.wolfram.com/language/',
+                'SAS': 'https://www.sas.com/',
+                'SPSS': 'https://www.ibm.com/products/spss-statistics',
+                'Stata': 'https://www.stata.com/',
+
+                // Database Languages
+                'PostgreSQL': 'https://www.postgresql.org/',
+                'MySQL': 'https://www.mysql.com/',
+                'SQLite': 'https://www.sqlite.org/',
+                'MongoDB': 'https://www.mongodb.com/',
+                'Cypher': 'https://neo4j.com/developer/cypher/',
+                'GraphQL': 'https://graphql.org/',
+
+                // Enterprise & Legacy
+                'COBOL': 'https://www.ibm.com/docs/en/cobol-zos',
+                'BASIC': 'https://en.wikipedia.org/wiki/BASIC',
+                'Pascal': 'https://www.freepascal.org/',
+                'Delphi': 'https://www.embarcadero.com/products/delphi',
+                'Visual Basic': 'https://docs.microsoft.com/en-us/dotnet/visual-basic/',
+                'VB.NET': 'https://docs.microsoft.com/en-us/dotnet/visual-basic/',
+                'ALGOL': 'https://en.wikipedia.org/wiki/ALGOL',
+                'BCPL': 'https://en.wikipedia.org/wiki/BCPL',
+                'B': 'https://en.wikipedia.org/wiki/B_(programming_language)',
+
+                // Game Development
+                'GDScript': 'https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/',
+                'UnityScript': 'https://docs.unity3d.com/',
+                'Lua': 'https://www.lua.org/',
+                'AngelScript': 'https://www.angelcode.com/angelscript/',
+
+                // Esoteric & Educational
+                'Brainfuck': 'https://en.wikipedia.org/wiki/Brainfuck',
+                'Befunge': 'https://en.wikipedia.org/wiki/Befunge',
+                'Whitespace': 'https://en.wikipedia.org/wiki/Whitespace_(programming_language)',
+                'Malbolge': 'https://en.wikipedia.org/wiki/Malbolge',
+                'Chef': 'https://www.dangermouse.net/esoteric/chef.html',
+                'Shakespeare': 'https://en.wikipedia.org/wiki/Shakespeare_Programming_Language',
+                'LOLCODE': 'https://en.wikipedia.org/wiki/LOLCODE',
+                'Piet': 'https://www.dangermouse.net/esoteric/piet.html',
+
+                // Configuration & Markup
+                'YAML': 'https://yaml.org/',
+                'TOML': 'https://toml.io/',
+                'JSON': 'https://www.json.org/',
+                'XML': 'https://www.w3.org/XML/',
+                'Markdown': 'https://daringfireball.net/projects/markdown/',
+                'LaTeX': 'https://www.latex-project.org/',
+                'AsciiDoc': 'https://asciidoc.org/',
+                'reStructuredText': 'https://docutils.sourceforge.io/rst.html',
+
+                // DevOps & Infrastructure
+                'Dockerfile': 'https://docs.docker.com/engine/reference/builder/',
+                'Terraform': 'https://www.terraform.io/',
+                'Ansible': 'https://docs.ansible.com/',
+                'Puppet': 'https://puppet.com/docs/',
+                'Chef': 'https://docs.chef.io/',
+                'Vagrant': 'https://www.vagrantup.com/docs',
+                'CMake': 'https://cmake.org/documentation/',
+
+                // Newer & Emerging Languages
+                'Gleam': 'https://gleam.run/',
+                'Roc': 'https://www.roc-lang.org/',
+                'Grain': 'https://grain-lang.org/',
+                'Fennel': 'https://fennel-lang.org/',
+                'Janet': 'https://janet-lang.org/',
+                'Jai': 'https://github.com/BSVino/JaiPrimer/blob/master/JaiPrimer.md',
+                'Odin': 'https://odin-lang.org/',
+                'Red': 'https://www.red-lang.org/',
+                'Factor': 'https://factorcode.org/',
+                'Forth': 'https://www.forth.com/',
+                'PostScript': 'https://en.wikipedia.org/wiki/PostScript',
+
+                // Specialized Languages
+                'Prolog': 'https://www.swi-prolog.org/',
+                'Erlang': 'https://www.erlang.org/',
+                'Elixir': 'https://elixir-lang.org/',
+                'Smalltalk': 'https://squeak.org/',
+                'Self': 'https://selflanguage.org/',
+                'Io': 'https://iolanguage.org/',
+                'Rebol': 'http://www.rebol.com/',
+                'Logo': 'https://en.wikipedia.org/wiki/Logo_(programming_language)',
+                'Scratch': 'https://scratch.mit.edu/',
+
+                // Additional Languages
+                'ActionScript': 'https://help.adobe.com/en_US/ActionScript/3.0_ProgrammingAS3/',
+                'AppleScript': 'https://developer.apple.com/library/archive/documentation/AppleScript/',
+                'AutoHotkey': 'https://www.autohotkey.com/',
+                'Batch': 'https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/',
+                'Eiffel': 'https://www.eiffel.org/',
+                'Groovy': 'https://groovy-lang.org/',
+                'JScript': 'https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/scripting-articles/',
+                'LiveScript': 'https://livescript.net/',
+                'Objective-J': 'https://www.cappuccino.dev/',
+                'Pike': 'https://pike.lysator.liu.se/',
+                'Processing': 'https://processing.org/',
+                'Racket': 'https://racket-lang.org/',
+                'Reason': 'https://reasonml.github.io/',
+                'Solidity': 'https://soliditylang.org/',
+                'Vala': 'https://vala.dev/',
+                'Verilog': 'https://en.wikipedia.org/wiki/Verilog',
+                'VHDL': 'https://en.wikipedia.org/wiki/VHDL',
+                'GLSL': 'https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language',
+                'HLSL': 'https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl',
+                'Gnuplot': 'http://www.gnuplot.info/',
+                'Gradle': 'https://gradle.org/',
+                'Groovy': 'https://groovy-lang.org/',
+                'Hack': 'https://hacklang.org/',
+                'Handlebars': 'https://handlebarsjs.com/',
+                'HCL': 'https://github.com/hashicorp/hcl',
+                'Haxe': 'https://haxe.org/',
+                'Hy': 'https://hylang.org/',
+                'IDL': 'https://en.wikipedia.org/wiki/IDL_(programming_language)',
+                'Inform': 'https://ganelson.github.io/inform-website/',
+                'Ink': 'https://www.inklestudios.com/ink/',
+                'Io': 'https://iolanguage.org/',
+                'J': 'https://www.jsoftware.com/',
+                'Jade': 'https://pugjs.org/',
+                'Jinja': 'https://jinja.palletsprojects.com/',
+                'Jsonnet': 'https://jsonnet.org/',
+                'JSX': 'https://reactjs.org/docs/introducing-jsx.html',
+                'Jupyter': 'https://jupyter.org/',
+                'Korn': 'https://en.wikipedia.org/wiki/KornShell',
+                'Less': 'https://lesscss.org/',
+                'Liquid': 'https://shopify.github.io/liquid/',
+                'Makefile': 'https://www.gnu.org/software/make/manual/make.html',
+                'Mako': 'https://www.makotemplates.org/',
+                'Maxima': 'https://maxima.sourceforge.io/',
+                'Mercury': 'https://mercurylang.org/',
+                'Meson': 'https://mesonbuild.com/',
+                'MoonScript': 'https://moonscript.org/',
+                'Mustache': 'https://mustache.github.io/',
+                'Nix': 'https://nixos.org/manual/nix/stable/',
+                'Nunjucks': 'https://mozilla.github.io/nunjucks/',
+                'Octave': 'https://www.gnu.org/software/octave/',
+                'OpenSCAD': 'https://openscad.org/',
+                'Oz': 'https://mozart.github.io/',
+                'Pug': 'https://pugjs.org/',
+                'PureScript': 'https://www.purescript.org/',
+                'Q': 'https://kx.com/',
+                'QML': 'https://doc.qt.io/qt-5/qmlapplications.html',
+                'Raku': 'https://raku.org/',
+                'Ring': 'https://ring-lang.github.io/',
+                'Sass': 'https://sass-lang.com/',
+                'Scala': 'https://www.scala-lang.org/',
+                'Scilab': 'https://www.scilab.org/',
+                'SCSS': 'https://sass-lang.com/',
+                'Stylus': 'https://stylus-lang.com/',
+                'Twig': 'https://twig.symfony.com/',
+                'Vim': 'https://www.vim.org/',
+                'WebAssembly': 'https://webassembly.org/',
+                'Xtend': 'https://www.eclipse.org/xtend/',
+                'Yacc': 'https://www.gnu.org/software/bison/',
+                'Zig': 'https://ziglang.org/'
             };
-            
-            return baseUrls[languageName] || '#';
+
+            // First check if we have a specific URL for this language
+            if (baseUrls[languageName]) {
+                return baseUrls[languageName];
+            }
+
+            // Fallback strategies for languages not in our list
+            var searchQuery = encodeURIComponent(languageName + ' programming language documentation');
+
+            // For well-known patterns, create more specific fallbacks
+            if (languageName.toLowerCase().includes('assembly')) {
+                return 'https://en.wikipedia.org/wiki/Assembly_language';
+            }
+
+            if (languageName.toLowerCase().includes('shell') || languageName.toLowerCase().includes('sh')) {
+                return 'https://www.gnu.org/software/bash/manual/bash.html';
+            }
+
+            // Generic fallback - search on a programming-focused site
+            return 'https://en.wikipedia.org/wiki/' + encodeURIComponent(languageName + '_(programming_language)');
+        }
+
+        function validateAndImproveUrl(url, languageName) {
+            // Handle some common URL issues
+            if (!url || url === '#') {
+                return generateReferenceLink(languageName);
+            }
+
+            // Fix some common URL patterns
+            if (url.includes('docs.microsoft.com/en-us/dotnet/csharp/')) {
+                return 'https://docs.microsoft.com/en-us/dotnet/csharp/';
+            }
+
+            if (url.includes('docs.microsoft.com/en-us/powershell/')) {
+                return 'https://docs.microsoft.com/en-us/powershell/';
+            }
+
+            return url;
         }
 
         function getLanguageType(lang) {
@@ -463,6 +1032,33 @@
             var html = filteredLanguages.map(function(lang, index) {
                 var referenceLink = generateReferenceLink(lang.name);
                 var linkAttribute = lang.link ? lang.link : referenceLink;
+
+                // Determine link type for better user experience
+                var linkText = 'Learn';
+                var linkIcon = '📖';
+
+                linkAttribute = validateAndImproveUrl(linkAttribute, lang.name);
+
+                if (linkAttribute === '#') {
+                    // This shouldn't happen with our improved generateReferenceLink, but just in case
+                    linkAttribute = 'https://en.wikipedia.org/wiki/' + encodeURIComponent(lang.name + '_(programming_language)');
+                }
+
+                // Customize link text based on URL type
+                if (linkAttribute.includes('wikipedia.org')) {
+                    linkText = 'Wiki';
+                    linkIcon = '📚';
+                } else if (linkAttribute.includes('github.com')) {
+                    linkText = 'GitHub';
+                    linkIcon = '🔗';
+                } else if (linkAttribute.includes('docs.') || linkAttribute.includes('/docs/')) {
+                    linkText = 'Docs';
+                    linkIcon = '📋';
+                } else if (lang.link) {
+                    // If it's a custom link from the language data, keep generic "Learn"
+                    linkText = 'Learn';
+                    linkIcon = '📖';
+                }
                 var languageTypes = getLanguageType(lang);
                 var popularityLevel = getPopularityLevel(lang.popularity);
 
@@ -505,8 +1101,8 @@
                                     <span class="btn-text">Copy</span>
                                 </button>
                                 <a href="${linkAttribute}" target="_blank" rel="noopener noreferrer" class="reference-btn modern-btn">
-                                    <span class="btn-icon">📖</span>
-                                    <span class="btn-text">Learn</span>
+                                    <span class="btn-icon">${linkIcon}</span>
+                                    <span class="btn-text">${linkText}</span>
                                 </a>
                             </div>
                         </div>

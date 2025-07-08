@@ -412,7 +412,10 @@ var Visualizations = (function() {
         languages.forEach(function(lang) {
             if (lang.paradigms && Array.isArray(lang.paradigms)) {
                 lang.paradigms.forEach(function(paradigm) {
-                    paradigms[paradigm] = (paradigms[paradigm] || 0) + 1;
+                    // Filter out "Multi-paradigm" as it's not a specific paradigm
+                    if (paradigm.toLowerCase() !== 'multi-paradigm') {
+                        paradigms[paradigm] = (paradigms[paradigm] || 0) + 1;
+                    }
                 });
             }
         });

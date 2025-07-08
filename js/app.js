@@ -163,6 +163,8 @@ function setupEventListeners() {
 }
 
 // Filter languages based on search and category
+// Improved search logic based on feedback from Andy Stanford-Clark
+// addressing over-zealous matching and case sensitivity issues
 function filterLanguages() {
     var searchTerm = searchInput.value.trim();
     var selectedCategory = categoryFilter.value;

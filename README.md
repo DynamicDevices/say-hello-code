@@ -55,6 +55,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 We'd like to thank the following people who have helped improve this project:
 
 - **Jim Hunt** - Identified missing assembly language coverage and provided valuable feedback on low-level programming language representation
+- **Andy Stanford-Clark** - Identified critical search functionality issues including over-zealous matching and case sensitivity problems, leading to significant search improvements
 
 *Want to be listed here? Contribute to the project and help make programming education better for everyone!*
 

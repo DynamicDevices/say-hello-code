@@ -79,7 +79,7 @@ function checkUrl(url) {
             port: urlObj.port,
             path: urlObj.pathname + urlObj.search,
             method: 'HEAD',
-            timeout: 15000, // Increased from 5000 to 15000 (15 seconds)
+            timeout: 60000, // Increased from 15000 to 60000 (60 seconds)
             headers: {
                 'User-Agent': 'Mozilla/5.0 (compatible; SayHelloCode-URLTester/1.0)'
             }

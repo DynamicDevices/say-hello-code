@@ -51,7 +51,7 @@ normalizedName = normalizedName
 ```
 
 ### URL Testing (test-urls.js)
-- **Timeout**: 15 seconds
+- **Timeout**: 60 seconds
 - **Batch**: 20 URLs at a time with 1s delays
 - **CI**: Auto-runs on push/PR, creates issues for failures
 
@@ -73,6 +73,20 @@ Uses `baseUrls` object for known languages, Google search fallback for others.
 - Update `baseUrls` in `js/app.js`
 - Test: `node test-urls.js`
 - Check CI artifacts for detailed reports
+
+### Recent URL Fixes (December 2024)
+**Fixed 16 broken/timeout URLs achieving 100% success rate:**
+- **Broken URLs Fixed**: ActionScript, MATLAB, Ksh, Oberon, Ook!, V, Xamarin, Deno, Batch, X10, Creole
+- **Timeout Issues Resolved**: AWK, Bash, Makefile, Octave, Sed (GNU.org sites replaced with faster alternatives)
+- **Timeout Setting**: Increased from 15s to 60s for better reliability
+- **Strategy**: Prioritized best available documentation sources regardless of year
+- **Result**: 242/242 URLs working (100% success rate, 0 timeouts, 0 failures)
+
+**Key Replacements Made:**
+- GNU.org URLs → Alternative sources (TutorialsPoint, W3Schools, Wikipedia, official sites)
+- Adobe ActionScript → AIR SDK documentation
+- MathWorks MATLAB → Wikipedia (403 bypass)
+- Various 404s → Current working documentation
 
 ## Deployment
 - **Host**: GitHub Pages

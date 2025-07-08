@@ -517,7 +517,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    align-items: center;
+    align-items: flex-start;
+    align-content: flex-start;
 }
 
 .badge-group:not(:last-child) {
@@ -526,6 +527,10 @@ body {
 
 .primary-badges {
     margin-bottom: 8px;
+}
+
+.secondary-badges {
+    margin-top: 4px;
 }
 
 .language-creator {
@@ -549,12 +554,14 @@ body {
     border-radius: 14px;
     font-size: 0.8rem;
     font-weight: 500;
-    margin-right: 4px;
-    display: inline-block;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
     line-height: 1.2;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     user-select: none;
+    vertical-align: top;
 }
 
 /* Different colors for different language types */

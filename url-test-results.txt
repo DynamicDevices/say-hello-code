@@ -1,0 +1,277 @@
+🔍 Testing Language Reference URLs
+==================================================
+Total languages to test: 242
+==================================================
+✅ ALGOL                | 200 | https://www.google.com/search?q=ALGOL%20programming%20language%20documentation
+✅ ActionScript         | 200 | https://www.google.com/search?q=ActionScript%20programming%20language%20documentation
+✅ Agda                 | 200 | https://www.google.com/search?q=Agda%20programming%20language%20documentation
+✅ Assembly x86         | 200 | https://www.google.com/search?q=Assembly%20x86%20programming%20language%20documentation
+✅ B                    | 200 | https://www.google.com/search?q=B%20programming%20language%20documentation
+✅ Angular              | 302 | https://angular.io/docs
+✅ AsciiDoc             | 200 | https://www.google.com/search?q=AsciiDoc%20programming%20language%20documentation
+❌ Ada                  | ERROR | https://www.adaic.org/resources/add_content/standards/ada12/html/Ada12_RM.html
+   Error: socket hang up
+✅ Ansible              | 200 | https://docs.ansible.com/
+⏰ AWK                  | TIMEOUT | https://www.gnu.org/software/gawk/manual/
+✅ BCPL                 | 200 | https://www.google.com/search?q=BCPL%20programming%20language%20documentation
+✅ Cat                  | 200 | https://www.google.com/search?q=Cat%20programming%20language%20documentation
+✅ Carbon               | 200 | https://www.google.com/search?q=Carbon%20programming%20language%20documentation
+✅ C#                   | 301 | https://docs.microsoft.com/en-us/dotnet/csharp/
+✅ Befunge              | 200 | https://esolangs.org/wiki/Befunge
+✅ Brainfuck            | 200 | https://esolangs.org/wiki/Brainfuck
+✅ BASIC                | 301 | https://www.qbasic.net/en/reference/
+✅ C                    | 301 | https://en.cppreference.com/w/c
+✅ C++                  | 301 | https://en.cppreference.com/w/cpp
+⏰ Bash                 | TIMEOUT | https://www.gnu.org/software/bash/manual/
+✅ Clojure              | 200 | https://clojure.org/guides/getting_started
+✅ Clean                | 200 | https://www.google.com/search?q=Clean%20programming%20language%20documentation
+✅ Coq                  | 200 | https://www.google.com/search?q=Coq%20programming%20language%20documentation
+✅ CoffeeScript         | 200 | https://www.google.com/search?q=CoffeeScript%20programming%20language%20documentation
+✅ Creole               | 200 | https://www.google.com/search?q=Creole%20programming%20language%20documentation
+✅ Chef                 | 200 | https://esolangs.org/wiki/Chef
+✅ COBOL                | 200 | https://www.ibm.com/docs/en/cobol-zos
+✅ Crystal              | 200 | https://crystal-lang.org/docs/
+✅ Csh                  | 200 | https://www.google.com/search?q=Csh%20programming%20language%20documentation
+✅ CMake                | 200 | https://cmake.org/documentation/
+✅ Cypher               | 200 | https://www.google.com/search?q=Cypher%20programming%20language%20documentation
+✅ CSS                  | 200 | https://developer.mozilla.org/en-US/docs/Web/CSS
+✅ Dash                 | 200 | https://www.google.com/search?q=Dash%20programming%20language%20documentation
+✅ Eiffel               | 200 | https://www.google.com/search?q=Eiffel%20programming%20language%20documentation
+✅ Elm                  | 200 | https://www.google.com/search?q=Elm%20programming%20language%20documentation
+✅ Dockerfile           | 301 | https://docs.docker.com/engine/reference/builder/
+✅ Dart                 | 301 | https://dart.dev/guides
+✅ Elixir               | 200 | https://elixir-lang.org/docs.html
+✅ Delphi               | 200 | https://docwiki.embarcadero.com/
+✅ D                    | 200 | https://dlang.org/spec/spec.html
+✅ F#                   | 301 | https://docs.microsoft.com/en-us/dotnet/fsharp/
+✅ Flutter              | 200 | https://www.google.com/search?q=Flutter%20programming%20language%20documentation
+✅ Factor               | 200 | https://www.google.com/search?q=Factor%20programming%20language%20documentation
+✅ FORTRAN              | 200 | https://www.google.com/search?q=FORTRAN%20programming%20language%20documentation
+✅ GDScript             | 200 | https://www.google.com/search?q=GDScript%20programming%20language%20documentation
+✅ Fennel               | 200 | https://www.google.com/search?q=Fennel%20programming%20language%20documentation
+✅ Gleam                | 200 | https://www.google.com/search?q=Gleam%20programming%20language%20documentation
+✅ Fortran              | 200 | https://fortran-lang.org/learn/
+✅ Erlang               | 200 | https://www.erlang.org/docs
+✅ Expect               | 200 | https://core.tcl-lang.org/expect/index
+✅ Grain                | 200 | https://www.google.com/search?q=Grain%20programming%20language%20documentation
+✅ Gnuplot              | 200 | https://www.google.com/search?q=Gnuplot%20programming%20language%20documentation
+✅ GraphQL              | 200 | https://www.google.com/search?q=GraphQL%20programming%20language%20documentation
+✅ Groovy               | 200 | https://www.google.com/search?q=Groovy%20programming%20language%20documentation
+✅ Gradle               | 302 | https://docs.gradle.org/
+✅ HLSL                 | 200 | https://www.google.com/search?q=HLSL%20programming%20language%20documentation
+✅ GLSL                 | 200 | https://www.google.com/search?q=GLSL%20programming%20language%20documentation
+✅ HTML                 | 200 | https://developer.mozilla.org/en-US/docs/Web/HTML
+✅ Go                   | 301 | https://golang.org/doc/
+✅ Haskell              | 200 | https://www.haskell.org/documentation/
+✅ Isabelle             | 200 | https://www.google.com/search?q=Isabelle%20programming%20language%20documentation
+✅ Idris                | 200 | https://www.google.com/search?q=Idris%20programming%20language%20documentation
+✅ Intercal             | 200 | https://www.google.com/search?q=Intercal%20programming%20language%20documentation
+✅ J                    | 200 | https://www.google.com/search?q=J%20programming%20language%20documentation
+✅ JAI                  | 200 | https://www.google.com/search?q=JAI%20programming%20language%20documentation
+✅ Hy                   | 200 | https://www.google.com/search?q=Hy%20programming%20language%20documentation
+✅ Inko                 | 200 | https://www.google.com/search?q=Inko%20programming%20language%20documentation
+✅ Icon                 | 200 | https://www.google.com/search?q=Icon%20programming%20language%20documentation
+✅ Ionic                | 200 | https://www.google.com/search?q=Ionic%20programming%20language%20documentation
+✅ Java                 | 200 | https://docs.oracle.com/en/java/
+✅ JavaScript           | 200 | https://developer.mozilla.org/en-US/docs/Web/JavaScript
+✅ Joy                  | 200 | https://www.google.com/search?q=Joy%20programming%20language%20documentation
+✅ JSX                  | 200 | https://www.google.com/search?q=JSX%20programming%20language%20documentation
+✅ Kitten               | 200 | https://www.google.com/search?q=Kitten%20programming%20language%20documentation
+✅ K                    | 200 | https://www.google.com/search?q=K%20programming%20language%20documentation
+✅ Koka                 | 200 | https://www.google.com/search?q=Koka%20programming%20language%20documentation
+✅ Julia                | 200 | https://docs.julialang.org/
+✅ Ksh                  | 200 | https://www.google.com/search?q=Ksh%20programming%20language%20documentation
+✅ Kotlin               | 200 | https://kotlinlang.org/docs/
+✅ JSON                 | 200 | https://www.json.org/json-en.html
+✅ Logo                 | 200 | https://www.google.com/search?q=Logo%20programming%20language%20documentation
+✅ Maple                | 200 | https://www.google.com/search?q=Maple%20programming%20language%20documentation
+✅ Lean                 | 200 | https://www.google.com/search?q=Lean%20programming%20language%20documentation
+✅ Lisp                 | 200 | https://www.google.com/search?q=Lisp%20programming%20language%20documentation
+✅ LESS                 | 200 | https://www.google.com/search?q=LESS%20programming%20language%20documentation
+✅ Makefile             | 200 | https://www.google.com/search?q=Makefile%20programming%20language%20documentation
+✅ LaTeX                | 200 | https://www.latex-project.org/help/documentation/
+✅ Malbolge             | 200 | https://esolangs.org/wiki/Malbolge
+✅ LOLCODE              | 200 | https://esolangs.org/wiki/LOLCODE
+✅ Lua                  | 200 | https://www.lua.org/docs.html
+✅ Miranda              | 200 | https://www.google.com/search?q=Miranda%20programming%20language%20documentation
+✅ Mojo                 | 200 | https://www.google.com/search?q=Mojo%20programming%20language%20documentation
+✅ ML                   | 200 | https://www.google.com/search?q=ML%20programming%20language%20documentation
+✅ Maxima               | 200 | https://www.google.com/search?q=Maxima%20programming%20language%20documentation
+✅ Modula-2             | 200 | https://www.google.com/search?q=Modula-2%20programming%20language%20documentation
+✅ N1QL                 | 200 | https://www.google.com/search?q=N1QL%20programming%20language%20documentation
+✅ Nim                  | 302 | https://nim-lang.org/docs/
+❌ MATLAB               | 403 | https://www.mathworks.com/help/matlab/
+✅ Mathematica          | 200 | https://www.google.com/search?q=Mathematica%20programming%20language%20documentation
+✅ Markdown             | 200 | https://daringfireball.net/projects/markdown/
+✅ PDP-11 Assembly      | 200 | https://www.google.com/search?q=PDP-11%20Assembly%20programming%20language%20documentation
+✅ Nushell              | 200 | https://www.google.com/search?q=Nushell%20programming%20language%20documentation
+✅ Odin                 | 200 | https://www.google.com/search?q=Odin%20programming%20language%20documentation
+✅ Oberon               | 200 | https://www.google.com/search?q=Oberon%20programming%20language%20documentation
+✅ Octave               | 200 | https://www.google.com/search?q=Octave%20programming%20language%20documentation
+✅ Objective-C          | 200 | https://www.google.com/search?q=Objective-C%20programming%20language%20documentation
+✅ Org-mode             | 200 | https://www.google.com/search?q=Org-mode%20programming%20language%20documentation
+✅ Pascal               | 200 | https://www.freepascal.org/docs.html
+✅ Ook!                 | 200 | https://esolangs.org/wiki/Ook!
+✅ OCaml                | 303 | https://ocaml.org/docs/
+✅ Pony                 | 200 | https://www.google.com/search?q=Pony%20programming%20language%20documentation
+✅ PostScript           | 200 | https://www.google.com/search?q=PostScript%20programming%20language%20documentation
+✅ PhoneGap             | 200 | https://www.google.com/search?q=PhoneGap%20programming%20language%20documentation
+✅ Perl                 | 200 | https://perldoc.perl.org/
+✅ PureScript           | 200 | https://www.google.com/search?q=PureScript%20programming%20language%20documentation
+✅ Piet                 | 200 | https://esolangs.org/wiki/Piet
+✅ PL/I                 | 200 | https://www.google.com/search?q=PL%2FI%20programming%20language%20documentation
+✅ PowerShell           | 301 | https://docs.microsoft.com/en-us/powershell/
+✅ Puppet               | 301 | https://puppet.com/docs/
+✅ PHP                  | 200 | https://www.php.net/docs.php
+✅ Q                    | 200 | https://www.google.com/search?q=Q%20programming%20language%20documentation
+✅ Python               | 200 | https://docs.python.org/3/
+✅ Ren'Py               | 200 | https://www.google.com/search?q=Ren'Py%20programming%20language%20documentation
+✅ reStructuredText     | 200 | https://www.google.com/search?q=reStructuredText%20programming%20language%20documentation
+✅ Red                  | 200 | https://www.google.com/search?q=Red%20programming%20language%20documentation
+✅ Regex                | 200 | https://www.google.com/search?q=Regex%20programming%20language%20documentation
+✅ React Native         | 200 | https://www.google.com/search?q=React%20Native%20programming%20language%20documentation
+✅ React                | 308 | https://reactjs.org/docs/
+✅ R                    | 200 | https://www.r-project.org/other-docs.html
+✅ Racket               | 200 | https://docs.racket-lang.org/
+✅ Rexx                 | 200 | https://www.google.com/search?q=Rexx%20programming%20language%20documentation
+✅ Roc                  | 200 | https://www.google.com/search?q=Roc%20programming%20language%20documentation
+✅ SageMath             | 200 | https://www.google.com/search?q=SageMath%20programming%20language%20documentation
+✅ SASS                 | 200 | https://www.google.com/search?q=SASS%20programming%20language%20documentation
+✅ SaltStack            | 200 | https://docs.saltproject.io/
+✅ Rust                 | 302 | https://doc.rust-lang.org/
+✅ Ruby                 | 200 | https://ruby-doc.org/
+✅ Scheme               | 200 | https://www.scheme.org/
+✅ Scala                | 200 | https://docs.scala-lang.org/
+⏰ Sed                  | TIMEOUT | https://www.gnu.org/software/sed/manual/
+✅ SNOBOL               | 200 | https://www.google.com/search?q=SNOBOL%20programming%20language%20documentation
+✅ SPARQL               | 200 | https://www.google.com/search?q=SPARQL%20programming%20language%20documentation
+✅ SPICE                | 200 | https://www.google.com/search?q=SPICE%20programming%20language%20documentation
+✅ Svelte               | 200 | https://svelte.dev/docs
+✅ SQL                  | 200 | https://www.w3schools.com/sql/
+✅ Swift                | 302 | https://swift.org/documentation/
+✅ SystemVerilog        | 200 | https://www.google.com/search?q=SystemVerilog%20programming%20language%20documentation
+✅ Shakespeare          | 200 | https://esolangs.org/wiki/Shakespeare_Programming_Language
+✅ Tcl                  | 301 | https://www.tcl.tk/doc/
+✅ Tcsh                 | 200 | https://www.google.com/search?q=Tcsh%20programming%20language%20documentation
+✅ Textile              | 200 | https://www.google.com/search?q=Textile%20programming%20language%20documentation
+✅ UnityScript          | 200 | https://www.google.com/search?q=UnityScript%20programming%20language%20documentation
+✅ Unison               | 200 | https://www.google.com/search?q=Unison%20programming%20language%20documentation
+✅ V                    | 200 | https://www.google.com/search?q=V%20programming%20language%20documentation
+✅ Titanium             | 200 | https://www.google.com/search?q=Titanium%20programming%20language%20documentation
+✅ Vagrant              | 308 | https://www.vagrantup.com/docs
+✅ TypeScript           | 200 | https://www.typescriptlang.org/docs/
+✅ Terraform            | 308 | https://www.terraform.io/docs/
+✅ Verilog              | 200 | https://www.google.com/search?q=Verilog%20programming%20language%20documentation
+✅ TOML                 | 200 | https://toml.io/en/
+✅ Visual Basic         | 301 | https://docs.microsoft.com/en-us/dotnet/visual-basic/
+✅ WikiText             | 200 | https://www.google.com/search?q=WikiText%20programming%20language%20documentation
+✅ Xamarin              | 200 | https://www.google.com/search?q=Xamarin%20programming%20language%20documentation
+❌ WebAssembly          | 404 | https://webassembly.org/docs/
+✅ Xonsh                | 200 | https://www.google.com/search?q=Xonsh%20programming%20language%20documentation
+✅ Vue.js               | 200 | https://www.google.com/search?q=Vue.js%20programming%20language%20documentation
+✅ VHDL                 | 200 | https://www.google.com/search?q=VHDL%20programming%20language%20documentation
+✅ XPath                | 200 | https://www.google.com/search?q=XPath%20programming%20language%20documentation
+✅ Whitespace           | 200 | https://esolangs.org/wiki/Whitespace
+✅ XML                  | 200 | https://www.w3.org/XML/
+✅ XSLT                 | 200 | https://www.google.com/search?q=XSLT%20programming%20language%20documentation
+✅ Deno                 | 200 | https://www.google.com/search?q=Deno%20programming%20language%20documentation
+✅ Bun                  | 200 | https://www.google.com/search?q=Bun%20programming%20language%20documentation
+✅ ALGOL 68             | 200 | https://www.google.com/search?q=ALGOL%2068%20programming%20language%20documentation
+✅ Bend                 | 200 | https://www.google.com/search?q=Bend%20programming%20language%20documentation
+✅ ALGOL 60             | 200 | https://www.google.com/search?q=ALGOL%2060%20programming%20language%20documentation
+✅ APL                  | 200 | https://www.google.com/search?q=APL%20programming%20language%20documentation
+✅ XQuery               | 200 | https://www.google.com/search?q=XQuery%20programming%20language%20documentation
+✅ YAML                 | 200 | https://yaml.org/spec/
+✅ Zig                  | 200 | https://ziglang.org/documentation/
+✅ CORAL 66             | 200 | https://www.google.com/search?q=CORAL%2066%20programming%20language%20documentation
+✅ BBC BASIC            | 200 | https://www.google.com/search?q=BBC%20BASIC%20programming%20language%20documentation
+✅ Boo                  | 200 | https://www.google.com/search?q=Boo%20programming%20language%20documentation
+❌ AutoHotkey           | 403 | https://www.autohotkey.com/docs/
+✅ CPL                  | 200 | https://www.google.com/search?q=CPL%20programming%20language%20documentation
+✅ Clipper              | 200 | https://www.google.com/search?q=Clipper%20programming%20language%20documentation
+✅ dBASE                | 200 | https://www.google.com/search?q=dBASE%20programming%20language%20documentation
+✅ Batch                | 200 | https://www.google.com/search?q=Batch%20programming%20language%20documentation
+✅ Dylan                | 200 | https://www.google.com/search?q=Dylan%20programming%20language%20documentation
+✅ AutoLISP             | 200 | https://help.autodesk.com/view/OARX/2024/ENU/?guid=GUID-C8C7B3A2-7B6D-4F7E-8C7B-7B6D4F7E8C7B
+✅ JOSS                 | 200 | https://www.google.com/search?q=JOSS%20programming%20language%20documentation
+✅ FoxPro               | 200 | https://www.google.com/search?q=FoxPro%20programming%20language%20documentation
+✅ Lingo                | 200 | https://www.google.com/search?q=Lingo%20programming%20language%20documentation
+✅ GW-BASIC             | 200 | https://www.google.com/search?q=GW-BASIC%20programming%20language%20documentation
+✅ Inform               | 200 | https://www.google.com/search?q=Inform%20programming%20language%20documentation
+✅ Euphoria             | 200 | https://www.google.com/search?q=Euphoria%20programming%20language%20documentation
+✅ HyperTalk            | 200 | https://www.google.com/search?q=HyperTalk%20programming%20language%20documentation
+✅ Forth                | 200 | https://www.google.com/search?q=Forth%20programming%20language%20documentation
+✅ Korn Shell           | 200 | https://www.google.com/search?q=Korn%20Shell%20programming%20language%20documentation
+✅ LabVIEW              | 200 | https://www.google.com/search?q=LabVIEW%20programming%20language%20documentation
+✅ LiveCode             | 200 | https://www.google.com/search?q=LiveCode%20programming%20language%20documentation
+✅ Paradox              | 200 | https://www.google.com/search?q=Paradox%20programming%20language%20documentation
+✅ Newspeak             | 200 | https://www.google.com/search?q=Newspeak%20programming%20language%20documentation
+✅ Pike                 | 200 | https://www.google.com/search?q=Pike%20programming%20language%20documentation
+✅ Oz                   | 200 | https://www.google.com/search?q=Oz%20programming%20language%20documentation
+✅ PL/M                 | 200 | https://www.google.com/search?q=PL%2FM%20programming%20language%20documentation
+✅ Modula-3             | 200 | https://www.google.com/search?q=Modula-3%20programming%20language%20documentation
+✅ Mumps                | 200 | https://www.google.com/search?q=Mumps%20programming%20language%20documentation
+✅ Occam                | 200 | https://www.google.com/search?q=Occam%20programming%20language%20documentation
+✅ PL/SQL               | 200 | https://www.google.com/search?q=PL%2FSQL%20programming%20language%20documentation
+✅ Simula               | 200 | https://www.google.com/search?q=Simula%20programming%20language%20documentation
+✅ Short Code           | 200 | https://www.google.com/search?q=Short%20Code%20programming%20language%20documentation
+✅ QBasic               | 200 | https://www.google.com/search?q=QBasic%20programming%20language%20documentation
+✅ FLOW-MATIC           | 200 | https://www.google.com/search?q=FLOW-MATIC%20programming%20language%20documentation
+✅ RPG                  | 200 | https://www.google.com/search?q=RPG%20programming%20language%20documentation
+✅ Smalltalk            | 200 | https://www.google.com/search?q=Smalltalk%20programming%20language%20documentation
+✅ Prolog               | 200 | https://www.google.com/search?q=Prolog%20programming%20language%20documentation
+✅ WATFIV               | 200 | https://www.google.com/search?q=WATFIV%20programming%20language%20documentation
+✅ Autocode             | 200 | https://www.google.com/search?q=Autocode%20programming%20language%20documentation
+✅ Turbo Pascal         | 200 | https://www.google.com/search?q=Turbo%20Pascal%20programming%20language%20documentation
+✅ Chapel               | 200 | https://www.google.com/search?q=Chapel%20programming%20language%20documentation
+✅ JOVIAL               | 200 | https://www.google.com/search?q=JOVIAL%20programming%20language%20documentation
+✅ ReasonML             | 200 | https://www.google.com/search?q=ReasonML%20programming%20language%20documentation
+✅ Futhark              | 200 | https://www.google.com/search?q=Futhark%20programming%20language%20documentation
+✅ X10                  | 200 | https://www.google.com/search?q=X10%20programming%20language%20documentation
+✅ AMPL                 | 200 | https://www.google.com/search?q=AMPL%20programming%20language%20documentation
+✅ NELIAC               | 200 | https://www.google.com/search?q=NELIAC%20programming%20language%20documentation
+✅ Idris 2              | 200 | https://www.google.com/search?q=Idris%202%20programming%20language%20documentation
+✅ MAD                  | 200 | https://www.google.com/search?q=MAD%20programming%20language%20documentation
+✅ GAMS                 | 200 | https://www.google.com/search?q=GAMS%20programming%20language%20documentation
+✅ Wren                 | 200 | https://www.google.com/search?q=Wren%20programming%20language%20documentation
+✅ Jai                  | 200 | https://www.google.com/search?q=Jai%20programming%20language%20documentation
+✅ AngelScript          | 200 | https://www.google.com/search?q=AngelScript%20programming%20language%20documentation
+✅ Vale                 | 200 | https://www.google.com/search?q=Vale%20programming%20language%20documentation
+✅ S                    | 200 | https://www.google.com/search?q=S%20programming%20language%20documentation
+✅ Assembly (x86-64)    | 200 | https://www.google.com/search?q=Assembly%20(x86-64)%20programming%20language%20documentation
+✅ Assembly (ARM)       | 200 | https://www.google.com/search?q=Assembly%20(ARM)%20programming%20language%20documentation
+✅ Fortress             | 200 | https://www.google.com/search?q=Fortress%20programming%20language%20documentation
+✅ Squirrel             | 200 | https://www.google.com/search?q=Squirrel%20programming%20language%20documentation
+✅ Assembly (x86 NASM)  | 200 | https://www.google.com/search?q=Assembly%20(x86%20NASM)%20programming%20language%20documentation
+✅ Assembly (RISC-V)    | 200 | https://www.google.com/search?q=Assembly%20(RISC-V)%20programming%20language%20documentation
+✅ Assembly (MIPS)      | 200 | https://www.google.com/search?q=Assembly%20(MIPS)%20programming%20language%20documentation
+
+==================================================
+📊 SUMMARY
+==================================================
+Total URLs tested: 242
+✅ Successful: 235 (97.1%)
+🔄 Redirected: 0 (0.0%)
+⏰ Timeout: 3 (1.2%)
+❌ Failed: 4 (1.7%)
+
+==================================================
+❌ FAILED URLS
+==================================================
+Ada: https://www.adaic.org/resources/add_content/standards/ada12/html/Ada12_RM.html
+  Status: N/A
+  Error: socket hang up
+
+MATLAB: https://www.mathworks.com/help/matlab/
+  Status: 403
+  Error: Unknown error
+
+WebAssembly: https://webassembly.org/docs/
+  Status: 404
+  Error: Unknown error
+
+AutoHotkey: https://www.autohotkey.com/docs/
+  Status: 403
+  Error: Unknown error
+
+📄 Detailed report saved to: url-test-report.json

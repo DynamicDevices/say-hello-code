@@ -348,21 +348,27 @@ var Visualizations = (function() {
                     },
                     tooltip: {
                         displayColors: false,
-                        filter: function(tooltipItem) {
-                            // Only show tooltip for the first item to avoid duplicates
-                            return tooltipItem.datasetIndex === 0;
-                        },
                         callbacks: {
                             title: function(context) {
                                 return context[0].raw.label;
                             },
-                            label: function(context) {
-                                var difficultyLabels = ['', 'Beginner', 'Intermediate', 'Advanced'];
-                                var difficulty = difficultyLabels[Math.round(context.parsed.x)] || 'Intermediate';
-                                return 'Difficulty: ' + difficulty;
+                            beforeBody: function() {
+                                return null;
                             },
-                            afterLabel: function(context) {
-                                return 'Popularity: ' + context.parsed.y;
+                            body: function(context) {
+                                var ctx = context[0];
+                                var difficultyLabels = ['', 'Beginner', 'Intermediate', 'Advanced'];
+                                var difficulty = difficultyLabels[Math.round(ctx.parsed.x)] || 'Intermediate';
+                                return [
+                                    'Difficulty: ' + difficulty,
+                                    'Popularity: ' + ctx.parsed.y
+                                ];
+                            },
+                            label: function() {
+                                return null; // Suppress default label
+                            },
+                            afterLabel: function() {
+                                return null; // Suppress after label
                             }
                         }
                     }

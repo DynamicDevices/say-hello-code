@@ -20,9 +20,9 @@ Website: https://sayhellocode.com
 
 // Service Worker for caching and offline functionality
 
-const CACHE_NAME = 'say-hello-code-v5';
-const STATIC_CACHE = 'say-hello-static-v5';
-const DYNAMIC_CACHE = 'say-hello-dynamic-v5';
+const CACHE_NAME = 'say-hello-code-v6';
+const STATIC_CACHE = 'say-hello-static-v6';
+const DYNAMIC_CACHE = 'say-hello-dynamic-v6';
 
 // Static resources that don't change often
 const staticUrlsToCache = [
@@ -30,6 +30,7 @@ const staticUrlsToCache = [
     './css/styles.css',
     './js/performance.js',
     './js/app.js',
+    './js/visualizations.js',
     './manifest.json',
     './404.html'
 ];

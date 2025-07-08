@@ -32,6 +32,7 @@ This collection was created to:
 - **240+ Programming Languages** - From classic languages like FORTRAN to modern ones like Rust
 - **Interactive Search & Filtering** - Find languages by name, year, creator, or description
 - **Category Filtering** - Filter by language categories (Web, Systems, Functional, etc.)
+- **📊 Data Visualizations** - Interactive charts showing language trends, categories, and insights
 - **Rich Metadata** - View programming paradigms, difficulty levels, and typing information
 - **Copy-to-Clipboard** - Easy code copying for quick testing
 - **Responsive Design** - Works perfectly on desktop, tablet, and mobile
@@ -41,14 +42,24 @@ This collection was created to:
 ## 🏗️ Technical Features
 
 - **Service Worker** - Offline functionality and fast loading
-- **PWA Manifest** - Installable web app experience  
+- **PWA Manifest** - Installable web app experience
 - **Performance Monitoring** - Real-time performance metrics
+- **Chart.js Integration** - Modern, responsive data visualization
 - **Accessibility** - Screen reader support and keyboard navigation
 - **SEO Optimized** - Rich metadata and structured data
 
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on how to add new languages or improve the project.
+
+## 📊 Visualization Features
+
+- **Timeline Chart** - Languages created by decade, showing the evolution of programming
+- **Category Distribution** - Pie chart displaying the diversity of language types
+- **Popularity Analysis** - Scatter plot correlating language difficulty with popularity
+- **Paradigm Insights** - Bar chart of the most common programming paradigms
+- **Interactive Dashboard** - Toggle visualizations on/off with responsive design
+- **Mobile Optimized** - All charts work perfectly on mobile devices
 
 ## 🤖 Working with Agentic AI
 

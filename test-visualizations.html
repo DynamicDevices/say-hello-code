@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualization Test - Say Hello Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #1e293b;
+            color: white;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-result {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .pass { background: #065f46; }
+        .fail { background: #7f1d1d; }
+        canvas {
+            background: white;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>📊 Visualization Test Page</h1>
+        <p>This page tests the visualization functionality independently.</p>
+        
+        <div id="testResults"></div>
+        
+        <h2>Sample Chart</h2>
+        <canvas id="testChart" width="400" height="200"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script>
+        // Test data similar to what we'd have from languages.js
+        const testLanguages = [
+            { name: "JavaScript", year: 1995, primaryCategory: "Web", popularity: 95, difficulty: "Beginner", paradigms: ["Object-Oriented", "Functional"] },
+            { name: "Python", year: 1991, primaryCategory: "Popular", popularity: 90, difficulty: "Beginner", paradigms: ["Object-Oriented", "Functional"] },
+            { name: "Java", year: 1995, primaryCategory: "Popular", popularity: 85, difficulty: "Intermediate", paradigms: ["Object-Oriented"] },
+            { name: "C", year: 1972, primaryCategory: "Systems", popularity: 80, difficulty: "Advanced", paradigms: ["Procedural"] },
+            { name: "Rust", year: 2010, primaryCategory: "Systems", popularity: 70, difficulty: "Advanced", paradigms: ["Functional", "Procedural"] }
+        ];
+
+        function runTests() {
+            const results = document.getElementById('testResults');
+            let testsPassed = 0;
+            let totalTests = 0;
+
+            function addResult(testName, passed, message) {
+                totalTests++;
+                if (passed) testsPassed++;
+                
+                const div = document.createElement('div');
+                div.className = `test-result ${passed ? 'pass' : 'fail'}`;
+                div.innerHTML = `<strong>${testName}:</strong> ${passed ? 'PASS' : 'FAIL'} - ${message}`;
+                results.appendChild(div);
+            }
+
+            // Test 1: Chart.js loaded
+            addResult('Chart.js Library', typeof Chart !== 'undefined', 
+                typeof Chart !== 'undefined' ? 'Chart.js loaded successfully' : 'Chart.js failed to load');
+
+            // Test 2: Can create a basic chart
+            try {
+                const ctx = document.getElementById('testChart');
+                const chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Web', 'Popular', 'Systems'],
+                        datasets: [{
+                            label: 'Languages',
+                            data: [1, 2, 2],
+                            backgroundColor: ['#4A90E2', '#7ED321', '#F5A623']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Test Chart - Categories'
+                            }
+                        }
+                    }
+                });
+                addResult('Chart Creation', true, 'Successfully created test chart');
+            } catch (error) {
+                addResult('Chart Creation', false, `Error creating chart: ${error.message}`);
+            }
+
+            // Test 3: Data processing functions
+            try {
+                // Test decade grouping
+                const decades = {};
+                testLanguages.forEach(lang => {
+                    const decade = Math.floor(lang.year / 10) * 10;
+                    decades[decade] = (decades[decade] || 0) + 1;
+                });
+                addResult('Data Processing', Object.keys(decades).length > 0, 
+                    `Processed ${Object.keys(decades).length} decades`);
+            } catch (error) {
+                addResult('Data Processing', false, `Error processing data: ${error.message}`);
+            }
+
+            // Test 4: Category distribution
+            try {
+                const categories = {};
+                testLanguages.forEach(lang => {
+                    categories[lang.primaryCategory] = (categories[lang.primaryCategory] || 0) + 1;
+                });
+                addResult('Category Analysis', Object.keys(categories).length > 0,
+                    `Found ${Object.keys(categories).length} categories`);
+            } catch (error) {
+                addResult('Category Analysis', false, `Error analyzing categories: ${error.message}`);
+            }
+
+            // Summary
+            const summary = document.createElement('div');
+            summary.className = `test-result ${testsPassed === totalTests ? 'pass' : 'fail'}`;
+            summary.innerHTML = `<strong>Summary:</strong> ${testsPassed}/${totalTests} tests passed`;
+            results.appendChild(summary);
+
+            if (testsPassed === totalTests) {
+                console.log('✅ All visualization tests passed!');
+            } else {
+                console.log(`❌ ${totalTests - testsPassed} tests failed`);
+            }
+        }
+
+        // Run tests when page loads
+        document.addEventListener('DOMContentLoaded', runTests);
+    </script>
+</body>
+</html>

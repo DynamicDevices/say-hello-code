@@ -1,0 +1,36 @@
+{
+  "version": "1.1.0",
+  "name": "Say Hello Code",
+  "description": "A comprehensive collection of Hello, World! programs in 240+ programming languages with data visualizations",
+  "releaseDate": "2025-01-27",
+  "features": [
+    "240+ programming languages",
+    "Interactive search and filtering",
+    "Data visualization dashboard",
+    "Timeline and category charts",
+    "Popularity analysis",
+    "Programming paradigm insights",
+    "Progressive Web App functionality",
+    "Offline support with service worker",
+    "Copy-to-clipboard functionality",
+    "Responsive design",
+    "Rich language metadata"
+  ],
+  "newInThisVersion": [
+    "Interactive data visualization dashboard",
+    "Timeline chart showing languages by decade",
+    "Category distribution pie chart",
+    "Popularity vs difficulty scatter plot",
+    "Programming paradigm bar chart",
+    "Chart.js integration",
+    "Responsive chart design"
+  ],
+  "nextVersion": "1.2.0",
+  "upcomingFeatures": [
+    "Advanced filtering with multiple criteria",
+    "Language comparison tool",
+    "Export functionality for charts",
+    "User preferences and favorites",
+    "Enhanced mobile experience"
+  ]
+}

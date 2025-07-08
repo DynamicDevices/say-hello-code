@@ -1,0 +1,416 @@
+/*
+Say Hello Code - Data Visualizations
+Copyright (c) 2025 Dynamic Devices Ltd
+
+This work is licensed under the Creative Commons Attribution 4.0 International License.
+To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/
+*/
+
+// Visualization module for Say Hello Code
+var Visualizations = (function() {
+    'use strict';
+
+    var charts = {};
+    var isChartsVisible = false;
+
+    // Initialize all visualizations
+    function init() {
+        if (typeof languages === 'undefined' || !languages.length) {
+            console.warn('Languages data not available for visualizations');
+            return;
+        }
+
+        setupVisualizationToggle();
+        createVisualizationContainer();
+        initializeCharts();
+    }
+
+    // Setup the toggle button for showing/hiding visualizations
+    function setupVisualizationToggle() {
+        var header = document.querySelector('header');
+        var toggleBtn = document.createElement('button');
+        toggleBtn.id = 'visualizationToggle';
+        toggleBtn.className = 'visualization-toggle-btn';
+        toggleBtn.innerHTML = '📊 Show Visualizations';
+        toggleBtn.addEventListener('click', toggleVisualizations);
+        
+        // Insert after the clear filters button
+        var clearBtn = document.getElementById('clearFilters');
+        if (clearBtn && clearBtn.parentNode) {
+            clearBtn.parentNode.insertBefore(toggleBtn, clearBtn.nextSibling);
+        } else {
+            header.appendChild(toggleBtn);
+        }
+    }
+
+    // Create the container for all visualizations
+    function createVisualizationContainer() {
+        var container = document.createElement('div');
+        container.id = 'visualizationContainer';
+        container.className = 'visualization-container hidden';
+        container.innerHTML = `
+            <div class="visualization-header">
+                <h2>📊 Language Data Visualizations</h2>
+                <p>Explore insights from our collection of 240+ programming languages</p>
+            </div>
+            <div class="visualization-grid">
+                <div class="chart-container">
+                    <h3>Languages by Creation Year</h3>
+                    <canvas id="timelineChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Category Distribution</h3>
+                    <canvas id="categoryChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Popularity vs Difficulty</h3>
+                    <canvas id="popularityChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Programming Paradigms</h3>
+                    <canvas id="paradigmChart"></canvas>
+                </div>
+            </div>
+        `;
+
+        // Insert after the statistics section
+        var stats = document.getElementById('statistics');
+        if (stats && stats.parentNode) {
+            stats.parentNode.insertBefore(container, stats.nextSibling);
+        } else {
+            document.body.insertBefore(container, document.getElementById('languagesContainer'));
+        }
+    }
+
+    // Toggle visualization visibility
+    function toggleVisualizations() {
+        var container = document.getElementById('visualizationContainer');
+        var toggleBtn = document.getElementById('visualizationToggle');
+        
+        if (isChartsVisible) {
+            container.classList.add('hidden');
+            toggleBtn.innerHTML = '📊 Show Visualizations';
+            isChartsVisible = false;
+        } else {
+            container.classList.remove('hidden');
+            toggleBtn.innerHTML = '📊 Hide Visualizations';
+            isChartsVisible = true;
+            
+            // Initialize charts if not already done
+            if (Object.keys(charts).length === 0) {
+                initializeCharts();
+            }
+        }
+    }
+
+    // Initialize all chart visualizations
+    function initializeCharts() {
+        if (!isChartsVisible) return;
+
+        try {
+            createTimelineChart();
+            createCategoryChart();
+            createPopularityChart();
+            createParadigmChart();
+        } catch (error) {
+            console.error('Error initializing charts:', error);
+        }
+    }
+
+    // 1. Timeline Chart - Languages by Creation Year
+    function createTimelineChart() {
+        var ctx = document.getElementById('timelineChart');
+        if (!ctx) return;
+
+        // Process data by decade
+        var decades = {};
+        languages.forEach(function(lang) {
+            var decade = Math.floor(lang.year / 10) * 10;
+            decades[decade] = (decades[decade] || 0) + 1;
+        });
+
+        var labels = Object.keys(decades).sort().map(function(decade) {
+            return decade + 's';
+        });
+        var data = Object.keys(decades).sort().map(function(decade) {
+            return decades[decade];
+        });
+
+        charts.timeline = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Languages Created',
+                    data: data,
+                    backgroundColor: 'rgba(74, 144, 226, 0.8)',
+                    borderColor: 'rgba(74, 144, 226, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(context) {
+                                return context[0].label;
+                            },
+                            label: function(context) {
+                                return context.parsed.y + ' languages created';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // 2. Category Distribution Pie Chart
+    function createCategoryChart() {
+        var ctx = document.getElementById('categoryChart');
+        if (!ctx) return;
+
+        // Process primary categories
+        var categories = {};
+        languages.forEach(function(lang) {
+            var category = lang.primaryCategory || 'Other';
+            categories[category] = (categories[category] || 0) + 1;
+        });
+
+        var labels = Object.keys(categories);
+        var data = Object.values(categories);
+        var colors = generateColors(labels.length);
+
+        charts.category = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    backgroundColor: colors,
+                    borderWidth: 2,
+                    borderColor: '#1a1a1a'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            usePointStyle: true
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                var percentage = ((context.parsed / data.reduce(function(a, b) { return a + b; }, 0)) * 100).toFixed(1);
+                                return context.label + ': ' + context.parsed + ' (' + percentage + '%)';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // 3. Popularity vs Difficulty Scatter Plot
+    function createPopularityChart() {
+        var ctx = document.getElementById('popularityChart');
+        if (!ctx) return;
+
+        // Process data for scatter plot
+        var difficultyMap = {
+            'Beginner': 1,
+            'Intermediate': 2,
+            'Intermediate to Advanced': 2.5,
+            'Advanced': 3
+        };
+
+        var scatterData = languages.map(function(lang) {
+            return {
+                x: difficultyMap[lang.difficulty] || 2,
+                y: lang.popularity || 0,
+                label: lang.name
+            };
+        });
+
+        charts.popularity = new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Languages',
+                    data: scatterData,
+                    backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1,
+                    pointRadius: 5,
+                    pointHoverRadius: 7
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(context) {
+                                return context[0].raw.label;
+                            },
+                            label: function(context) {
+                                var difficultyLabels = ['', 'Beginner', 'Intermediate', 'Advanced'];
+                                var difficulty = difficultyLabels[Math.round(context.parsed.x)] || 'Intermediate';
+                                return [
+                                    'Difficulty: ' + difficulty,
+                                    'Popularity: ' + context.parsed.y
+                                ];
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Difficulty Level'
+                        },
+                        min: 0.5,
+                        max: 3.5,
+                        ticks: {
+                            stepSize: 1,
+                            callback: function(value) {
+                                var labels = ['', 'Beginner', 'Intermediate', 'Advanced'];
+                                return labels[value] || '';
+                            }
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Popularity Score'
+                        },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    // 4. Programming Paradigms Bar Chart
+    function createParadigmChart() {
+        var ctx = document.getElementById('paradigmChart');
+        if (!ctx) return;
+
+        // Process paradigms data
+        var paradigms = {};
+        languages.forEach(function(lang) {
+            if (lang.paradigms && Array.isArray(lang.paradigms)) {
+                lang.paradigms.forEach(function(paradigm) {
+                    paradigms[paradigm] = (paradigms[paradigm] || 0) + 1;
+                });
+            }
+        });
+
+        // Sort by count and take top 10
+        var sortedParadigms = Object.entries(paradigms)
+            .sort(function(a, b) { return b[1] - a[1]; })
+            .slice(0, 10);
+
+        var labels = sortedParadigms.map(function(item) { return item[0]; });
+        var data = sortedParadigms.map(function(item) { return item[1]; });
+
+        charts.paradigm = new Chart(ctx, {
+            type: 'horizontalBar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Number of Languages',
+                    data: data,
+                    backgroundColor: 'rgba(153, 102, 255, 0.8)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.x + ' languages';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // Generate colors for charts
+    function generateColors(count) {
+        var colors = [
+            '#4A90E2', '#7ED321', '#F5A623', '#D0021B', '#9013FE',
+            '#50E3C2', '#B8E986', '#4A4A4A', '#9B9B9B', '#BD10E0',
+            '#F8E71C', '#8B572A', '#417505', '#9013FE', '#50E3C2'
+        ];
+        
+        var result = [];
+        for (var i = 0; i < count; i++) {
+            result.push(colors[i % colors.length]);
+        }
+        return result;
+    }
+
+    // Public API
+    return {
+        init: init,
+        toggle: toggleVisualizations,
+        refresh: initializeCharts
+    };
+})();
+
+// Initialize visualizations when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait for languages data to be available
+    var initAttempts = 0;
+    var maxAttempts = 10;
+    
+    function tryInit() {
+        if (typeof languages !== 'undefined' && languages.length > 0) {
+            Visualizations.init();
+        } else if (initAttempts < maxAttempts) {
+            initAttempts++;
+            setTimeout(tryInit, 500);
+        } else {
+            console.warn('Could not initialize visualizations: languages data not available');
+        }
+    }
+    
+    tryInit();
+});

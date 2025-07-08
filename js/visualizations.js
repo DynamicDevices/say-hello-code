@@ -354,10 +354,10 @@ var Visualizations = (function() {
                             label: function(context) {
                                 var difficultyLabels = ['', 'Beginner', 'Intermediate', 'Advanced'];
                                 var difficulty = difficultyLabels[Math.round(context.parsed.x)] || 'Intermediate';
-                                return [
-                                    'Difficulty: ' + difficulty,
-                                    'Popularity: ' + context.parsed.y
-                                ];
+                                return 'Difficulty: ' + difficulty;
+                            },
+                            afterLabel: function(context) {
+                                return 'Popularity: ' + context.parsed.y;
                             }
                         }
                     }

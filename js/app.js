@@ -162,9 +162,6 @@ function setupEventListeners() {
     }
 }
 
-// Filter languages based on search and category
-// Improved search logic based on feedback from Andy Stanford-Clark
-// addressing over-zealous matching and case sensitivity issues
 function filterLanguages() {
     var searchTerm = searchInput.value.trim();
     var selectedCategory = categoryFilter.value;
@@ -180,46 +177,50 @@ function filterLanguages() {
             if (searchTerm) {
                 var searchLower = searchTerm.toLowerCase();
                 var langName = lang.name.toLowerCase();
-                var langCreator = lang.creator.toLowerCase();
+                var langCreator = (lang.creator || '').toLowerCase();
                 var langYear = lang.year.toString();
                 var langDesc = (lang.desc || '').toLowerCase();
 
-                // Improved search logic with priority matching
-                var exactNameMatch = langName === searchLower;
-                var nameStartsWith = langName.startsWith(searchLower);
-                var nameContains = langName.includes(searchLower);
-                var creatorContains = langCreator.includes(searchLower);
-                var yearMatches = langYear.includes(searchTerm);
-                var descContains = langDesc.includes(searchLower);
+                // For very short searches (1-2 characters), be more restrictive than longer searches
+                if (searchTerm.length <= 2) {
+                    // Match exact name or name that starts with the search term
+                    var exactNameMatch = langName === searchLower;
+                    var nameStartsWith = langName.startsWith(searchLower);
 
-                // For single character searches, be more restrictive
-                if (searchTerm.length === 1) {
-                    matchesSearch = exactNameMatch ||
-                                  nameStartsWith ||
-                                  creatorContains ||
-                                  yearMatches;
-                } else if (searchTerm.length === 2) {
-                    // For 2-character searches, prioritize exact matches and starts-with
+                    matchesSearch = exactNameMatch || nameStartsWith;
+
+                } else if (searchTerm.length === 3) {
+                    // For 3-character searches, allow exact match, starts with, or word boundary
+                    var exactNameMatch = langName === searchLower;
+                    var nameStartsWith = langName.startsWith(searchLower);
+                    // Escape special regex characters for word boundary check
+                    var escapedSearch = searchLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    var wordBoundaryRegex = new RegExp('\\b' + escapedSearch + '\\b', 'i');
+                    var isCompleteWord = wordBoundaryRegex.test(lang.name);
+
+                    matchesSearch = exactNameMatch || nameStartsWith || isCompleteWord;
+
+                } else {
+                    // For longer searches (4+ characters), use broader matching
+                    var exactNameMatch = langName === searchLower;
+                    var nameStartsWith = langName.startsWith(searchLower);
+                    var nameContains = langName.includes(searchLower);
+                    var creatorContains = langCreator.includes(searchLower);
+                    var yearMatches = langYear.includes(searchTerm);
+                    var descContains = langDesc.includes(searchLower);
+
+                    // Prioritize name matches over other fields
                     matchesSearch = exactNameMatch ||
                                   nameStartsWith ||
                                   nameContains ||
-                                  creatorContains ||
-                                  yearMatches;
-                } else {
-                    // For longer searches, use full text search
-                    matchesSearch = nameContains ||
                                   creatorContains ||
                                   yearMatches ||
                                   descContains;
                 }
 
-                // Debug logging for single character searches
-                if (searchTerm.length === 1 && matchesSearch) {
-                    console.log('Match found for "' + searchTerm + '":', lang.name,
-                               'exact:', exactNameMatch,
-                               'starts:', nameStartsWith,
-                               'creator:', creatorContains,
-                               'year:', yearMatches);
+                // Debug logging for short searches
+                if (searchTerm.length <= 3 && matchesSearch) {
+                    console.log('Match found for "' + searchTerm + '":', lang.name);
                 }
             }
 

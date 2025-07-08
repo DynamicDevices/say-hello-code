@@ -1,6 +1,6 @@
-const CACHE_NAME = 'say-hello-code-v2';
-const STATIC_CACHE = 'say-hello-static-v2';
-const DYNAMIC_CACHE = 'say-hello-dynamic-v2';
+const CACHE_NAME = 'say-hello-code-v3';
+const STATIC_CACHE = 'say-hello-static-v3';
+const DYNAMIC_CACHE = 'say-hello-dynamic-v3';
 
 // Static resources that don't change often
 const staticUrlsToCache = [

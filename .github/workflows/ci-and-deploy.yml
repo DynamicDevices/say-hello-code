@@ -38,9 +38,9 @@ jobs:
       run: |
         echo "🔍 Validating JavaScript files..."
         
-        # Check for syntax errors in all JS files
+        # Check for syntax errors in all JS files (excluding backup files)
         for file in js/*.js; do
-          if [ -f "$file" ]; then
+          if [ -f "$file" ] && [[ ! "$file" =~ -backup ]]; then
             echo "Checking $file..."
             node -c "$file" || {
               echo "❌ Syntax error in $file"

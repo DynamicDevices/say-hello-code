@@ -5301,6 +5301,265 @@ var languages = [
         "difficulty": "Advanced",
         "typing": "Untyped",
         "sourceFile": "systems-languages.js"
+    },
+    {
+        "name": "Zig",
+        "year": 2015,
+        "creator": "Andrew Kelley",
+        "code": "const std = @import(\"std\");\n\npub fn main() !void {\n    const stdout = std.io.getStdOut().writer();\n    try stdout.print(\"Hello, World!\\n\", .{});\n}",
+        "desc": "Zig is a general-purpose programming language and toolchain for maintaining robust, optimal, and reusable software. It's designed to be a modern alternative to C.",
+        "popularity": 45,
+        "categories": [
+            "Systems",
+            "Modern",
+            "Low-level"
+        ],
+        "primaryCategory": "Systems",
+        "paradigms": [
+            "Imperative",
+            "Procedural"
+        ],
+        "domains": [
+            "System Programming",
+            "Embedded Systems",
+            "Game Development"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "systems-languages.js"
+    },
+    {
+        "name": "Vale",
+        "year": 2020,
+        "creator": "Evan Ovadia",
+        "code": "fn main() {\n    println(\"Hello, World!\");\n}",
+        "desc": "Vale is a programming language focused on memory safety and performance. It uses a unique approach to memory management called 'generational references'.",
+        "popularity": 15,
+        "categories": [
+            "Modern",
+            "Systems",
+            "Research"
+        ],
+        "primaryCategory": "Modern",
+        "paradigms": [
+            "Imperative",
+            "Object-Oriented"
+        ],
+        "domains": [
+            "System Programming",
+            "High Performance Computing"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "modern-languages.js"
+    },
+    {
+        "name": "Bend",
+        "year": 2023,
+        "creator": "HVM",
+        "code": "def main() {\n  \"Hello, World!\"\n}",
+        "desc": "Bend is a massively parallel programming language that automatically parallelizes code. It's designed to make parallel programming as easy as sequential programming.",
+        "popularity": 10,
+        "categories": [
+            "Modern",
+            "Research",
+            "Parallel"
+        ],
+        "primaryCategory": "Modern",
+        "paradigms": [
+            "Functional",
+            "Parallel"
+        ],
+        "domains": [
+            "High Performance Computing",
+            "Parallel Programming",
+            "Research"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "modern-languages.js"
+    },
+    {
+        "name": "Roc",
+        "year": 2020,
+        "creator": "Roc Lang Team",
+        "code": "app \"hello\"\n    packages { pf: \"https://github.com/roc-lang/basic-cli\" }\n    imports [pf.Stdout]\n    provides [main] to pf\n\nmain = Stdout.line \"Hello, World!\"",
+        "desc": "Roc is a functional programming language designed for building reliable, fast software. It emphasizes simplicity, performance, and correctness.",
+        "popularity": 20,
+        "categories": [
+            "Modern",
+            "Functional",
+            "Research"
+        ],
+        "primaryCategory": "Modern",
+        "paradigms": [
+            "Functional",
+            "Pure"
+        ],
+        "domains": [
+            "Web Development",
+            "System Programming",
+            "Research"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "modern-languages.js"
+    },
+    {
+        "name": "Unison",
+        "year": 2019,
+        "creator": "Unison Computing",
+        "code": "Hello = \"Hello, World!\"",
+        "desc": "Unison is a functional programming language with a unique approach to code organization and versioning. It uses content-addressed code and eliminates the need for traditional package managers.",
+        "popularity": 25,
+        "categories": [
+            "Modern",
+            "Functional",
+            "Research"
+        ],
+        "primaryCategory": "Modern",
+        "paradigms": [
+            "Functional",
+            "Pure"
+        ],
+        "domains": [
+            "Web Development",
+            "Distributed Systems",
+            "Research"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "modern-languages.js"
+    },
+    {
+        "name": "Mojo",
+        "year": 2023,
+        "creator": "Modular",
+        "code": "fn main():\n    print(\"Hello, World!\")",
+        "desc": "Mojo is a programming language designed for AI and machine learning. It combines the performance of C with the ease of Python, specifically targeting AI workloads.",
+        "popularity": 35,
+        "categories": [
+            "Modern",
+            "AI/ML",
+            "High Performance"
+        ],
+        "primaryCategory": "Modern",
+        "paradigms": [
+            "Imperative",
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Artificial Intelligence",
+            "Machine Learning",
+            "High Performance Computing"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "modern-languages.js"
+    },
+    {
+        "name": "Chapel",
+        "year": 2009,
+        "creator": "Cray Inc.",
+        "code": "writeln(\"Hello, World!\");",
+        "desc": "Chapel is a parallel programming language designed for high-performance computing. It provides high-level abstractions for parallel programming while maintaining performance.",
+        "popularity": 20,
+        "categories": [
+            "Parallel",
+            "High Performance",
+            "Academic"
+        ],
+        "primaryCategory": "Parallel",
+        "paradigms": [
+            "Parallel",
+            "Object-Oriented"
+        ],
+        "domains": [
+            "High Performance Computing",
+            "Scientific Computing",
+            "Parallel Programming"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "parallel-languages.js"
+    },
+    {
+        "name": "Futhark",
+        "year": 2014,
+        "creator": "DIKU",
+        "code": "let main = \"Hello, World!\"",
+        "desc": "Futhark is a functional data-parallel programming language designed for high-performance computing on GPUs. It automatically optimizes and parallelizes code.",
+        "popularity": 15,
+        "categories": [
+            "Functional",
+            "Parallel",
+            "GPU Computing"
+        ],
+        "primaryCategory": "Functional",
+        "paradigms": [
+            "Functional",
+            "Data-Parallel"
+        ],
+        "domains": [
+            "GPU Computing",
+            "High Performance Computing",
+            "Scientific Computing"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "parallel-languages.js"
+    },
+    {
+        "name": "Pony",
+        "year": 2014,
+        "creator": "Sylvan Clebsch",
+        "code": "actor Main\n  new create(env: Env) =>\n    env.out.print(\"Hello, World!\")",
+        "desc": "Pony is an actor-model programming language with built-in support for concurrent programming. It provides memory safety without garbage collection.",
+        "popularity": 20,
+        "categories": [
+            "Concurrent",
+            "Actor Model",
+            "Research"
+        ],
+        "primaryCategory": "Concurrent",
+        "paradigms": [
+            "Actor Model",
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Concurrent Programming",
+            "Distributed Systems",
+            "High Performance Computing"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "concurrent-languages.js"
+    },
+    {
+        "name": "Bun",
+        "year": 2022,
+        "creator": "Jarred Sumner",
+        "code": "console.log(\"Hello, World!\");",
+        "desc": "Bun is a fast all-in-one JavaScript runtime and toolkit. It includes a bundler, test runner, and package manager, designed to be a drop-in replacement for Node.js.",
+        "popularity": 40,
+        "categories": [
+            "Modern",
+            "Web",
+            "Runtime"
+        ],
+        "primaryCategory": "Modern",
+        "paradigms": [
+            "Multi-paradigm",
+            "Event-driven"
+        ],
+        "domains": [
+            "Web Development",
+            "Server-side Programming",
+            "JavaScript Runtime"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Dynamic",
+        "sourceFile": "modern-languages.js"
     }
 ];
 

@@ -43,12 +43,7 @@ Website: https://sayhellocode.com
     
     // Error tracking
     window.addEventListener('error', function(e) {
-        console.error('JavaScript Error:', {
-            message: e.message,
-            filename: e.filename,
-            lineno: e.lineno,
-            colno: e.colno
-        });
+        console.error('JavaScript Error:', e.message, 'at', e.filename + ':' + e.lineno + ':' + e.colno);
     });
     
     // Initialize performance monitoring

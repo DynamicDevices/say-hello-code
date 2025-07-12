@@ -462,7 +462,7 @@ function escapeHtml(text) {
 // Generate reference link for a programming language
 function generateReferenceLink(languageName) {
     // baseUrls is now imported from js/language-urls.js
-    if (baseUrls[languageName]) {
+    if (typeof baseUrls !== 'undefined' && baseUrls[languageName]) {
         return baseUrls[languageName];
     }
 

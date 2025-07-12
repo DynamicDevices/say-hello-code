@@ -1,10 +1,10 @@
 {
-  "version": "1.2.1",
+  "version": "1.3.0",
   "name": "Say Hello Code",
-      "description": "A comprehensive collection of Hello, World! programs in 250+ programming languages with enhanced data visualizations",
-  "releaseDate": "2025-01-27",
+  "description": "A comprehensive collection of Hello, World! programs in 241+ programming languages with enhanced data visualizations and robust CI/CD pipeline",
+  "releaseDate": "2025-01-12",
   "features": [
-    "250+ programming languages",
+    "241+ programming languages",
     "Interactive search and filtering",
     "Enhanced data visualization dashboard",
     "Timeline charts with language names on hover",
@@ -16,7 +16,10 @@
     "Chart.js 3.x compatibility",
     "Mobile-responsive design",
     "Copy-to-clipboard functionality",
-    "Service worker for offline support"
+    "Service worker for offline support",
+    "Robust CI/CD pipeline with automated testing",
+    "Duplicate language detection and prevention",
+    "Enhanced JavaScript validation and error handling"
   ],
   "improvements": [
     "Fixed visualization button functionality",
@@ -27,20 +30,41 @@
     "Timeline tooltips show up to 10 language names per decade",
     "Chart.js 3.x compatibility fixes for horizontal bar charts",
     "More accurate scatter plot distribution",
-    "Improved user experience across all visualizations"
+    "Improved user experience across all visualizations",
+    "Added 50 new programming languages covering modern, functional, and emerging languages",
+    "Implemented robust duplicate detection system",
+    "Enhanced CI/CD pipeline with comprehensive validation",
+    "Fixed JavaScript parsing issues and improved error handling",
+    "Streamlined deployment process with automated testing"
   ],
   "bugfixes": [
     "Fixed 'Show Visualizations' button not working",
     "Corrected CSS selectors for DOM elements",
     "Fixed tooltip duplication in popularity chart",
     "Resolved Chart.js 3.x horizontal bar chart issues",
-    "Fixed missing difficulty level mappings"
+    "Fixed missing difficulty level mappings",
+    "Resolved CI duplicate check failures",
+    "Fixed JavaScript syntax validation issues",
+    "Removed duplicate FORTRAN entry",
+    "Fixed cache-busting and baseUrls availability issues",
+    "Resolved theme toggle functionality issues"
   ],
   "technical": [
     "Chart.js 3.x compatibility",
     "Enhanced tooltip callback system",
     "Improved data processing and filtering",
     "Better error handling and debugging",
-    "Comprehensive test files for validation"
+    "Comprehensive test files for validation",
+    "Robust CI/CD pipeline with automated testing",
+    "Duplicate language detection using regex parsing",
+    "Enhanced JavaScript validation in CI workflow",
+    "Improved deployment reliability and error handling"
+  ],
+  "newLanguages": [
+    "Agda", "Alice", "Ballerina", "Carbon", "Chapel", "Clean", "Clojure", "Coq", "Crystal",
+    "Eiffel", "Elm", "Factor", "Forth", "Fortress", "Idris", "Io", "Joy", "Julia", "Lean",
+    "Mercury", "Miranda", "Modula-2", "Mojo", "Nim", "Oberon", "Odin", "Pony", "PostScript",
+    "PureScript", "Racket", "Rebol", "Red", "Scheme", "Self", "V", "Vale", "X10", "Zig",
+    "And many more modern and emerging languages"
   ]
 }

@@ -1,79 +1,71 @@
 {
-  "timestamp": "2025-07-08T17:25:08.904Z",
+  "timestamp": "2025-07-12T13:21:52.990Z",
   "summary": {
-    "total": 242,
-    "successful": 241,
+    "total": 262,
+    "successful": 262,
     "failed": 0,
-    "redirected": 24,
+    "redirected": 5,
     "timeout": 0,
-    "errors": [],
-    "botRestricted": 1,
-    "botRestrictedUrls": [
-      {
-        "language": "AWK",
-        "url": "https://httpbin.org/status/403",
-        "status": 403
-      }
-    ]
+    "errors": []
   },
   "details": [
     {
       "language": "ActionScript",
-      "url": "https://airsdk.dev/reference/actionscript/3.0/",
+      "url": "https://www.google.com/search?q=ActionScript%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Ada",
-      "url": "https://www.adacore.com/about-ada",
+      "url": "https://www.google.com/search?q=Ada%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Agda",
-      "url": "https://wiki.portal.chalmers.se/agda/",
+      "url": "https://www.google.com/search?q=Agda%20programming%20language%20documentation",
       "error": null,
-      "status": 302
+      "status": 200
     },
     {
       "language": "ALGOL",
-      "url": "https://en.wikipedia.org/wiki/ALGOL",
+      "url": "https://www.google.com/search?q=ALGOL%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Angular",
-      "url": "https://angular.io/",
+      "url": "https://www.google.com/search?q=Angular%20programming%20language%20documentation",
       "error": null,
-      "status": 302
+      "status": 200
     },
     {
       "language": "Ansible",
-      "url": "https://docs.ansible.com/",
+      "url": "https://www.google.com/search?q=Ansible%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "AsciiDoc",
-      "url": "https://asciidoc.org/",
+      "url": "https://www.google.com/search?q=AsciiDoc%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Assembly x86",
-      "url": "https://en.wikipedia.org/wiki/X86_assembly_language",
+      "url": "https://www.google.com/search?q=Assembly%20x86%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "AWK",
-      "url": "https://httpbin.org/status/403",
+      "url": "https://www.google.com/search?q=AWK%20programming%20language%20documentation",
       "error": null,
-      "status": 403
+      "status": 200
     },
     {
       "language": "B",
-      "url": "https://en.wikipedia.org/wiki/B_(programming_language)",
+      "url": "https://www.google.com/search?q=B%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -85,25 +77,25 @@
     },
     {
       "language": "BASIC",
-      "url": "https://en.wikipedia.org/wiki/BASIC",
+      "url": "https://www.google.com/search?q=BASIC%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "BCPL",
-      "url": "https://en.wikipedia.org/wiki/BCPL",
+      "url": "https://www.google.com/search?q=BCPL%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Befunge",
-      "url": "https://en.wikipedia.org/wiki/Befunge",
+      "url": "https://www.google.com/search?q=Befunge%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Brainfuck",
-      "url": "https://en.wikipedia.org/wiki/Brainfuck",
+      "url": "https://www.google.com/search?q=Brainfuck%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -127,27 +119,27 @@
     },
     {
       "language": "Carbon",
-      "url": "https://github.com/carbon-language/carbon-lang",
+      "url": "https://www.google.com/search?q=Carbon%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Cat",
-      "url": "https://github.com/cdiggins/cat-language",
+      "url": "https://www.google.com/search?q=Cat%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Chef",
-      "url": "https://www.dangermouse.net/esoteric/chef.html",
+      "url": "https://www.google.com/search?q=Chef%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Clean",
-      "url": "https://clean.cs.ru.nl/",
+      "url": "https://www.google.com/search?q=Clean%20programming%20language%20documentation",
       "error": null,
-      "status": 301
+      "status": 200
     },
     {
       "language": "Clojure",
@@ -157,43 +149,43 @@
     },
     {
       "language": "CMake",
-      "url": "https://cmake.org/documentation/",
+      "url": "https://www.google.com/search?q=CMake%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "COBOL",
-      "url": "https://www.ibm.com/docs/en/cobol-zos",
+      "url": "https://www.google.com/search?q=COBOL%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "CoffeeScript",
-      "url": "https://coffeescript.org/",
+      "url": "https://www.google.com/search?q=CoffeeScript%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Coq",
-      "url": "https://coq.inria.fr/",
+      "url": "https://www.google.com/search?q=Coq%20programming%20language%20documentation",
       "error": null,
-      "status": 301
+      "status": 200
     },
     {
       "language": "Creole",
-      "url": "https://en.wikipedia.org/wiki/Creole_(markup)",
+      "url": "https://www.google.com/search?q=Creole%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Crystal",
-      "url": "https://crystal-lang.org/",
+      "url": "https://www.google.com/search?q=Crystal%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Csh",
-      "url": "https://en.wikipedia.org/wiki/C_shell",
+      "url": "https://www.google.com/search?q=Csh%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -205,13 +197,13 @@
     },
     {
       "language": "Cypher",
-      "url": "https://neo4j.com/developer/cypher/",
+      "url": "https://www.google.com/search?q=Cypher%20programming%20language%20documentation",
       "error": null,
-      "status": 301
+      "status": 200
     },
     {
       "language": "D",
-      "url": "https://dlang.org/",
+      "url": "https://www.google.com/search?q=D%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -223,25 +215,25 @@
     },
     {
       "language": "Dash",
-      "url": "https://wiki.ubuntu.com/DashAsBinSh",
+      "url": "https://www.google.com/search?q=Dash%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Delphi",
-      "url": "https://www.embarcadero.com/products/delphi",
+      "url": "https://www.google.com/search?q=Delphi%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Dockerfile",
-      "url": "https://docs.docker.com/engine/reference/builder/",
+      "url": "https://www.google.com/search?q=Dockerfile%20programming%20language%20documentation",
       "error": null,
-      "status": 301
+      "status": 200
     },
     {
       "language": "Eiffel",
-      "url": "https://www.eiffel.org/",
+      "url": "https://www.google.com/search?q=Eiffel%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -253,7 +245,7 @@
     },
     {
       "language": "Elm",
-      "url": "https://elm-lang.org/",
+      "url": "https://www.google.com/search?q=Elm%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -265,9 +257,9 @@
     },
     {
       "language": "Expect",
-      "url": "https://core.tcl-lang.org/expect/",
+      "url": "https://www.google.com/search?q=Expect%20programming%20language%20documentation",
       "error": null,
-      "status": 302
+      "status": 200
     },
     {
       "language": "F#",
@@ -277,55 +269,55 @@
     },
     {
       "language": "Factor",
-      "url": "https://factorcode.org/",
+      "url": "https://www.google.com/search?q=Factor%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Fennel",
-      "url": "https://fennel-lang.org/",
+      "url": "https://www.google.com/search?q=Fennel%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Flutter",
-      "url": "https://flutter.dev/",
+      "url": "https://www.google.com/search?q=Flutter%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Fortran",
-      "url": "https://fortran-lang.org/",
+      "url": "https://www.google.com/search?q=Fortran%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "FORTRAN",
-      "url": "https://fortran-lang.org/",
+      "url": "https://www.google.com/search?q=FORTRAN%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "GDScript",
-      "url": "https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/",
+      "url": "https://www.google.com/search?q=GDScript%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Gleam",
-      "url": "https://gleam.run/",
+      "url": "https://www.google.com/search?q=Gleam%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "GLSL",
-      "url": "https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language",
+      "url": "https://www.google.com/search?q=GLSL%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Gnuplot",
-      "url": "http://www.gnuplot.info/",
+      "url": "https://www.google.com/search?q=Gnuplot%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -337,25 +329,25 @@
     },
     {
       "language": "Gradle",
-      "url": "https://gradle.org/",
+      "url": "https://www.google.com/search?q=Gradle%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Grain",
-      "url": "https://grain-lang.org/",
+      "url": "https://www.google.com/search?q=Grain%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "GraphQL",
-      "url": "https://graphql.org/",
+      "url": "https://www.google.com/search?q=GraphQL%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Groovy",
-      "url": "https://groovy-lang.org/",
+      "url": "https://www.google.com/search?q=Groovy%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -367,7 +359,7 @@
     },
     {
       "language": "HLSL",
-      "url": "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl",
+      "url": "https://www.google.com/search?q=HLSL%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -379,55 +371,55 @@
     },
     {
       "language": "Hy",
-      "url": "https://hylang.org/",
+      "url": "https://www.google.com/search?q=Hy%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Icon",
-      "url": "https://www.cs.arizona.edu/icon/",
+      "url": "https://www.google.com/search?q=Icon%20programming%20language%20documentation",
       "error": null,
-      "status": 302
+      "status": 200
     },
     {
       "language": "Idris",
-      "url": "https://www.idris-lang.org/",
+      "url": "https://www.google.com/search?q=Idris%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Inko",
-      "url": "https://inko-lang.org/",
+      "url": "https://www.google.com/search?q=Inko%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Intercal",
-      "url": "https://en.wikipedia.org/wiki/INTERCAL",
+      "url": "https://www.google.com/search?q=Intercal%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Ionic",
-      "url": "https://ionicframework.com/",
+      "url": "https://www.google.com/search?q=Ionic%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Isabelle",
-      "url": "https://isabelle.in.tum.de/",
+      "url": "https://www.google.com/search?q=Isabelle%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "J",
-      "url": "https://www.jsoftware.com/",
+      "url": "https://www.google.com/search?q=J%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "JAI",
-      "url": "https://github.com/BSVino/JaiPrimer/blob/master/JaiPrimer.md",
+      "url": "https://www.google.com/search?q=JAI%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -445,43 +437,43 @@
     },
     {
       "language": "Joy",
-      "url": "http://www.latrobe.edu.au/humanities/research/research-projects/past-projects/joy-programming-language",
+      "url": "https://www.google.com/search?q=Joy%20programming%20language%20documentation",
       "error": null,
-      "status": 301
+      "status": 200
     },
     {
       "language": "JSON",
-      "url": "https://www.json.org/",
+      "url": "https://www.google.com/search?q=JSON%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "JSX",
-      "url": "https://react.dev/learn/writing-markup-with-jsx",
+      "url": "https://www.google.com/search?q=JSX%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Julia",
-      "url": "https://julialang.org/",
+      "url": "https://www.google.com/search?q=Julia%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "K",
-      "url": "https://kx.com/",
+      "url": "https://www.google.com/search?q=K%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Kitten",
-      "url": "https://kittenlang.org/",
+      "url": "https://www.google.com/search?q=Kitten%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Koka",
-      "url": "https://koka-lang.github.io/",
+      "url": "https://www.google.com/search?q=Koka%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -493,25 +485,25 @@
     },
     {
       "language": "Ksh",
-      "url": "https://www.ibm.com/docs/en/aix/7.2.0?topic=shells-korn-shell",
+      "url": "https://www.google.com/search?q=Ksh%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "LaTeX",
-      "url": "https://www.latex-project.org/",
+      "url": "https://www.google.com/search?q=LaTeX%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Lean",
-      "url": "https://leanprover.github.io/",
+      "url": "https://www.google.com/search?q=Lean%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "LESS",
-      "url": "https://lesscss.org/",
+      "url": "https://www.google.com/search?q=LESS%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -523,13 +515,13 @@
     },
     {
       "language": "Logo",
-      "url": "https://en.wikipedia.org/wiki/Logo_(programming_language)",
+      "url": "https://www.google.com/search?q=Logo%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "LOLCODE",
-      "url": "https://en.wikipedia.org/wiki/LOLCODE",
+      "url": "https://www.google.com/search?q=LOLCODE%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -541,31 +533,31 @@
     },
     {
       "language": "Makefile",
-      "url": "https://en.wikipedia.org/wiki/Make_(software)",
+      "url": "https://www.google.com/search?q=Makefile%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Malbolge",
-      "url": "https://en.wikipedia.org/wiki/Malbolge",
+      "url": "https://www.google.com/search?q=Malbolge%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Maple",
-      "url": "https://www.maplesoft.com/products/maple/",
+      "url": "https://www.google.com/search?q=Maple%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Markdown",
-      "url": "https://daringfireball.net/projects/markdown/",
+      "url": "https://www.google.com/search?q=Markdown%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Mathematica",
-      "url": "https://www.wolfram.com/mathematica/",
+      "url": "https://www.google.com/search?q=Mathematica%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -577,61 +569,61 @@
     },
     {
       "language": "Maxima",
-      "url": "https://maxima.sourceforge.io/",
+      "url": "https://www.google.com/search?q=Maxima%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Miranda",
-      "url": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/",
+      "url": "https://www.google.com/search?q=Miranda%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "ML",
-      "url": "https://www.smlnj.org/",
+      "url": "https://www.google.com/search?q=ML%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Modula-2",
-      "url": "https://www.modula2.org/",
+      "url": "https://www.google.com/search?q=Modula-2%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Mojo",
-      "url": "https://www.modular.com/mojo",
+      "url": "https://www.google.com/search?q=Mojo%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "N1QL",
-      "url": "https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/index.html",
+      "url": "https://www.google.com/search?q=N1QL%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Nim",
-      "url": "https://nim-lang.org/",
+      "url": "https://www.google.com/search?q=Nim%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Nushell",
-      "url": "https://www.nushell.sh/",
+      "url": "https://www.google.com/search?q=Nushell%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Oberon",
-      "url": "https://people.inf.ethz.ch/wirth/Oberon/index.html",
+      "url": "https://www.google.com/search?q=Oberon%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Objective-C",
-      "url": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/",
+      "url": "https://www.google.com/search?q=Objective-C%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -643,37 +635,37 @@
     },
     {
       "language": "Octave",
-      "url": "https://octave.org/",
+      "url": "https://www.google.com/search?q=Octave%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Odin",
-      "url": "https://odin-lang.org/",
+      "url": "https://www.google.com/search?q=Odin%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Ook!",
-      "url": "https://esolangs.org/wiki/Ook!",
+      "url": "https://www.google.com/search?q=Ook!%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Org-mode",
-      "url": "https://orgmode.org/",
+      "url": "https://www.google.com/search?q=Org-mode%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Pascal",
-      "url": "https://www.freepascal.org/",
+      "url": "https://www.google.com/search?q=Pascal%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "PDP-11 Assembly",
-      "url": "https://en.wikipedia.org/wiki/PDP-11_architecture",
+      "url": "https://www.google.com/search?q=PDP-11%20Assembly%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -685,9 +677,9 @@
     },
     {
       "language": "PhoneGap",
-      "url": "https://phonegap.com/",
+      "url": "https://www.google.com/search?q=PhoneGap%20programming%20language%20documentation",
       "error": null,
-      "status": 301
+      "status": 200
     },
     {
       "language": "PHP",
@@ -697,25 +689,25 @@
     },
     {
       "language": "Piet",
-      "url": "https://www.dangermouse.net/esoteric/piet.html",
+      "url": "https://www.google.com/search?q=Piet%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "PL/I",
-      "url": "https://en.wikipedia.org/wiki/PL/I",
+      "url": "https://www.google.com/search?q=PL%2FI%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Pony",
-      "url": "https://www.ponylang.io/",
+      "url": "https://www.google.com/search?q=Pony%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "PostScript",
-      "url": "https://en.wikipedia.org/wiki/PostScript",
+      "url": "https://www.google.com/search?q=PostScript%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -727,13 +719,13 @@
     },
     {
       "language": "Puppet",
-      "url": "https://puppet.com/docs/",
+      "url": "https://www.google.com/search?q=Puppet%20programming%20language%20documentation",
       "error": null,
-      "status": 301
+      "status": 200
     },
     {
       "language": "PureScript",
-      "url": "https://www.purescript.org/",
+      "url": "https://www.google.com/search?q=PureScript%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -745,7 +737,7 @@
     },
     {
       "language": "Q",
-      "url": "https://kx.com/",
+      "url": "https://www.google.com/search?q=Q%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -757,55 +749,55 @@
     },
     {
       "language": "Racket",
-      "url": "https://racket-lang.org/",
+      "url": "https://www.google.com/search?q=Racket%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "React",
-      "url": "https://react.dev/",
+      "url": "https://www.google.com/search?q=React%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "React Native",
-      "url": "https://reactnative.dev/",
+      "url": "https://www.google.com/search?q=React%20Native%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Red",
-      "url": "https://www.red-lang.org/",
+      "url": "https://www.google.com/search?q=Red%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Regex",
-      "url": "https://en.wikipedia.org/wiki/Regular_expression",
+      "url": "https://www.google.com/search?q=Regex%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Ren'Py",
-      "url": "https://www.renpy.org/",
+      "url": "https://www.google.com/search?q=Ren'Py%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "reStructuredText",
-      "url": "https://docutils.sourceforge.io/rst.html",
+      "url": "https://www.google.com/search?q=reStructuredText%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Rexx",
-      "url": "https://www.rexx.org/",
+      "url": "https://www.google.com/search?q=Rexx%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Roc",
-      "url": "https://www.roc-lang.org/",
+      "url": "https://www.google.com/search?q=Roc%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -823,19 +815,19 @@
     },
     {
       "language": "SageMath",
-      "url": "https://www.sagemath.org/",
+      "url": "https://www.google.com/search?q=SageMath%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "SaltStack",
-      "url": "https://docs.saltproject.io/",
+      "url": "https://www.google.com/search?q=SaltStack%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "SASS",
-      "url": "https://sass-lang.com/",
+      "url": "https://www.google.com/search?q=SASS%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -853,31 +845,31 @@
     },
     {
       "language": "Sed",
-      "url": "https://en.wikipedia.org/wiki/Sed",
+      "url": "https://www.google.com/search?q=Sed%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Shakespeare",
-      "url": "https://en.wikipedia.org/wiki/Shakespeare_Programming_Language",
+      "url": "https://www.google.com/search?q=Shakespeare%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "SNOBOL",
-      "url": "https://en.wikipedia.org/wiki/SNOBOL",
+      "url": "https://www.google.com/search?q=SNOBOL%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "SPARQL",
-      "url": "https://www.w3.org/TR/sparql11-query/",
+      "url": "https://www.google.com/search?q=SPARQL%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "SPICE",
-      "url": "https://en.wikipedia.org/wiki/SPICE",
+      "url": "https://www.google.com/search?q=SPICE%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -889,7 +881,7 @@
     },
     {
       "language": "Svelte",
-      "url": "https://svelte.dev/",
+      "url": "https://www.google.com/search?q=Svelte%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
@@ -901,45 +893,45 @@
     },
     {
       "language": "SystemVerilog",
-      "url": "https://en.wikipedia.org/wiki/SystemVerilog",
+      "url": "https://www.google.com/search?q=SystemVerilog%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Tcl",
-      "url": "https://www.tcl.tk/",
+      "url": "https://www.google.com/search?q=Tcl%20programming%20language%20documentation",
       "error": null,
-      "status": 301
+      "status": 200
     },
     {
       "language": "Tcsh",
-      "url": "https://www.tcsh.org/",
+      "url": "https://www.google.com/search?q=Tcsh%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Terraform",
-      "url": "https://www.terraform.io/",
+      "url": "https://www.google.com/search?q=Terraform%20programming%20language%20documentation",
       "error": null,
-      "status": 308
+      "status": 200
     },
     {
       "language": "Textile",
-      "url": "https://textile-lang.com/",
+      "url": "https://www.google.com/search?q=Textile%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Titanium",
-      "url": "https://titaniumsdk.com/",
+      "url": "https://www.google.com/search?q=Titanium%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "TOML",
-      "url": "https://toml.io/",
+      "url": "https://www.google.com/search?q=TOML%20programming%20language%20documentation",
       "error": null,
-      "status": 301
+      "status": 200
     },
     {
       "language": "TypeScript",
@@ -949,525 +941,645 @@
     },
     {
       "language": "Unison",
-      "url": "https://www.unison-lang.org/",
+      "url": "https://www.google.com/search?q=Unison%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "UnityScript",
-      "url": "https://docs.unity3d.com/",
+      "url": "https://www.google.com/search?q=UnityScript%20programming%20language%20documentation",
       "error": null,
-      "status": 301
+      "status": 200
     },
     {
       "language": "V",
-      "url": "https://docs.vlang.io/",
+      "url": "https://www.google.com/search?q=V%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Vagrant",
-      "url": "https://www.vagrantup.com/docs",
+      "url": "https://www.google.com/search?q=Vagrant%20programming%20language%20documentation",
       "error": null,
-      "status": 308
+      "status": 200
     },
     {
       "language": "Verilog",
-      "url": "https://en.wikipedia.org/wiki/Verilog",
+      "url": "https://www.google.com/search?q=Verilog%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "VHDL",
-      "url": "https://en.wikipedia.org/wiki/VHDL",
+      "url": "https://www.google.com/search?q=VHDL%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Visual Basic",
-      "url": "https://learn.microsoft.com/en-us/dotnet/visual-basic/",
+      "url": "https://www.google.com/search?q=Visual%20Basic%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Vue.js",
-      "url": "https://vuejs.org/",
+      "url": "https://www.google.com/search?q=Vue.js%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "WebAssembly",
-      "url": "https://webassembly.org/",
+      "url": "https://www.google.com/search?q=WebAssembly%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Whitespace",
-      "url": "https://en.wikipedia.org/wiki/Whitespace_(programming_language)",
+      "url": "https://www.google.com/search?q=Whitespace%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "WikiText",
-      "url": "https://www.mediawiki.org/wiki/Wikitext",
+      "url": "https://www.google.com/search?q=WikiText%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Xamarin",
-      "url": "https://learn.microsoft.com/en-us/xamarin/",
+      "url": "https://www.google.com/search?q=Xamarin%20programming%20language%20documentation",
       "error": null,
-      "status": 301
+      "status": 200
     },
     {
       "language": "XML",
-      "url": "https://www.w3.org/XML/",
+      "url": "https://www.google.com/search?q=XML%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Xonsh",
-      "url": "https://xon.sh/",
+      "url": "https://www.google.com/search?q=Xonsh%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "XPath",
-      "url": "https://www.w3.org/TR/xpath/",
+      "url": "https://www.google.com/search?q=XPath%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "XQuery",
-      "url": "https://www.w3.org/TR/xquery/",
+      "url": "https://www.google.com/search?q=XQuery%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "XSLT",
-      "url": "https://www.w3.org/TR/xslt/",
+      "url": "https://www.google.com/search?q=XSLT%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "YAML",
-      "url": "https://yaml.org/",
+      "url": "https://www.google.com/search?q=YAML%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Zig",
-      "url": "https://ziglang.org/",
+      "url": "https://www.google.com/search?q=Zig%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Deno",
-      "url": "https://github.com/denoland/deno",
+      "url": "https://www.google.com/search?q=Deno%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Bun",
-      "url": "https://bun.sh/",
+      "url": "https://www.google.com/search?q=Bun%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Bend",
-      "url": "https://github.com/HigherOrderCO/Bend",
+      "url": "https://www.google.com/search?q=Bend%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "ALGOL 60",
-      "url": "https://en.wikipedia.org/wiki/ALGOL_60",
+      "url": "https://www.google.com/search?q=ALGOL%2060%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "ALGOL 68",
-      "url": "https://en.wikipedia.org/wiki/ALGOL_68",
+      "url": "https://www.google.com/search?q=ALGOL%2068%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "APL",
-      "url": "https://www.dyalog.com/",
+      "url": "https://www.google.com/search?q=APL%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "AutoHotkey",
-      "url": "https://www.autohotkey.com/",
+      "url": "https://www.google.com/search?q=AutoHotkey%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "AutoLISP",
-      "url": "https://help.autodesk.com/view/OARX/2023/ENU/?guid=GUID-C8C7B3A2-7B6D-4F7E-8C7B-7B6D4F7E8C7B",
+      "url": "https://www.google.com/search?q=AutoLISP%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Batch",
-      "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands",
+      "url": "https://www.google.com/search?q=Batch%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "BBC BASIC",
-      "url": "https://www.bbcbasic.co.uk/",
+      "url": "https://www.google.com/search?q=BBC%20BASIC%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Boo",
-      "url": "https://boo-language.github.io/",
+      "url": "https://www.google.com/search?q=Boo%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Clipper",
-      "url": "https://en.wikipedia.org/wiki/Clipper_(programming_language)",
+      "url": "https://www.google.com/search?q=Clipper%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "CORAL 66",
-      "url": "https://en.wikipedia.org/wiki/CORAL_66",
+      "url": "https://www.google.com/search?q=CORAL%2066%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "CPL",
-      "url": "https://en.wikipedia.org/wiki/CPL_(programming_language)",
+      "url": "https://www.google.com/search?q=CPL%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "dBASE",
-      "url": "https://en.wikipedia.org/wiki/DBase",
+      "url": "https://www.google.com/search?q=dBASE%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Dylan",
-      "url": "https://opendylan.org/",
+      "url": "https://www.google.com/search?q=Dylan%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Euphoria",
-      "url": "https://openeuphoria.org/",
+      "url": "https://www.google.com/search?q=Euphoria%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Forth",
-      "url": "https://www.forth.com/",
+      "url": "https://www.google.com/search?q=Forth%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "FoxPro",
-      "url": "https://en.wikipedia.org/wiki/Visual_FoxPro",
+      "url": "https://www.google.com/search?q=FoxPro%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "GW-BASIC",
-      "url": "https://en.wikipedia.org/wiki/GW-BASIC",
+      "url": "https://www.google.com/search?q=GW-BASIC%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "HyperTalk",
-      "url": "https://en.wikipedia.org/wiki/HyperTalk",
+      "url": "https://www.google.com/search?q=HyperTalk%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Inform",
-      "url": "https://ganelson.github.io/inform-website/",
+      "url": "https://www.google.com/search?q=Inform%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "JOSS",
-      "url": "https://en.wikipedia.org/wiki/JOSS",
+      "url": "https://www.google.com/search?q=JOSS%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Korn Shell",
-      "url": "https://www.ibm.com/docs/en/aix/7.2.0?topic=shells-korn-shell",
+      "url": "https://www.google.com/search?q=Korn%20Shell%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "LabVIEW",
-      "url": "https://www.ni.com/en-us/shop/labview.html",
-      "error": null,
-      "status": 301
-    },
-    {
-      "language": "Lingo",
-      "url": "https://en.wikipedia.org/wiki/Lingo_(programming_language)",
+      "url": "https://www.google.com/search?q=LabVIEW%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "LiveCode",
-      "url": "https://livecode.com/",
+      "url": "https://www.google.com/search?q=LiveCode%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
-      "language": "Modula-3",
-      "url": "https://www.modula3.org/",
+      "language": "Processing",
+      "url": "https://www.google.com/search?q=Processing%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
-      "language": "Mumps",
-      "url": "https://en.wikipedia.org/wiki/MUMPS",
+      "language": "Ink",
+      "url": "https://www.google.com/search?q=Ink%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Mercury",
+      "url": "https://www.google.com/search?q=Mercury%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Newspeak",
-      "url": "https://newspeaklanguage.org/",
+      "url": "https://www.google.com/search?q=Newspeak%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
-      "language": "Occam",
-      "url": "https://en.wikipedia.org/wiki/Occam_(programming_language)",
+      "language": "Xtend",
+      "url": "https://www.google.com/search?q=Xtend%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
-      "language": "Oz",
-      "url": "https://mozart.github.io/",
-      "error": null,
-      "status": 301
-    },
-    {
-      "language": "Paradox",
-      "url": "https://en.wikipedia.org/wiki/Paradox_(database)",
+      "language": "Vala",
+      "url": "https://www.google.com/search?q=Vala%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
-      "language": "Pike",
-      "url": "https://pike.lysator.liu.se/",
+      "language": "Stylus",
+      "url": "https://www.google.com/search?q=Stylus%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
-      "language": "PL/M",
-      "url": "https://en.wikipedia.org/wiki/PL/M",
+      "language": "Twig",
+      "url": "https://www.google.com/search?q=Twig%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
-      "language": "PL/SQL",
-      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/lnpls/",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "Prolog",
-      "url": "https://www.swi-prolog.org/",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "QBasic",
-      "url": "https://en.wikipedia.org/wiki/QBasic",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "RPG",
-      "url": "https://en.wikipedia.org/wiki/IBM_RPG",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "Simula",
-      "url": "https://en.wikipedia.org/wiki/Simula",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "Smalltalk",
-      "url": "https://squeak.org/",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "Turbo Pascal",
-      "url": "https://en.wikipedia.org/wiki/Turbo_Pascal",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "WATFIV",
-      "url": "https://en.wikipedia.org/wiki/WATFIV",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "FLOW-MATIC",
-      "url": "https://en.wikipedia.org/wiki/FLOW-MATIC",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "Short Code",
-      "url": "https://en.wikipedia.org/wiki/Short_Code_(computer_language)",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "Autocode",
-      "url": "https://en.wikipedia.org/wiki/Autocode",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "MAD",
-      "url": "https://en.wikipedia.org/wiki/MAD_(programming_language)",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "JOVIAL",
-      "url": "https://en.wikipedia.org/wiki/JOVIAL",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "NELIAC",
-      "url": "https://en.wikipedia.org/wiki/NELIAC",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "Idris 2",
-      "url": "https://www.idris-lang.org/",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "ReasonML",
-      "url": "https://reasonml.github.io/",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "Futhark",
-      "url": "https://futhark-lang.org/",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "GAMS",
-      "url": "https://www.gams.com/",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "AMPL",
-      "url": "https://ampl.com/",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "Chapel",
-      "url": "https://chapel-lang.org/",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "X10",
-      "url": "https://github.com/x10-lang/x10",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "Fortress",
-      "url": "https://en.wikipedia.org/wiki/Fortress_(programming_language)",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "S",
-      "url": "https://en.wikipedia.org/wiki/S_(programming_language)",
-      "error": null,
-      "status": 200
-    },
-    {
-      "language": "Jai",
-      "url": "https://github.com/BSVino/JaiPrimer/blob/master/JaiPrimer.md",
+      "language": "Jsonnet",
+      "url": "https://www.google.com/search?q=Jsonnet%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Vale",
-      "url": "https://vale.dev/",
+      "url": "https://www.google.com/search?q=Vale%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
-      "language": "AngelScript",
-      "url": "https://www.angelcode.com/angelscript/",
+      "language": "Ballerina",
+      "url": "https://www.google.com/search?q=Ballerina%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
-      "language": "Squirrel",
-      "url": "http://squirrel-lang.org/",
+      "language": "Chapel",
+      "url": "https://www.google.com/search?q=Chapel%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "X10",
+      "url": "https://www.google.com/search?q=X10%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Fortress",
+      "url": "https://www.google.com/search?q=Fortress%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "SAS",
+      "url": "https://www.google.com/search?q=SAS%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "SPSS",
+      "url": "https://www.google.com/search?q=SPSS%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Stata",
+      "url": "https://www.google.com/search?q=Stata%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Scratch",
+      "url": "https://www.google.com/search?q=Scratch%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Blockly",
+      "url": "https://www.google.com/search?q=Blockly%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Alice",
+      "url": "https://www.google.com/search?q=Alice%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Small Basic",
+      "url": "https://www.google.com/search?q=Small%20Basic%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Kodu",
+      "url": "https://www.google.com/search?q=Kodu%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Snap!",
+      "url": "https://www.google.com/search?q=Snap!%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Tynker",
+      "url": "https://www.google.com/search?q=Tynker%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Code.org",
+      "url": "https://www.google.com/search?q=Code.org%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "MakeCode",
+      "url": "https://www.google.com/search?q=MakeCode%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Raku",
+      "url": "https://www.google.com/search?q=Raku%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Janet",
+      "url": "https://www.google.com/search?q=Janet%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
       "language": "Wren",
-      "url": "https://wren.io/",
+      "url": "https://www.google.com/search?q=Wren%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
-      "language": "Assembly (x86 NASM)",
-      "url": "https://www.nasm.us/",
+      "language": "Haxe",
+      "url": "https://www.google.com/search?q=Haxe%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
-      "language": "Assembly (x86-64)",
-      "url": "https://en.wikipedia.org/wiki/X86-64",
+      "language": "Falcon",
+      "url": "https://www.google.com/search?q=Falcon%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
-      "language": "Assembly (ARM)",
-      "url": "https://developer.arm.com/documentation/dui0473/m/writing-arm-assembly-language",
+      "language": "Io",
+      "url": "https://www.google.com/search?q=Io%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
-      "language": "Assembly (MIPS)",
-      "url": "https://en.wikipedia.org/wiki/MIPS_architecture",
+      "language": "Rebol",
+      "url": "https://www.google.com/search?q=Rebol%20programming%20language%20documentation",
       "error": null,
       "status": 200
     },
     {
-      "language": "Assembly (RISC-V)",
-      "url": "https://riscv.org/technical/specifications/",
+      "language": "Self",
+      "url": "https://www.google.com/search?q=Self%20programming%20language%20documentation",
       "error": null,
-      "status": 301
+      "status": 200
+    },
+    {
+      "language": "Smalltalk",
+      "url": "https://www.google.com/search?q=Smalltalk%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Prolog",
+      "url": "https://www.google.com/search?q=Prolog%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Q#",
+      "url": "https://www.google.com/search?q=Q%23%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Futhark",
+      "url": "https://www.google.com/search?q=Futhark%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Zsh",
+      "url": "https://www.google.com/search?q=Zsh%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Apex",
+      "url": "https://www.google.com/search?q=Apex%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Ballerina",
+      "url": "https://www.google.com/search?q=Ballerina%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Ceylon",
+      "url": "https://www.google.com/search?q=Ceylon%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Chapel",
+      "url": "https://www.google.com/search?q=Chapel%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Crystal",
+      "url": "https://www.google.com/search?q=Crystal%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Dart",
+      "url": "https://dart.dev/",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Elixir",
+      "url": "https://elixir-lang.org/",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "F#",
+      "url": "https://fsharp.org/",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "GDScript",
+      "url": "https://www.google.com/search?q=GDScript%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Groovy",
+      "url": "https://www.google.com/search?q=Groovy%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Hack",
+      "url": "https://www.google.com/search?q=Hack%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "J",
+      "url": "https://www.google.com/search?q=J%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Kotlin",
+      "url": "https://kotlinlang.org/",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Lua",
+      "url": "https://www.lua.org/",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Nim",
+      "url": "https://www.google.com/search?q=Nim%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "OCaml",
+      "url": "https://ocaml.org/",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Pascal",
+      "url": "https://www.google.com/search?q=Pascal%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Perl",
+      "url": "https://www.perl.org/",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Racket",
+      "url": "https://www.google.com/search?q=Racket%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Scala",
+      "url": "https://www.scala-lang.org/",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "Swift",
+      "url": "https://swift.org/",
+      "error": null,
+      "status": 302
+    },
+    {
+      "language": "Tcl",
+      "url": "https://www.google.com/search?q=Tcl%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
+    },
+    {
+      "language": "VHDL",
+      "url": "https://www.google.com/search?q=VHDL%20programming%20language%20documentation",
+      "error": null,
+      "status": 200
     }
   ]
 }

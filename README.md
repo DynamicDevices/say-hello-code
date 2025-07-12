@@ -2,7 +2,7 @@
 
 Alex Was Here!
 
-A comprehensive collection of "Hello, World!" programs in 240+ programming languages, designed to help students and aspiring programmers explore the vast landscape of programming languages.
+A comprehensive collection of "Hello, World!" programs in 240 programming languages, designed to help students and aspiring programmers explore the vast landscape of programming languages.
 
 🌐 **[Visit the Live Site: sayhellocode.com](https://sayhellocode.com)**
 
@@ -31,7 +31,7 @@ This collection was created to:
 
 ## 🚀 Features
 
-- **240+ Programming Languages** - From classic languages like FORTRAN to modern ones like Rust
+- **240 Programming Languages** - From classic languages like FORTRAN to modern ones like Rust
 - **Interactive Search & Filtering** - Find languages by name, year, creator, or description
 - **Category Filtering** - Filter by language categories (Web, Systems, Functional, etc.)
 - **📊 Data Visualizations** - Interactive charts showing language trends, categories, and insights
@@ -118,7 +118,7 @@ The live site is available at:
 
 ## 📊 Usage Statistics
 
-- **240+ Languages** supported
+- **240 Languages** supported
 - **67 Years** of programming history (1957-2024)
 - **Multiple Categories** including Web, Systems, Functional, Data Science, and more
 - **Educational Resource** used by students and educators worldwide

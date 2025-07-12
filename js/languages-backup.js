@@ -1,8 +1,28 @@
-// Consolidated Programming Languages Collection
-// Total Languages: 247
+/*
+Say Hello Code - Programming Languages Collection
+Copyright (c) 2025 Dynamic Devices Ltd
+
+This work is licensed under the Creative Commons Attribution 4.0 International License.
+To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/
+or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+You are free to:
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material for any purpose, even commercially
+
+Under the following terms:
+- Attribution — You must give appropriate credit, provide a link to the license,
+  and indicate if changes were made.
+
+Created by Dynamic Devices Ltd in collaboration with Claude.ai
+Website: https://sayhellocode.com
+*/
+
+// Programming languages data for Say Hello Code
 // Generated: 2025-01-27T12:00:00.000Z
 
 var languages = [
+[
     {
         "name": "ActionScript",
         "year": 1998,
@@ -159,10 +179,10 @@ var languages = [
     },
     {
         "name": "Assembly x86",
-        "year": 1949,
-        "creator": "Various",
+        "year": 1947,
+        "creator": "Kathleen Booth",
         "code": ".section .data\n    hello: .ascii \"Hello, World!\\n\"\n.section .text\n    .global _start\n_start:\n    mov $4, %eax\n    mov $1, %ebx\n    mov $hello, %ecx\n    int $0x80",
-        "desc": "Assembly language provides a human-readable representation of machine code instructions specific to the x86 processor architecture that has dominated personal computing.",
+        "desc": "Assembly language, invented by Kathleen Booth in 1947 for the ARC (Automatic Relay Calculator), provides a human-readable representation of machine code instructions. This example shows x86 assembly syntax.",
         "popularity": 45,
         "categories": [
             "Systems",
@@ -283,20 +303,22 @@ var languages = [
         "name": "Befunge",
         "year": 1993,
         "creator": "Chris Pressey",
-        "code": "\"!dlroW ,olleH\">:#,_@",
-        "desc": "Befunge is a stack-based, reflective, esoteric programming language created by Chris Pressey in 1993. It's notable for being two-dimensional.",
-        "popularity": 10,
+        "code": ">25*\"Hello, World!\"@",
+        "desc": "Befunge is an esoteric programming language with a two-dimensional instruction pointer.",
+        "popularity": 5,
         "categories": [
-            "Esoteric",
-            "Educational"
+            "Esoteric"
         ],
         "primaryCategory": "Esoteric",
         "paradigms": [
-            "Multi-paradigm"
+            "Esoteric"
         ],
-        "domains": [],
-        "difficulty": "Varies",
-        "typing": "Mixed",
+        "domains": [
+            "Education",
+            "Fun"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Untyped",
         "sourceFile": "esoteric-languages.js"
     },
     {
@@ -4079,25 +4101,25 @@ var languages = [
         "name": "Forth",
         "year": 1970,
         "creator": "Charles H. Moore",
-        "code": ": HELLO ( -- ) .\" Hello, World!\" CR ;\nHELLO",
-        "desc": "Forth is a stack-based, extensible programming language without type checking. It was created by Charles H. Moore in the early 1970s.",
-        "popularity": 12,
+        "code": ".\"Hello, World!\"",
+        "desc": "Forth is a stack-based, extensible language without type checking, used in embedded and scientific applications.",
+        "popularity": 10,
         "categories": [
             "Stack-based",
             "Embedded"
         ],
         "primaryCategory": "Stack-based",
         "paradigms": [
-            "Stack-based",
-            "Concatenative"
+            "Procedural",
+            "Stack-based"
         ],
         "domains": [
-            "Embedded Systems",
-            "Real-time Systems"
+            "Embedded",
+            "Scientific"
         ],
-        "difficulty": "Advanced",
+        "difficulty": "Intermediate",
         "typing": "Untyped",
-        "sourceFile": "embedded-languages.js"
+        "sourceFile": "stack-languages.js"
     },
     {
         "name": "FoxPro",
@@ -4172,7 +4194,7 @@ var languages = [
         "name": "Inform",
         "year": 1993,
         "creator": "Graham Nelson",
-        "code": "[ Main;\n  print \"Hello, World!^\";\n];",
+        "code": "[ Main;\\n  print \\\"Hello, World!^\\\";\\n];",
         "desc": "Inform is a programming language and design system for interactive fiction originally created by Graham Nelson in 1993.",
         "popularity": 8,
         "categories": [
@@ -4240,312 +4262,521 @@ var languages = [
         "name": "LabVIEW",
         "year": 1986,
         "creator": "National Instruments",
-        "code": "// Visual programming - displays \"Hello, World!\" in a string indicator",
+        "code": "(LabVIEW is graphical; Hello World is typically a string constant wired to an indicator)",
         "desc": "LabVIEW is a system-design platform and development environment for a visual programming language from National Instruments.",
         "popularity": 20,
         "categories": [
-            "Visual Programming",
-            "Engineering"
+            "Graphical",
+            "Domain-specific"
         ],
-        "primaryCategory": "Visual Programming",
+        "primaryCategory": "Graphical",
         "paradigms": [
-            "Visual Programming",
-            "Dataflow"
+            "Dataflow",
+            "Visual"
         ],
         "domains": [
             "Engineering",
-            "Scientific Computing",
-            "Instrumentation"
+            "Measurement",
+            "Automation"
         ],
         "difficulty": "Intermediate",
-        "typing": "Dynamic",
-        "sourceFile": "visual-languages.js"
-    },
-    {
-        "name": "Lingo",
-        "year": 1988,
-        "creator": "John H. Thompson",
-        "code": "put \"Hello, World!\"",
-        "desc": "Lingo is a verbose object-oriented (OO) scripting language developed by John H. Thompson for use in Adobe Director (formerly Macromedia Director).",
-        "popularity": 5,
-        "categories": [
-            "Legacy",
-            "Multimedia"
-        ],
-        "primaryCategory": "Legacy",
-        "paradigms": [
-            "Object-Oriented"
-        ],
-        "domains": [
-            "Multimedia",
-            "Interactive Media"
-        ],
-        "difficulty": "Intermediate",
-        "typing": "Dynamic",
-        "sourceFile": "multimedia-languages.js"
+        "typing": "Untyped",
+        "sourceFile": "graphical-languages.js"
     },
     {
         "name": "LiveCode",
-        "year": 1993,
-        "creator": "Scott Raney",
+        "year": 2001,
+        "creator": "RunRev",
         "code": "answer \"Hello, World!\"",
-        "desc": "LiveCode is a cross-platform rapid application development runtime system inspired by HyperCard. Originally called MetaCard, then Revolution.",
-        "popularity": 12,
+        "desc": "LiveCode is a cross-platform rapid application development language inspired by HyperTalk.",
+        "popularity": 8,
         "categories": [
-            "RAD",
-            "Cross-platform"
+            "Scripting",
+            "Graphical"
         ],
-        "primaryCategory": "RAD",
+        "primaryCategory": "Scripting",
         "paradigms": [
             "Event-driven"
         ],
         "domains": [
-            "Rapid Application Development",
-            "Mobile Development"
+            "Scripting",
+            "Education"
         ],
         "difficulty": "Beginner",
         "typing": "Dynamic",
-        "sourceFile": "rad-languages.js"
+        "sourceFile": "scripting-languages.js"
     },
     {
-        "name": "Modula-3",
-        "year": 1988,
-        "creator": "Luca Cardelli",
-        "code": "MODULE Hello EXPORTS Main;\nIMPORT IO;\nBEGIN\n  IO.Put(\"Hello, World!\\n\");\nEND Hello.",
-        "desc": "Modula-3 is a programming language conceived as a successor to an upgraded version of Modula-2 known as Modula-2+. It was developed at Digital Equipment Corporation and Olivetti.",
-        "popularity": 5,
+        "name": "Processing",
+        "year": 2001,
+        "creator": "Casey Reas, Ben Fry",
+        "code": "void setup() {\n  println(\"Hello, World!\");\n}",
+        "desc": "Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts.",
+        "popularity": 18,
         "categories": [
-            "Legacy",
-            "System Programming"
+            "Visual Arts",
+            "Education"
         ],
-        "primaryCategory": "Legacy",
-        "paradigms": [
-            "Procedural",
-            "Object-Oriented"
-        ],
-        "domains": [
-            "System Programming"
-        ],
-        "difficulty": "Advanced",
-        "typing": "Static",
-        "sourceFile": "system-languages.js"
-    },
-    {
-        "name": "Mumps",
-        "year": 1966,
-        "creator": "Neil Pappalardo",
-        "code": "WRITE \"Hello, World!\",!",
-        "desc": "MUMPS (Massachusetts General Hospital Utility Multi-Programming System) is a general-purpose computer programming language originally designed for the healthcare industry.",
-        "popularity": 8,
-        "categories": [
-            "Legacy",
-            "Healthcare"
-        ],
-        "primaryCategory": "Legacy",
+        "primaryCategory": "Visual Arts",
         "paradigms": [
             "Procedural"
         ],
         "domains": [
-            "Healthcare",
-            "Database Applications"
+            "Art",
+            "Education"
         ],
-        "difficulty": "Intermediate",
+        "difficulty": "Beginner",
         "typing": "Dynamic",
-        "sourceFile": "healthcare-languages.js"
+        "sourceFile": "visual-languages.js"
+    },
+    {
+        "name": "Ink",
+        "year": 2016,
+        "creator": "Inkle Studios",
+        "code": "Hello, World!",
+        "desc": "Ink is a narrative scripting language for writing interactive fiction, developed by Inkle Studios.",
+        "popularity": 7,
+        "categories": [
+            "Interactive Fiction",
+            "Scripting"
+        ],
+        "primaryCategory": "Interactive Fiction",
+        "paradigms": [
+            "Declarative"
+        ],
+        "domains": [
+            "Games",
+            "Storytelling"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Untyped",
+        "sourceFile": "scripting-languages.js"
+    },
+    {
+        "name": "Mercury",
+        "year": 1995,
+        "creator": "Zoltan Somogyi",
+        "code": "main(!IO) :-\n    io.write_string(\"Hello, World!\\n\", !IO).",
+        "desc": "Mercury is a functional logic programming language geared towards real-world applications, with a strong, static, polymorphic type system.",
+        "popularity": 6,
+        "categories": [
+            "Logic",
+            "Functional"
+        ],
+        "primaryCategory": "Logic",
+        "paradigms": [
+            "Logic",
+            "Functional"
+        ],
+        "domains": [
+            "Research",
+            "AI"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "logic-languages.js"
     },
     {
         "name": "Newspeak",
         "year": 2006,
         "creator": "Gilad Bracha",
-        "code": "class HelloWorld = (\npublic main = (\n  'Hello, World!' out\n)\n)",
-        "desc": "Newspeak is a programming language and platform in the tradition of Smalltalk and Self being developed by a team led by Gilad Bracha.",
-        "popularity": 3,
+        "code": "Transcript show: 'Hello, World!'; cr.",
+        "desc": "Newspeak is a dynamic, reflective programming language in the tradition of Smalltalk and Self.",
+        "popularity": 5,
         "categories": [
             "Object-Oriented",
-            "Research"
+            "Reflective"
         ],
-        "primaryCategory": "Research",
+        "primaryCategory": "Object-Oriented",
+        "paradigms": [
+            "Object-Oriented",
+            "Reflective"
+        ],
+        "domains": [
+            "Research",
+            "Education"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Dynamic",
+        "sourceFile": "object-languages.js"
+    },
+    {
+        "name": "Xtend",
+        "year": 2012,
+        "creator": "Sven Efftinge",
+        "code": "def main() {\n  println(\"Hello, World!\")\n}",
+        "desc": "Xtend is a flexible and expressive dialect of Java, compiling to readable Java source code.",
+        "popularity": 6,
+        "categories": [
+            "JVM",
+            "Java-like"
+        ],
+        "primaryCategory": "JVM",
+        "paradigms": [
+            "Object-Oriented",
+            "Functional"
+        ],
+        "domains": [
+            "JVM",
+            "Java"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "jvm-languages.js"
+    },
+    {
+        "name": "Vala",
+        "year": 2006,
+        "creator": "Jürg Billeter",
+        "code": "void main() {\n    print(\"Hello, World!\\n\");\n}",
+        "desc": "Vala is a programming language that aims to bring modern programming language features to GNOME developers without imposing additional runtime requirements.",
+        "popularity": 7,
+        "categories": [
+            "GNOME",
+            "Object-Oriented"
+        ],
+        "primaryCategory": "GNOME",
+        "paradigms": [
+            "Object-Oriented",
+            "Imperative"
+        ],
+        "domains": [
+            "GNOME",
+            "Linux"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "object-languages.js"
+    },
+    {
+        "name": "Stylus",
+        "year": 2010,
+        "creator": "TJ Holowaychuk",
+        "code": "body\n  before\n    content 'Hello, World!'",
+        "desc": "Stylus is a dynamic stylesheet preprocessor language that is compiled into CSS.",
+        "popularity": 10,
+        "categories": [
+            "Web",
+            "CSS Preprocessor"
+        ],
+        "primaryCategory": "Web",
+        "paradigms": [
+            "Declarative"
+        ],
+        "domains": [
+            "Web Development"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Untyped",
+        "sourceFile": "web-languages.js"
+    },
+    {
+        "name": "Twig",
+        "year": 2009,
+        "creator": "Fabien Potencier",
+        "code": "{{ 'Hello, World!' }}",
+        "desc": "Twig is a modern template engine for PHP.",
+        "popularity": 12,
+        "categories": [
+            "Templating",
+            "Web"
+        ],
+        "primaryCategory": "Templating",
+        "paradigms": [
+            "Declarative"
+        ],
+        "domains": [
+            "Web Development"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Untyped",
+        "sourceFile": "web-languages.js"
+    },
+    {
+        "name": "Jsonnet",
+        "year": 2014,
+        "creator": "Google",
+        "code": "{ message: 'Hello, World!' }",
+        "desc": "Jsonnet is a data templating language for app and tool config, extending JSON.",
+        "popularity": 8,
+        "categories": [
+            "Config",
+            "Templating"
+        ],
+        "primaryCategory": "Config",
+        "paradigms": [
+            "Declarative"
+        ],
+        "domains": [
+            "Configuration",
+            "DevOps"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Untyped",
+        "sourceFile": "config-languages.js"
+    },
+    {
+        "name": "Vale",
+        "year": 2020,
+        "creator": "Evan Ovadia",
+        "code": "fn main() {\n    println(\"Hello, World!\");\n}",
+        "desc": "Vale is a memory-safe programming language that's fast, simple, and easy to learn.",
+        "popularity": 5,
+        "categories": [
+            "Systems",
+            "Memory Safe"
+        ],
+        "primaryCategory": "Systems",
+        "paradigms": [
+            "Imperative"
+        ],
+        "domains": [
+            "Systems Programming"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "systems-languages.js"
+    },
+    {
+        "name": "Ballerina",
+        "year": 2017,
+        "creator": "WSO2",
+        "code": "import ballerina/io;\n\npublic function main() {\n    io:println(\"Hello, World!\");\n}",
+        "desc": "Ballerina is a cloud-native programming language that makes it easier to use, combine, and create network services.",
+        "popularity": 10,
+        "categories": [
+            "Cloud",
+            "Network Services"
+        ],
+        "primaryCategory": "Cloud",
         "paradigms": [
             "Object-Oriented"
         ],
         "domains": [
-            "Research"
+            "Cloud Computing",
+            "Microservices"
         ],
-        "difficulty": "Advanced",
-        "typing": "Dynamic",
-        "sourceFile": "research-languages.js"
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "cloud-languages.js"
     },
     {
-        "name": "Occam",
-        "year": 1983,
-        "creator": "David May",
-        "code": "#INCLUDE \"consts.inc\"\n#INCLUDE \"hostio.inc\"\nPROC main (CHAN OF BYTE keyboard, screen, error)\n  so.write.string.nl (screen, \"Hello, World!\")\n:",
-        "desc": "Occam is a concurrent programming language that builds on the communicating sequential processes (CSP) process algebra, and shares many of its features.",
-        "popularity": 5,
+        "name": "Chapel",
+        "year": 2009,
+        "creator": "Cray Inc.",
+        "code": "writeln(\"Hello, World!\");",
+        "desc": "Chapel is a parallel programming language designed for productive parallel computing at scale.",
+        "popularity": 8,
         "categories": [
-            "Legacy",
-            "Concurrent"
+            "Parallel",
+            "High Performance"
         ],
-        "primaryCategory": "Legacy",
+        "primaryCategory": "Parallel",
         "paradigms": [
-            "Concurrent"
+            "Parallel"
         ],
         "domains": [
-            "Parallel Computing",
-            "Embedded Systems"
+            "High Performance Computing",
+            "Scientific Computing"
         ],
         "difficulty": "Advanced",
         "typing": "Static",
-        "sourceFile": "concurrent-languages.js"
+        "sourceFile": "parallel-languages.js"
     },
     {
-        "name": "Oz",
-        "year": 1991,
-        "creator": "Gert Smolka",
-        "code": "{System.showInfo \"Hello, World!\"}",
-        "desc": "Oz is a multiparadigm programming language, developed in the Programming Systems Lab at Université catholique de Louvain, for programming language education and research.",
+        "name": "X10",
+        "year": 2004,
+        "creator": "IBM",
+        "code": "public class Hello {\n    public static def main(args: Array[String]) {\n        Console.OUT.println(\"Hello, World!\");\n    }\n}",
+        "desc": "X10 is a programming language designed for productivity in high-performance computing.",
         "popularity": 5,
         "categories": [
-            "Multi-paradigm",
-            "Academic"
+            "Parallel",
+            "High Performance"
         ],
-        "primaryCategory": "Academic",
+        "primaryCategory": "Parallel",
         "paradigms": [
-            "Multi-paradigm",
-            "Concurrent"
+            "Object-Oriented",
+            "Parallel"
+        ],
+        "domains": [
+            "High Performance Computing"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "parallel-languages.js"
+    },
+    {
+        "name": "Fortress",
+        "year": 2006,
+        "creator": "Sun Microsystems",
+        "code": "component provides Main\nexports Executable\n\nrun(args: Array[String]): Void =\n    println(\"Hello, World!\")",
+        "desc": "Fortress was a programming language designed for high-performance computing with mathematical notation.",
+        "popularity": 3,
+        "categories": [
+            "Parallel",
+            "Scientific"
+        ],
+        "primaryCategory": "Parallel",
+        "paradigms": [
+            "Functional",
+            "Parallel"
+        ],
+        "domains": [
+            "Scientific Computing"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "parallel-languages.js"
+    },
+    {
+        "name": "SAS",
+        "year": 1976,
+        "creator": "SAS Institute",
+        "code": "data _null_;\n   put 'Hello, World!';\nrun;",
+        "desc": "SAS is a software suite for advanced analytics, business intelligence, data management, and predictive analytics.",
+        "popularity": 30,
+        "categories": [
+            "Statistical",
+            "Business"
+        ],
+        "primaryCategory": "Statistical",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Statistics",
+            "Business Intelligence"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "statistical-languages.js"
+    },
+    {
+        "name": "SPSS",
+        "year": 1968,
+        "creator": "Norman Nie",
+        "code": "STRING hello (A12).\nCOMPUTE hello = 'Hello, World!'.\nEXECUTE.",
+        "desc": "SPSS is a software package used for interactive, or batched, statistical analysis.",
+        "popularity": 25,
+        "categories": [
+            "Statistical",
+            "Business"
+        ],
+        "primaryCategory": "Statistical",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Statistics",
+            "Social Sciences"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "statistical-languages.js"
+    },
+    {
+        "name": "Stata",
+        "year": 1985,
+        "creator": "StataCorp",
+        "code": "display \"Hello, World!\"",
+        "desc": "Stata is a general-purpose statistical software package used by researchers in many fields.",
+        "popularity": 20,
+        "categories": [
+            "Statistical",
+            "Research"
+        ],
+        "primaryCategory": "Statistical",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Statistics",
+            "Research"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "statistical-languages.js"
+    },
+    {
+        "name": "Scratch",
+        "year": 2007,
+        "creator": "MIT Media Lab",
+        "code": "when green flag clicked\nsay [Hello, World!]",
+        "desc": "Scratch is a block-based visual programming language designed for children to learn programming concepts.",
+        "popularity": 30,
+        "categories": [
+            "Educational",
+            "Visual"
+        ],
+        "primaryCategory": "Educational",
+        "paradigms": [
+            "Event-driven"
         ],
         "domains": [
             "Education",
-            "Research"
+            "Game Development"
         ],
-        "difficulty": "Advanced",
-        "typing": "Dynamic",
-        "sourceFile": "academic-languages.js"
+        "difficulty": "Beginner",
+        "typing": "Untyped",
+        "sourceFile": "educational-languages.js"
     },
     {
-        "name": "Paradox",
-        "year": 1985,
-        "creator": "Richard Schwartz",
-        "code": "MESSAGE \"Hello, World!\"",
-        "desc": "Paradox is a relational database management system originally written by Richard Schwartz and Robert Shostak for DOS. It included its own programming language.",
-        "popularity": 8,
+        "name": "Blockly",
+        "year": 2012,
+        "creator": "Google",
+        "code": "// Visual block-based programming\n// Generates JavaScript code",
+        "desc": "Blockly is a library for building block-based visual programming editors, used in educational applications.",
+        "popularity": 20,
         "categories": [
-            "Legacy",
-            "Database"
+            "Educational",
+            "Visual"
         ],
-        "primaryCategory": "Database",
+        "primaryCategory": "Educational",
         "paradigms": [
-            "Procedural"
+            "Event-driven"
         ],
         "domains": [
-            "Database Applications"
-        ],
-        "difficulty": "Intermediate",
-        "typing": "Dynamic",
-        "sourceFile": "database-languages.js"
-    },
-    {
-        "name": "Pike",
-        "year": 1994,
-        "creator": "Fredrik Hübinette",
-        "code": "int main() {\n  write(\"Hello, World!\\n\");\n  return 0;\n}",
-        "desc": "Pike is an interpreted, general-purpose, high-level, cross-platform, dynamic programming language, with a syntax similar to that of C.",
-        "popularity": 8,
-        "categories": [
-            "General Purpose",
-            "Interpreted"
-        ],
-        "primaryCategory": "General Purpose",
-        "paradigms": [
-            "Multi-paradigm"
-        ],
-        "domains": [
-            "General Purpose",
+            "Education",
             "Web Development"
         ],
-        "difficulty": "Intermediate",
+        "difficulty": "Beginner",
+        "typing": "Untyped",
+        "sourceFile": "educational-languages.js"
+    },
+    {
+        "name": "Alice",
+        "year": 1994,
+        "creator": "Randy Pausch",
+        "code": "// 3D programming environment\n// Visual drag-and-drop interface",
+        "desc": "Alice is an educational programming language with an integrated development environment for creating 3D animations.",
+        "popularity": 12,
+        "categories": [
+            "Educational",
+            "3D"
+        ],
+        "primaryCategory": "Educational",
+        "paradigms": [
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Education",
+            "Animation"
+        ],
+        "difficulty": "Beginner",
         "typing": "Dynamic",
-        "sourceFile": "general-languages.js"
+        "sourceFile": "educational-languages.js"
     },
     {
-        "name": "PL/M",
-        "year": 1972,
-        "creator": "Gary Kildall",
-        "code": "HELLO: PROCEDURE;\n  CALL PRINT('HELLO, WORLD!');\nEND HELLO;",
-        "desc": "PL/M (Programming Language for Microcomputers) is a high-level programming language developed by Intel for their microprocessors.",
-        "popularity": 3,
-        "categories": [
-            "Legacy",
-            "System Programming"
-        ],
-        "primaryCategory": "Legacy",
-        "paradigms": [
-            "Procedural"
-        ],
-        "domains": [
-            "System Programming",
-            "Embedded Systems"
-        ],
-        "difficulty": "Advanced",
-        "typing": "Static",
-        "sourceFile": "embedded-languages.js"
-    },
-    {
-        "name": "PL/SQL",
-        "year": 1991,
-        "creator": "Oracle Corporation",
-        "code": "BEGIN\n  DBMS_OUTPUT.PUT_LINE('Hello, World!');\nEND;\n/",
-        "desc": "PL/SQL (Procedural Language/Structured Query Language) is Oracle Corporation's procedural extension for SQL and the Oracle relational database.",
-        "popularity": 35,
-        "categories": [
-            "Database",
-            "Procedural"
-        ],
-        "primaryCategory": "Database",
-        "paradigms": [
-            "Procedural"
-        ],
-        "domains": [
-            "Database Applications",
-            "Enterprise Software"
-        ],
-        "difficulty": "Intermediate",
-        "typing": "Static",
-        "sourceFile": "database-languages.js"
-    },
-    {
-        "name": "Prolog",
-        "year": 1972,
-        "creator": "Alain Colmerauer",
-        "code": ":- write('Hello, World!'), nl.",
-        "desc": "Prolog is a logic programming language associated with artificial intelligence and computational linguistics. It was created by Alain Colmerauer and Philippe Roussel.",
-        "popularity": 15,
-        "categories": [
-            "Logic Programming",
-            "AI"
-        ],
-        "primaryCategory": "Logic Programming",
-        "paradigms": [
-            "Logic Programming"
-        ],
-        "domains": [
-            "Artificial Intelligence",
-            "Expert Systems"
-        ],
-        "difficulty": "Advanced",
-        "typing": "Dynamic",
-        "sourceFile": "ai-languages.js"
-    },
-    {
-        "name": "QBasic",
-        "year": 1991,
+        "name": "Small Basic",
+        "year": 2008,
         "creator": "Microsoft",
-        "code": "PRINT \"Hello, World!\"",
-        "desc": "QBasic is an IDE and interpreter for a variant of the BASIC programming language which is based on QuickBASIC. It was developed and marketed by Microsoft.",
-        "popularity": 15,
+        "code": "TextWindow.WriteLine(\"Hello, World!\")",
+        "desc": "Microsoft Small Basic is a programming language designed to make programming extremely easy, approachable and fun for beginners.",
+        "popularity": 10,
         "categories": [
-            "Legacy",
-            "Educational"
+            "Educational",
+            "Beginner"
         ],
         "primaryCategory": "Educational",
         "paradigms": [
@@ -4553,70 +4784,322 @@ var languages = [
         ],
         "domains": [
             "Education",
-            "Beginner Programming"
+            "Windows"
         ],
         "difficulty": "Beginner",
         "typing": "Dynamic",
         "sourceFile": "educational-languages.js"
     },
     {
-        "name": "RPG",
-        "year": 1959,
-        "creator": "IBM",
-        "code": "     C                   DSPLY     'Hello, World!'",
-        "desc": "RPG (Report Program Generator) is a high-level programming language for business applications, originally developed by IBM in 1959.",
-        "popularity": 12,
+        "name": "Kodu",
+        "year": 2009,
+        "creator": "Microsoft",
+        "code": "// Visual programming environment\n// When: Start\nSay: \"Hello, World!\"",
+        "desc": "Kodu is a visual programming language made specifically for creating games.",
+        "popularity": 8,
         "categories": [
-            "Legacy",
-            "Business"
+            "Educational",
+            "Game Development"
         ],
-        "primaryCategory": "Legacy",
+        "primaryCategory": "Educational",
         "paradigms": [
-            "Procedural"
+            "Event-driven"
         ],
         "domains": [
-            "Business Applications",
-            "Mainframe Computing"
+            "Education",
+            "Game Development"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Untyped",
+        "sourceFile": "educational-languages.js"
+    },
+    {
+        "name": "Snap!",
+        "year": 2011,
+        "creator": "UC Berkeley",
+        "code": "when green flag clicked\nsay [Hello, World!]",
+        "desc": "Snap! is a visual, drag-and-drop programming language inspired by Scratch, designed for computer science education.",
+        "popularity": 12,
+        "categories": [
+            "Educational",
+            "Visual"
+        ],
+        "primaryCategory": "Educational",
+        "paradigms": [
+            "Event-driven"
+        ],
+        "domains": [
+            "Education",
+            "Computer Science"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Untyped",
+        "sourceFile": "educational-languages.js"
+    },
+    {
+        "name": "Tynker",
+        "year": 2013,
+        "creator": "Tynker",
+        "code": "// Visual block programming\n// When Start\nSay \"Hello, World!\"",
+        "desc": "Tynker is a visual programming language designed to teach children computational thinking and programming skills.",
+        "popularity": 10,
+        "categories": [
+            "Educational",
+            "Visual"
+        ],
+        "primaryCategory": "Educational",
+        "paradigms": [
+            "Event-driven"
+        ],
+        "domains": [
+            "Education",
+            "Game Development"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Untyped",
+        "sourceFile": "educational-languages.js"
+    },
+    {
+        "name": "Code.org",
+        "year": 2013,
+        "creator": "Code.org",
+        "code": "// Block-based programming\n// When run\nprint \"Hello, World!\"",
+        "desc": "Code.org's block-based programming environment for teaching computer science concepts.",
+        "popularity": 25,
+        "categories": [
+            "Educational",
+            "Visual"
+        ],
+        "primaryCategory": "Educational",
+        "paradigms": [
+            "Event-driven"
+        ],
+        "domains": [
+            "Education",
+            "Computer Science"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Untyped",
+        "sourceFile": "educational-languages.js"
+    },
+    {
+        "name": "MakeCode",
+        "year": 2016,
+        "creator": "Microsoft",
+        "code": "// Microsoft MakeCode\n// On start\nbasic.showString(\"Hello, World!\")",
+        "desc": "Microsoft MakeCode is a programming platform for creating interactive computer science education projects.",
+        "popularity": 15,
+        "categories": [
+            "Educational",
+            "IoT"
+        ],
+        "primaryCategory": "Educational",
+        "paradigms": [
+            "Event-driven"
+        ],
+        "domains": [
+            "Education",
+            "IoT"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Untyped",
+        "sourceFile": "educational-languages.js"
+    },
+    {
+        "name": "Raku",
+        "year": 2015,
+        "creator": "Larry Wall",
+        "code": "say \"Hello, World!\";",
+        "desc": "Raku is a member of the Perl family of programming languages, designed as a sister language to Perl 6.",
+        "popularity": 12,
+        "categories": [
+            "General Purpose",
+            "Perl Family"
+        ],
+        "primaryCategory": "General Purpose",
+        "paradigms": [
+            "Multi-paradigm"
+        ],
+        "domains": [
+            "Web Development",
+            "Text Processing"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "general-languages.js"
+    },
+    {
+        "name": "Janet",
+        "year": 2018,
+        "creator": "Calvin Rose",
+        "code": "(print \"Hello, World!\")",
+        "desc": "Janet is a functional and imperative programming language and bytecode interpreter.",
+        "popularity": 8,
+        "categories": [
+            "Functional",
+            "Lisp-like"
+        ],
+        "primaryCategory": "Functional",
+        "paradigms": [
+            "Functional",
+            "Imperative"
+        ],
+        "domains": [
+            "Scripting",
+            "Embedded"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "functional-languages.js"
+    },
+    {
+        "name": "Wren",
+        "year": 2013,
+        "creator": "Bob Nystrom",
+        "code": "System.print(\"Hello, World!\")",
+        "desc": "Wren is a small, fast, class-based concurrent scripting language.",
+        "popularity": 6,
+        "categories": [
+            "Scripting",
+            "Object-Oriented"
+        ],
+        "primaryCategory": "Scripting",
+        "paradigms": [
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Scripting",
+            "Embedded"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Dynamic",
+        "sourceFile": "scripting-languages.js"
+    },
+    {
+        "name": "Haxe",
+        "year": 2005,
+        "creator": "Nicolas Cannasse",
+        "code": "trace(\"Hello, World!\");",
+        "desc": "Haxe is an open source high-level strictly-typed programming language with a fast optimizing cross-compiler.",
+        "popularity": 15,
+        "categories": [
+            "Cross-platform",
+            "Statically Typed"
+        ],
+        "primaryCategory": "Cross-platform",
+        "paradigms": [
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Game Development",
+            "Web Development"
         ],
         "difficulty": "Intermediate",
         "typing": "Static",
-        "sourceFile": "business-languages.js"
+        "sourceFile": "cross-platform-languages.js"
     },
     {
-        "name": "Simula",
-        "year": 1962,
-        "creator": "Ole-Johan Dahl",
-        "code": "Begin\n   OutText(\"Hello, World!\");\n   Outimage;\nEnd;",
-        "desc": "Simula is the name of two simulation programming languages, Simula I and Simula 67, developed in the 1960s at the Norwegian Computing Center. It introduced object-oriented programming.",
-        "popularity": 8,
+        "name": "Falcon",
+        "year": 2003,
+        "creator": "Giancarlo Niccolai",
+        "code": "printl(\"Hello, World!\")",
+        "desc": "Falcon is a lightweight, fast and one of the most feature-rich programming languages.",
+        "popularity": 5,
         "categories": [
-            "Legacy",
-            "Historical",
-            "Object-Oriented"
+            "Scripting",
+            "Multi-paradigm"
         ],
-        "primaryCategory": "Historical",
+        "primaryCategory": "Scripting",
         "paradigms": [
-            "Object-Oriented",
-            "Procedural"
+            "Multi-paradigm"
         ],
         "domains": [
-            "Simulation",
-            "Scientific Computing"
+            "Scripting",
+            "Embedded"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "scripting-languages.js"
+    },
+    {
+        "name": "Io",
+        "year": 2002,
+        "creator": "Steve Dekorte",
+        "code": "\"Hello, World!\" println",
+        "desc": "Io is a pure object-oriented programming language inspired by Smalltalk, Self, Lua, Lisp, Act1, and NewtonScript.",
+        "popularity": 4,
+        "categories": [
+            "Object-Oriented",
+            "Prototype-based"
+        ],
+        "primaryCategory": "Object-Oriented",
+        "paradigms": [
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Scripting",
+            "Education"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "object-languages.js"
+    },
+    {
+        "name": "Rebol",
+        "year": 1997,
+        "creator": "Carl Sassenrath",
+        "code": "print \"Hello, World!\"",
+        "desc": "Rebol is a cross-platform data exchange language and multi-paradigm dynamic programming language.",
+        "popularity": 6,
+        "categories": [
+            "Data Exchange",
+            "Multi-paradigm"
+        ],
+        "primaryCategory": "Data Exchange",
+        "paradigms": [
+            "Multi-paradigm"
+        ],
+        "domains": [
+            "Data Exchange",
+            "Scripting"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "data-languages.js"
+    },
+    {
+        "name": "Self",
+        "year": 1987,
+        "creator": "David Ungar",
+        "code": "('Hello, World!' printLine)",
+        "desc": "Self is a prototype-based object-oriented programming language based on the concept of prototypes.",
+        "popularity": 8,
+        "categories": [
+            "Object-Oriented",
+            "Prototype-based"
+        ],
+        "primaryCategory": "Object-Oriented",
+        "paradigms": [
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Research",
+            "Education"
         ],
         "difficulty": "Advanced",
-        "typing": "Static",
-        "sourceFile": "historical-languages.js"
+        "typing": "Dynamic",
+        "sourceFile": "object-languages.js"
     },
     {
         "name": "Smalltalk",
         "year": 1972,
         "creator": "Alan Kay",
-        "code": "Transcript show: 'Hello, World!'.",
-        "desc": "Smalltalk is an object-oriented, dynamically typed reflective programming language. It was designed and created in part for educational use at Xerox PARC by Alan Kay and others.",
+        "code": "Transcript show: 'Hello, World!'; cr.",
+        "desc": "Smalltalk is an object-oriented, dynamically typed reflective programming language.",
         "popularity": 12,
         "categories": [
             "Object-Oriented",
-            "Educational"
+            "Historical"
         ],
         "primaryCategory": "Object-Oriented",
         "paradigms": [
@@ -4628,450 +5111,186 @@ var languages = [
         ],
         "difficulty": "Intermediate",
         "typing": "Dynamic",
-        "sourceFile": "educational-languages.js"
+        "sourceFile": "object-languages.js"
     },
     {
-        "name": "Turbo Pascal",
-        "year": 1983,
-        "creator": "Anders Hejlsberg",
-        "code": "program HelloWorld;\nbegin\n  writeln('Hello, World!');\nend.",
-        "desc": "Turbo Pascal is a software development system that includes a compiler and an integrated development environment (IDE) for the Pascal programming language running on CP/M, CP/M-86, and DOS.",
-        "popularity": 18,
+        "name": "Prolog",
+        "year": 1972,
+        "creator": "Alain Colmerauer",
+        "code": "write('Hello, World!'), nl.",
+        "desc": "Prolog is a logic programming language associated with artificial intelligence and computational linguistics.",
+        "popularity": 15,
         "categories": [
-            "Legacy",
-            "Educational"
+            "Logic",
+            "AI"
         ],
-        "primaryCategory": "Educational",
+        "primaryCategory": "Logic",
         "paradigms": [
-            "Procedural"
+            "Logic",
+            "Declarative"
         ],
         "domains": [
-            "Education",
-            "System Programming"
-        ],
-        "difficulty": "Beginner to Intermediate",
-        "typing": "Static",
-        "sourceFile": "educational-languages.js"
-    },
-    {
-        "name": "WATFIV",
-        "year": 1967,
-        "creator": "University of Waterloo",
-        "code": "      WRITE(6,100)\n100   FORMAT(' HELLO, WORLD!')\n      STOP\n      END",
-        "desc": "WATFIV (WATerloo FORTRAN IV) was a FORTRAN compiler developed at the University of Waterloo for student use in the late 1960s.",
-        "popularity": 3,
-        "categories": [
-            "Legacy",
-            "Educational"
-        ],
-        "primaryCategory": "Legacy",
-        "paradigms": [
-            "Procedural"
-        ],
-        "domains": [
-            "Education",
-            "Scientific Computing"
-        ],
-        "difficulty": "Intermediate",
-        "typing": "Static",
-        "sourceFile": "educational-languages.js"
-    },
-    {
-        "name": "FLOW-MATIC",
-        "year": 1955,
-        "creator": "Grace Hopper",
-        "code": "INPUT INVENTORY FILE-A PRICE FILE-B ; OUTPUT PRICED-INV FILE-C UNPRICED-INV FILE-D .\nHSP *'HELLO, WORLD!' .",
-        "desc": "FLOW-MATIC was one of the first English-like data processing languages, developed by Grace Hopper and her team. It was a precursor to COBOL.",
-        "popularity": 3,
-        "categories": [
-            "Legacy",
-            "Historical"
-        ],
-        "primaryCategory": "Historical",
-        "paradigms": [
-            "Procedural"
-        ],
-        "domains": [
-            "Business Computing",
-            "Data Processing"
-        ],
-        "difficulty": "Advanced",
-        "typing": "Static",
-        "sourceFile": "historical-languages.js"
-    },
-    {
-        "name": "Short Code",
-        "year": 1949,
-        "creator": "John Mauchly",
-        "code": "X3 =  HELLO, WORLD!\nX4 03 05 \nX5 40 \n01",
-        "desc": "Short Code was one of the first high-level programming languages, developed for the BINAC and UNIVAC I computers by John Mauchly.",
-        "popularity": 2,
-        "categories": [
-            "Legacy",
-            "Historical"
-        ],
-        "primaryCategory": "Historical",
-        "paradigms": [
-            "Procedural"
-        ],
-        "domains": [
-            "Early Computing"
-        ],
-        "difficulty": "Advanced",
-        "typing": "Untyped",
-        "sourceFile": "historical-languages.js"
-    },
-    {
-        "name": "Autocode",
-        "year": 1952,
-        "creator": "Alick Glennie",
-        "code": "n1 = 'HELLO, WORLD!'\nc1 = n1",
-        "desc": "Autocode was the name given to a family of early computer programming systems, more advanced than machine code but simpler than later high-level languages.",
-        "popularity": 3,
-        "categories": [
-            "Legacy",
-            "Historical"
-        ],
-        "primaryCategory": "Historical",
-        "paradigms": [
-            "Procedural"
-        ],
-        "domains": [
-            "Early Computing"
+            "AI",
+            "Natural Language Processing"
         ],
         "difficulty": "Advanced",
         "typing": "Dynamic",
-        "sourceFile": "historical-languages.js"
+        "sourceFile": "logic-languages.js"
     },
     {
-        "name": "MAD",
-        "year": 1959,
-        "creator": "University of Michigan",
-        "code": "PRINT FORMAT HELLO, WORLD!\nEND OF PROGRAM",
-        "desc": "MAD (Michigan Algorithm Decoder) was a programming language and compiler developed at the University of Michigan in 1959.",
-        "popularity": 4,
+        "name": "Q#",
+        "year": 2017,
+        "creator": "Microsoft",
+        "code": "operation HelloWorld() : Unit {\n    Message(\"Hello, World!\");\n}",
+        "desc": "Q# is a domain-specific programming language used for expressing quantum algorithms.",
+        "popularity": 7,
         "categories": [
-            "Legacy",
-            "Academic"
+            "Quantum",
+            "Domain-Specific"
         ],
-        "primaryCategory": "Legacy",
+        "primaryCategory": "Quantum",
         "paradigms": [
-            "Procedural"
+            "Quantum"
         ],
         "domains": [
-            "Academic Computing",
-            "Scientific Computing"
-        ],
-        "difficulty": "Intermediate",
-        "typing": "Static",
-        "sourceFile": "academic-languages.js"
-    },
-    {
-        "name": "JOVIAL",
-        "year": 1960,
-        "creator": "Jules Schwartz",
-        "code": "START\nTYPE 'HELLO, WORLD!' $\nSTOP $",
-        "desc": "JOVIAL (Jules' Own Version of the International Algebraic Language) was a high-level programming language developed for military computer applications.",
-        "popularity": 5,
-        "categories": [
-            "Legacy",
-            "Military"
-        ],
-        "primaryCategory": "Legacy",
-        "paradigms": [
-            "Procedural"
-        ],
-        "domains": [
-            "Military Applications",
-            "Real-time Systems"
+            "Quantum Computing"
         ],
         "difficulty": "Advanced",
         "typing": "Static",
-        "sourceFile": "military-languages.js"
-    },
-    {
-        "name": "NELIAC",
-        "year": 1958,
-        "creator": "Navy Electronics Laboratory",
-        "code": "PROCEDURE HELLO;\nWRITE 'HELLO, WORLD!';\nEND;",
-        "desc": "NELIAC (Navy Electronics Laboratory International ALGOL Compiler) was developed by the U.S. Navy Electronics Laboratory.",
-        "popularity": 3,
-        "categories": [
-            "Legacy",
-            "Military"
-        ],
-        "primaryCategory": "Legacy",
-        "paradigms": [
-            "Procedural"
-        ],
-        "domains": [
-            "Military Applications",
-            "Scientific Computing"
-        ],
-        "difficulty": "Advanced",
-        "typing": "Static",
-        "sourceFile": "military-languages.js"
-    },
-    {
-        "name": "Idris 2",
-        "year": 2020,
-        "creator": "Edwin Brady",
-        "code": "module Main\n\nmain : IO ()\nmain = putStrLn \"Hello, World!\"",
-        "desc": "Idris 2 is a purely functional programming language with dependent types, designed for general-purpose programming with a focus on type safety.",
-        "popularity": 8,
-        "categories": [
-            "Functional",
-            "Academic"
-        ],
-        "primaryCategory": "Functional",
-        "paradigms": [
-            "Functional",
-            "Dependent Types"
-        ],
-        "domains": [
-            "Research",
-            "Formal Verification"
-        ],
-        "difficulty": "Advanced",
-        "typing": "Static",
-        "sourceFile": "functional-languages.js"
-    },
-    {
-        "name": "PureScript",
-        "year": 2013,
-        "creator": "Phil Freeman",
-        "code": "module Main where\n\nimport Prelude\nimport Effect.Console (log)\n\nmain = log \"Hello, World!\"",
-        "desc": "PureScript is a strongly-typed, purely-functional programming language that compiles to JavaScript, inspired by Haskell.",
-        "popularity": 15,
-        "categories": [
-            "Functional",
-            "Web"
-        ],
-        "primaryCategory": "Functional",
-        "paradigms": [
-            "Functional"
-        ],
-        "domains": [
-            "Web Development",
-            "Frontend Development"
-        ],
-        "difficulty": "Advanced",
-        "typing": "Static",
-        "sourceFile": "functional-languages.js"
-    },
-    {
-        "name": "ReasonML",
-        "year": 2016,
-        "creator": "Jordan Walke",
-        "code": "let () = print_endline(\"Hello, World!\");",
-        "desc": "ReasonML is a syntax extension and toolchain for OCaml, created by Facebook to make functional programming more accessible.",
-        "popularity": 12,
-        "categories": [
-            "Functional",
-            "Web"
-        ],
-        "primaryCategory": "Functional",
-        "paradigms": [
-            "Functional"
-        ],
-        "domains": [
-            "Web Development",
-            "System Programming"
-        ],
-        "difficulty": "Intermediate",
-        "typing": "Static",
-        "sourceFile": "functional-languages.js"
+        "sourceFile": "quantum-languages.js"
     },
     {
         "name": "Futhark",
-        "year": 2014,
+        "year": 2016,
         "creator": "Troels Henriksen",
-        "code": "let main = \"Hello, World!\"",
-        "desc": "Futhark is a purely functional data-parallel programming language designed for high-performance computing on GPUs.",
-        "popularity": 5,
+        "code": "let main =\n  putStrLn \"Hello, World!\"",
+        "desc": "Futhark is a functional, data-parallel programming language for high-performance computing.",
+        "popularity": 4,
         "categories": [
             "Functional",
-            "Parallel"
+            "High Performance"
         ],
         "primaryCategory": "Functional",
         "paradigms": [
             "Functional",
-            "Parallel"
+            "Data-Parallel"
         ],
         "domains": [
-            "High Performance Computing",
-            "GPU Programming"
+            "High Performance Computing"
         ],
         "difficulty": "Advanced",
         "typing": "Static",
-        "sourceFile": "parallel-languages.js"
+        "sourceFile": "functional-languages.js"
     },
     {
-        "name": "VHDL",
-        "year": 1987,
-        "creator": "U.S. Department of Defense",
-        "code": "library IEEE;\nuse IEEE.STD_LOGIC_1164.ALL;\n\nentity hello is\nend hello;\n\narchitecture Behavioral of hello is\nbegin\n    process\n    begin\n        report \"Hello, World!\";\n        wait;\n    end process;\nend Behavioral;",
-        "desc": "VHDL (VHSIC Hardware Description Language) is a hardware description language used in electronic design automation to describe digital and mixed-signal systems.",
+        "name": "Zsh",
+        "year": 1990,
+        "creator": "Paul Falstad",
+        "code": "echo \"Hello, World!\"",
+        "desc": "Zsh (Z shell) is a Unix shell that can be used as an interactive login shell and as a command interpreter for shell scripting. Created by Paul Falstad.",
+        "popularity": 55,
+        "categories": [
+            "Scripting",
+            "Shell"
+        ],
+        "primaryCategory": "Scripting",
+        "paradigms": [
+            "Multi-paradigm"
+        ],
+        "domains": [
+            "System Administration",
+            "Automation"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Mixed",
+        "sourceFile": "scripting-languages.js"
+    },
+    {
+        "name": "Apex",
+        "year": 2007,
+        "creator": "Salesforce",
+        "code": "public class HelloWorld {\n    public static void main(String[] args) {\n        System.debug('Hello, World!');\n    }\n}",
+        "desc": "Apex is a strongly typed, object-oriented programming language that allows developers to execute flow and transaction control statements on Salesforce servers.",
         "popularity": 25,
         "categories": [
-            "Hardware",
-            "Engineering"
+            "Enterprise",
+            "Cloud"
         ],
-        "primaryCategory": "Hardware",
+        "primaryCategory": "Enterprise",
         "paradigms": [
-            "Concurrent",
-            "Event-driven"
+            "Object-Oriented"
         ],
         "domains": [
-            "Hardware Design",
-            "Digital Systems",
-            "FPGA Programming"
-        ],
-        "difficulty": "Advanced",
-        "typing": "Static",
-        "sourceFile": "hardware-languages.js"
-    },
-    {
-        "name": "Verilog",
-        "year": 1984,
-        "creator": "Phil Moorby",
-        "code": "module hello;\n  initial begin\n    $display(\"Hello, World!\");\n    $finish;\n  end\nendmodule",
-        "desc": "Verilog is a hardware description language used to model electronic systems, widely used in the design and verification of digital circuits.",
-        "popularity": 30,
-        "categories": [
-            "Hardware",
-            "Engineering"
-        ],
-        "primaryCategory": "Hardware",
-        "paradigms": [
-            "Concurrent",
-            "Event-driven"
-        ],
-        "domains": [
-            "Hardware Design",
-            "Digital Systems",
-            "ASIC Design"
-        ],
-        "difficulty": "Advanced",
-        "typing": "Static",
-        "sourceFile": "hardware-languages.js"
-    },
-    {
-        "name": "PostScript",
-        "year": 1982,
-        "creator": "John Warnock",
-        "code": "/Helvetica findfont 12 scalefont setfont\n72 720 moveto\n(Hello, World!) show\nshowpage",
-        "desc": "PostScript is a page description language and programming language used primarily in desktop publishing and electronic publishing.",
-        "popularity": 20,
-        "categories": [
-            "Domain-Specific",
-            "Graphics"
-        ],
-        "primaryCategory": "Domain-Specific",
-        "paradigms": [
-            "Stack-based",
-            "Concatenative"
-        ],
-        "domains": [
-            "Desktop Publishing",
-            "Graphics",
-            "Printing"
+            "Enterprise Software",
+            "Cloud Computing"
         ],
         "difficulty": "Intermediate",
-        "typing": "Dynamic",
-        "sourceFile": "graphics-languages.js"
+        "typing": "Static",
+        "sourceFile": "enterprise-languages.js"
     },
     {
-        "name": "SPICE",
-        "year": 1973,
-        "creator": "University of California, Berkeley",
-        "code": "* Hello World SPICE Circuit\n.TITLE Hello World\nVHELLO 1 0 DC 5V\nRLOAD 1 0 1K\n.OP\n.PRINT DC V(1)\n.END",
-        "desc": "SPICE (Simulation Program with Integrated Circuit Emphasis) is a general-purpose analog electronic circuit simulator.",
+        "name": "Ballerina",
+        "year": 2017,
+        "creator": "WSO2",
+        "code": "import ballerina/io;\n\npublic function main() {\n    io:println(\"Hello, World!\");\n}",
+        "desc": "Ballerina is a cloud-native programming language that makes it easier to use, combine, and create network services. Developed by WSO2.",
         "popularity": 15,
         "categories": [
-            "Domain-Specific",
-            "Engineering"
+            "Cloud",
+            "Modern"
         ],
-        "primaryCategory": "Domain-Specific",
+        "primaryCategory": "Cloud",
         "paradigms": [
-            "Declarative"
+            "Multi-paradigm"
         ],
         "domains": [
-            "Circuit Simulation",
-            "Electronic Design",
-            "Engineering"
+            "Cloud Computing",
+            "Microservices"
         ],
-        "difficulty": "Advanced",
-        "typing": "Untyped",
-        "sourceFile": "engineering-languages.js"
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "cloud-languages.js"
     },
     {
-        "name": "GAMS",
-        "year": 1976,
-        "creator": "Alexander Meeraus",
-        "code": "Display 'Hello, World!';",
-        "desc": "GAMS (General Algebraic Modeling System) is a high-level modeling system for mathematical optimization problems.",
+        "name": "Ceylon",
+        "year": 2011,
+        "creator": "Red Hat",
+        "code": "void hello() {\n    print(\"Hello, World!\");\n}\n\nhello();",
+        "desc": "Ceylon is a programming language developed by Red Hat. It was designed to be a better Java, with improved syntax and type system.",
         "popularity": 10,
         "categories": [
-            "Domain-Specific",
-            "Mathematical"
+            "JVM",
+            "Modern"
         ],
-        "primaryCategory": "Domain-Specific",
+        "primaryCategory": "JVM",
         "paradigms": [
-            "Declarative"
+            "Object-Oriented"
         ],
         "domains": [
-            "Mathematical Optimization",
-            "Operations Research",
-            "Economics"
+            "Enterprise Software",
+            "Web Development"
         ],
         "difficulty": "Intermediate",
-        "typing": "Dynamic",
-        "sourceFile": "mathematical-languages.js"
-    },
-    {
-        "name": "AMPL",
-        "year": 1985,
-        "creator": "Robert Fourer",
-        "code": "printf \"Hello, World!\\n\";",
-        "desc": "AMPL (A Mathematical Programming Language) is an algebraic modeling language for describing and solving high-complexity problems.",
-        "popularity": 8,
-        "categories": [
-            "Domain-Specific",
-            "Mathematical"
-        ],
-        "primaryCategory": "Domain-Specific",
-        "paradigms": [
-            "Declarative"
-        ],
-        "domains": [
-            "Mathematical Programming",
-            "Optimization",
-            "Operations Research"
-        ],
-        "difficulty": "Intermediate",
-        "typing": "Dynamic",
-        "sourceFile": "mathematical-languages.js"
+        "typing": "Static",
+        "sourceFile": "jvm-languages.js"
     },
     {
         "name": "Chapel",
         "year": 2009,
         "creator": "Cray Inc.",
         "code": "writeln(\"Hello, World!\");",
-        "desc": "Chapel is a parallel programming language developed by Cray Inc. designed for productive parallel computing at scale.",
-        "popularity": 12,
+        "desc": "Chapel is a parallel programming language designed by Cray Inc. It is designed to improve programmer productivity while maintaining performance.",
+        "popularity": 15,
         "categories": [
             "Parallel",
-            "High Performance"
+            "Scientific"
         ],
         "primaryCategory": "Parallel",
         "paradigms": [
-            "Parallel",
-            "Object-Oriented"
+            "Multi-paradigm"
         ],
         "domains": [
             "High Performance Computing",
-            "Parallel Computing",
             "Scientific Computing"
         ],
         "difficulty": "Advanced",
@@ -5079,315 +5298,441 @@ var languages = [
         "sourceFile": "parallel-languages.js"
     },
     {
-        "name": "X10",
-        "year": 2004,
-        "creator": "IBM",
-        "code": "public class HelloWorld {\n    public static def main(args:Rail[String]) {\n        Console.OUT.println(\"Hello, World!\");\n    }\n}",
-        "desc": "X10 is a programming language developed by IBM for high-performance parallel computing, designed to be productive for distributed computing.",
-        "popularity": 8,
-        "categories": [
-            "Parallel",
-            "Distributed"
-        ],
-        "primaryCategory": "Parallel",
-        "paradigms": [
-            "Object-Oriented",
-            "Parallel"
-        ],
-        "domains": [
-            "High Performance Computing",
-            "Distributed Computing"
-        ],
-        "difficulty": "Advanced",
-        "typing": "Static",
-        "sourceFile": "parallel-languages.js"
-    },
-    {
-        "name": "Fortress",
-        "year": 2006,
-        "creator": "Sun Microsystems",
-        "code": "export Executable\nrun() = println(\"Hello, World!\")",
-        "desc": "Fortress was a programming language developed by Sun Microsystems for high-performance computing with mathematical notation support.",
-        "popularity": 5,
-        "categories": [
-            "Legacy",
-            "Scientific"
-        ],
-        "primaryCategory": "Legacy",
-        "paradigms": [
-            "Functional",
-            "Parallel"
-        ],
-        "domains": [
-            "Scientific Computing",
-            "High Performance Computing"
-        ],
-        "difficulty": "Advanced",
-        "typing": "Static",
-        "sourceFile": "scientific-languages.js"
-    },
-    {
-        "name": "S",
-        "year": 1976,
-        "creator": "John Chambers",
-        "code": "print(\"Hello, World!\")",
-        "desc": "S is a statistical programming language developed at Bell Labs. It was the precursor to the R programming language.",
-        "popularity": 10,
-        "categories": [
-            "Legacy",
-            "Statistical"
-        ],
-        "primaryCategory": "Statistical",
-        "paradigms": [
-            "Functional",
-            "Interactive"
-        ],
-        "domains": [
-            "Statistical Computing",
-            "Data Analysis"
-        ],
-        "difficulty": "Intermediate",
-        "typing": "Dynamic",
-        "sourceFile": "statistical-languages.js"
-    },
-    {
-        "name": "Mojo",
-        "year": 2023,
-        "creator": "Modular Inc.",
-        "code": "def main():\n    print(\"Hello, World!\")",
-        "desc": "Mojo is a new programming language designed for AI development, combining Python's usability with C's performance.",
+        "name": "Crystal",
+        "year": 2011,
+        "creator": "Ary Borenszweig",
+        "code": "puts \"Hello, World!\"",
+        "desc": "Crystal is a programming language with Ruby-like syntax that compiles to native code. It combines the elegance of Ruby with the performance of C.",
         "popularity": 25,
         "categories": [
             "Modern",
-            "AI/ML"
+            "Web"
         ],
         "primaryCategory": "Modern",
         "paradigms": [
-            "Object-Oriented",
-            "Functional"
+            "Object-Oriented"
         ],
         "domains": [
-            "Artificial Intelligence",
-            "Machine Learning",
-            "High Performance Computing"
-        ],
-        "difficulty": "Intermediate",
-        "typing": "Static",
-        "sourceFile": "modern-languages.js"
-    },
-    {
-        "name": "Carbon",
-        "year": 2022,
-        "creator": "Google",
-        "code": "package Sample api;\n\nfn Main() -> i32 {\n    Print(\"Hello, World!\");\n    return 0;\n}",
-        "desc": "Carbon is an experimental programming language by Google, designed as a C++ successor with modern features and better tooling.",
-        "popularity": 20,
-        "categories": [
-            "Modern",
-            "Systems"
-        ],
-        "primaryCategory": "Modern",
-        "paradigms": [
-            "Object-Oriented",
-            "Generic"
-        ],
-        "domains": [
-            "System Programming",
-            "Performance-Critical Applications"
-        ],
-        "difficulty": "Advanced",
-        "typing": "Static",
-        "sourceFile": "modern-languages.js"
-    },
-    {
-        "name": "Jai",
-        "year": 2014,
-        "creator": "Jonathan Blow",
-        "code": "#import \"Basic\";\n\nmain :: () {\n    print(\"Hello, World!\\n\");\n}",
-        "desc": "Jai is a programming language designed by Jonathan Blow for game development, focusing on simplicity and performance.",
-        "popularity": 15,
-        "categories": [
-            "Modern",
-            "Game Development"
-        ],
-        "primaryCategory": "Game Development",
-        "paradigms": [
-            "Procedural",
-            "Data-Oriented"
-        ],
-        "domains": [
-            "Game Development",
+            "Web Development",
             "System Programming"
         ],
         "difficulty": "Intermediate",
         "typing": "Static",
-        "sourceFile": "game-languages.js"
+        "sourceFile": "modern-languages.js"
     },
     {
-        "name": "Odin",
-        "year": 2016,
-        "creator": "Ginger Bill",
-        "code": "package main\n\nimport \"core:fmt\"\n\nmain :: proc() {\n    fmt.println(\"Hello, World!\");\n}",
-        "desc": "Odin is a general-purpose programming language designed as an alternative to C, with modern features and simplicity.",
-        "popularity": 12,
+        "name": "Dart",
+        "year": 2011,
+        "creator": "Google",
+        "code": "void main() {\n  print('Hello, World!');\n}",
+        "desc": "Dart is a client-optimized programming language for fast apps on any platform. Developed by Google and used for Flutter development.",
+        "popularity": 45,
         "categories": [
-            "Modern",
-            "Systems"
+            "Mobile",
+            "Web"
         ],
-        "primaryCategory": "Systems",
+        "primaryCategory": "Mobile",
         "paradigms": [
-            "Procedural"
-        ],
-        "domains": [
-            "System Programming",
-            "Game Development"
-        ],
-        "difficulty": "Intermediate",
-        "typing": "Static",
-        "sourceFile": "systems-languages.js"
-    },
-    {
-        "name": "Vale",
-        "year": 2019,
-        "creator": "Evan Ovadia",
-        "code": "import stdlib.*;\n\nexported func main() {\n  println(\"Hello, World!\");\n}",
-        "desc": "Vale is a programming language that aims to be fast, safe, and easy, with innovative memory management techniques.",
-        "popularity": 8,
-        "categories": [
-            "Modern",
-            "Systems"
-        ],
-        "primaryCategory": "Systems",
-        "paradigms": [
-            "Object-Oriented",
-            "Functional"
-        ],
-        "domains": [
-            "System Programming",
-            "Game Development"
-        ],
-        "difficulty": "Advanced",
-        "typing": "Static",
-        "sourceFile": "systems-languages.js"
-    },
-    {
-        "name": "Pony",
-        "year": 2015,
-        "creator": "Sylvan Clebsch",
-        "code": "actor Main\n  new create(env: Env) =>\n    env.out.print(\"Hello, World!\")",
-        "desc": "Pony is an actor-model programming language designed for high-performance concurrent applications with memory safety.",
-        "popularity": 10,
-        "categories": [
-            "Modern",
-            "Concurrent"
-        ],
-        "primaryCategory": "Concurrent",
-        "paradigms": [
-            "Actor Model",
             "Object-Oriented"
         ],
         "domains": [
-            "Concurrent Programming",
-            "Distributed Systems"
+            "Mobile Development",
+            "Web Development"
         ],
-        "difficulty": "Advanced",
-        "typing": "Static",
-        "sourceFile": "concurrent-languages.js"
+        "difficulty": "Beginner",
+        "typing": "Mixed",
+        "sourceFile": "mobile-languages.js"
     },
     {
-        "name": "AngelScript",
-        "year": 2003,
-        "creator": "Andreas Jönsson",
-        "code": "void main() {\n    print(\"Hello, World!\\n\");\n}",
-        "desc": "AngelScript is a flexible cross-platform scripting library designed to be embedded in applications, popular in game development.",
-        "popularity": 18,
+        "name": "Elixir",
+        "year": 2011,
+        "creator": "José Valim",
+        "code": "IO.puts \"Hello, World!\"",
+        "desc": "Elixir is a functional, concurrent, general-purpose programming language that runs on the Erlang virtual machine. Created by José Valim.",
+        "popularity": 35,
         "categories": [
-            "Scripting",
-            "Game Development"
+            "Functional",
+            "Web"
         ],
-        "primaryCategory": "Scripting",
+        "primaryCategory": "Functional",
         "paradigms": [
-            "Object-Oriented",
-            "Procedural"
-        ],
-        "domains": [
-            "Game Development",
-            "Embedded Scripting"
-        ],
-        "difficulty": "Intermediate",
-        "typing": "Static",
-        "sourceFile": "scripting-languages.js"
-    },
-    {
-        "name": "Squirrel",
-        "year": 2003,
-        "creator": "Alberto Demichelis",
-        "code": "print(\"Hello, World!\\n\");",
-        "desc": "Squirrel is a lightweight scripting language designed for embedding in applications, with syntax similar to C and JavaScript.",
-        "popularity": 15,
-        "categories": [
-            "Scripting",
-            "Game Development"
-        ],
-        "primaryCategory": "Scripting",
-        "paradigms": [
-            "Object-Oriented",
             "Functional"
         ],
         "domains": [
+            "Web Development",
+            "Distributed Systems"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "functional-languages.js"
+    },
+    {
+        "name": "F#",
+        "year": 2005,
+        "creator": "Microsoft",
+        "code": "printfn \"Hello, World!\"",
+        "desc": "F# is a functional-first programming language that runs on .NET. It combines functional programming with object-oriented and imperative programming.",
+        "popularity": 30,
+        "categories": [
+            "Functional",
+            "Microsoft"
+        ],
+        "primaryCategory": "Functional",
+        "paradigms": [
+            "Functional"
+        ],
+        "domains": [
+            "Enterprise Software",
+            "Scientific Computing"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "functional-languages.js"
+    },
+    {
+        "name": "GDScript",
+        "year": 2014,
+        "creator": "Godot",
+        "code": "extends Node\n\nfunc _ready():\n    print(\"Hello, World!\")",
+        "desc": "GDScript is a high-level, dynamically typed programming language used to create content in the Godot game engine.",
+        "popularity": 25,
+        "categories": [
             "Game Development",
-            "Embedded Scripting"
+            "Scripting"
+        ],
+        "primaryCategory": "Game Development",
+        "paradigms": [
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Game Development",
+            "Graphics"
         ],
         "difficulty": "Beginner",
         "typing": "Dynamic",
-        "sourceFile": "scripting-languages.js"
+        "sourceFile": "game-languages.js"
     },
     {
-        "name": "Wren",
-        "year": 2013,
-        "creator": "Bob Nystrom",
-        "code": "System.print(\"Hello, World!\")",
-        "desc": "Wren is a small, fast, class-based concurrent scripting language designed for embedding in applications.",
-        "popularity": 12,
+        "name": "Groovy",
+        "year": 2003,
+        "creator": "James Strachan",
+        "code": "println \"Hello, World!\"",
+        "desc": "Groovy is a powerful, optionally typed and dynamic language, with static-typing and static compilation capabilities, for the Java platform.",
+        "popularity": 30,
+        "categories": [
+            "JVM",
+            "Scripting"
+        ],
+        "primaryCategory": "JVM",
+        "paradigms": [
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Enterprise Software",
+            "Automation"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Mixed",
+        "sourceFile": "jvm-languages.js"
+    },
+    {
+        "name": "Hack",
+        "year": 2014,
+        "creator": "Facebook",
+        "code": "<?hh\n\n<<__EntryPoint>>\nfunction main(): void {\n  echo \"Hello, World!\";\n}",
+        "desc": "Hack is a programming language for the HipHop Virtual Machine (HHVM), created by Facebook as a dialect of PHP.",
+        "popularity": 20,
+        "categories": [
+            "Web",
+            "Modern"
+        ],
+        "primaryCategory": "Web",
+        "paradigms": [
+            "Multi-paradigm"
+        ],
+        "domains": [
+            "Web Development",
+            "Server-side"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Mixed",
+        "sourceFile": "web-languages.js"
+    },
+    {
+        "name": "J",
+        "year": 1990,
+        "creator": "Kenneth E. Iverson",
+        "code": "'Hello, World!'",
+        "desc": "J is a programming language developed by Kenneth E. Iverson and Roger Hui. It is an array programming language based on APL.",
+        "popularity": 15,
+        "categories": [
+            "Array",
+            "Mathematical"
+        ],
+        "primaryCategory": "Array",
+        "paradigms": [
+            "Array-oriented"
+        ],
+        "domains": [
+            "Data Analysis",
+            "Mathematical Computing"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Dynamic",
+        "sourceFile": "array-languages.js"
+    },
+    {
+        "name": "Kotlin",
+        "year": 2011,
+        "creator": "JetBrains",
+        "code": "fun main() {\n    println(\"Hello, World!\")\n}",
+        "desc": "Kotlin is a cross-platform, statically typed, general-purpose programming language with type inference. Developed by JetBrains.",
+        "popularity": 60,
+        "categories": [
+            "JVM",
+            "Android"
+        ],
+        "primaryCategory": "JVM",
+        "paradigms": [
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Android Development",
+            "Web Development"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Static",
+        "sourceFile": "jvm-languages.js"
+    },
+    {
+        "name": "Lua",
+        "year": 1993,
+        "creator": "Roberto Ierusalimschy",
+        "code": "print(\"Hello, World!\")",
+        "desc": "Lua is a lightweight, high-level, multi-paradigm programming language designed primarily for embedded use in applications.",
+        "popularity": 40,
         "categories": [
             "Scripting",
             "Embedded"
         ],
         "primaryCategory": "Scripting",
         "paradigms": [
-            "Object-Oriented",
-            "Concurrent"
+            "Multi-paradigm"
         ],
         "domains": [
-            "Embedded Scripting",
-            "Game Development"
+            "Game Development",
+            "Embedded Systems"
         ],
         "difficulty": "Beginner",
         "typing": "Dynamic",
         "sourceFile": "scripting-languages.js"
     },
     {
-        "name": "Elm",
-        "year": 2012,
-        "creator": "Evan Czaplicki",
-        "code": "import Html exposing (text)\n\nmain =\n  text \"Hello, World!\"",
-        "desc": "Elm is a functional programming language for creating web browser-based graphical user interfaces, known for its strong type system.",
-        "popularity": 22,
+        "name": "Nim",
+        "year": 2008,
+        "creator": "Andreas Rumpf",
+        "code": "echo \"Hello, World!\"",
+        "desc": "Nim is a statically typed compiled systems programming language. It combines successful concepts from mature languages like Python, Ada and Modula.",
+        "popularity": 25,
+        "categories": [
+            "Systems",
+            "Modern"
+        ],
+        "primaryCategory": "Systems",
+        "paradigms": [
+            "Multi-paradigm"
+        ],
+        "domains": [
+            "System Programming",
+            "Web Development"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "systems-languages.js"
+    },
+    {
+        "name": "OCaml",
+        "year": 1996,
+        "creator": "INRIA",
+        "code": "print_endline \"Hello, World!\";",
+        "desc": "OCaml is a general-purpose, industrial-strength programming language with an emphasis on expressiveness and safety.",
+        "popularity": 25,
         "categories": [
             "Functional",
-            "Web"
+            "Academic"
         ],
-        "primaryCategory": "Web",
+        "primaryCategory": "Functional",
         "paradigms": [
             "Functional"
         ],
         "domains": [
-            "Web Development",
-            "Frontend Development"
+            "Research",
+            "Financial Software"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "functional-languages.js"
+    },
+    {
+        "name": "Pascal",
+        "year": 1970,
+        "creator": "Niklaus Wirth",
+        "code": "program Hello;\nbegin\n  writeln('Hello, World!');\nend.",
+        "desc": "Pascal is an imperative and procedural programming language, designed by Niklaus Wirth as a small, efficient language intended to encourage good programming practices.",
+        "popularity": 20,
+        "categories": [
+            "Historical",
+            "Educational"
+        ],
+        "primaryCategory": "Historical",
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Education",
+            "System Programming"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Static",
+        "sourceFile": "historical-languages.js"
+    },
+    {
+        "name": "Perl",
+        "year": 1987,
+        "creator": "Larry Wall",
+        "code": "print \"Hello, World!\\n\";",
+        "desc": "Perl is a family of two high-level, general-purpose, interpreted, dynamic programming languages. Created by Larry Wall.",
+        "popularity": 35,
+        "categories": [
+            "Scripting",
+            "Web"
+        ],
+        "primaryCategory": "Scripting",
+        "paradigms": [
+            "Multi-paradigm"
+        ],
+        "domains": [
+            "System Administration",
+            "Web Development"
         ],
         "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "scripting-languages.js"
+    },
+    {
+        "name": "Racket",
+        "year": 1995,
+        "creator": "PLT",
+        "code": "(displayln \"Hello, World!\")",
+        "desc": "Racket is a general-purpose, multi-paradigm programming language and a platform for programming language design and implementation.",
+        "popularity": 15,
+        "categories": [
+            "Functional",
+            "Academic"
+        ],
+        "primaryCategory": "Functional",
+        "paradigms": [
+            "Functional"
+        ],
+        "domains": [
+            "Education",
+            "Research"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "functional-languages.js"
+    },
+    {
+        "name": "Scala",
+        "year": 2004,
+        "creator": "Martin Odersky",
+        "code": "object Hello extends App {\n  println(\"Hello, World!\")\n}",
+        "desc": "Scala is a strong statically typed general-purpose programming language which supports both object-oriented programming and functional programming.",
+        "popularity": 35,
+        "categories": [
+            "JVM",
+            "Functional"
+        ],
+        "primaryCategory": "JVM",
+        "paradigms": [
+            "Multi-paradigm"
+        ],
+        "domains": [
+            "Big Data",
+            "Web Development"
+        ],
+        "difficulty": "Advanced",
         "typing": "Static",
-        "sourceFile": "web-languages.js"
+        "sourceFile": "jvm-languages.js"
+    },
+    {
+        "name": "Swift",
+        "year": 2014,
+        "creator": "Apple",
+        "code": "print(\"Hello, World!\")",
+        "desc": "Swift is a powerful and intuitive programming language for iOS, iPadOS, macOS, tvOS, and watchOS. Developed by Apple.",
+        "popularity": 65,
+        "categories": [
+            "Mobile",
+            "Apple"
+        ],
+        "primaryCategory": "Mobile",
+        "paradigms": [
+            "Multi-paradigm"
+        ],
+        "domains": [
+            "Mobile Development",
+            "iOS Development"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Static",
+        "sourceFile": "mobile-languages.js"
+    },
+    {
+        "name": "Tcl",
+        "year": 1988,
+        "creator": "John Ousterhout",
+        "code": "puts \"Hello, World!\"",
+        "desc": "Tcl (Tool Command Language) is a high-level, general-purpose, interpreted, dynamic programming language. Created by John Ousterhout.",
+        "popularity": 20,
+        "categories": [
+            "Scripting",
+            "Embedded"
+        ],
+        "primaryCategory": "Scripting",
+        "paradigms": [
+            "Multi-paradigm"
+        ],
+        "domains": [
+            "System Administration",
+            "Embedded Systems"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Dynamic",
+        "sourceFile": "scripting-languages.js"
+    },
+    {
+        "name": "VHDL",
+        "year": 1980,
+        "creator": "IEEE",
+        "code": "library IEEE;\nuse IEEE.STD_LOGIC_1164.ALL;\n\nentity hello is\nend hello;\n\narchitecture Behavioral of hello is\nbegin\n    process\n    begin\n        report \"Hello, World!\";\n        wait;\n    end process;\nend Behavioral;",
+        "desc": "VHDL (VHSIC Hardware Description Language) is a hardware description language used in electronic design automation to describe digital and mixed-signal systems.",
+        "popularity": 25,
+        "categories": [
+            "Hardware",
+            "Embedded"
+        ],
+        "primaryCategory": "Hardware",
+        "paradigms": [
+            "Hardware Description"
+        ],
+        "domains": [
+            "Digital Design",
+            "FPGA Programming"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "hardware-languages.js"
     }
 ];
 

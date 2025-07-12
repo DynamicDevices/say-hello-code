@@ -585,7 +585,7 @@ function generateReferenceLink(languageName) {
         'Groovy': 'https://groovy-lang.org/',
         'Hack': 'https://hacklang.org/',
         'Hy': 'https://hylang.org/',
-        'Icon': 'https://www.cs.arizona.edu/icon/',
+        'Icon': 'https://en.wikipedia.org/wiki/Icon_(programming_language)',
         'Isabelle': 'https://isabelle.in.tum.de/',
         'JScript': 'https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/scripting-articles/',
         'LabVIEW': 'https://www.ni.com/en-us/shop/labview.html',

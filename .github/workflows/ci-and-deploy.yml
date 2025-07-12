@@ -124,8 +124,113 @@ jobs:
         
         echo "✅ Common issues check completed"
 
+  check-duplicate-languages:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Check for duplicate languages
+      run: |
+        echo "🔍 Checking for duplicate languages..."
+        
+        # Create a temporary script to check for duplicates
+        cat > check-duplicates.js << 'EOF'
+        const fs = require('fs');
+        
+        try {
+          // Read the languages file
+          const languagesContent = fs.readFileSync('js/languages.js', 'utf8');
+          
+          // Extract the languages array
+          const languagesMatch = languagesContent.match(/var languages = (\[[\s\S]*?\]);/);
+          
+          if (!languagesMatch) {
+            console.error('❌ Could not find languages array in js/languages.js');
+            process.exit(1);
+          }
+          
+          // Parse the languages array
+          const languages = eval(languagesMatch[1]);
+          
+          console.log(`📊 Total languages found: ${languages.length}`);
+          
+          // Check for duplicates by name
+          const seen = {};
+          const duplicates = [];
+          
+          languages.forEach((lang, index) => {
+            const name = lang.name.toLowerCase().trim();
+            const normalizedName = name
+              .replace(/\s+/g, '') // Remove spaces
+              .replace(/[^\w#\+\-\.]/g, ''); // Remove special characters but keep #, +, -, .
+            
+            if (seen[normalizedName]) {
+              duplicates.push({
+                name: lang.name,
+                index: index,
+                original: seen[normalizedName]
+              });
+            } else {
+              seen[normalizedName] = { name: lang.name, index: index };
+            }
+          });
+          
+          if (duplicates.length > 0) {
+            console.error('❌ Found duplicate languages:');
+            duplicates.forEach(dup => {
+              console.error(`   - "${dup.name}" (index ${dup.index}) duplicates "${dup.original.name}" (index ${dup.original.index})`);
+            });
+            console.error(`\nTotal duplicates found: ${duplicates.length}`);
+            process.exit(1);
+          } else {
+            console.log('✅ No duplicate languages found');
+          }
+          
+          // Check for languages with same name but different casing
+          const caseInsensitiveSeen = {};
+          const caseDuplicates = [];
+          
+          languages.forEach((lang, index) => {
+            const name = lang.name.toLowerCase();
+            
+            if (caseInsensitiveSeen[name] && caseInsensitiveSeen[name].name !== lang.name) {
+              caseDuplicates.push({
+                name: lang.name,
+                index: index,
+                original: caseInsensitiveSeen[name]
+              });
+            } else {
+              caseInsensitiveSeen[name] = { name: lang.name, index: index };
+            }
+          });
+          
+          if (caseDuplicates.length > 0) {
+            console.warn('⚠️  Found languages with same name but different casing:');
+            caseDuplicates.forEach(dup => {
+              console.warn(`   - "${dup.name}" (index ${dup.index}) vs "${dup.original.name}" (index ${dup.original.index})`);
+            });
+          }
+          
+        } catch (error) {
+          console.error('❌ Error checking for duplicates:', error.message);
+          process.exit(1);
+        }
+        EOF
+        
+        # Run the duplicate check
+        node check-duplicates.js
+        
+        echo "✅ Duplicate language check completed"
+
   test-urls:
-    needs: validate-javascript
+    needs: [validate-javascript, check-duplicate-languages]
     runs-on: ubuntu-latest
     
     steps:
@@ -314,7 +419,7 @@ jobs:
         fi
 
   deploy:
-    needs: [validate-javascript, test-urls]
+    needs: [validate-javascript, check-duplicate-languages, test-urls]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     environment:

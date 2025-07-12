@@ -38,25 +38,8 @@ try {
     }
 }
 
-// Extract the baseUrls from app.js to use as single source of truth
-function extractBaseUrlsFromAppJs() {
-    try {
-        const appJsContent = fs.readFileSync('./js/app.js', 'utf8');
-        const baseUrlsMatch = appJsContent.match(/var baseUrls = \{([\s\S]*?)\};/);
-        
-        if (!baseUrlsMatch) {
-            throw new Error('Could not extract baseUrls from app.js');
-        }
-        
-        const baseUrlsString = `({${baseUrlsMatch[1]}})`;
-        const baseUrls = new Function('return ' + baseUrlsString)();
-        
-        return baseUrls;
-    } catch (error) {
-        console.error('Error extracting baseUrls from app.js:', error.message);
-        process.exit(1);
-    }
-}
+// Import baseUrls from the new data file
+const baseUrls = require('./js/language-urls.js');
 
 // Generate reference link using the same logic as app.js
 function generateReferenceLink(languageName, baseUrls) {
@@ -117,8 +100,6 @@ async function testAllUrls() {
     console.log('==================================================');
     console.log(`Total languages to test: ${languages.length}`);
     console.log('==================================================');
-    
-    const baseUrls = extractBaseUrlsFromAppJs();
     
     const results = {
         timestamp: new Date().toISOString(),
@@ -461,4 +442,4 @@ if (require.main === module) {
         });
 }
 
-module.exports = { testAllUrls, checkUrl, generateReferenceLink, extractBaseUrlsFromAppJs };
+module.exports = { testAllUrls, checkUrl, generateReferenceLink };

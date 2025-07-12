@@ -98,8 +98,10 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('typeof languages:', typeof languages);
         console.log('languages defined:', typeof languages !== 'undefined');
         console.log('languages length:', typeof languages !== 'undefined' ? languages.length : 'N/A');
+        console.log('typeof baseUrls:', typeof baseUrls);
+        console.log('baseUrls defined:', typeof baseUrls !== 'undefined');
 
-        if (typeof languages !== 'undefined' && languages.length > 0) {
+        if (typeof languages !== 'undefined' && languages.length > 0 && typeof baseUrls !== 'undefined') {
             // Deduplicate languages based on normalized names
             allLanguages = deduplicateLanguages(languages);
             filteredLanguages = allLanguages.slice();
@@ -119,7 +121,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return true; // Success
         } else {
             console.error('Languages data not loaded - typeof languages:', typeof languages);
-            console.error('Available global variables:', Object.keys(window).filter(key => key.includes('lang')));
+            console.error('baseUrls not loaded - typeof baseUrls:', typeof baseUrls);
+            console.error('Available global variables:', Object.keys(window).filter(key => key.includes('lang') || key.includes('base')));
 
             // Show loading message instead of error initially
             if (languagesContainer) {

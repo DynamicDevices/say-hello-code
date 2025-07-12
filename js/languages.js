@@ -1283,25 +1283,6 @@ var languages = [
     "sourceFile": "functional-languages.js"
 },
 {
-    "name": "Icon",
-    "year": 1977,
-    "creator": "Ralph Griswold",
-    "code": "procedure main()\n    write(\"Hello, World!\")\nend",
-    "desc": "Icon is a high-level, general-purpose programming language with a large repertoire of features for processing and presenting symbolic data. Created by Ralph Griswold.",
-    "popularity": 6,
-    "categories": [
-        "Additional"
-    ],
-    "primaryCategory": "Additional",
-    "paradigms": [
-        "Multi-paradigm"
-    ],
-    "domains": [],
-    "difficulty": "Varies",
-    "typing": "Mixed",
-    "sourceFile": "additional-languages.js"
-},
-{
     "name": "Idris",
     "year": 2007,
     "creator": "Edwin Brady",
@@ -2974,26 +2955,6 @@ var languages = [
     "sourceFile": "esoteric-languages.js"
 },
 {
-    "name": "SNOBOL",
-    "year": 1962,
-    "creator": "Ralph Griswold",
-    "code": "OUTPUT = \"Hello, World!\"\nEND",
-    "desc": "SNOBOL is a series of computer programming languages developed between 1962 and 1967 at AT&T Bell Laboratories by David J. Farber, Ralph E. Griswold and Ivan P. Polonsky.",
-    "popularity": 3,
-    "categories": [
-        "Vintage",
-        "Historical"
-    ],
-    "primaryCategory": "Vintage",
-    "paradigms": [
-        "Multi-paradigm"
-    ],
-    "domains": [],
-    "difficulty": "Advanced",
-    "typing": "Mixed",
-    "sourceFile": "vintage-languages.js"
-},
-{
     "name": "SPARQL",
     "year": 2008,
     "creator": "W3C",
@@ -3465,26 +3426,6 @@ var languages = [
     "difficulty": "Beginner to Advanced",
     "typing": "Mixed",
     "sourceFile": "web-languages.js"
-},
-{
-    "name": "Whitespace",
-    "year": 2003,
-    "creator": "Edwin Brady",
-    "code": "   \t  \t   \n   \t \t\t  \n   \t \t\t \t\n   \t \t\t\t \n   \t \t \t  \n   \t     \t\n   \t   \t\t \n   \t \t\t\t\t\n   \t \t\t\t \n   \t \t\t  \n   \t\t  \t \n\t\n  \n\n\n",
-    "desc": "Whitespace is an esoteric programming language developed by Edwin Brady and Chris Morris where only whitespace characters have meaning.",
-    "popularity": 8,
-    "categories": [
-        "Esoteric",
-        "Educational"
-    ],
-    "primaryCategory": "Esoteric",
-    "paradigms": [
-        "Multi-paradigm"
-    ],
-    "domains": [],
-    "difficulty": "Varies",
-    "typing": "Mixed",
-    "sourceFile": "esoteric-languages.js"
 },
 {
     "name": "WikiText",
@@ -4051,29 +3992,6 @@ var languages = [
     "difficulty": "Advanced",
     "typing": "Dynamic",
     "sourceFile": "functional-languages.js"
-},
-{
-    "name": "Euphoria",
-    "year": 1993,
-    "creator": "Robert Craig",
-    "code": "puts(1, \"Hello, World!\\n\")",
-    "desc": "Euphoria is a programming language created by Robert Craig of Rapid Deployment Software in Toronto. It is simple, flexible, and easy to learn.",
-    "popularity": 8,
-    "categories": [
-        "General Purpose",
-        "Beginner-Friendly"
-    ],
-    "primaryCategory": "General Purpose",
-    "paradigms": [
-        "Procedural"
-    ],
-    "domains": [
-        "General Purpose",
-        "Education"
-    ],
-    "difficulty": "Beginner",
-    "typing": "Dynamic",
-    "sourceFile": "educational-languages.js"
 },
 {
     "name": "Forth",
@@ -4977,29 +4895,6 @@ var languages = [
     "sourceFile": "cross-platform-languages.js"
 },
 {
-    "name": "Falcon",
-    "year": 2003,
-    "creator": "Giancarlo Niccolai",
-    "code": "printl(\"Hello, World!\")",
-    "desc": "Falcon is a lightweight, fast and one of the most feature-rich programming languages.",
-    "popularity": 5,
-    "categories": [
-        "Scripting",
-        "Multi-paradigm"
-    ],
-    "primaryCategory": "Scripting",
-    "paradigms": [
-        "Multi-paradigm"
-    ],
-    "domains": [
-        "Scripting",
-        "Embedded"
-    ],
-    "difficulty": "Intermediate",
-    "typing": "Dynamic",
-    "sourceFile": "scripting-languages.js"
-},
-{
     "name": "Io",
     "year": 2002,
     "creator": "Steve Dekorte",
@@ -5274,27 +5169,6 @@ var languages = [
     "sourceFile": "esoteric-languages.js"
 },
 {
-    "name": "INTERCAL",
-    "year": 1972,
-    "creator": "Don Woods, James Lyon",
-    "code": "DO ,1 <- #13\nPLEASE DO ,1 SUB #1 <- #238\nPLEASE READ OUT ,1\nPLEASE GIVE UP",
-    "desc": "INTERCAL is a parody esoteric programming language designed to be as different from traditional programming languages as possible.",
-    "popularity": 2,
-    "categories": [
-        "Esoteric"
-    ],
-    "primaryCategory": "Esoteric",
-    "paradigms": [
-        "Esoteric"
-    ],
-    "domains": [
-        "Fun"
-    ],
-    "difficulty": "Advanced",
-    "typing": "Untyped",
-    "sourceFile": "esoteric-languages.js"
-},
-{
     "name": "Simula",
     "year": 1967,
     "creator": "Ole-Johan Dahl, Kristen Nygaard",
@@ -5362,27 +5236,6 @@ var languages = [
     "sourceFile": "database-languages.js"
 },
 {
-    "name": "Icon",
-    "year": 1977,
-    "creator": "Ralph Griswold",
-    "code": "procedure main()\n    write(\"Hello, World!\")\nend",
-    "desc": "Icon is a high-level, general-purpose programming language with goal-directed evaluation.",
-    "popularity": 5,
-    "categories": [
-        "General Purpose"
-    ],
-    "primaryCategory": "General Purpose",
-    "paradigms": [
-        "Procedural"
-    ],
-    "domains": [
-        "General Purpose"
-    ],
-    "difficulty": "Intermediate",
-    "typing": "Dynamic",
-    "sourceFile": "general-languages.js"
-},
-{
     "name": "JOVIAL",
     "year": 1959,
     "creator": "Jules Schwartz",
@@ -5403,27 +5256,6 @@ var languages = [
     "difficulty": "Advanced",
     "typing": "Static",
     "sourceFile": "embedded-languages.js"
-},
-{
-    "name": "REXX",
-    "year": 1979,
-    "creator": "Mike Cowlishaw",
-    "code": "say \"Hello, World!\"",
-    "desc": "REXX is an interpreted programming language developed at IBM for ease of learning and reading.",
-    "popularity": 6,
-    "categories": [
-        "Scripting"
-    ],
-    "primaryCategory": "Scripting",
-    "paradigms": [
-        "Procedural"
-    ],
-    "domains": [
-        "Scripting"
-    ],
-    "difficulty": "Beginner",
-    "typing": "Dynamic",
-    "sourceFile": "scripting-languages.js"
 },
 {
     "name": "QBasic",
@@ -5510,28 +5342,6 @@ var languages = [
     "sourceFile": "general-languages.js"
 },
 {
-    "name": "SNOBOL",
-    "year": 1962,
-    "creator": "Ralph Griswold",
-    "code": "OUTPUT = \"Hello, World!\"\nEND",
-    "desc": "SNOBOL is a series of programming languages developed for string manipulation.",
-    "popularity": 3,
-    "categories": [
-        "String Processing",
-        "Historical"
-    ],
-    "primaryCategory": "String Processing",
-    "paradigms": [
-        "Procedural"
-    ],
-    "domains": [
-        "Text Processing"
-    ],
-    "difficulty": "Intermediate",
-    "typing": "Dynamic",
-    "sourceFile": "string-languages.js"
-},
-{
     "name": "ChucK",
     "year": 2003,
     "creator": "Ge Wang, Perry Cook",
@@ -5575,27 +5385,6 @@ var languages = [
     "sourceFile": "theoretical-languages.js"
 },
 {
-    "name": "Whitespace",
-    "year": 2003,
-    "creator": "Edwin Brady, Chris Morris",
-    "code": "   \t  \t   \n   \t \t\t  \n   \t \t\t \t\n   \t \t\t\t \n   \t \t \t  \n   \t     \t\n   \t   \t\t \n   \t \t\t\t\t\n   \t \t\t\t \n   \t \t\t  \n   \t\t  \t \n\t\n  \n\n\n",
-    "desc": "Whitespace is an esoteric programming language that uses only whitespace characters.",
-    "popularity": 2,
-    "categories": [
-        "Esoteric"
-    ],
-    "primaryCategory": "Esoteric",
-    "paradigms": [
-        "Esoteric"
-    ],
-    "domains": [
-        "Fun"
-    ],
-    "difficulty": "Advanced",
-    "typing": "Untyped",
-    "sourceFile": "esoteric-languages.js"
-},
-{
     "name": "Befunge-98",
     "year": 1998,
     "creator": "Chris Pressey",
@@ -5616,48 +5405,6 @@ var languages = [
     "typing": "Untyped",
     "sourceFile": "esoteric-languages.js"
 },
-{
-    "name": "Falcon",
-    "year": 2003,
-    "creator": "Giancarlo Niccolai",
-    "code": "printl(\"Hello, World!\\n\");",
-    "desc": "Falcon is a lightweight, fast, and feature-rich programming language.",
-    "popularity": 2,
-    "categories": [
-        "Scripting"
-    ],
-    "primaryCategory": "Scripting",
-    "paradigms": [
-        "Multi-paradigm"
-    ],
-    "domains": [
-        "Scripting"
-    ],
-    "difficulty": "Intermediate",
-    "typing": "Dynamic",
-    "sourceFile": "scripting-languages.js"
-},
-{
-    "name": "Euphoria",
-    "year": 1993,
-    "creator": "Robert Craig",
-    "code": "puts(1, \"Hello, World!\\n\")",
-    "desc": "Euphoria is a simple, flexible, and easy-to-learn programming language.",
-    "popularity": 2,
-    "categories": [
-        "General Purpose"
-    ],
-    "primaryCategory": "General Purpose",
-    "paradigms": [
-        "Procedural"
-    ],
-    "domains": [
-        "General Purpose"
-    ],
-    "difficulty": "Beginner",
-    "typing": "Dynamic",
-    "sourceFile": "general-languages.js"
-}
 ];
 
 // Export for use in other modules

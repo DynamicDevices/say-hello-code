@@ -1,10 +1,10 @@
 {
-  "version": "1.2.0",
+  "version": "1.2.1",
   "name": "Say Hello Code",
-  "description": "A comprehensive collection of Hello, World! programs in 240+ programming languages with enhanced data visualizations",
+      "description": "A comprehensive collection of Hello, World! programs in 250+ programming languages with enhanced data visualizations",
   "releaseDate": "2025-01-27",
   "features": [
-    "240+ programming languages",
+    "250+ programming languages",
     "Interactive search and filtering",
     "Enhanced data visualization dashboard",
     "Timeline charts with language names on hover",

@@ -19,15 +19,13 @@ const fs = require('fs');
 // Import the languages data by requiring the module directly
 let languages;
 try {
-    // Read the languages.js file and extract the languages array
-    const languagesData = fs.readFileSync('./js/languages.js', 'utf8');
-    let languagesMatch = languagesData.match(/var languages = (\[[\s\S]*?\]);/);
+    // Try to require the languages file directly
+    languages = require('./js/languages.js');
     
-    if (!languagesMatch) {
-        throw new Error('Could not extract languages array from languages.js');
+    // If it's a nested array, flatten it
+    if (Array.isArray(languages) && languages.length === 1 && Array.isArray(languages[0])) {
+        languages = languages[0];
     }
-    
-    languages = new Function('return ' + languagesMatch[1])();
     
     // Validate that we got an array of language objects
     if (!Array.isArray(languages) || languages.length === 0) {

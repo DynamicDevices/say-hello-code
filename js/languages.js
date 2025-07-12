@@ -5420,21 +5420,7 @@ var languages = [
     "typing": "Static",
     "sourceFile": "legacy-languages.js"
 },
-{
-    "name": "PL/I",
-    "year": 1964,
-    "creator": "IBM",
-    "code": "HELLO: PROCEDURE;\n   PUT SKIP LIST('Hello, World!');\nEND HELLO;",
-    "desc": "PL/I (Programming Language One) is a procedural, imperative computer programming language designed for scientific, engineering, business and system programming.",
-    "popularity": 8,
-    "categories": ["Legacy", "Historical"],
-    "primaryCategory": "Legacy",
-    "paradigms": ["Procedural"],
-    "domains": [],
-    "difficulty": "Advanced",
-    "typing": "Static",
-    "sourceFile": "legacy-languages.js"
-},
+
 {
     "name": "Modula-3",
     "year": 1988,
@@ -5570,36 +5556,8 @@ var languages = [
     "typing": "Static",
     "sourceFile": "academic-languages.js"
 },
-{
-    "name": "Chapel",
-    "year": 2009,
-    "creator": "Cray Inc.",
-    "code": "writeln(\"Hello, World!\");",
-    "desc": "Chapel is a parallel programming language designed to be productive for both single-locale and multi-locale programming.",
-    "popularity": 8,
-    "categories": ["Academic", "Research"],
-    "primaryCategory": "Academic",
-    "paradigms": ["Multi-paradigm"],
-    "domains": ["Research", "High Performance Computing"],
-    "difficulty": "Advanced",
-    "typing": "Static",
-    "sourceFile": "academic-languages.js"
-},
-{
-    "name": "Vale",
-    "year": 2020,
-    "creator": "Evan Ovadia",
-    "code": "fn main() {\n  println(\"Hello, World!\");\n}",
-    "desc": "Vale is a memory-safe programming language that aims to provide the performance of C++ with the safety of Rust.",
-    "popularity": 15,
-    "categories": ["Systems", "Low-level"],
-    "primaryCategory": "Systems",
-    "paradigms": ["Multi-paradigm"],
-    "domains": ["System Programming", "Operating Systems"],
-    "difficulty": "Advanced",
-    "typing": "Static",
-    "sourceFile": "systems-languages.js"
-},
+
+
 {
     "name": "Fantom",
     "year": 2008,
@@ -5630,51 +5588,9 @@ var languages = [
     "typing": "Dynamic",
     "sourceFile": "game-languages.js"
 },
-{
-    "name": "Ceylon",
-    "year": 2011,
-    "creator": "Red Hat",
-    "code": "void hello() {\n    print(\"Hello, World!\");\n}",
-    "desc": "Ceylon is a programming language designed by Red Hat. It was designed to be a better Java, with a focus on readability and modularity.",
-    "popularity": 6,
-    "categories": ["Additional"],
-    "primaryCategory": "Additional",
-    "paradigms": ["Object-Oriented"],
-    "domains": [],
-    "difficulty": "Intermediate",
-    "typing": "Static",
-    "sourceFile": "additional-languages.js"
-},
-{
-    "name": "X10",
-    "year": 2004,
-    "creator": "IBM",
-    "code": "public class Hello {\n  public static def main(args:Rail[String]) {\n    x10.io.Console.OUT.println(\"Hello, World!\");\n  }\n}",
-    "desc": "X10 is a programming language designed for high-performance, scalable computing, developed by IBM.",
-    "popularity": 3,
-    "categories": ["Academic", "Research"],
-    "primaryCategory": "Academic",
-    "paradigms": ["Object-Oriented"],
-    "domains": ["Research", "High Performance Computing"],
-    "difficulty": "Advanced",
-    "typing": "Static",
-    "sourceFile": "academic-languages.js"
-},
-{
-    "name": "Fortress",
-    "year": 2006,
-    "creator": "Sun Microsystems",
-    "code": "component HelloWorld\nexports Executable\nrun() = println(\"Hello, World!\")",
-    "desc": "Fortress was a programming language designed by Sun Microsystems for high-performance computing.",
-    "popularity": 2,
-    "categories": ["Academic", "Research"],
-    "primaryCategory": "Academic",
-    "paradigms": ["Multi-paradigm"],
-    "domains": ["Research", "High Performance Computing"],
-    "difficulty": "Advanced",
-    "typing": "Static",
-    "sourceFile": "academic-languages.js"
-},
+
+
+
 {
     "name": "Xojo",
     "year": 1998,

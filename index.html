@@ -94,7 +94,7 @@ Website: https://sayhellocode.com
 
     <!-- CSS Styles -->
     <link rel="stylesheet" href="css/styles.css">
-    
+
     <!-- Cache busting script -->
     <script>
         // Force cache refresh for all JavaScript files
@@ -112,10 +112,10 @@ Website: https://sayhellocode.com
             <h1 class="title">Say Hello Code</h1>
             <p class="subtitle">Explore "Hello, World!" programs in programming languages from 1949 to today</p>
             <p class="creator">Created by <a href="https://www.dynamicdevices.co.uk" target="_blank" rel="noopener noreferrer">Dynamic Devices Ltd</a> in collaboration with <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">Claude.ai</a></p>
-            
+
             <!-- Theme toggle -->
             <div class="theme-toggle-container">
-                <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark/light theme">
+                <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark/light theme" type="button">
                     <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="5"></circle>
                         <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -132,7 +132,7 @@ Website: https://sayhellocode.com
                     </svg>
                 </button>
             </div>
-            
+
             <!-- Search input -->
             <label for="searchInput" class="sr-only">Search programming languages</label>
             <input type="text" class="search-input" id="searchInput" placeholder="Search by name (e.g., 'C', 'Python'), creator, or year..." aria-label="Search programming languages by name, creator, or year">
@@ -204,12 +204,12 @@ Website: https://sayhellocode.com
 
                 <!-- Quick filter buttons -->
                 <div class="quick-filters">
-                    <button class="quick-filter-btn" data-filter="popular" aria-label="Show popular languages">Popular</button>
-                    <button class="quick-filter-btn" data-filter="new" aria-label="Show new languages">New</button>
-                    <button class="quick-filter-btn" data-filter="vintage" aria-label="Show vintage languages">Vintage</button>
-                    <button class="quick-filter-btn" data-filter="favorites" aria-label="Show favorite languages">Favorites</button>
-                    <button class="quick-filter-btn" data-filter="web" aria-label="Show web languages">Web</button>
-                    <button class="quick-filter-btn" data-filter="mobile" aria-label="Show mobile languages">Mobile</button>
+                    <button class="quick-filter-btn" data-filter="popular" aria-label="Show popular languages" type="button">Popular</button>
+                    <button class="quick-filter-btn" data-filter="new" aria-label="Show new languages" type="button">New</button>
+                    <button class="quick-filter-btn" data-filter="vintage" aria-label="Show vintage languages" type="button">Vintage</button>
+                    <button class="quick-filter-btn" data-filter="favorites" aria-label="Show favorite languages" type="button">Favorites</button>
+                    <button class="quick-filter-btn" data-filter="web" aria-label="Show web languages" type="button">Web</button>
+                    <button class="quick-filter-btn" data-filter="mobile" aria-label="Show mobile languages" type="button">Mobile</button>
                 </div>
             </div>
 
@@ -225,10 +225,10 @@ Website: https://sayhellocode.com
                 </select>
 
                 <!-- Clear filters button -->
-                <button class="clear-filters-btn" id="clearFilters">Clear Filters</button>
+                <button class="clear-filters-btn" id="clearFilters" type="button">Clear Filters</button>
 
                 <!-- Mobile menu toggle -->
-                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" type="button">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -269,9 +269,9 @@ Website: https://sayhellocode.com
             <p>&copy; 2025 <a href="https://www.dynamicdevices.co.uk" target="_blank" rel="noopener noreferrer" title="Dynamic Devices - Software Development Company">Dynamic Devices Ltd</a>.
             Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" title="Creative Commons Attribution 4.0">CC BY 4.0</a>.</p>
             <p>Created in collaboration with <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" title="Claude AI Assistant">Claude.ai</a> | Perfect for students, educators, and developers</p>
-            <div class="cc-license" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
-                <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; text-decoration: none; color: #cbd5e1;">
-                    <svg width="80" height="15" viewBox="0 0 80 15" style="margin-right: 8px;">
+            <div class="cc-license">
+                <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="cc-license-link">
+                    <svg width="80" height="15" viewBox="0 0 80 15" class="cc-license-svg">
                         <g fill="#cbd5e1">
                             <!-- CC logo -->
                             <circle cx="7.5" cy="7.5" r="7" stroke="#cbd5e1" stroke-width="1" fill="none"/>

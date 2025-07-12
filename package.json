@@ -23,7 +23,7 @@
   "author": "Dynamic Devices Ltd",
   "license": "CC-BY-4.0",
   "devDependencies": {
-    "html-validate": "^8.7.4",
+    "html-validate": "^8.29.0",
     "http-server": "^14.1.1",
     "lighthouse": "^10.4.0"
   },

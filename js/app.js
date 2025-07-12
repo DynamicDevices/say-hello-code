@@ -290,12 +290,7 @@ function escapeHtml(text) {
     return text.replace(/[&<>"']/g, function(m) { return map[m]; });
 }
 
-// Import baseUrls from the new data file
-// For browser, baseUrls will be available as a global variable if included via <script>
-// For Node.js, it will be required as a module
-if (typeof require !== 'undefined') {
-    var baseUrls = require('./language-urls.js');
-}
+// baseUrls is imported from js/language-urls.js and available as a global variable
 
 // Generate reference link for a programming language
 function generateReferenceLink(languageName) {

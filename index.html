@@ -94,6 +94,14 @@ Website: https://sayhellocode.com
 
     <!-- CSS Styles -->
     <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Cache busting script -->
+    <script>
+        // Force cache refresh for all JavaScript files
+        if (window.location.search.indexOf('v=2.4') === -1) {
+            window.location.search = window.location.search + (window.location.search ? '&' : '?') + 'v=2.4';
+        }
+    </script>
 </head>
 <body>
     <div class="main-content">
@@ -281,9 +289,9 @@ Website: https://sayhellocode.com
 
     <!-- JavaScript Files -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
-    <script src="js/language-urls.js?v=2.3"></script>
-    <script src="js/languages.js?v=2.3"></script>
-    <script src="js/performance.js?v=2.3"></script>
+    <script src="js/language-urls.js?v=2.4"></script>
+    <script src="js/languages.js?v=2.4"></script>
+    <script src="js/performance.js?v=2.4"></script>
     <script src="js/app.js?v=2.4"></script>
     <script src="js/visualizations.js?v=1.1"></script>
 </body>

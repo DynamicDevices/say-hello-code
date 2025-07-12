@@ -19,23 +19,26 @@ const fs = require('fs');
 // Import the languages data by requiring the module directly
 let languages;
 try {
-    languages = require('./js/languages.js');
-} catch (error) {
-    console.error('Error loading languages module:', error.message);
+    // Read the languages.js file and extract the languages array
+    const languagesData = fs.readFileSync('./js/languages.js', 'utf8');
+    let languagesMatch = languagesData.match(/var languages = (\[[\s\S]*?\]);/);
     
-    try {
-        const languagesData = fs.readFileSync('./js/languages.js', 'utf8');
-        let languagesMatch = languagesData.match(/var languages = (\[[\s\S]*?\]);/);
-        
-        if (!languagesMatch) {
-            throw new Error('Could not extract languages array from languages.js');
-        }
-        
-        languages = new Function('return ' + languagesMatch[1])();
-    } catch (parseError) {
-        console.error('Error parsing languages data:', parseError.message);
-        process.exit(1);
+    if (!languagesMatch) {
+        throw new Error('Could not extract languages array from languages.js');
     }
+    
+    languages = new Function('return ' + languagesMatch[1])();
+    
+    // Validate that we got an array of language objects
+    if (!Array.isArray(languages) || languages.length === 0) {
+        throw new Error('Languages array is empty or invalid');
+    }
+    
+    console.log(`Successfully loaded ${languages.length} languages`);
+    
+} catch (error) {
+    console.error('Error loading languages:', error.message);
+    process.exit(1);
 }
 
 // Import baseUrls from the new data file

@@ -10,7 +10,8 @@
     "test": "echo \"No tests specified\" && exit 0",
     "validate": "html-validate index.html",
     "lighthouse": "lighthouse http://localhost:8000 --output html --output-path ./lighthouse-report.html",
-    "deploy": "echo 'Push to main branch to deploy to GitHub Pages'"
+    "deploy": "echo 'Push to main branch to deploy to GitHub Pages'",
+    "add-unique-languages": "node add-unique-languages.js"
   },
   "keywords": [
     "programming",

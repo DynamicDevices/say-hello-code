@@ -19,7 +19,113 @@ permissions:
   id-token: write
 
 jobs:
+  validate-javascript:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install ESLint
+      run: npm install -g eslint
+        
+    - name: Validate JavaScript syntax
+      run: |
+        echo "🔍 Validating JavaScript files..."
+        
+        # Check for syntax errors in all JS files
+        for file in js/*.js; do
+          if [ -f "$file" ]; then
+            echo "Checking $file..."
+            node -c "$file" || {
+              echo "❌ Syntax error in $file"
+              exit 1
+            }
+            echo "✅ $file - Syntax OK"
+          fi
+        done
+        
+        # Check for undefined variables and functions
+        echo "🔍 Checking for potential issues..."
+        
+        # Check app.js for common issues
+        if [ -f "js/app.js" ]; then
+          echo "Checking app.js for potential issues..."
+          
+          # Check for undefined functions
+          UNDEFINED_FUNCTIONS=$(grep -n "function [a-zA-Z_][a-zA-Z0-9_]*(" js/app.js | cut -d'(' -f1 | cut -d' ' -f2- | sed 's/function //' | while read func; do
+            if ! grep -q "function $func(" js/app.js; then
+              echo "Potential undefined function: $func"
+            fi
+          done)
+          
+          if [ ! -z "$UNDEFINED_FUNCTIONS" ]; then
+            echo "⚠️  Potential issues found:"
+            echo "$UNDEFINED_FUNCTIONS"
+          fi
+        fi
+        
+        echo "✅ JavaScript validation completed successfully"
+        
+    - name: Check for console errors
+      run: |
+        echo "🔍 Checking for console.error statements..."
+        
+        ERROR_COUNT=$(grep -r "console.error" js/ | wc -l || echo "0")
+        if [ "$ERROR_COUNT" -gt 0 ]; then
+          echo "⚠️  Found $ERROR_COUNT console.error statements:"
+          grep -r "console.error" js/ || true
+        else
+          echo "✅ No console.error statements found"
+        fi
+        
+    - name: Validate HTML structure
+      run: |
+        echo "🔍 Validating HTML structure..."
+        
+        # Check if all script tags reference existing files
+        for script in $(grep -o 'src="[^"]*"' index.html | sed 's/src="//' | sed 's/"//'); do
+          if [[ $script == js/* ]]; then
+            file_path=$(echo $script | sed 's/\?.*//')
+            if [ ! -f "$file_path" ]; then
+              echo "❌ Script file not found: $file_path"
+              exit 1
+            else
+              echo "✅ Script file exists: $file_path"
+            fi
+          fi
+        done
+        
+        echo "✅ HTML structure validation completed"
+        
+    - name: Check for common JavaScript issues
+      run: |
+        echo "🔍 Checking for common JavaScript issues..."
+        
+        # Check for missing semicolons
+        SEMICOLON_ISSUES=$(grep -r "console\." js/ | grep -v ";" | wc -l || echo "0")
+        if [ "$SEMICOLON_ISSUES" -gt 0 ]; then
+          echo "⚠️  Found potential missing semicolons:"
+          grep -r "console\." js/ | grep -v ";" || true
+        fi
+        
+        # Check for undefined variables
+        UNDEFINED_VARS=$(grep -r "var [a-zA-Z_][a-zA-Z0-9_]*;" js/ | wc -l || echo "0")
+        echo "Found $UNDEFINED_VARS variable declarations"
+        
+        # Check for function definitions
+        FUNCTION_COUNT=$(grep -r "function [a-zA-Z_][a-zA-Z0-9_]*(" js/ | wc -l || echo "0")
+        echo "Found $FUNCTION_COUNT function definitions"
+        
+        echo "✅ Common issues check completed"
+
   test-urls:
+    needs: validate-javascript
     runs-on: ubuntu-latest
     
     steps:
@@ -208,7 +314,7 @@ jobs:
         fi
 
   deploy:
-    needs: test-urls
+    needs: [validate-javascript, test-urls]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     environment:

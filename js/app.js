@@ -34,6 +34,40 @@ var searchInput, categoryFilter, sortSelect, languagesContainer, noResults;
 var yearRangeFilter, difficultyFilter, typingFilter;
 var themeToggle, mobileMenuToggle, advancedFilters;
 
+// Initialize theme
+function initializeTheme() {
+    if (currentTheme === 'light') {
+        document.body.classList.add('light-theme');
+    }
+    
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+}
+
+// Toggle theme
+function toggleTheme() {
+    document.body.classList.toggle('light-theme');
+    currentTheme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
+    localStorage.setItem('theme', currentTheme);
+}
+
+// Initialize mobile menu
+function initializeMobileMenu() {
+    if (mobileMenuToggle && advancedFilters) {
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenuToggle.classList.toggle('active');
+            advancedFilters.classList.toggle('collapsed');
+            advancedFilters.classList.toggle('expanded');
+        });
+        
+        // Start with collapsed filters on mobile
+        if (window.innerWidth <= 768) {
+            advancedFilters.classList.add('collapsed');
+        }
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Get DOM elements
     searchInput = document.getElementById('searchInput');

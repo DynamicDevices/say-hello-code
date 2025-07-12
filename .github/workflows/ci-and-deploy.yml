@@ -1,0 +1,232 @@
+name: CI and Deploy
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run daily at 2 AM UTC to catch broken links
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    # Allow manual triggering
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+  pages: write
+  id-token: write
+
+jobs:
+  test-urls:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Run URL accessibility tests
+      id: url-test
+      run: |
+        echo "Starting URL tests..."
+        node test-urls.js > url-test-output.txt 2>&1
+        TEST_EXIT_CODE=$?
+
+        # Extract summary from output
+        echo "## 🔗 URL Test Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo '```' >> $GITHUB_STEP_SUMMARY
+        grep -A 10 "📊 SUMMARY" url-test-output.txt >> $GITHUB_STEP_SUMMARY || echo "Summary not found" >> $GITHUB_STEP_SUMMARY
+        echo '```' >> $GITHUB_STEP_SUMMARY
+
+        # Add failed URLs section to summary if any failures exist
+        FAILED_URLS=$(grep "❌ Failed:" url-test-output.txt | grep -o '[0-9]\+' | head -1 || echo "0")
+        if [ "$FAILED_URLS" -gt "0" ]; then
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## ❌ Failed URLs Details" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          # Extract failed URLs section with better formatting
+          sed -n '/❌ FAILED URLS/,/📄\|$/p' url-test-output.txt | head -50 >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "💡 **Action Required:** Update the failing URLs in \`js/app.js\` baseUrls object" >> $GITHUB_STEP_SUMMARY
+        fi
+
+        # Set output variables
+        TOTAL_URLS=$(grep "Total URLs tested:" url-test-output.txt | grep -o '[0-9]\+' | head -1 || echo "0")
+        SUCCESSFUL_URLS=$(grep "✅ Successful:" url-test-output.txt | grep -o '[0-9]\+' | head -1 || echo "0")
+
+        echo "total_urls=$TOTAL_URLS" >> $GITHUB_OUTPUT
+        echo "successful_urls=$SUCCESSFUL_URLS" >> $GITHUB_OUTPUT
+        echo "failed_urls=$FAILED_URLS" >> $GITHUB_OUTPUT
+        echo "test_exit_code=$TEST_EXIT_CODE" >> $GITHUB_OUTPUT
+
+        # Show full output for debugging
+        echo "Full test output:"
+        cat url-test-output.txt
+
+        exit $TEST_EXIT_CODE
+      
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: url-test-results-${{ github.run_number }}
+        path: |
+          url-test-report.json
+          url-test-output.txt
+        retention-days: 30
+        
+    - name: Comment on PR with results
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          
+          let reportContent = '';
+          try {
+            const output = fs.readFileSync('url-test-output.txt', 'utf8');
+            const summaryMatch = output.match(/📊 SUMMARY[\s\S]*?(?=\n==|$)/);
+            
+            if (summaryMatch) {
+              reportContent = `## 🔗 URL Test Results
+              
+              \`\`\`
+              ${summaryMatch[0]}
+              \`\`\`
+              
+              `;
+              
+              // Add failed URLs if any
+              const failedMatch = output.match(/❌ FAILED URLS[\s\S]*?(?=📄|$)/);
+              if (failedMatch) {
+                reportContent += `
+              ### Failed URLs:
+              \`\`\`
+              ${failedMatch[0]}
+              \`\`\`
+              `;
+              }
+            } else {
+              reportContent = '## 🔗 URL Test Results\n\nTest completed but summary not found in output.';
+            }
+            
+            reportContent += `\n📄 Full test report available in [workflow artifacts](${context.payload.repository.html_url}/actions/runs/${context.runId}).`;
+            
+          } catch (error) {
+            reportContent = `## 🔗 URL Test Results\n\n❌ Error reading test results: ${error.message}`;
+          }
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: reportContent
+          });
+          
+    - name: Create issue for failed URLs
+      if: failure() && github.event_name == 'schedule'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          
+          try {
+            const output = fs.readFileSync('url-test-output.txt', 'utf8');
+            const failedMatch = output.match(/❌ FAILED URLS[\s\S]*?(?=📄|$)/);
+            
+            if (failedMatch && failedMatch[0].includes('http')) {
+              const issueTitle = `🔗 Broken URLs detected - ${new Date().toISOString().split('T')[0]}`;
+              const issueBody = `## Broken URLs Detected
+              
+              The scheduled URL check has found broken links that need attention:
+              
+              \`\`\`
+              ${failedMatch[0]}
+              \`\`\`
+              
+              ### Action Required:
+              - [ ] Review and fix the broken URLs
+              - [ ] Update the \`baseUrls\` object in \`js/app.js\`
+              - [ ] Test the fixes locally with \`node test-urls.js\`
+              
+              **Auto-generated by URL testing workflow**
+              `;
+              
+              // Check if similar issue already exists
+              const { data: issues } = await github.rest.issues.listForRepo({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'open',
+                labels: 'broken-urls'
+              });
+              
+              const existingIssue = issues.find(issue => 
+                issue.title.includes('Broken URLs detected') && 
+                issue.created_at > new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
+              );
+              
+              if (!existingIssue) {
+                await github.rest.issues.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: issueTitle,
+                  body: issueBody,
+                  labels: ['broken-urls', 'bug', 'automated']
+                });
+              }
+            }
+          } catch (error) {
+            console.log('Error creating issue:', error.message);
+          }
+          
+    - name: Set job status
+      if: always()
+      run: |
+        FAILED_URLS="${{ steps.url-test.outputs.failed_urls }}"
+        TOTAL_URLS="${{ steps.url-test.outputs.total_urls }}"
+
+        # Set default values if variables are empty
+        FAILED_URLS=${FAILED_URLS:-0}
+        TOTAL_URLS=${TOTAL_URLS:-0}
+
+        echo "Debug: FAILED_URLS='$FAILED_URLS', TOTAL_URLS='$TOTAL_URLS'"
+
+        if [ "$FAILED_URLS" -gt "0" ]; then
+          echo "::warning::Found $FAILED_URLS broken URLs out of $TOTAL_URLS total URLs"
+          exit 1
+        else
+          echo "::notice::All $TOTAL_URLS URLs are accessible"
+        fi
+
+  deploy:
+    needs: test-urls
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.'
+        
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4 

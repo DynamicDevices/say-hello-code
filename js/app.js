@@ -26,9 +26,13 @@ Website: https://sayhellocode.com
 var allLanguages = [];
 var filteredLanguages = [];
 var currentSort = 'popularity';
+var favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+var currentTheme = localStorage.getItem('theme') || 'dark';
 
 // DOM elements
 var searchInput, categoryFilter, sortSelect, languagesContainer, noResults;
+var yearRangeFilter, difficultyFilter, typingFilter;
+var themeToggle, mobileMenuToggle, advancedFilters;
 
 document.addEventListener('DOMContentLoaded', function() {
     // Get DOM elements
@@ -37,8 +41,23 @@ document.addEventListener('DOMContentLoaded', function() {
     sortSelect = document.getElementById('sortSelect');
     languagesContainer = document.getElementById('languagesContainer');
     noResults = document.getElementById('noResults');
+    
+    // New filter elements
+    yearRangeFilter = document.getElementById('yearRangeFilter');
+    difficultyFilter = document.getElementById('difficultyFilter');
+    typingFilter = document.getElementById('typingFilter');
+    
+    // Theme and mobile elements
+    themeToggle = document.getElementById('themeToggle');
+    mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    advancedFilters = document.getElementById('advancedFilters');
 
-    // Function to initialize the app with language data
+    // Initialize theme
+    initializeTheme();
+    
+    // Initialize mobile menu
+    initializeMobileMenu();
+
     // Function to initialize the app with language data
     function initializeApp() {
         console.log('Attempting to initialize app...');
@@ -59,6 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Set up event listeners
             setupEventListeners();
+            
+            // Update favorites count
+            updateFavoritesCount();
 
             return true; // Success
         } else {
@@ -139,6 +161,27 @@ function setupEventListeners() {
         filterLanguages();
     });
 
+    // Year range filter
+    if (yearRangeFilter) {
+        yearRangeFilter.addEventListener('change', function() {
+            filterLanguages();
+        });
+    }
+
+    // Difficulty filter
+    if (difficultyFilter) {
+        difficultyFilter.addEventListener('change', function() {
+            filterLanguages();
+        });
+    }
+
+    // Typing filter
+    if (typingFilter) {
+        typingFilter.addEventListener('change', function() {
+            filterLanguages();
+        });
+    }
+
     // Sort functionality
     sortSelect.addEventListener('change', function() {
         currentSort = this.value;
@@ -152,23 +195,95 @@ function setupEventListeners() {
         clearFiltersBtn.addEventListener('click', function() {
             searchInput.value = '';
             categoryFilter.value = '';
+            yearRangeFilter.value = '';
+            difficultyFilter.value = '';
+            typingFilter.value = '';
             sortSelect.value = 'popularity';
             currentSort = 'popularity';
+            
+            // Clear quick filter buttons
+            document.querySelectorAll('.quick-filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
             filteredLanguages = allLanguages.slice();
             filteredLanguages = sortLanguages(filteredLanguages, currentSort);
             updateStatistics(filteredLanguages);
             renderLanguages();
         });
     }
+
+    // Quick filter buttons
+    document.querySelectorAll('.quick-filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const filterType = this.dataset.filter;
+            applyQuickFilter(filterType);
+        });
+    });
+}
+
+// Apply quick filters
+function applyQuickFilter(filterType) {
+    // Clear other quick filter buttons
+    document.querySelectorAll('.quick-filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // Activate clicked button
+    event.target.classList.add('active');
+    
+    // Clear other filters
+    searchInput.value = '';
+    categoryFilter.value = '';
+    yearRangeFilter.value = '';
+    difficultyFilter.value = '';
+    typingFilter.value = '';
+    
+    switch(filterType) {
+        case 'popular':
+            filteredLanguages = allLanguages.filter(lang => lang.popularity >= 50);
+            break;
+        case 'new':
+            filteredLanguages = allLanguages.filter(lang => lang.year >= 2010);
+            break;
+        case 'vintage':
+            filteredLanguages = allLanguages.filter(lang => lang.year < 1980);
+            break;
+        case 'favorites':
+            filteredLanguages = allLanguages.filter(lang => favorites.includes(lang.name));
+            break;
+        case 'web':
+            filteredLanguages = allLanguages.filter(lang => 
+                lang.categories && lang.categories.includes('Web'));
+            break;
+        case 'mobile':
+            filteredLanguages = allLanguages.filter(lang => 
+                lang.categories && lang.categories.includes('Mobile'));
+            break;
+        default:
+            filteredLanguages = allLanguages.slice();
+    }
+    
+    filteredLanguages = sortLanguages(filteredLanguages, currentSort);
+    updateStatistics(filteredLanguages);
+    renderLanguages();
 }
 
 function filterLanguages() {
     var searchTerm = searchInput.value.trim();
     var selectedCategory = categoryFilter.value;
+    var selectedYearRange = yearRangeFilter ? yearRangeFilter.value : '';
+    var selectedDifficulty = difficultyFilter ? difficultyFilter.value : '';
+    var selectedTyping = typingFilter ? typingFilter.value : '';
 
-    console.log('Filtering with search term:', searchTerm, 'category:', selectedCategory);
+    console.log('Filtering with search term:', searchTerm, 'category:', selectedCategory, 'year range:', selectedYearRange, 'difficulty:', selectedDifficulty, 'typing:', selectedTyping);
 
-    if (!searchTerm && !selectedCategory) {
+    // Clear quick filter buttons when using other filters
+    document.querySelectorAll('.quick-filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    if (!searchTerm && !selectedCategory && !selectedYearRange && !selectedDifficulty && !selectedTyping) {
         filteredLanguages = allLanguages.slice();
     } else {
         filteredLanguages = allLanguages.filter(function(lang) {
@@ -228,7 +343,25 @@ function filterLanguages() {
                 (lang.categories && lang.categories.includes(selectedCategory)) ||
                 lang.primaryCategory === selectedCategory;
 
-            return matchesSearch && matchesCategory;
+            var matchesYearRange = true;
+            if (selectedYearRange) {
+                var yearRange = selectedYearRange.split('-');
+                var startYear = parseInt(yearRange[0]);
+                var endYear = parseInt(yearRange[1]);
+                matchesYearRange = lang.year >= startYear && lang.year <= endYear;
+            }
+
+            var matchesDifficulty = true;
+            if (selectedDifficulty) {
+                matchesDifficulty = lang.difficulty === selectedDifficulty;
+            }
+
+            var matchesTyping = true;
+            if (selectedTyping) {
+                matchesTyping = lang.typing === selectedTyping;
+            }
+
+            return matchesSearch && matchesCategory && matchesYearRange && matchesDifficulty && matchesTyping;
         });
     }
 
@@ -519,6 +652,11 @@ function renderLanguages() {
                             <span class="btn-icon">${linkIcon}</span>
                             <span class="btn-text">${linkText}</span>
                         </a>
+                        <button class="favorite-btn ${favorites.includes(lang.name) ? 'favorited' : ''}" onclick="toggleFavorite('${lang.name}', this)" title="${favorites.includes(lang.name) ? 'Remove from favorites' : 'Add to favorites'}">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
                     </div>
                 </div>
 
@@ -547,4 +685,35 @@ function renderLanguages() {
     }).join('');
 
     languagesContainer.innerHTML = html;
+}
+
+// Toggle favorite status
+function toggleFavorite(languageName, button) {
+    var index = favorites.indexOf(languageName);
+    
+    if (index > -1) {
+        // Remove from favorites
+        favorites.splice(index, 1);
+        button.classList.remove('favorited');
+        button.title = 'Add to favorites';
+    } else {
+        // Add to favorites
+        favorites.push(languageName);
+        button.classList.add('favorited');
+        button.title = 'Remove from favorites';
+    }
+    
+    // Save to localStorage
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    
+    // Update favorites count in quick filter button
+    updateFavoritesCount();
+}
+
+// Update favorites count display
+function updateFavoritesCount() {
+    var favoritesBtn = document.querySelector('[data-filter="favorites"]');
+    if (favoritesBtn) {
+        favoritesBtn.textContent = `Favorites (${favorites.length})`;
+    }
 }

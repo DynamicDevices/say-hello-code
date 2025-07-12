@@ -103,47 +103,127 @@ Website: https://sayhellocode.com
             <p class="subtitle">Explore "Hello, World!" programs in programming languages from 1949 to today</p>
             <p class="creator">Created by <a href="https://www.dynamicdevices.co.uk" target="_blank" rel="noopener noreferrer">Dynamic Devices Ltd</a> in collaboration with <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">Claude.ai</a></p>
             
+            <!-- Theme toggle -->
+            <div class="theme-toggle-container">
+                <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark/light theme">
+                    <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+            
             <!-- Search input -->
             <label for="searchInput" class="sr-only">Search programming languages</label>
             <input type="text" class="search-input" id="searchInput" placeholder="Search by name (e.g., 'C', 'Python'), creator, or year..." aria-label="Search programming languages by name, creator, or year">
 
-            <!-- Category filter -->
-            <label for="categoryFilter" class="sr-only">Filter by category</label>
-            <select class="sort-select" id="categoryFilter" style="margin-right: 10px;" aria-label="Filter languages by category">
-                <option value="">All Categories</option>
-                <option value="Popular">Popular</option>
-                <option value="Web">Web</option>
-                <option value="Systems">Systems</option>
-                <option value="Functional">Functional</option>
-                <option value="Data Science">Data Science</option>
-                <option value="Mobile">Mobile</option>
-                <option value="Game Development">Game Development</option>
-                <option value="Academic">Academic</option>
-                <option value="Legacy">Legacy</option>
-                <option value="Emerging">Emerging</option>
-                <option value="Esoteric">Esoteric</option>
-                <option value="Specialized">Specialized</option>
-                <option value="Configuration">Configuration</option>
-                <option value="Markup">Markup</option>
-                <option value="Shell">Shell</option>
-                <option value="Scripting">Scripting</option>
-                <option value="Scientific">Scientific</option>
-                <option value="Vintage">Vintage</option>
-                <option value="Object-Oriented">Object-Oriented</option>
-                <option value="Additional">Additional</option>
-            </select>
+            <!-- Advanced filters container -->
+            <div class="advanced-filters" id="advancedFilters">
+                <!-- Basic filters row -->
+                <div class="filter-row">
+                    <!-- Category filter -->
+                    <label for="categoryFilter" class="sr-only">Filter by category</label>
+                    <select class="sort-select" id="categoryFilter" aria-label="Filter languages by category">
+                        <option value="">All Categories</option>
+                        <option value="Popular">Popular</option>
+                        <option value="Web">Web</option>
+                        <option value="Systems">Systems</option>
+                        <option value="Functional">Functional</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="Mobile">Mobile</option>
+                        <option value="Game Development">Game Development</option>
+                        <option value="Academic">Academic</option>
+                        <option value="Legacy">Legacy</option>
+                        <option value="Emerging">Emerging</option>
+                        <option value="Esoteric">Esoteric</option>
+                        <option value="Specialized">Specialized</option>
+                        <option value="Configuration">Configuration</option>
+                        <option value="Markup">Markup</option>
+                        <option value="Shell">Shell</option>
+                        <option value="Scripting">Scripting</option>
+                        <option value="Scientific">Scientific</option>
+                        <option value="Vintage">Vintage</option>
+                        <option value="Object-Oriented">Object-Oriented</option>
+                        <option value="Additional">Additional</option>
+                    </select>
 
-            <!-- Sort select -->
-            <label for="sortSelect" class="sr-only">Sort languages</label>
-            <select class="sort-select" id="sortSelect" aria-label="Sort languages by different criteria">
-                <option value="popularity">Sort by Popularity</option>
-                <option value="alphabetical">Sort Alphabetically</option>
-                <option value="year">Sort by Year</option>
-                <option value="creator">Sort by Creator</option>
-            </select>
+                    <!-- Year range filter -->
+                    <label for="yearRangeFilter" class="sr-only">Filter by year range</label>
+                    <select class="sort-select" id="yearRangeFilter" aria-label="Filter languages by year range">
+                        <option value="">All Years</option>
+                        <option value="2020-2025">2020-2025 (Modern)</option>
+                        <option value="2010-2019">2010-2019 (Recent)</option>
+                        <option value="2000-2009">2000-2009 (Millennium)</option>
+                        <option value="1990-1999">1990-1999 (90s)</option>
+                        <option value="1980-1989">1980-1989 (80s)</option>
+                        <option value="1970-1979">1970-1979 (70s)</option>
+                        <option value="1960-1969">1960-1969 (60s)</option>
+                        <option value="1950-1959">1950-1959 (50s)</option>
+                        <option value="1940-1949">1940-1949 (40s)</option>
+                    </select>
 
-            <!-- Clear filters button -->
-            <button class="clear-filters-btn" id="clearFilters" style="margin-left: 10px;">Clear Filters</button>
+                    <!-- Difficulty filter -->
+                    <label for="difficultyFilter" class="sr-only">Filter by difficulty</label>
+                    <select class="sort-select" id="difficultyFilter" aria-label="Filter languages by difficulty level">
+                        <option value="">All Difficulties</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+
+                    <!-- Typing system filter -->
+                    <label for="typingFilter" class="sr-only">Filter by typing system</label>
+                    <select class="sort-select" id="typingFilter" aria-label="Filter languages by typing system">
+                        <option value="">All Typing</option>
+                        <option value="Static">Static</option>
+                        <option value="Dynamic">Dynamic</option>
+                        <option value="Mixed">Mixed</option>
+                        <option value="Gradual">Gradual</option>
+                    </select>
+                </div>
+
+                <!-- Quick filter buttons -->
+                <div class="quick-filters">
+                    <button class="quick-filter-btn" data-filter="popular" aria-label="Show popular languages">Popular</button>
+                    <button class="quick-filter-btn" data-filter="new" aria-label="Show new languages">New</button>
+                    <button class="quick-filter-btn" data-filter="vintage" aria-label="Show vintage languages">Vintage</button>
+                    <button class="quick-filter-btn" data-filter="favorites" aria-label="Show favorite languages">Favorites</button>
+                    <button class="quick-filter-btn" data-filter="web" aria-label="Show web languages">Web</button>
+                    <button class="quick-filter-btn" data-filter="mobile" aria-label="Show mobile languages">Mobile</button>
+                </div>
+            </div>
+
+            <!-- Sort and clear controls -->
+            <div class="controls-row">
+                <!-- Sort select -->
+                <label for="sortSelect" class="sr-only">Sort languages</label>
+                <select class="sort-select" id="sortSelect" aria-label="Sort languages by different criteria">
+                    <option value="popularity">Sort by Popularity</option>
+                    <option value="alphabetical">Sort Alphabetically</option>
+                    <option value="year">Sort by Year</option>
+                    <option value="creator">Sort by Creator</option>
+                </select>
+
+                <!-- Clear filters button -->
+                <button class="clear-filters-btn" id="clearFilters">Clear Filters</button>
+
+                <!-- Mobile menu toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
 
         <!-- Statistics section -->

@@ -5846,6 +5846,289 @@ var languages = [
         "difficulty": "Advanced",
         "typing": "Static",
         "sourceFile": "functional-languages.js"
+    },
+    {
+        "name": "Vue.js",
+        "year": 2014,
+        "creator": "Evan You",
+        "code": "<template>\n  <div>\n    <h1>{{ message }}</h1>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      message: 'Hello, World!'\n    }\n  }\n}\n</script>",
+        "desc": "Vue.js is a progressive JavaScript framework for building user interfaces. It's designed to be incrementally adoptable and focuses on the view layer.",
+        "popularity": 65,
+        "categories": [
+            "Web",
+            "Frontend",
+            "Modern"
+        ],
+        "primaryCategory": "Web",
+        "paradigms": [
+            "Component-based",
+            "Reactive"
+        ],
+        "domains": [
+            "Web Development",
+            "Frontend Development",
+            "Single Page Applications"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Dynamic",
+        "sourceFile": "web-languages.js"
+    },
+    {
+        "name": "React",
+        "year": 2013,
+        "creator": "Facebook",
+        "code": "import React from 'react';\n\nfunction App() {\n  return (\n    <div>\n      <h1>Hello, World!</h1>\n    </div>\n  );\n}\n\nexport default App;",
+        "desc": "React is a JavaScript library for building user interfaces, particularly single-page applications. It's used for handling the view layer and can be used for developing both web and mobile applications.",
+        "popularity": 90,
+        "categories": [
+            "Web",
+            "Frontend",
+            "Popular"
+        ],
+        "primaryCategory": "Web",
+        "paradigms": [
+            "Component-based",
+            "Declarative"
+        ],
+        "domains": [
+            "Web Development",
+            "Frontend Development",
+            "Mobile Development"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Dynamic",
+        "sourceFile": "web-languages.js"
+    },
+    {
+        "name": "Svelte",
+        "year": 2016,
+        "creator": "Rich Harris",
+        "code": "<script>\n  let message = 'Hello, World!';\n</script>\n\n<h1>{message}</h1>",
+        "desc": "Svelte is a modern JavaScript framework that compiles at build time to vanilla JavaScript, resulting in smaller bundle sizes and better performance.",
+        "popularity": 35,
+        "categories": [
+            "Web",
+            "Frontend",
+            "Modern"
+        ],
+        "primaryCategory": "Web",
+        "paradigms": [
+            "Component-based",
+            "Reactive"
+        ],
+        "domains": [
+            "Web Development",
+            "Frontend Development",
+            "Progressive Web Apps"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Dynamic",
+        "sourceFile": "web-languages.js"
+    },
+    {
+        "name": "Angular",
+        "year": 2010,
+        "creator": "Google",
+        "code": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-hello',\n  template: '<h1>Hello, World!</h1>'\n})\nexport class HelloComponent { }",
+        "desc": "Angular is a platform and framework for building single-page client applications using HTML and TypeScript. Developed by Google.",
+        "popularity": 68,
+        "categories": [
+            "Web",
+            "Frontend",
+            "Backend"
+        ],
+        "primaryCategory": "Web",
+        "paradigms": [
+            "Multi-paradigm"
+        ],
+        "domains": [
+            "Web Development"
+        ],
+        "difficulty": "Beginner to Advanced",
+        "typing": "Mixed",
+        "sourceFile": "web-languages.js"
+    },
+    {
+        "name": "React Native",
+        "year": 2015,
+        "creator": "Facebook",
+        "code": "import React from 'react';\nimport { Text, View } from 'react-native';\n\nfunction App() {\n  return (\n    <View>\n      <Text>Hello, World!</Text>\n    </View>\n  );\n}\n\nexport default App;",
+        "desc": "React Native is a framework for building native applications using React. It allows developers to use React with native platform capabilities.",
+        "popularity": 60,
+        "categories": [
+            "Mobile",
+            "Cross-platform",
+            "Modern"
+        ],
+        "primaryCategory": "Mobile",
+        "paradigms": [
+            "Component-based",
+            "Declarative"
+        ],
+        "domains": [
+            "Mobile Development",
+            "Cross-platform Development",
+            "App Development"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "mobile-languages.js"
+    },
+    {
+        "name": "Flutter",
+        "year": 2017,
+        "creator": "Google",
+        "code": "import 'package:flutter/material.dart';\n\nvoid main() {\n  runApp(MyApp());\n}\n\nclass MyApp extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return MaterialApp(\n      home: Scaffold(\n        body: Center(\n          child: Text('Hello, World!'),\n        ),\n      ),\n    );\n  }\n}",
+        "desc": "Flutter is Google's UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase using Dart.",
+        "popularity": 55,
+        "categories": [
+            "Mobile",
+            "Cross-platform",
+            "Modern"
+        ],
+        "primaryCategory": "Mobile",
+        "paradigms": [
+            "Object-Oriented",
+            "Component-based"
+        ],
+        "domains": [
+            "Mobile Development",
+            "Cross-platform Development",
+            "App Development"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "mobile-languages.js"
+    },
+    {
+        "name": "Objective-C",
+        "year": 1984,
+        "creator": "Brad Cox",
+        "code": "#import <Foundation/Foundation.h>\n\nint main(int argc, const char * argv[]) {\n    @autoreleasepool {\n        NSLog(@\"Hello, World!\");\n    }\n    return 0;\n}",
+        "desc": "Objective-C is a general-purpose, object-oriented programming language that adds Smalltalk-style messaging to the C programming language.",
+        "popularity": 30,
+        "categories": [
+            "Mobile",
+            "Legacy",
+            "Apple"
+        ],
+        "primaryCategory": "Mobile",
+        "paradigms": [
+            "Object-Oriented",
+            "Imperative"
+        ],
+        "domains": [
+            "iOS Development",
+            "macOS Development",
+            "Apple Ecosystem"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "mobile-languages.js"
+    },
+    {
+        "name": "Xamarin",
+        "year": 2011,
+        "creator": "Microsoft",
+        "code": "using System;\n\nnamespace HelloWorld\n{\n    class Program\n    {\n        static void Main(string[] args)\n        {\n            Console.WriteLine(\"Hello, World!\");\n        }\n    }\n}",
+        "desc": "Xamarin is a Microsoft-owned San Francisco-based software company that provides commercial software development tools that allow a user to develop applications for Android, iOS and Windows using C#.",
+        "popularity": 25,
+        "categories": [
+            "Mobile",
+            "Cross-platform",
+            "Microsoft"
+        ],
+        "primaryCategory": "Mobile",
+        "paradigms": [
+            "Object-Oriented",
+            "Imperative"
+        ],
+        "domains": [
+            "Mobile Development",
+            "Cross-platform Development",
+            "App Development"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "mobile-languages.js"
+    },
+    {
+        "name": "Ionic",
+        "year": 2013,
+        "creator": "Drifty Co.",
+        "code": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-home',\n  template: '<ion-content><h1>Hello, World!</h1></ion-content>'\n})\nexport class HomePage { }",
+        "desc": "Ionic is an open source mobile UI toolkit for building high quality, cross-platform native and web app experiences using web technologies.",
+        "popularity": 30,
+        "categories": [
+            "Mobile",
+            "Cross-platform",
+            "Web"
+        ],
+        "primaryCategory": "Mobile",
+        "paradigms": [
+            "Component-based",
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Mobile Development",
+            "Cross-platform Development",
+            "Progressive Web Apps"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Dynamic",
+        "sourceFile": "mobile-languages.js"
+    },
+    {
+        "name": "PhoneGap",
+        "year": 2009,
+        "creator": "Nitobi",
+        "code": "document.addEventListener('deviceready', onDeviceReady, false);\n\nfunction onDeviceReady() {\n    document.getElementById('message').innerHTML = 'Hello, World!';\n}",
+        "desc": "PhoneGap is a mobile development framework that enables software programmers to build applications for mobile devices using JavaScript, HTML5, and CSS3.",
+        "popularity": 15,
+        "categories": [
+            "Mobile",
+            "Cross-platform",
+            "Legacy"
+        ],
+        "primaryCategory": "Mobile",
+        "paradigms": [
+            "Event-driven",
+            "Imperative"
+        ],
+        "domains": [
+            "Mobile Development",
+            "Cross-platform Development",
+            "Hybrid Apps"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Dynamic",
+        "sourceFile": "mobile-languages.js"
+    },
+    {
+        "name": "Titanium",
+        "year": 2008,
+        "creator": "Appcelerator",
+        "code": "var win = Ti.UI.createWindow({\n    title: 'Hello World'\n});\n\nvar label = Ti.UI.createLabel({\n    text: 'Hello, World!',\n    top: 50\n});\n\nwin.add(label);\nwin.open();",
+        "desc": "Titanium is a cross-platform mobile development framework that allows developers to build native mobile applications using JavaScript.",
+        "popularity": 10,
+        "categories": [
+            "Mobile",
+            "Cross-platform",
+            "Legacy"
+        ],
+        "primaryCategory": "Mobile",
+        "paradigms": [
+            "Object-Oriented",
+            "Event-driven"
+        ],
+        "domains": [
+            "Mobile Development",
+            "Cross-platform Development",
+            "Hybrid Apps"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Dynamic",
+        "sourceFile": "mobile-languages.js"
     }
 ];
 

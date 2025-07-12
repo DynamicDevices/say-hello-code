@@ -5560,6 +5560,292 @@ var languages = [
         "difficulty": "Beginner",
         "typing": "Dynamic",
         "sourceFile": "modern-languages.js"
+    },
+    {
+        "name": "Solidity",
+        "year": 2014,
+        "creator": "Christian Reitwiessner",
+        "code": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract HelloWorld {\n    function sayHello() public pure returns (string memory) {\n        return \"Hello, World!\";\n    }\n}",
+        "desc": "Solidity is an object-oriented programming language for implementing smart contracts on various blockchain platforms, most notably Ethereum.",
+        "popularity": 35,
+        "categories": [
+            "Blockchain",
+            "Smart Contracts",
+            "Modern"
+        ],
+        "primaryCategory": "Blockchain",
+        "paradigms": [
+            "Object-Oriented",
+            "Contract-oriented"
+        ],
+        "domains": [
+            "Blockchain Development",
+            "Smart Contracts",
+            "DeFi"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "blockchain-languages.js"
+    },
+    {
+        "name": "Move",
+        "year": 2019,
+        "creator": "Meta (Facebook)",
+        "code": "module hello_world::hello {\n    public fun say_hello() {\n        std::debug::print(&b\"Hello, World!\");\n    }\n}",
+        "desc": "Move is a safe and secure programming language for Web3. It was originally developed by Meta for the Diem blockchain and is now used by Aptos and Sui.",
+        "popularity": 25,
+        "categories": [
+            "Blockchain",
+            "Smart Contracts",
+            "Modern"
+        ],
+        "primaryCategory": "Blockchain",
+        "paradigms": [
+            "Resource-oriented",
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Blockchain Development",
+            "Smart Contracts",
+            "Web3"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "blockchain-languages.js"
+    },
+    {
+        "name": "Rust",
+        "year": 2010,
+        "creator": "Graydon Hoare",
+        "code": "fn main() {\n    println!(\"Hello, World!\");\n}",
+        "desc": "Rust is a systems programming language focused on safety, speed, and concurrency. It guarantees memory safety without garbage collection.",
+        "popularity": 85,
+        "categories": [
+            "Systems",
+            "Modern",
+            "Popular"
+        ],
+        "primaryCategory": "Systems",
+        "paradigms": [
+            "Multi-paradigm",
+            "Systems"
+        ],
+        "domains": [
+            "System Programming",
+            "Web Development",
+            "Embedded Systems"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "systems-languages.js"
+    },
+    {
+        "name": "Swift",
+        "year": 2014,
+        "creator": "Apple Inc.",
+        "code": "print(\"Hello, World!\")",
+        "desc": "Swift is a powerful and intuitive programming language for iOS, iPadOS, macOS, tvOS, and watchOS development. It's designed to be safe, fast, and expressive.",
+        "popularity": 75,
+        "categories": [
+            "Mobile",
+            "Modern",
+            "Popular"
+        ],
+        "primaryCategory": "Mobile",
+        "paradigms": [
+            "Object-Oriented",
+            "Protocol-oriented"
+        ],
+        "domains": [
+            "Mobile Development",
+            "iOS Development",
+            "Apple Ecosystem"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Static",
+        "sourceFile": "mobile-languages.js"
+    },
+    {
+        "name": "Kotlin",
+        "year": 2011,
+        "creator": "JetBrains",
+        "code": "fun main() {\n    println(\"Hello, World!\")\n}",
+        "desc": "Kotlin is a modern programming language that makes developers happier. It's concise, safe, interoperable with Java and other languages, and provides many ways to reuse code between multiple platforms for productive programming.",
+        "popularity": 70,
+        "categories": [
+            "Modern",
+            "Popular",
+            "Multi-platform"
+        ],
+        "primaryCategory": "Modern",
+        "paradigms": [
+            "Object-Oriented",
+            "Functional"
+        ],
+        "domains": [
+            "Android Development",
+            "Web Development",
+            "Server-side Programming"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Static",
+        "sourceFile": "modern-languages.js"
+    },
+    {
+        "name": "TypeScript",
+        "year": 2012,
+        "creator": "Microsoft",
+        "code": "console.log(\"Hello, World!\");",
+        "desc": "TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale. It adds optional static typing to JavaScript.",
+        "popularity": 80,
+        "categories": [
+            "Web",
+            "Modern",
+            "Popular"
+        ],
+        "primaryCategory": "Web",
+        "paradigms": [
+            "Object-Oriented",
+            "Functional"
+        ],
+        "domains": [
+            "Web Development",
+            "Frontend Development",
+            "Full-stack Development"
+        ],
+        "difficulty": "Beginner",
+        "typing": "Static",
+        "sourceFile": "web-languages.js"
+    },
+    {
+        "name": "Scala",
+        "year": 2004,
+        "creator": "Martin Odersky",
+        "code": "object HelloWorld {\n  def main(args: Array[String]): Unit = {\n    println(\"Hello, World!\")\n  }\n}",
+        "desc": "Scala is a strong statically typed general-purpose programming language which supports both object-oriented programming and functional programming.",
+        "popularity": 45,
+        "categories": [
+            "Functional",
+            "Modern",
+            "Enterprise"
+        ],
+        "primaryCategory": "Functional",
+        "paradigms": [
+            "Object-Oriented",
+            "Functional"
+        ],
+        "domains": [
+            "Big Data",
+            "Web Development",
+            "Enterprise Software"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "functional-languages.js"
+    },
+    {
+        "name": "OCaml",
+        "year": 1996,
+        "creator": "INRIA",
+        "code": "print_endline \"Hello, World!\";",
+        "desc": "OCaml is a general-purpose, industrial-strength programming language with an emphasis on expressiveness and safety. It's the language of the ML family.",
+        "popularity": 30,
+        "categories": [
+            "Functional",
+            "Academic",
+            "Research"
+        ],
+        "primaryCategory": "Functional",
+        "paradigms": [
+            "Functional",
+            "Imperative"
+        ],
+        "domains": [
+            "Research",
+            "Financial Software",
+            "System Programming"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "functional-languages.js"
+    },
+    {
+        "name": "F#",
+        "year": 2005,
+        "creator": "Microsoft",
+        "code": "printfn \"Hello, World!\"",
+        "desc": "F# is a functional-first programming language that makes it easy to write correct code. It runs on .NET and provides access to the entire .NET ecosystem.",
+        "popularity": 25,
+        "categories": [
+            "Functional",
+            "Modern",
+            "Enterprise"
+        ],
+        "primaryCategory": "Functional",
+        "paradigms": [
+            "Functional",
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Enterprise Software",
+            "Data Science",
+            "Web Development"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "functional-languages.js"
+    },
+    {
+        "name": "Elm",
+        "year": 2012,
+        "creator": "Evan Czaplicki",
+        "code": "import Html exposing (text)\n\nmain =\n  text \"Hello, World!\"",
+        "desc": "Elm is a functional programming language for building reliable web applications. It compiles to JavaScript and is known for its excellent error messages and zero runtime errors.",
+        "popularity": 20,
+        "categories": [
+            "Functional",
+            "Web",
+            "Frontend"
+        ],
+        "primaryCategory": "Functional",
+        "paradigms": [
+            "Functional",
+            "Pure"
+        ],
+        "domains": [
+            "Web Development",
+            "Frontend Development",
+            "User Interfaces"
+        ],
+        "difficulty": "Intermediate",
+        "typing": "Static",
+        "sourceFile": "functional-languages.js"
+    },
+    {
+        "name": "PureScript",
+        "year": 2013,
+        "creator": "Phil Freeman",
+        "code": "module Main where\n\nimport Effect.Console (log)\n\nmain = log \"Hello, World!\"",
+        "desc": "PureScript is a strongly-typed functional programming language that compiles to JavaScript. It's heavily influenced by Haskell and designed for web development.",
+        "popularity": 15,
+        "categories": [
+            "Functional",
+            "Web",
+            "Research"
+        ],
+        "primaryCategory": "Functional",
+        "paradigms": [
+            "Functional",
+            "Pure"
+        ],
+        "domains": [
+            "Web Development",
+            "Frontend Development",
+            "Research"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "functional-languages.js"
     }
 ];
 

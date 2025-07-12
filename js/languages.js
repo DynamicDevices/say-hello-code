@@ -22,7 +22,6 @@ Website: https://sayhellocode.com
 // Generated: 2025-01-27T12:00:00.000Z
 
 var languages = [
-[
     {
         "name": "ActionScript",
         "year": 1998,
@@ -5254,7 +5253,6 @@ var languages = [
         "typing": "Mixed",
         "sourceFile": "web-languages.js"
     }
-]
 ];
 
 // Export for use in other modules

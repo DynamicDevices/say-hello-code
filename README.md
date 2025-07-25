@@ -1,5 +1,9 @@
 # Say Hello Code 🌍
 
+[![CI & Deploy](https://github.com/DynamicDevices/say-hello-code/actions/workflows/ci-and-deploy.yml/badge.svg?branch=main)](https://github.com/DynamicDevices/say-hello-code/actions/workflows/ci-and-deploy.yml)
+[![GitHub Pages](https://img.shields.io/badge/deployed-GitHub%20Pages-blue?logo=github)](https://sayhellocode.com)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
 Alex Was Here!
 
 A comprehensive collection of "Hello, World!" programs in 240 programming languages, designed to help students and aspiring programmers explore the vast landscape of programming languages.

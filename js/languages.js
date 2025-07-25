@@ -5252,6 +5252,31 @@ var languages = [
         "difficulty": "Intermediate",
         "typing": "Mixed",
         "sourceFile": "web-languages.js"
+    },
+    {
+        "name": "Hare",
+        "year": 2021,
+        "creator": "Drew DeVault et al.",
+        "code": "use fmt;\n\nexport fn main() void = {\n    const greetings = [\n        \"Hello, world!\",\n        \"¡Hola Mundo!\",\n        \"Γειά σου Κόσμε!\",\n        \"Привіт, світе!\",\n        \"こんにちは世界！\",\n    ];\n    for (let greeting .. greetings) {\n        fmt::println(greeting)!;\n    };\n};",
+        "desc": "Hare is a systems programming language created in 2021 by Drew DeVault and contributors. Designed to be simple, stable, and robust, Hare features a static type system, manual memory management, and a minimal runtime. It is well-suited for writing operating systems, system tools, compilers, networking software, and other low-level, high-performance tasks. Hare emphasizes clarity and maintainability, making it a modern choice for systems programming. The project is developed by a team of maintainers and contributors, and aims to provide a reliable foundation for critical software. Learn more at harelang.org.",
+        "popularity": 5,
+        "categories": [
+            "Systems",
+            "Low-level"
+        ],
+        "primaryCategory": "Systems",
+        "paradigms": [
+            "Procedural",
+            "Imperative"
+        ],
+        "domains": [
+            "System Programming",
+            "Operating Systems",
+            "Networking"
+        ],
+        "difficulty": "Advanced",
+        "typing": "Static",
+        "sourceFile": "systems-languages.js"
     }
 ];
 

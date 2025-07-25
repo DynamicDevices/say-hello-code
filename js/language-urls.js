@@ -39,6 +39,7 @@ var baseUrls = {
     'Lisp': 'https://common-lisp.net/',
     'Scheme': 'https://www.scheme.org/',
     // ... (rest of baseUrls object from app.js) ...
+    'Hare': 'https://harelang.org/',
 };
 
 // Export for Node.js and browser

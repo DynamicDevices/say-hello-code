@@ -80,7 +80,7 @@ Uses `baseUrls` object for known languages, Google search fallback for others.
 - **Timeout Issues Resolved**: AWK, Bash, Makefile, Octave, Sed (GNU.org sites replaced with faster alternatives)
 - **Timeout Setting**: Increased from 15s to 60s for better reliability
 - **Strategy**: Prioritized best available documentation sources regardless of year
-- **Result**: 242/242 URLs working (100% success rate, 0 timeouts, 0 failures)
+- **Result**: 273/273 URLs working (100% success rate, 0 timeouts, 0 failures)
 
 **Key Replacements Made:**
 - GNU.org URLs → Alternative sources (TutorialsPoint, W3Schools, Wikipedia, official sites)

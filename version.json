@@ -1,10 +1,10 @@
 {
-  "version": "1.3.0",
+  "version": "1.4.0",
   "name": "Say Hello Code",
-  "description": "A comprehensive collection of Hello, World! programs in 241+ programming languages with enhanced data visualizations and robust CI/CD pipeline",
-  "releaseDate": "2025-01-12",
+  "description": "A comprehensive collection of Hello, World! programs in 273 programming languages with enhanced educational content and robust CI/CD pipeline",
+  "releaseDate": "2025-08-16",
   "features": [
-    "241+ programming languages",
+    "273 programming languages",
     "Interactive search and filtering",
     "Enhanced data visualization dashboard",
     "Timeline charts with language names on hover",
@@ -18,8 +18,10 @@
     "Copy-to-clipboard functionality",
     "Service worker for offline support",
     "Robust CI/CD pipeline with automated testing",
-    "Duplicate language detection and prevention",
-    "Enhanced JavaScript validation and error handling"
+    "Duplicate language detection and prevention",  
+    "Enhanced JavaScript validation and error handling",
+    "Unique informative language descriptions (71 languages improved)",
+    "Resilient URL testing with network error handling"
   ],
   "improvements": [
     "Fixed visualization button functionality",
@@ -33,9 +35,12 @@
     "Improved user experience across all visualizations",
     "Added 50 new programming languages covering modern, functional, and emerging languages",
     "Implemented robust duplicate detection system",
-    "Enhanced CI/CD pipeline with comprehensive validation",
+    "Enhanced CI/CD pipeline with comprehensive validation", 
     "Fixed JavaScript parsing issues and improved error handling",
-    "Streamlined deployment process with automated testing"
+    "Streamlined deployment process with automated testing",
+    "Replaced 71 formulaic language descriptions with unique educational content",
+    "Improved URL testing resilience to handle Google search network connectivity issues",
+    "Enhanced error classification distinguishing real failures from temporary network issues"
   ],
   "bugfixes": [
     "Fixed 'Show Visualizations' button not working",
@@ -46,8 +51,11 @@
     "Resolved CI duplicate check failures",
     "Fixed JavaScript syntax validation issues",
     "Removed duplicate FORTRAN entry",
-    "Fixed cache-busting and baseUrls availability issues",
-    "Resolved theme toggle functionality issues"
+    "Fixed cache-busting and baseUrls availability issues", 
+    "Resolved theme toggle functionality issues",
+    "Fixed CI pipeline failures caused by Google search network connectivity issues",
+    "Resolved formulaic language descriptions that were repetitive and uninformative",
+    "Fixed URL testing false failures due to temporary network issues in CI environment"
   ],
   "technical": [
     "Chart.js 3.x compatibility",

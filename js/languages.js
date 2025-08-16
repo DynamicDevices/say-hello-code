@@ -19,7 +19,7 @@ Website: https://sayhellocode.com
 */
 
 // Programming languages data for Say Hello Code
-// Generated: 2025-01-27T12:00:00.000Z
+// Generated: 2025-08-16T10:54:05.157Z
 
 var languages = [
     {
@@ -27,7 +27,7 @@ var languages = [
         "year": 1998,
         "creator": "Gary Grossman",
         "code": "trace(\"Hello, World!\");",
-        "desc": "ActionScript is a programming language created in 1998 by Gary Grossman. It was designed for game development and is known for its Object-Oriented paradigm(s). ActionScript has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Game Development, Graphics.",
+        "desc": "A discontinued object-oriented programming language originally developed by Macromedia for Flash applications. ActionScript was widely used for creating interactive web content, games, and rich internet applications before HTML5 became prevalent.",
         "popularity": 20,
         "categories": [
             "Game Development"
@@ -49,7 +49,7 @@ var languages = [
         "year": 1980,
         "creator": "Jean Ichbiah",
         "code": "with Ada.Text_IO;\nprocedure Hello is\nbegin\n   Ada.Text_IO.Put_Line(\"Hello, World!\");\nend Hello;",
-        "desc": "Ada is a programming language created in 1980 by Jean Ichbiah. It was designed for legacy and is known for its Object-Oriented paradigm(s). Ada has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A structured, statically typed programming language designed for embedded and real-time systems with an emphasis on safety and reliability. Named after Ada Lovelace, it's widely used in aerospace, defense, and mission-critical applications where software failure is not an option.",
         "popularity": 15,
         "categories": [
             "Legacy",
@@ -69,7 +69,7 @@ var languages = [
         "year": 2007,
         "creator": "Ulf Norell",
         "code": "module Hello where\n\nopen import IO\n\nmain = run (putStrLn \"Hello, World!\")",
-        "desc": "Agda is a programming language created in 2007 by Ulf Norell. It was designed for academic and is known for its Functional paradigm(s). Agda has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Research, Formal Methods.",
+        "desc": "A dependently typed functional programming language based on intuitionistic type theory. Agda serves both as a programming language and a proof assistant, allowing mathematicians and computer scientists to write formal proofs that are verified by the compiler.",
         "popularity": 10,
         "categories": [
             "Academic",
@@ -92,7 +92,7 @@ var languages = [
         "year": 1958,
         "creator": "Committee",
         "code": "begin\n  print((\"Hello, World!\"))\nend",
-        "desc": "ALGOL is a programming language created in 1958 by Committee. It was designed for legacy and is known for its Multi-paradigm paradigm(s). ALGOL has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A family of imperative programming languages that introduced many fundamental concepts still used today, including block structure and lexical scoping. ALGOL 60 was particularly influential in the development of subsequent programming languages like Pascal, C, and Java.",
         "popularity": 10,
         "categories": [
             "Legacy",
@@ -112,7 +112,7 @@ var languages = [
         "year": 2010,
         "creator": "Google",
         "code": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-hello',\n  template: '<h1>Hello, World!</h1>'\n})\nexport class HelloComponent { }",
-        "desc": "Angular is a programming language created in 2010 by Google. It was designed for web and is known for its Multi-paradigm paradigm(s). Angular has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Web Development.",
+        "desc": "Angular is actually a TypeScript-based web application framework, not a programming language. It's a platform for building mobile and desktop web applications using declarative templates, dependency injection, and end-to-end tooling.",
         "popularity": 68,
         "categories": [
             "Web",
@@ -135,7 +135,7 @@ var languages = [
         "year": 2012,
         "creator": "Michael DeHaan",
         "code": "---\n- name: Hello World\n  debug:\n    msg: \"Hello, World!\"",
-        "desc": "Ansible is a programming language created in 2012 by Michael DeHaan. It was designed for configuration and is known for its Multi-paradigm paradigm(s). Ansible has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as DevOps, Infrastructure.",
+        "desc": "Ansible is an automation tool that uses YAML for configuration management, not a programming language per se. It enables infrastructure as code, application deployment, and configuration management across multiple servers without requiring agents.",
         "popularity": 42,
         "categories": [
             "Configuration",
@@ -158,7 +158,7 @@ var languages = [
         "year": 2002,
         "creator": "Stuart Rackham",
         "code": "= Hello, World!\n\nThis is a *Hello, World!* example in AsciiDoc.",
-        "desc": "AsciiDoc is a programming language created in 2002 by Stuart Rackham. It was designed for markup and is known for its Multi-paradigm paradigm(s). AsciiDoc has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Documentation, Web.",
+        "desc": "A lightweight markup language for authoring technical documentation, books, and articles. AsciiDoc provides more features than Markdown while remaining human-readable, making it popular for software documentation and publishing workflows.",
         "popularity": 20,
         "categories": [
             "Markup",
@@ -181,7 +181,7 @@ var languages = [
         "year": 1947,
         "creator": "Kathleen Booth",
         "code": ".section .data\n    hello: .ascii \"Hello, World!\\n\"\n.section .text\n    .global _start\n_start:\n    mov $4, %eax\n    mov $1, %ebx\n    mov $hello, %ecx\n    int $0x80",
-        "desc": "Assembly x86 is a programming language created in 1947 by Kathleen Booth. It was designed for systems and is known for its Multi-paradigm paradigm(s). Assembly x86 has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as System Programming, Operating Systems.",
+        "desc": "A low-level programming language with a very strong correspondence between the language instructions and the machine code. Assembly provides direct hardware control and is essential for system programming, embedded systems, and performance-critical applications.",
         "popularity": 45,
         "categories": [
             "Systems",
@@ -204,7 +204,7 @@ var languages = [
         "year": 1977,
         "creator": "Alfred Aho",
         "code": "BEGIN { print \"Hello, World!\" }",
-        "desc": "AWK is a programming language created in 1977 by Alfred Aho. It was designed for specialized and is known for its Multi-paradigm paradigm(s). AWK has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A domain-specific language designed for text processing and data extraction. AWK excels at pattern scanning and processing structured data, making it invaluable for system administration, log analysis, and quick data manipulation tasks.",
         "popularity": 35,
         "categories": [
             "Specialized",
@@ -224,7 +224,7 @@ var languages = [
         "year": 1969,
         "creator": "Ken Thompson",
         "code": "main() {\n  printf(\"Hello, World!\");\n}",
-        "desc": "B is a programming language created in 1969 by Ken Thompson. It was designed for vintage and is known for its Multi-paradigm paradigm(s). B has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "An early systems programming language developed by Ken Thompson as a simplified version of BCPL. B was the direct predecessor to C and played a crucial role in the development of Unix, though it was largely superseded by C.",
         "popularity": 1,
         "categories": [
             "Vintage",
@@ -244,7 +244,7 @@ var languages = [
         "year": 1989,
         "creator": "Brian Fox",
         "code": "#!/bin/bash\necho \"Hello, World!\"",
-        "desc": "Bash is a programming language created in 1989 by Brian Fox. It was designed for popular and is known for its Multi-paradigm paradigm(s). Bash has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "The GNU Bourne Again Shell, a command processor and scripting language that serves as the default shell for most Linux distributions. Bash combines the best features of sh, csh, and ksh while adding numerous improvements for interactive use.",
         "popularity": 75,
         "categories": [
             "Popular"
@@ -263,7 +263,7 @@ var languages = [
         "year": 1964,
         "creator": "John Kemeny",
         "code": "10 PRINT \"Hello, World!\"\n20 END",
-        "desc": "BASIC is a programming language created in 1964 by John Kemeny. It was designed for legacy and is known for its Multi-paradigm paradigm(s). BASIC has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "Beginner's All-purpose Symbolic Instruction Code, designed to be easy to learn and use. BASIC democratized computer programming by making it accessible to non-technical users and was instrumental in the personal computer revolution of the 1980s.",
         "popularity": 30,
         "categories": [
             "Legacy",
@@ -283,7 +283,7 @@ var languages = [
         "year": 1966,
         "creator": "Martin Richards",
         "code": "GET \"LIBHDR\"\n\nLET START() BE\n$( WRITES(\"Hello, World!*N\")\n$)",
-        "desc": "BCPL is a programming language created in 1966 by Martin Richards. It was designed for vintage and is known for its Procedural paradigm(s). BCPL has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "Basic Combined Programming Language, a procedural programming language that influenced the development of B and subsequently C. BCPL introduced many concepts that became fundamental in systems programming, including pointer arithmetic and structured programming.",
         "popularity": 2,
         "categories": [
             "Vintage",
@@ -303,7 +303,7 @@ var languages = [
         "year": 1993,
         "creator": "Chris Pressey",
         "code": ">25*\"Hello, World!\"@",
-        "desc": "Befunge is a programming language created in 1993 by Chris Pressey. It was designed for esoteric and is known for its Esoteric paradigm(s). Befunge has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Education, Fun.",
+        "desc": "A two-dimensional esoteric programming language where programs are laid out on a grid and execution can move in any direction. Befunge was designed to be as difficult as possible to compile, making it a favorite among programming language enthusiasts.",
         "popularity": 5,
         "categories": [
             "Esoteric"
@@ -325,7 +325,7 @@ var languages = [
         "year": 1993,
         "creator": "Urban Müller",
         "code": "++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.",
-        "desc": "Brainfuck is a programming language created in 1993 by Urban Müller. It was designed for esoteric and is known for its Multi-paradigm paradigm(s). Brainfuck has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "An extremely minimalist esoteric programming language with only eight commands, designed to challenge and amuse programmers. Despite its simplicity, Brainfuck is Turing complete and demonstrates that complex computations can be performed with very simple operations.",
         "popularity": 15,
         "categories": [
             "Esoteric",
@@ -345,7 +345,7 @@ var languages = [
         "year": 1972,
         "creator": "Dennis Ritchie",
         "code": "#include <stdio.h>\n\nint main() {\n    printf(\"Hello, World!\\n\");\n    return 0;\n}",
-        "desc": "C is a programming language created in 1972 by Dennis Ritchie. It was designed for popular and is known for its Procedural, Imperative paradigm(s). C has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A general-purpose programming language that provides low-level access to memory and system resources while maintaining portability. C has been fundamental to modern computing, serving as the foundation for operating systems, embedded systems, and many other programming languages.",
         "popularity": 85,
         "categories": [
             "Popular"
@@ -365,7 +365,7 @@ var languages = [
         "year": 2000,
         "creator": "Anders Hejlsberg",
         "code": "using System;\n\nclass Program {\n    static void Main() {\n        Console.WriteLine(\"Hello, World!\");\n    }\n}",
-        "desc": "C# is a programming language created in 2000 by Anders Hejlsberg. It was designed for popular and is known for its Object-Oriented paradigm(s). C# has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A modern, object-oriented programming language developed by Microsoft as part of the .NET framework. C# combines the power of C++ with the simplicity of Visual Basic, featuring strong typing, garbage collection, and extensive library support.",
         "popularity": 90,
         "categories": [
             "Popular"
@@ -384,7 +384,7 @@ var languages = [
         "year": 1985,
         "creator": "Bjarne Stroustrup",
         "code": "#include <iostream>\n\nint main() {\n    std::cout << \"Hello, World!\" << std::endl;\n    return 0;\n}",
-        "desc": "C++ is a programming language created in 1985 by Bjarne Stroustrup. It was designed for popular and is known for its Object-Oriented, Imperative paradigm(s). C++ has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "An extension of C that adds object-oriented programming capabilities while maintaining C's efficiency and flexibility. C++ is widely used for system programming, game development, embedded systems, and applications requiring high performance.",
         "popularity": 87,
         "categories": [
             "Popular"
@@ -404,7 +404,7 @@ var languages = [
         "year": 2022,
         "creator": "Google",
         "code": "package Sample api;\n\nfn Main() -> i32 {\n    Print(\"Hello, World!\");\n    return 0;\n}",
-        "desc": "Carbon is a programming language created in 2022 by Google. It was designed for systems and is known for its Multi-paradigm paradigm(s). Carbon has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as System Programming, Operating Systems.",
+        "desc": "An experimental programming language developed by Google as a potential successor to C++. Carbon aims to provide better memory safety, generics, and metaprogramming while maintaining performance and interoperability with existing C++ code.",
         "popularity": 30,
         "categories": [
             "Systems",
@@ -469,7 +469,7 @@ var languages = [
         "year": 1987,
         "creator": "Rinus Plasmeijer",
         "code": "module hello\n\nimport StdEnv\n\nStart = \"Hello, World!\"",
-        "desc": "Clean is a programming language created in 1987 by Rinus Plasmeijer. It was designed for functional and is known for its Functional paradigm(s). Clean has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A purely functional programming language with strong static typing and uniqueness typing. Clean is particularly notable for its efficient compilation and its unique type system that helps manage side effects and resource usage.",
         "popularity": 6,
         "categories": [
             "Functional"
@@ -488,7 +488,7 @@ var languages = [
         "year": 2007,
         "creator": "Rich Hickey",
         "code": "(println \"Hello, World!\")",
-        "desc": "Clojure is a programming language created in 2007 by Rich Hickey. It was designed for functional and is known for its Functional paradigm(s). Clojure has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A dynamic functional programming language that runs on the Java Virtual Machine. Clojure emphasizes immutability, functional programming, and provides powerful tools for concurrent programming while leveraging the vast Java ecosystem.",
         "popularity": 45,
         "categories": [
             "Functional"
@@ -530,7 +530,7 @@ var languages = [
         "year": 1959,
         "creator": "Grace Hopper",
         "code": "IDENTIFICATION DIVISION.\nPROGRAM-ID. HELLO-WORLD.\nPROCEDURE DIVISION.\nDISPLAY 'Hello, World!'.\nSTOP RUN.",
-        "desc": "COBOL is a programming language created in 1959 by Grace Hopper. It was designed for legacy and is known for its Procedural paradigm(s). COBOL has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "Common Business-Oriented Language, designed for business data processing. Despite being decades old, COBOL still processes an enormous amount of financial and administrative data worldwide, particularly in banking and government systems.",
         "popularity": 25,
         "categories": [
             "Legacy",
@@ -550,7 +550,7 @@ var languages = [
         "year": 2009,
         "creator": "Jeremy Ashkenas",
         "code": "console.log \"Hello, World!\"",
-        "desc": "CoffeeScript is a programming language created in 2009 by Jeremy Ashkenas. It was designed for web and is known for its Multi-paradigm paradigm(s). CoffeeScript has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Web Development.",
+        "desc": "A programming language that transcompiles to JavaScript, featuring a syntax inspired by Ruby and Python. CoffeeScript aims to make JavaScript more readable and writable while adding useful features like array comprehensions and destructuring.",
         "popularity": 25,
         "categories": [
             "Web",
@@ -619,7 +619,7 @@ var languages = [
         "year": 2014,
         "creator": "Ary Borenszweig",
         "code": "puts \"Hello, World!\"",
-        "desc": "Crystal is a programming language created in 2014 by Ary Borenszweig. It was designed for systems and is known for its Object-Oriented paradigm(s). Crystal has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as System Programming, Operating Systems.",
+        "desc": "A statically typed programming language with syntax similar to Ruby but with compile-time type checking and performance comparable to C. Crystal aims to combine the productivity of Ruby with the efficiency of compiled languages.",
         "popularity": 18,
         "categories": [
             "Systems",
@@ -665,7 +665,7 @@ var languages = [
         "year": 1996,
         "creator": "Håkon Lie",
         "code": "body::before {\n    content: \"Hello, World!\";\n    font-size: 2em;\n    display: block;\n    text-align: center;\n}",
-        "desc": "CSS is a programming language created in 1996 by Håkon Lie. It was designed for popular and is known for its Multi-paradigm paradigm(s). CSS has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "Cascading Style Sheets, a style sheet language used for describing the presentation of documents written in HTML or XML. CSS enables the separation of content and presentation, allowing for flexible and maintainable web design.",
         "popularity": 83,
         "categories": [
             "Popular"
@@ -707,7 +707,7 @@ var languages = [
         "year": 2001,
         "creator": "Walter Bright",
         "code": "import std.stdio;\n\nvoid main() {\n    writeln(\"Hello, World!\");\n}",
-        "desc": "D is a programming language created in 2001 by Walter Bright. It was designed for systems and is known for its Multi-paradigm paradigm(s). D has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as System Programming, Operating Systems.",
+        "desc": "A systems programming language that aims to combine the efficiency of C++ with improved memory safety and developer productivity. D features garbage collection, built-in testing, and advanced metaprogramming capabilities.",
         "popularity": 20,
         "categories": [
             "Systems",
@@ -730,7 +730,7 @@ var languages = [
         "year": 2011,
         "creator": "Google",
         "code": "void main() {\n  print('Hello, World!');\n}",
-        "desc": "Dart is a programming language created in 2011 by Google. It was designed for mobile and is known for its Multi-paradigm paradigm(s). Dart has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Mobile Development.",
+        "desc": "A client-optimized programming language developed by Google for fast applications on any platform. Dart is primarily used with the Flutter framework for building mobile, web, and desktop applications from a single codebase.",
         "popularity": 55,
         "categories": [
             "Mobile"
@@ -774,7 +774,7 @@ var languages = [
         "year": 1995,
         "creator": "Borland",
         "code": "program HelloWorld;\nbegin\n  writeln('Hello, World!');\nend.",
-        "desc": "Delphi is a programming language created in 1995 by Borland. It was designed for legacy and is known for its Multi-paradigm paradigm(s). Delphi has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "An integrated development environment and programming language based on Object Pascal. Delphi was pioneering in visual programming and rapid application development, particularly for Windows desktop applications.",
         "popularity": 22,
         "categories": [
             "Legacy",
@@ -794,7 +794,7 @@ var languages = [
         "year": 2013,
         "creator": "Solomon Hykes",
         "code": "FROM alpine:latest\nRUN echo \"Hello, World!\"",
-        "desc": "Dockerfile is a programming language created in 2013 by Solomon Hykes. It was designed for configuration and is known for its Multi-paradigm paradigm(s). Dockerfile has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as DevOps, Infrastructure.",
+        "desc": "A domain-specific language used to define Docker container images. Dockerfiles contain instructions for building reproducible, portable application environments, making them essential for modern DevOps and microservices architectures.",
         "popularity": 50,
         "categories": [
             "Configuration",
@@ -836,7 +836,7 @@ var languages = [
         "year": 2011,
         "creator": "José Valim",
         "code": "IO.puts \"Hello, World!\"",
-        "desc": "Elixir is a programming language created in 2011 by José Valim. It was designed for functional and is known for its Functional paradigm(s). Elixir has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A dynamic, functional programming language built on the Erlang Virtual Machine. Elixir is designed for building maintainable and scalable applications, particularly suited for distributed systems, web applications, and IoT.",
         "popularity": 38,
         "categories": [
             "Functional"
@@ -855,7 +855,7 @@ var languages = [
         "year": 2012,
         "creator": "Evan Czaplicki",
         "code": "import Html exposing (text)\n\nmain =\n  text \"Hello, World!\"",
-        "desc": "Elm is a programming language created in 2012 by Evan Czaplicki. It was designed for web and is known for its Multi-paradigm paradigm(s). Elm has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Web Development.",
+        "desc": "A functional programming language that compiles to JavaScript for building web applications. Elm guarantees no runtime exceptions and features a powerful type system that helps developers write reliable, maintainable frontend code.",
         "popularity": 20,
         "categories": [
             "Web",
@@ -878,7 +878,7 @@ var languages = [
         "year": 1986,
         "creator": "Joe Armstrong",
         "code": "-module(hello).\n-export([start/0]).\n\nstart() ->\n    io:format(\"Hello, World!~n\").",
-        "desc": "Erlang is a programming language created in 1986 by Joe Armstrong. It was designed for functional and is known for its Functional paradigm(s). Erlang has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A concurrent, functional programming language designed for building fault-tolerant, distributed systems. Erlang's 'let it crash' philosophy and lightweight processes make it ideal for telecommunications, banking, and messaging systems.",
         "popularity": 40,
         "categories": [
             "Functional"
@@ -920,7 +920,7 @@ var languages = [
         "year": 2005,
         "creator": "Don Syme",
         "code": "printfn \"Hello, World!\"",
-        "desc": "F# is a programming language created in 2005 by Don Syme. It was designed for functional and is known for its Functional paradigm(s). F# has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A functional-first programming language that runs on .NET. F# combines functional programming with object-oriented and imperative programming, making it excellent for data science, web development, and parallel programming.",
         "popularity": 42,
         "categories": [
             "Functional"
@@ -939,7 +939,7 @@ var languages = [
         "year": 2003,
         "creator": "Slava Pestov",
         "code": "\"Hello, World!\" print",
-        "desc": "Factor is a programming language created in 2003 by Slava Pestov. It was designed for additional and is known for its Multi-paradigm paradigm(s). Factor has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A concatenative programming language based on stack-based execution. Factor features powerful metaprogramming capabilities and is known for its interactive development environment and extensive use of combinators.",
         "popularity": 5,
         "categories": [
             "Additional"
@@ -998,7 +998,7 @@ var languages = [
         "year": 1957,
         "creator": "John Backus",
         "code": "program hello\n    print *, 'Hello, World!'\nend program hello",
-        "desc": "Fortran is a programming language created in 1957 by John Backus. It was designed for scientific and is known for its Multi-paradigm paradigm(s). Fortran has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Scientific Computing, Mathematics.",
+        "desc": "The first high-level programming language, originally developed for scientific and engineering calculations. Modern Fortran continues to be widely used in high-performance computing, particularly for numerical simulations and scientific computing.",
         "popularity": 30,
         "categories": [
             "Numerical",
@@ -1105,7 +1105,7 @@ var languages = [
         "year": 2009,
         "creator": "Google Team",
         "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}",
-        "desc": "Go is a programming language created in 2009 by Google Team. It was designed for popular and is known for its Multi-paradigm paradigm(s). Go has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A statically typed programming language developed by Google, designed for simplicity, efficiency, and excellent concurrency support. Go has become popular for cloud infrastructure, microservices, and systems programming due to its fast compilation and garbage collection.",
         "popularity": 82,
         "categories": [
             "Popular"
@@ -1190,7 +1190,7 @@ var languages = [
         "year": 2003,
         "creator": "James Strachan",
         "code": "println \"Hello, World!\"",
-        "desc": "Groovy is a programming language created in 2003 by James Strachan. It was designed for object-oriented and is known for its Object-Oriented paradigm(s). Groovy has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A dynamic programming language for the Java Virtual Machine that combines the power of Java with features inspired by Python, Ruby, and Smalltalk. Groovy is commonly used for scripting, testing, and domain-specific languages.",
         "popularity": 30,
         "categories": [
             "Object-Oriented"
@@ -1209,7 +1209,7 @@ var languages = [
         "year": 1990,
         "creator": "Committee",
         "code": "main = putStrLn \"Hello, World!\"",
-        "desc": "Haskell is a programming language created in 1990 by Committee. It was designed for functional and is known for its Functional paradigm(s). Haskell has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A purely functional programming language with lazy evaluation and strong static typing. Haskell has been influential in programming language research and is prized for its mathematical elegance and powerful type system.",
         "popularity": 48,
         "categories": [
             "Functional"
@@ -1250,7 +1250,7 @@ var languages = [
         "year": 1990,
         "creator": "Tim Berners-Lee",
         "code": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Hello World</title>\n</head>\n<body>\n    <h1>Hello, World!</h1>\n</body>\n</html>",
-        "desc": "HTML is a programming language created in 1990 by Tim Berners-Lee. It was designed for popular and is known for its Multi-paradigm paradigm(s). HTML has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "HyperText Markup Language, the standard markup language for creating web pages. HTML provides the basic structure and content of web documents, which can then be styled with CSS and made interactive with JavaScript.",
         "popularity": 85,
         "categories": [
             "Popular"
@@ -1456,7 +1456,7 @@ var languages = [
         "year": 1995,
         "creator": "James Gosling",
         "code": "public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}",
-        "desc": "Java is a programming language created in 1995 by James Gosling. It was designed for popular and is known for its Object-Oriented, Imperative paradigm(s). Java has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A class-based, object-oriented programming language designed to have as few implementation dependencies as possible. Java's 'write once, run anywhere' philosophy has made it one of the most widely used programming languages in enterprise software development.",
         "popularity": 95,
         "categories": [
             "Popular"
@@ -1476,7 +1476,7 @@ var languages = [
         "year": 1995,
         "creator": "Brendan Eich",
         "code": "console.log(\"Hello, World!\");",
-        "desc": "JavaScript is a programming language created in 1995 by Brendan Eich. It was designed for popular and is known for its Multi-paradigm paradigm(s). JavaScript has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A high-level, interpreted programming language that enables interactive web pages and is an essential part of web applications. JavaScript has evolved far beyond its web origins and is now used for server-side development, mobile apps, and desktop applications.",
         "popularity": 100,
         "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
         "categories": [
@@ -1515,7 +1515,7 @@ var languages = [
         "year": 2001,
         "creator": "Douglas Crockford",
         "code": "{\n  \"message\": \"Hello, World!\",\n  \"language\": \"JSON\"\n}",
-        "desc": "JSON is a programming language created in 2001 by Douglas Crockford. It was designed for data science and is known for its Multi-paradigm paradigm(s). JSON has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Data Analysis, Statistics.",
+        "desc": "JavaScript Object Notation, a lightweight data interchange format that is easy for humans to read and write. Although derived from JavaScript, JSON is language-independent and has become the de facto standard for web APIs and configuration files.",
         "popularity": 50,
         "categories": [
             "Data Science",
@@ -1561,7 +1561,7 @@ var languages = [
         "year": 2012,
         "creator": "Jeff Bezanson",
         "code": "println(\"Hello, World!\")",
-        "desc": "Julia is a programming language created in 2012 by Jeff Bezanson. It was designed for scientific and is known for its Multi-paradigm paradigm(s). Julia has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Scientific Computing, Mathematics.",
+        "desc": "A high-level programming language designed for high-performance numerical analysis and computational science. Julia aims to bridge the gap between ease of use and performance, making it popular in scientific computing and data science.",
         "popularity": 35,
         "categories": [
             "Numerical",
@@ -1646,7 +1646,7 @@ var languages = [
         "year": 2011,
         "creator": "JetBrains",
         "code": "fun main() {\n    println(\"Hello, World!\")\n}",
-        "desc": "Kotlin is a programming language created in 2011 by JetBrains. It was designed for popular and is known for its Object-Oriented paradigm(s). Kotlin has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A statically typed programming language that runs on the Java Virtual Machine and is fully interoperable with Java. Kotlin has been adopted by Google as a preferred language for Android development due to its conciseness and safety features.",
         "popularity": 76,
         "categories": [
             "Popular"
@@ -1688,7 +1688,7 @@ var languages = [
         "year": 1985,
         "creator": "Leslie Lamport",
         "code": "\\documentclass{article}\n\\begin{document}\nHello, World!\n\\end{document}",
-        "desc": "LaTeX is a programming language created in 1985 by Leslie Lamport. It was designed for markup and is known for its Multi-paradigm paradigm(s). LaTeX has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Documentation, Web.",
+        "desc": "A document preparation system built on top of TeX, widely used for typesetting academic papers, books, and technical documents. LaTeX excels at formatting mathematical formulas and managing complex document structures.",
         "popularity": 45,
         "categories": [
             "Markup",
@@ -1757,7 +1757,7 @@ var languages = [
         "year": 1958,
         "creator": "John McCarthy",
         "code": "(format t \"Hello, World!~%\")",
-        "desc": "Lisp is a programming language created in 1958 by John McCarthy. It was designed for functional and is known for its Functional paradigm(s). Lisp has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "One of the oldest high-level programming languages, known for its fully parenthesized syntax and powerful metaprogramming capabilities. Lisp has been influential in artificial intelligence research and continues to inspire modern functional languages.",
         "popularity": 25,
         "categories": [
             "Functional"
@@ -1816,7 +1816,7 @@ var languages = [
         "year": 1993,
         "creator": "Roberto Ierusalimschy",
         "code": "print(\"Hello, World!\")",
-        "desc": "Lua is a programming language created in 1993 by Roberto Ierusalimschy. It was designed for game development and is known for its Multi-paradigm paradigm(s). Lua has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Game Development, Graphics.",
+        "desc": "A lightweight, embeddable scripting language designed for extending applications. Lua is widely used in game development, web servers, and embedded systems due to its small footprint and easy integration with C.",
         "popularity": 50,
         "categories": [
             "Game Development"
@@ -1950,7 +1950,7 @@ var languages = [
         "year": 1984,
         "creator": "Cleve Moler",
         "code": "disp('Hello, World!')",
-        "desc": "MATLAB is a programming language created in 1984 by Cleve Moler. It was designed for scientific and is known for its Multi-paradigm paradigm(s). MATLAB has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Scientific Computing, Mathematics.",
+        "desc": "A proprietary programming language and computing environment designed for numerical computation, visualization, and algorithm development. MATLAB is widely used in engineering, science, and economics for data analysis and mathematical modeling.",
         "popularity": 55,
         "categories": [
             "Numerical",
@@ -2100,7 +2100,7 @@ var languages = [
         "year": 2008,
         "creator": "Andreas Rumpf",
         "code": "echo \"Hello, World!\"",
-        "desc": "Nim is a programming language created in 2008 by Andreas Rumpf. It was designed for systems and is known for its Multi-paradigm paradigm(s). Nim has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as System Programming, Operating Systems.",
+        "desc": "A statically typed compiled programming language that combines successful concepts from mature languages like Python, Ada, and Modula. Nim generates efficient C, C++, or JavaScript code and is designed for efficiency, expressiveness, and elegance.",
         "popularity": 15,
         "categories": [
             "Systems",
@@ -2166,7 +2166,7 @@ var languages = [
         "year": 1984,
         "creator": "Brad Cox",
         "code": "#import <Foundation/Foundation.h>\n\nint main() {\n    NSLog(@\"Hello, World!\");\n    return 0;\n}",
-        "desc": "Objective-C is a programming language created in 1984 by Brad Cox. It was designed for mobile and is known for its Object-Oriented paradigm(s). Objective-C has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Mobile Development.",
+        "desc": "An object-oriented programming language that adds Smalltalk-style messaging to C. Objective-C was the primary programming language for Apple's iOS and macOS development before being largely superseded by Swift.",
         "popularity": 35,
         "categories": [
             "Mobile"
@@ -2187,7 +2187,7 @@ var languages = [
         "year": 1996,
         "creator": "Xavier Leroy",
         "code": "print_endline \"Hello, World!\";;",
-        "desc": "OCaml is a programming language created in 1996 by Xavier Leroy. It was designed for functional and is known for its Object-Oriented, Functional paradigm(s). OCaml has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A functional programming language with strong static typing and type inference. OCaml is used in academic research, financial systems, and was notably used to implement parts of Facebook's infrastructure.",
         "popularity": 35,
         "categories": [
             "Functional"
@@ -2296,7 +2296,7 @@ var languages = [
         "year": 1970,
         "creator": "Niklaus Wirth",
         "code": "program HelloWorld;\nbegin\n  writeln('Hello, World!');\nend.",
-        "desc": "Pascal is a programming language created in 1970 by Niklaus Wirth. It was designed for legacy and is known for its Procedural paradigm(s). Pascal has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A procedural programming language designed for teaching structured programming and data structuring. Pascal influenced many later languages and was widely used for education and application development in the 1980s and 1990s.",
         "popularity": 20,
         "categories": [
             "Legacy",
@@ -2336,7 +2336,7 @@ var languages = [
         "year": 1987,
         "creator": "Larry Wall",
         "code": "print \"Hello, World!\\n\";",
-        "desc": "Perl is a programming language created in 1987 by Larry Wall. It was designed for scripting and is known for its Multi-paradigm paradigm(s). Perl has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Automation, System Administration.",
+        "desc": "A high-level programming language known for its powerful text processing capabilities and flexible syntax. Perl was instrumental in the early development of the web and remains popular for system administration, bioinformatics, and data munging.",
         "popularity": 45,
         "categories": [
             "Scripting",
@@ -2380,7 +2380,7 @@ var languages = [
         "year": 1995,
         "creator": "Rasmus Lerdorf",
         "code": "<?php\necho \"Hello, World!\";\n?>",
-        "desc": "PHP is a programming language created in 1995 by Rasmus Lerdorf. It was designed for popular and is known for its Multi-paradigm paradigm(s). PHP has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A server-side scripting language designed for web development but also used as a general-purpose programming language. PHP powers a significant portion of the web, including platforms like WordPress, Facebook, and Wikipedia.",
         "popularity": 88,
         "categories": [
             "Popular"
@@ -2479,7 +2479,7 @@ var languages = [
         "year": 2006,
         "creator": "Jeffrey Snover",
         "code": "Write-Host \"Hello, World!\"",
-        "desc": "PowerShell is a programming language created in 2006 by Jeffrey Snover. It was designed for popular and is known for its Multi-paradigm paradigm(s). PowerShell has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A task automation and configuration management framework from Microsoft, consisting of a command-line shell and scripting language. PowerShell is built on .NET and provides powerful tools for managing Windows and cloud environments.",
         "popularity": 65,
         "categories": [
             "Popular"
@@ -2544,7 +2544,7 @@ var languages = [
         "year": 1991,
         "creator": "Guido van Rossum",
         "code": "print(\"Hello, World!\")",
-        "desc": "Python is a programming language created in 1991 by Guido van Rossum. It was designed for popular and is known for its Object-Oriented, Imperative paradigm(s). Python has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A high-level programming language emphasizing code readability and simplicity. Python's extensive libraries and readable syntax have made it popular for web development, data science, artificial intelligence, and automation.",
         "popularity": 98,
         "link": "https://www.python.org/",
         "categories": [
@@ -2588,7 +2588,7 @@ var languages = [
         "year": 1993,
         "creator": "Ross Ihaka",
         "code": "print(\"Hello, World!\")",
-        "desc": "R is a programming language created in 1993 by Ross Ihaka. It was designed for popular and is known for its Multi-paradigm paradigm(s). R has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A programming language and environment specifically designed for statistical computing and graphics. R is widely used among statisticians, data scientists, and researchers for data analysis, statistical modeling, and visualization.",
         "popularity": 68,
         "categories": [
             "Popular"
@@ -2793,7 +2793,7 @@ var languages = [
         "year": 1995,
         "creator": "Yukihiro Matsumoto",
         "code": "puts \"Hello, World!\"",
-        "desc": "Ruby is a programming language created in 1995 by Yukihiro Matsumoto. It was designed for popular and is known for its Object-Oriented paradigm(s). Ruby has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A dynamic, object-oriented programming language that emphasizes programmer happiness and productivity. Ruby's elegant syntax and the Ruby on Rails framework have made it popular for web development and automation.",
         "popularity": 74,
         "categories": [
             "Popular"
@@ -2812,7 +2812,7 @@ var languages = [
         "year": 2010,
         "creator": "Graydon Hoare",
         "code": "fn main() {\n    println!(\"Hello, World!\");\n}",
-        "desc": "Rust is a programming language created in 2010 by Graydon Hoare. It was designed for popular and is known for its Multi-paradigm paradigm(s). Rust has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety. Rust achieves memory safety without garbage collection, making it ideal for system programming, web backends, and performance-critical applications.",
         "popularity": 80,
         "categories": [
             "Popular"
@@ -2900,7 +2900,7 @@ var languages = [
         "year": 2003,
         "creator": "Martin Odersky",
         "code": "object HelloWorld extends App {\n  println(\"Hello, World!\")\n}",
-        "desc": "Scala is a programming language created in 2003 by Martin Odersky. It was designed for popular and is known for its Object-Oriented, Functional paradigm(s). Scala has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A programming language that combines object-oriented and functional programming paradigms on the Java Virtual Machine. Scala is designed to be concise and has strong static types, making it popular for big data processing and web development.",
         "popularity": 62,
         "categories": [
             "Popular"
@@ -2920,7 +2920,7 @@ var languages = [
         "year": 1975,
         "creator": "Guy Steele",
         "code": "(display \"Hello, World!\")\n(newline)",
-        "desc": "Scheme is a programming language created in 1975 by Guy Steele. It was designed for functional and is known for its Functional paradigm(s). Scheme has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A dialect of Lisp that emphasizes functional programming and has influenced the design of many other languages. Scheme is known for its minimalist design and is often used for teaching computer science concepts.",
         "popularity": 15,
         "categories": [
             "Functional"
@@ -3042,7 +3042,7 @@ var languages = [
         "year": 1974,
         "creator": "Donald Chamberlin",
         "code": "SELECT 'Hello, World!' AS greeting;",
-        "desc": "SQL is a programming language created in 1974 by Donald Chamberlin. It was designed for popular and is known for its Multi-paradigm paradigm(s). SQL has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "Structured Query Language, a domain-specific language for managing and manipulating relational databases. SQL is essential for data storage, retrieval, and analysis across virtually all database systems.",
         "popularity": 88,
         "categories": [
             "Popular"
@@ -3084,7 +3084,7 @@ var languages = [
         "year": 2014,
         "creator": "Apple Team",
         "code": "print(\"Hello, World!\")",
-        "desc": "Swift is a programming language created in 2014 by Apple Team. It was designed for popular and is known for its Object-Oriented paradigm(s). Swift has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A powerful and intuitive programming language developed by Apple for iOS, macOS, watchOS, and tvOS development. Swift is designed to be fast and safe, with modern language features that make development more productive.",
         "popularity": 78,
         "categories": [
             "Popular"
@@ -3259,7 +3259,7 @@ var languages = [
         "year": 2012,
         "creator": "Anders Hejlsberg",
         "code": "console.log(\"Hello, World!\");",
-        "desc": "TypeScript is a programming language created in 2012 by Anders Hejlsberg. It was designed for popular and is known for its Multi-paradigm paradigm(s). TypeScript has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as various fields.",
+        "desc": "A strongly typed superset of JavaScript that compiles to plain JavaScript. TypeScript adds optional static typing and modern language features to JavaScript, helping developers build more robust and maintainable applications.",
         "popularity": 92,
         "categories": [
             "Popular"
@@ -3320,7 +3320,7 @@ var languages = [
         "year": 2019,
         "creator": "Alexander Medvednikov",
         "code": "fn main() {\n    println('Hello, World!')\n}",
-        "desc": "V is a programming language created in 2019 by Alexander Medvednikov. It was designed for systems and is known for its Multi-paradigm paradigm(s). V has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as System Programming, Operating Systems.",
+        "desc": "A simple, fast, safe, compiled programming language for developing maintainable software. V aims to combine the simplicity of Go with the performance of C while providing memory safety and fast compilation.",
         "popularity": 12,
         "categories": [
             "Systems",
@@ -3449,7 +3449,7 @@ var languages = [
         "year": 2017,
         "creator": "W3C",
         "code": "(module\n  (import \"env\" \"print\" (func $print (param i32)))\n  (func $hello\n    i32.const 42\n    call $print\n  )\n  (export \"hello\" (func $hello))\n)",
-        "desc": "WebAssembly is a programming language created in 2017 by W3C. It was designed for web and is known for its Multi-paradigm paradigm(s). WebAssembly has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Web Development.",
+        "desc": "A binary instruction format for a stack-based virtual machine designed to run alongside JavaScript in web browsers. WebAssembly enables high-performance applications on the web and allows languages like C, C++, and Rust to run in browsers.",
         "popularity": 50,
         "categories": [
             "Web",
@@ -3536,7 +3536,7 @@ var languages = [
         "year": 1996,
         "creator": "W3C",
         "code": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<message>\n  <text>Hello, World!</text>\n</message>",
-        "desc": "XML is a programming language created in 1996 by W3C. It was designed for data science and is known for its Multi-paradigm paradigm(s). XML has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Data Analysis, Statistics.",
+        "desc": "eXtensible Markup Language, a markup language that defines rules for encoding documents in a format that is both human-readable and machine-readable. XML is widely used for data exchange, configuration files, and document storage.",
         "popularity": 40,
         "categories": [
             "Data Science",
@@ -3642,7 +3642,7 @@ var languages = [
         "year": 2001,
         "creator": "Clark Evans",
         "code": "message: \"Hello, World!\"\nlanguage: YAML",
-        "desc": "YAML is a programming language created in 2001 by Clark Evans. It was designed for data science and is known for its Multi-paradigm paradigm(s). YAML has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Data Analysis, Statistics.",
+        "desc": "YAML Ain't Markup Language, a human-readable data serialization standard commonly used for configuration files and data exchange. YAML's clean syntax makes it popular for DevOps tools, CI/CD pipelines, and application configuration.",
         "popularity": 45,
         "categories": [
             "Data Science",
@@ -3665,7 +3665,7 @@ var languages = [
         "year": 2016,
         "creator": "Andrew Kelley",
         "code": "const std = @import(\"std\");\n\npub fn main() !void {\n    const stdout = std.io.getStdOut().writer();\n    try stdout.print(\"Hello, World!\\n\");\n}",
-        "desc": "Zig is a programming language created in 2016 by Andrew Kelley. It was designed for systems and is known for its Multi-paradigm paradigm(s). Zig has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as System Programming, Operating Systems.",
+        "desc": "A general-purpose programming language and toolchain for maintaining robust, optimal, and reusable software. Zig aims to be a better C with compile-time code execution, optional types, and no hidden memory allocations.",
         "popularity": 25,
         "categories": [
             "Systems",
@@ -4081,7 +4081,7 @@ var languages = [
         "year": 1970,
         "creator": "Charles H. Moore",
         "code": ".\"Hello, World!\"",
-        "desc": "Forth is a programming language created in 1970 by Charles H. Moore. It was designed for stack-based and is known for its Procedural, Stack-based paradigm(s). Forth has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as Embedded, Scientific.",
+        "desc": "A stack-based programming language known for its simplicity and extensibility. Forth has been used in embedded systems, space applications, and anywhere minimal resource usage and direct hardware control are required.",
         "popularity": 10,
         "categories": [
             "Stack-based",
@@ -4544,7 +4544,7 @@ var languages = [
         "year": 2009,
         "creator": "Cray Inc.",
         "code": "writeln(\"Hello, World!\");",
-        "desc": "Chapel is a programming language created in 2009 by Cray Inc.. It was designed for parallel and is known for its Parallel paradigm(s). Chapel has played a significant role in the evolution of programming, offering unique features and influencing many other languages. Today, it is used in domains such as High Performance Computing, Scientific Computing.",
+        "desc": "A parallel programming language designed for productive high-performance computing. Chapel aims to make parallel programming more accessible by providing high-level abstractions for data parallelism and task parallelism.",
         "popularity": 8,
         "categories": [
             "Parallel",
@@ -5285,9 +5285,15 @@ var languages = [
         "code": "namespace NSMain;\nentity Main {\n  function main(): Int {\n    print(\"Hello, World!\");\n    return 0;\n  }\n}",
         "desc": "Bosque is an experimental, regularized programming language from Microsoft Research focused on eliminating sources of complexity such as loops, mutable state, and reference equality.",
         "popularity": 1,
-        "categories": ["Experimental", "General Purpose"],
+        "categories": [
+            "Experimental",
+            "General Purpose"
+        ],
         "primaryCategory": "Experimental",
-        "paradigms": ["Functional", "Imperative"],
+        "paradigms": [
+            "Functional",
+            "Imperative"
+        ],
         "domains": [],
         "difficulty": "Intermediate",
         "typing": "Static",
@@ -5300,10 +5306,18 @@ var languages = [
         "code": "let main = \"Hello, World!\"",
         "desc": "Dark is a holistic programming language, editor, and infrastructure for building backend web services with minimal ceremony.",
         "popularity": 1,
-        "categories": ["Experimental", "Web"],
+        "categories": [
+            "Experimental",
+            "Web"
+        ],
         "primaryCategory": "Experimental",
-        "paradigms": ["Functional", "Event-driven"],
-        "domains": ["Web Development"],
+        "paradigms": [
+            "Functional",
+            "Event-driven"
+        ],
+        "domains": [
+            "Web Development"
+        ],
         "difficulty": "Beginner",
         "typing": "Dynamic",
         "sourceFile": "experimental-languages.js"
@@ -5315,10 +5329,17 @@ var languages = [
         "code": "print \"Hello, World!\"",
         "desc": "Red/System is a low-level, C-like language that serves as the system programming subset of Red, designed for performance and direct hardware access.",
         "popularity": 2,
-        "categories": ["Systems", "Low-level"],
+        "categories": [
+            "Systems",
+            "Low-level"
+        ],
         "primaryCategory": "Systems",
-        "paradigms": ["Procedural"],
-        "domains": ["System Programming"],
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "System Programming"
+        ],
         "difficulty": "Advanced",
         "typing": "Static",
         "sourceFile": "systems-languages.js"
@@ -5330,9 +5351,15 @@ var languages = [
         "code": "method main(System.Console console):\n    console.out.println(\"Hello, World!\");",
         "desc": "Whiley is a programming language designed for verifying programs through its flow-sensitive type system and support for formal specification.",
         "popularity": 1,
-        "categories": ["Experimental", "Verification"],
+        "categories": [
+            "Experimental",
+            "Verification"
+        ],
         "primaryCategory": "Experimental",
-        "paradigms": ["Imperative", "Functional"],
+        "paradigms": [
+            "Imperative",
+            "Functional"
+        ],
         "domains": [],
         "difficulty": "Advanced",
         "typing": "Static",
@@ -5345,9 +5372,14 @@ var languages = [
         "code": "main : IO ()\nmain = putStrLn \"Hello, World!\"",
         "desc": "Idris 2 is a general-purpose functional programming language with full dependent types, a successor to Idris with a new core and improved performance.",
         "popularity": 1,
-        "categories": ["Functional", "Dependent Types"],
+        "categories": [
+            "Functional",
+            "Dependent Types"
+        ],
         "primaryCategory": "Functional",
-        "paradigms": ["Functional"],
+        "paradigms": [
+            "Functional"
+        ],
         "domains": [],
         "difficulty": "Advanced",
         "typing": "Static",
@@ -5360,10 +5392,17 @@ var languages = [
         "code": "@public\ndef main():\n    print(\"Hello, World!\")",
         "desc": "Vyper is a contract-oriented, pythonic programming language targeting the Ethereum Virtual Machine (EVM), designed to be simple and secure for smart contract development.",
         "popularity": 1,
-        "categories": ["Blockchain", "Smart Contracts"],
+        "categories": [
+            "Blockchain",
+            "Smart Contracts"
+        ],
         "primaryCategory": "Blockchain",
-        "paradigms": ["Procedural"],
-        "domains": ["Smart Contracts"],
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Smart Contracts"
+        ],
         "difficulty": "Intermediate",
         "typing": "Static",
         "sourceFile": "blockchain-languages.js"
@@ -5375,9 +5414,14 @@ var languages = [
         "code": "begin\n  write(\"Hello, World!\")\nend",
         "desc": "ALGOL W is a programming language designed by Niklaus Wirth as a successor to ALGOL 60. It was the precursor to Pascal and introduced several important concepts.",
         "popularity": 3,
-        "categories": ["Legacy", "Historical"],
+        "categories": [
+            "Legacy",
+            "Historical"
+        ],
         "primaryCategory": "Legacy",
-        "paradigms": ["Procedural"],
+        "paradigms": [
+            "Procedural"
+        ],
         "domains": [],
         "difficulty": "Advanced",
         "typing": "Static",
@@ -5390,9 +5434,14 @@ var languages = [
         "code": "MODULE Hello EXPORTS Main;\nIMPORT IO;\nBEGIN\n  IO.Put(\"Hello, World!\\n\")\nEND Hello.",
         "desc": "Modula-3 is a programming language conceived as a successor to Modula-2. It was designed by Digital Equipment Corporation and Olivetti.",
         "popularity": 5,
-        "categories": ["Legacy", "Historical"],
+        "categories": [
+            "Legacy",
+            "Historical"
+        ],
         "primaryCategory": "Legacy",
-        "paradigms": ["Object-Oriented"],
+        "paradigms": [
+            "Object-Oriented"
+        ],
         "domains": [],
         "difficulty": "Advanced",
         "typing": "Static",
@@ -5405,9 +5454,14 @@ var languages = [
         "code": "MODULE Hello;\nIMPORT Out;\nBEGIN\n  Out.String(\"Hello, World!\");\n  Out.Ln\nEND Hello.",
         "desc": "Oberon-2 is an extension of the original Oberon programming language that adds object-oriented programming features.",
         "popularity": 4,
-        "categories": ["Legacy", "Historical"],
+        "categories": [
+            "Legacy",
+            "Historical"
+        ],
         "primaryCategory": "Legacy",
-        "paradigms": ["Object-Oriented"],
+        "paradigms": [
+            "Object-Oriented"
+        ],
         "domains": [],
         "difficulty": "Advanced",
         "typing": "Static",
@@ -5420,9 +5474,14 @@ var languages = [
         "code": "MODULE Hello;\nIMPORT Out;\nBEGIN\n  Out.String(\"Hello, World!\");\n  Out.Ln\nEND Hello.",
         "desc": "Component Pascal is a programming language in the Pascal/Modula/Oberon family, designed for component-based software engineering and rapid application development.",
         "popularity": 2,
-        "categories": ["Legacy", "Component-based"],
+        "categories": [
+            "Legacy",
+            "Component-based"
+        ],
         "primaryCategory": "Legacy",
-        "paradigms": ["Object-Oriented"],
+        "paradigms": [
+            "Object-Oriented"
+        ],
         "domains": [],
         "difficulty": "Advanced",
         "typing": "Static",
@@ -5435,10 +5494,18 @@ var languages = [
         "code": "script {\n  fun main() {\n    debug::print(\"Hello, World!\");\n  }\n}",
         "desc": "Move is a safe and flexible programming language for the Libra/Diem blockchain, designed for secure resource management and smart contracts.",
         "popularity": 2,
-        "categories": ["Blockchain", "Smart Contracts"],
+        "categories": [
+            "Blockchain",
+            "Smart Contracts"
+        ],
         "primaryCategory": "Blockchain",
-        "paradigms": ["Resource-oriented", "Procedural"],
-        "domains": ["Blockchain"],
+        "paradigms": [
+            "Resource-oriented",
+            "Procedural"
+        ],
+        "domains": [
+            "Blockchain"
+        ],
         "difficulty": "Advanced",
         "typing": "Static",
         "sourceFile": "blockchain-languages.js"
@@ -5450,10 +5517,19 @@ var languages = [
         "code": "actor Main {\n  public func main() : async () {\n    Debug.print(\"Hello, World!\");\n  }\n}",
         "desc": "Motoko is a modern, actor-based programming language for the Internet Computer blockchain, designed for building secure, scalable, and efficient canister smart contracts.",
         "popularity": 2,
-        "categories": ["Blockchain", "Smart Contracts"],
+        "categories": [
+            "Blockchain",
+            "Smart Contracts"
+        ],
         "primaryCategory": "Blockchain",
-        "paradigms": ["Actor", "Functional", "Imperative"],
-        "domains": ["Blockchain"],
+        "paradigms": [
+            "Actor",
+            "Functional",
+            "Imperative"
+        ],
+        "domains": [
+            "Blockchain"
+        ],
         "difficulty": "Intermediate",
         "typing": "Static",
         "sourceFile": "blockchain-languages.js"
@@ -5465,10 +5541,18 @@ var languages = [
         "code": "let main () =\n  print_endline \"Hello, World!\"",
         "desc": "F* (F star) is a functional programming language aimed at program verification, with dependent types and effectful programming.",
         "popularity": 1,
-        "categories": ["Functional", "Verification"],
+        "categories": [
+            "Functional",
+            "Verification"
+        ],
         "primaryCategory": "Functional",
-        "paradigms": ["Functional", "Dependent Types"],
-        "domains": ["Formal Verification"],
+        "paradigms": [
+            "Functional",
+            "Dependent Types"
+        ],
+        "domains": [
+            "Formal Verification"
+        ],
         "difficulty": "Advanced",
         "typing": "Static",
         "sourceFile": "functional-languages.js"
@@ -5480,10 +5564,18 @@ var languages = [
         "code": "let () = print_endline \"Hello, World!\";",
         "desc": "ReasonML is a syntax extension and toolchain for OCaml, created by Facebook to provide a familiar syntax for JavaScript developers and strong type inference.",
         "popularity": 3,
-        "categories": ["Functional", "Web"],
+        "categories": [
+            "Functional",
+            "Web"
+        ],
         "primaryCategory": "Functional",
-        "paradigms": ["Functional", "Imperative"],
-        "domains": ["Web Development"],
+        "paradigms": [
+            "Functional",
+            "Imperative"
+        ],
+        "domains": [
+            "Web Development"
+        ],
         "difficulty": "Intermediate",
         "typing": "Static",
         "sourceFile": "functional-languages.js"
@@ -5495,10 +5587,18 @@ var languages = [
         "code": "echo 'Hello, World!'",
         "desc": "Elvish is an expressive programming language and interactive shell, designed for both scripting and interactive use.",
         "popularity": 1,
-        "categories": ["Shell", "Scripting"],
+        "categories": [
+            "Shell",
+            "Scripting"
+        ],
         "primaryCategory": "Shell",
-        "paradigms": ["Functional", "Imperative"],
-        "domains": ["System Administration"],
+        "paradigms": [
+            "Functional",
+            "Imperative"
+        ],
+        "domains": [
+            "System Administration"
+        ],
         "difficulty": "Beginner",
         "typing": "Dynamic",
         "sourceFile": "shell-languages.js"
@@ -5510,10 +5610,17 @@ var languages = [
         "code": "func main() {\n    printf(\"Hello, World!\");\n    return (); \n}",
         "desc": "Cairo is a Turing-complete language for writing provable programs on blockchain, used for StarkNet and other zero-knowledge applications.",
         "popularity": 2,
-        "categories": ["Blockchain", "Smart Contracts"],
+        "categories": [
+            "Blockchain",
+            "Smart Contracts"
+        ],
         "primaryCategory": "Blockchain",
-        "paradigms": ["Procedural"],
-        "domains": ["Blockchain"],
+        "paradigms": [
+            "Procedural"
+        ],
+        "domains": [
+            "Blockchain"
+        ],
         "difficulty": "Advanced",
         "typing": "Static",
         "sourceFile": "blockchain-languages.js"
@@ -5525,10 +5632,17 @@ var languages = [
         "code": "(* Hello World in Scilla *)\nimport ListUtils\n\nlet main =\n  let _ = ListUtils.print_string \"Hello, World!\" in\n  ()",
         "desc": "Scilla is an intermediate-level smart contract language for Zilliqa, designed for safety and formal verification.",
         "popularity": 1,
-        "categories": ["Blockchain", "Smart Contracts"],
+        "categories": [
+            "Blockchain",
+            "Smart Contracts"
+        ],
         "primaryCategory": "Blockchain",
-        "paradigms": ["Functional"],
-        "domains": ["Blockchain"],
+        "paradigms": [
+            "Functional"
+        ],
+        "domains": [
+            "Blockchain"
+        ],
         "difficulty": "Advanced",
         "typing": "Static",
         "sourceFile": "blockchain-languages.js"
@@ -5540,10 +5654,18 @@ var languages = [
         "code": "(define pact-id \"hello-world\")\n(define (main)\n  (enforce true \"Hello, World!\"))",
         "desc": "Pact is a smart contract language for the Kadena blockchain, designed for safety, upgradability, and ease of use.",
         "popularity": 1,
-        "categories": ["Blockchain", "Smart Contracts"],
+        "categories": [
+            "Blockchain",
+            "Smart Contracts"
+        ],
         "primaryCategory": "Blockchain",
-        "paradigms": ["Functional", "Declarative"],
-        "domains": ["Blockchain"],
+        "paradigms": [
+            "Functional",
+            "Declarative"
+        ],
+        "domains": [
+            "Blockchain"
+        ],
         "difficulty": "Intermediate",
         "typing": "Static",
         "sourceFile": "blockchain-languages.js"
@@ -5555,10 +5677,18 @@ var languages = [
         "code": "export const main = () => {\n  console.log(\"Hello, World!\");\n};",
         "desc": "Reach is a high-level programming language for building decentralized applications on multiple blockchains, focusing on safety and developer productivity.",
         "popularity": 1,
-        "categories": ["Blockchain", "Smart Contracts"],
+        "categories": [
+            "Blockchain",
+            "Smart Contracts"
+        ],
         "primaryCategory": "Blockchain",
-        "paradigms": ["Functional", "Imperative"],
-        "domains": ["Blockchain"],
+        "paradigms": [
+            "Functional",
+            "Imperative"
+        ],
+        "domains": [
+            "Blockchain"
+        ],
         "difficulty": "Intermediate",
         "typing": "Static",
         "sourceFile": "blockchain-languages.js"
@@ -5570,10 +5700,17 @@ var languages = [
         "code": "main :: IO ()\nmain = putStrLn \"Hello, World!\"",
         "desc": "Plutus is a smart contract development platform and language for Cardano, based on Haskell and designed for secure financial contracts.",
         "popularity": 2,
-        "categories": ["Blockchain", "Smart Contracts"],
+        "categories": [
+            "Blockchain",
+            "Smart Contracts"
+        ],
         "primaryCategory": "Blockchain",
-        "paradigms": ["Functional"],
-        "domains": ["Blockchain"],
+        "paradigms": [
+            "Functional"
+        ],
+        "domains": [
+            "Blockchain"
+        ],
         "difficulty": "Advanced",
         "typing": "Static",
         "sourceFile": "blockchain-languages.js"
@@ -5585,10 +5722,18 @@ var languages = [
         "code": "template HelloWorld\n  with\n    party : Party\n  where\n    signatory party\n    controller party can\n      Create : ContractId HelloWorld\n        with\n          party = party\n        do\n          create this",
         "desc": "DAML is a smart contract language for distributed ledgers, designed for safety, expressiveness, and ease of use.",
         "popularity": 2,
-        "categories": ["Blockchain", "Smart Contracts"],
+        "categories": [
+            "Blockchain",
+            "Smart Contracts"
+        ],
         "primaryCategory": "Blockchain",
-        "paradigms": ["Functional", "Declarative"],
-        "domains": ["Blockchain"],
+        "paradigms": [
+            "Functional",
+            "Declarative"
+        ],
+        "domains": [
+            "Blockchain"
+        ],
         "difficulty": "Intermediate",
         "typing": "Static",
         "sourceFile": "blockchain-languages.js"
@@ -5600,9 +5745,14 @@ var languages = [
         "code": "PRINT \"Hello, World!\"",
         "desc": "FreeBASIC is a multiplatform, free/open source BASIC compiler, with syntax similar to QuickBASIC.",
         "popularity": 12,
-        "categories": ["Legacy", "Historical"],
+        "categories": [
+            "Legacy",
+            "Historical"
+        ],
         "primaryCategory": "Legacy",
-        "paradigms": ["Procedural"],
+        "paradigms": [
+            "Procedural"
+        ],
         "domains": [],
         "difficulty": "Beginner to Intermediate",
         "typing": "Static",
@@ -5615,9 +5765,14 @@ var languages = [
         "code": "PRINT \"Hello, World!\"",
         "desc": "QB64 is a modern BASIC programming language that maintains compatibility with QBasic while adding new features.",
         "popularity": 8,
-        "categories": ["Legacy", "Historical"],
+        "categories": [
+            "Legacy",
+            "Historical"
+        ],
         "primaryCategory": "Legacy",
-        "paradigms": ["Procedural"],
+        "paradigms": [
+            "Procedural"
+        ],
         "domains": [],
         "difficulty": "Beginner",
         "typing": "Dynamic",
@@ -5630,9 +5785,14 @@ var languages = [
         "code": "see \"Hello, World!\" + nl",
         "desc": "Ring is a dynamic, general-purpose programming language designed to be simple and small, with a focus on productivity and flexibility.",
         "popularity": 6,
-        "categories": ["Emerging", "Modern"],
+        "categories": [
+            "Emerging",
+            "Modern"
+        ],
         "primaryCategory": "Emerging",
-        "paradigms": ["Multi-paradigm"],
+        "paradigms": [
+            "Multi-paradigm"
+        ],
         "domains": [],
         "difficulty": "Beginner to Intermediate",
         "typing": "Dynamic",
@@ -5645,9 +5805,14 @@ var languages = [
         "code": "? \"Hello, World!\"",
         "desc": "Harbour is a free software compiler for the xBase superset language, often referred to as Clipper.",
         "popularity": 4,
-        "categories": ["Legacy", "Historical"],
+        "categories": [
+            "Legacy",
+            "Historical"
+        ],
         "primaryCategory": "Legacy",
-        "paradigms": ["Procedural"],
+        "paradigms": [
+            "Procedural"
+        ],
         "domains": [],
         "difficulty": "Intermediate",
         "typing": "Dynamic",
@@ -5660,9 +5825,13 @@ var languages = [
         "code": "int main() {\n  write(\"Hello, World!\\n\");\n  return 0;\n}",
         "desc": "Pike is a dynamic programming language with a syntax similar to C. It features a built-in garbage collector and supports multiple programming paradigms.",
         "popularity": 3,
-        "categories": ["Additional"],
+        "categories": [
+            "Additional"
+        ],
         "primaryCategory": "Additional",
-        "paradigms": ["Multi-paradigm"],
+        "paradigms": [
+            "Multi-paradigm"
+        ],
         "domains": [],
         "difficulty": "Intermediate",
         "typing": "Dynamic",
@@ -5675,10 +5844,18 @@ var languages = [
         "code": "implement main0 () = println! (\"Hello, World!\")",
         "desc": "ATS (Applied Type System) is a programming language designed to unify specification and implementation. It uses a type system to ensure program correctness.",
         "popularity": 2,
-        "categories": ["Academic", "Research"],
+        "categories": [
+            "Academic",
+            "Research"
+        ],
         "primaryCategory": "Academic",
-        "paradigms": ["Functional"],
-        "domains": ["Research", "Formal Methods"],
+        "paradigms": [
+            "Functional"
+        ],
+        "domains": [
+            "Research",
+            "Formal Methods"
+        ],
         "difficulty": "Advanced",
         "typing": "Static",
         "sourceFile": "academic-languages.js"
@@ -5690,9 +5867,13 @@ var languages = [
         "code": "class Hello {\n  static Void main() {\n    echo(\"Hello, World!\")\n  }\n}",
         "desc": "Fantom is an object-oriented programming language that runs on the JVM, .NET, and JavaScript.",
         "popularity": 5,
-        "categories": ["Additional"],
+        "categories": [
+            "Additional"
+        ],
         "primaryCategory": "Additional",
-        "paradigms": ["Object-Oriented"],
+        "paradigms": [
+            "Object-Oriented"
+        ],
         "domains": [],
         "difficulty": "Intermediate",
         "typing": "Static",
@@ -5705,10 +5886,17 @@ var languages = [
         "code": "Function Main:Int()\n  Print \"Hello, World!\"\n  Return 0\nEnd",
         "desc": "Monkey X is a high-level programming language designed for cross-platform game development.",
         "popularity": 4,
-        "categories": ["Game Development"],
+        "categories": [
+            "Game Development"
+        ],
         "primaryCategory": "Game Development",
-        "paradigms": ["Object-Oriented"],
-        "domains": ["Game Development", "Graphics"],
+        "paradigms": [
+            "Object-Oriented"
+        ],
+        "domains": [
+            "Game Development",
+            "Graphics"
+        ],
         "difficulty": "Intermediate",
         "typing": "Dynamic",
         "sourceFile": "game-languages.js"
@@ -5720,9 +5908,13 @@ var languages = [
         "code": "Sub Main()\n  MsgBox \"Hello, World!\"\nEnd Sub",
         "desc": "Xojo is a cross-platform development tool for creating desktop, web, and mobile applications.",
         "popularity": 8,
-        "categories": ["Additional"],
+        "categories": [
+            "Additional"
+        ],
         "primaryCategory": "Additional",
-        "paradigms": ["Object-Oriented"],
+        "paradigms": [
+            "Object-Oriented"
+        ],
         "domains": [],
         "difficulty": "Beginner to Intermediate",
         "typing": "Dynamic",
@@ -5735,9 +5927,13 @@ var languages = [
         "code": "init\n  print \"Hello, World!\"",
         "desc": "Genie is a modern, general-purpose high-level programming language in the tradition of Python and Boo.",
         "popularity": 3,
-        "categories": ["Additional"],
+        "categories": [
+            "Additional"
+        ],
         "primaryCategory": "Additional",
-        "paradigms": ["Object-Oriented"],
+        "paradigms": [
+            "Object-Oriented"
+        ],
         "domains": [],
         "difficulty": "Intermediate",
         "typing": "Static",
@@ -5745,7 +5941,6 @@ var languages = [
     }
 ];
 
-// Export for use in other modules
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = languages;
 }

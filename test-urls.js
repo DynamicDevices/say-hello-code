@@ -110,6 +110,7 @@ async function testAllUrls() {
             failed: 0,
             redirected: 0,
             timeout: 0,
+            networkWarnings: 0,
             errors: []
         },
         details: []
@@ -131,8 +132,21 @@ async function testAllUrls() {
                 status = '⏰';
                 statusText = 'TIMEOUT';
             } else if (result.error) {
-                status = '❌';
-                statusText = 'ERROR';
+                // Check if this is a network connectivity issue with Google search URLs
+                const isGoogleUrl = url.includes('www.google.com/search');
+                const isNetworkError = result.error.includes('Client network socket disconnected') ||
+                                     result.error.includes('ENOTFOUND') ||
+                                     result.error.includes('ECONNRESET') ||
+                                     result.error.includes('ETIMEDOUT');
+                
+                if (isGoogleUrl && isNetworkError) {
+                    // Treat Google search network errors as warnings, not failures
+                    status = '⚠️';
+                    statusText = 'NETWORK';
+                } else {
+                    status = '❌';
+                    statusText = 'ERROR';
+                }
             } else if (result.status >= 200 && result.status < 300) {
                 status = '✅';
                 statusText = result.status;
@@ -204,6 +218,9 @@ async function testAllUrls() {
                 url: url,
                 status: result.status
             });
+        } else if (statusText === 'NETWORK') {
+            // Network warning for Google search URLs - don't count as failure
+            results.summary.networkWarnings++;
         } else if (result.error || (result.status && (result.status < 200 || result.status >= 400))) {
             results.summary.failed++;
             results.summary.errors.push({
@@ -252,6 +269,7 @@ async function testAllUrls() {
     console.log(`✅ Successful: ${results.summary.successful} (${(results.summary.successful/results.summary.total*100).toFixed(1)}%)`);
     console.log(`🔄 Redirected: ${results.summary.redirected} (${(results.summary.redirected/results.summary.total*100).toFixed(1)}%)`);
     console.log(`🤖 Bot Restricted: ${results.summary.botRestricted || 0} (${((results.summary.botRestricted || 0)/results.summary.total*100).toFixed(1)}%)`);
+    console.log(`⚠️ Network Warnings: ${results.summary.networkWarnings} (${(results.summary.networkWarnings/results.summary.total*100).toFixed(1)}%)`);
     console.log(`⏰ Timeout: ${results.summary.timeout} (${(results.summary.timeout/results.summary.total*100).toFixed(1)}%)`);
     console.log(`❌ Failed: ${results.summary.failed} (${(results.summary.failed/results.summary.total*100).toFixed(1)}%)`);
     
@@ -424,15 +442,16 @@ function getHttpErrorDescription(statusCode) {
 if (require.main === module) {
     testAllUrls()
         .then(results => {
-            // Exit with error code only for actual failures (not 403 bot restrictions)
+            // Exit with error code only for actual failures (not 403 bot restrictions or network warnings)
             const actualFailures = results.summary.failed + results.summary.timeout;
             if (actualFailures > 0) {
                 console.log(`\n❌ Exiting with error code 1 due to ${actualFailures} actual failure(s)`);
                 process.exit(1);
             } else {
                 console.log(`\n✅ Exiting with success code 0`);
-                if (results.summary.botRestricted > 0) {
-                    console.log(`   (${results.summary.botRestricted} bot-restricted URLs are not considered failures)`);
+                const warnings = (results.summary.botRestricted || 0) + results.summary.networkWarnings;
+                if (warnings > 0) {
+                    console.log(`   (${warnings} warnings: ${results.summary.botRestricted || 0} bot-restricted, ${results.summary.networkWarnings} network issues)`);
                 }
                 process.exit(0);
             }
